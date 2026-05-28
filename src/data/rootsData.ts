@@ -2027,5 +2027,977 @@ export const rootsData: WordRoot[] = [
         vietnameseTranslation: "Yếu tố thống trị đằng sau việc di cư đô thị vẫn là cuộc tìm kiếm các con đường sự nghiệp béo bở."
       }
     ]
+  },
+  {
+    id: "r103",
+    root: "ECO",
+    meaning: "Môi trường, Sinh thái",
+    origin: "Greek (oikos - house, environment)",
+    description: "Xuất hiện dày đặc trong bài đọc IELTS phần Môi trường, Biến đổi khí hậu và Sinh thái học.",
+    tip: "Nghĩ ngay tới 'Ecosystem' (Hệ sinh thái) hay 'Ecology' (Sinh thái học). ECO chỉ mối tương quan giữa sinh vật và ngôi nhà chung Trái Đất.",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "ecosystem",
+        partOfSpeech: "n",
+        meaning: "Hệ sinh thái",
+        visualBreakdown: "ECO (môi trường) + SYSTEM (hệ thống) -> một hệ thống tuần hoàn của môi trường sống tự nhiên",
+        ieltsSentence: "Deforestation has caused irreversible damage to the local forest ecosystem.",
+        vietnameseTranslation: "Nạn phá rừng đã gây ra những tổn hại không thể đảo ngược đối với hệ sinh thái rừng địa phương."
+      },
+      {
+        word: "ecology",
+        partOfSpeech: "n",
+        meaning: "Sinh thái học, hệ sinh thái học",
+        visualBreakdown: "ECO (môi trường) + LOGY (ngành học) -> môn học nghiên cứu về môi trường sống",
+        ieltsSentence: "Ocean ecology is highly vulnerable to increasing global temperatures and chemical pollution.",
+        vietnameseTranslation: "Sinh thái học đại dương cực kỳ dễ bị tổn thương trước tình trạng nhiệt độ toàn cầu gia tăng và ô nhiễm hóa chất."
+      }
+    ]
+  },
+  {
+    id: "r104",
+    root: "THERM",
+    meaning: "Nhiệt, Năng lượng nhiệt",
+    origin: "Greek (therme - heat)",
+    description: "Bộ rễ then chốt trong các chủ đề địa chất, vật lý học, biến đổi năng lượng tái tạo.",
+    tip: "Nhớ đến 'Thermometer' (Nhiệt kế đo nhiệt độ) hoặc cái phích nước giữ nhiệt 'Thermos'.",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "thermal",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về nhiệt, giữ ấm bằng nhiệt",
+        visualBreakdown: "THERM (nhiệt) + AL -> liên quan đến nhiệt lượng",
+        ieltsSentence: "Thermal energy from geothermal springs can be utilized to generate clean electricity.",
+        vietnameseTranslation: "Nhiệt năng từ các nguồn suối địa nhiệt có thể được tận dụng để sản xuất điện sạch."
+      },
+      {
+        word: "thermodynamics",
+        partOfSpeech: "n",
+        meaning: "Nhiệt động lực học",
+        visualBreakdown: "THERM (nhiệt) + DYNAMICS (động lực) -> nghiên cứu về dòng chảy năng lượng cơ và nhiệt",
+        ieltsSentence: "The fundamental laws of thermodynamics govern overall energy efficiency in machines.",
+        vietnameseTranslation: "Các định luật cơ bản của nhiệt động lực học điều khiển hiệu suất năng lượng tổng thể trong máy móc."
+      }
+    ]
+  },
+  {
+    id: "r105",
+    root: "GEO",
+    meaning: "Trái đất, Địa chất, Địa lý",
+    origin: "Greek (ge - earth)",
+    description: "Hay gặp trong các bài đọc IELTS khai thác về lục địa trôi dạt, biến đổi khí hậu học và khai khoáng.",
+    tip: "Liệt kê 'Geography' (Địa lý học) và 'Geology' (Địa chất học). Trực quan hóa hình ảnh quả địa cầu xanh.",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "geothermal",
+        partOfSpeech: "adj",
+        meaning: "Thuộc địa nhiệt (nhiệt năng trong lòng đất)",
+        visualBreakdown: "GEO (đất/Trái đất) + THERM (nhiệt) + AL -> nhiệt từ sâu trong lòng đất",
+        ieltsSentence: "Geothermal power plants release significantly lower greenhouse gas emissions compared to coal plants.",
+        vietnameseTranslation: "Các nhà máy điện địa nhiệt giải phóng lượng khí thải nhà kính thấp hơn nhiều so với nhà máy than."
+      },
+      {
+        word: "geological",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về địa chất, kiến tạo đất đai",
+        visualBreakdown: "GEO (đất) + LOG (nghiên cứu) + ICAL -> liên quan đến nghiên cứu cấu trúc vật lý của Trái đất",
+        ieltsSentence: "The Grand Canyon reveals millions of years of geological history through its exposed strata.",
+        vietnameseTranslation: "Hẻm núi Grand Canyon để lộ hàng triệu năm lịch sử địa chất thông qua các lớp trầm tích lộ ra của nó."
+      }
+    ]
+  },
+  {
+    id: "r106",
+    root: "HYDRO",
+    meaning: "Nước, Thuỷ điện",
+    origin: "Greek (hydor - water)",
+    description: "Xuất hiện trong các báo cáo khoa học về vòng tuần hoàn nước, thủy lợi học và tài nguyên năng lượng hydro.",
+    tip: "Nghĩ ngay tới 'Hydrate' (Cấp nước cho da) hay 'Hydrogen' (Khí hydro - nguyên tố tạo ra nước).",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "hydroelectric",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về thủy điện, điện năng từ sức nước",
+        visualBreakdown: "HYDRO (nước) + ELECTRIC (thuộc về điện) -> điện sinh ra nhờ động năng của nước",
+        ieltsSentence: "Hydroelectric power remains a cornerstone of the renewable energy sector in mountain nations.",
+        vietnameseTranslation: "Thủy điện vẫn là một viên đá tảng của ngành năng lượng tái tạo tại các quốc gia miền núi."
+      },
+      {
+        word: "hydrology",
+        partOfSpeech: "n",
+        meaning: "Thủy văn học (nghiên cứu về sự phân phối nước)",
+        visualBreakdown: "HYDRO (nước) + LOGY (ngành khoa học) -> khoa học nghiên cứu nước trên Trái Đất",
+        ieltsSentence: "Understanding local hydrology is critical when designing effective flood control systems.",
+        vietnameseTranslation: "Hiểu rõ thủy văn của địa phương là cực kỳ quan trọng khi thiết kế các hệ thống kiểm soát lũ hiệu quả."
+      }
+    ]
+  },
+  {
+    id: "r107",
+    root: "PED/PAED",
+    meaning: "Trẻ em, Giáo dục trẻ",
+    origin: "Greek (pais - child)",
+    description: "Thường dùng trong các văn bản IELTS về tâm lý học trẻ nhỏ, giáo dục mầm non và sự phát triển hành vi.",
+    tip: "Dễ nhớ nhất qua 'Pediatric' (Thuộc khoa nhi) hoặc 'Pedagogy' (Nghệ thuật sư phạm / giảng dạy trẻ nhỏ). Đừng nhầm với PED của chân (Latin pes).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "pedagogy",
+        partOfSpeech: "n",
+        meaning: "Sư phạm học, phương pháp và nghệ thuật dạy học",
+        visualBreakdown: "PED (trẻ em) + AGOG (dẫn dắt) + Y -> việc dẫn dắt định hướng sự phát triển của học sinh nhỏ tuổi",
+        ieltsSentence: "Modern pedagogy prioritizes active student engagement over passive, lecture-based learning.",
+        vietnameseTranslation: "Phương pháp sư phạm hiện đại ưu tiên sự tham gia tích cực của học sinh hơn là việc học thụ động dựa trên nghe giảng."
+      },
+      {
+        word: "pediatrician",
+        partOfSpeech: "n",
+        meaning: "Bác sĩ khoa nhi, bác sĩ trẻ em",
+        visualBreakdown: "PED (trẻ em) + IATR (chữa bệnh) + ICIAN (nhà chuyên môn) -> chuyên gia chữa bệnh cho trẻ em",
+        ieltsSentence: "The pediatrician recommended a balanced diet to address the toddler's minor vitamin deficiency.",
+        vietnameseTranslation: "Bác sĩ nhi khoa đã khuyên dùng một chế độ ăn cân bằng để khắc phục tình trạng thiếu hụt vitamin nhẹ của trẻ biết đi."
+      }
+    ]
+  },
+  {
+    id: "r108",
+    root: "COGN",
+    meaning: "Nhập tâm, Nhận thức, Hiểu biết",
+    origin: "Latin (cognoscere - to know)",
+    description: "Bộ rễ của thần kinh học, tâm lý nhận thức và các nghiên cứu khoa học hành vi con người.",
+    tip: "Xem từ 'Cognitive' (Thuộc về nhận thức) hoặc 'Recognize' (Công nhận hoặc nhận ra người quen cũ).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "cognitive",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về nhận thức, ghi nhớ và tư duy",
+        visualBreakdown: "COGN (biết) + ITIVE -> liên quan đến quá trình thu nạp và xử lý tri thức của bộ não",
+        ieltsSentence: "Regular physical exercise is proven to maintain optimal cognitive function in older adults.",
+        vietnameseTranslation: "Tập thể dục thường xuyên được chứng minh giúp duy trì chức năng nhận thức tối ưu ở người lớn tuổi."
+      },
+      {
+        word: "recognize",
+        partOfSpeech: "v",
+        meaning: "Công nhận, nhận ra ai đó hoặc thừa nhận điều gì",
+        visualBreakdown: "RE (lại) + COGN (biết) + IZE -> biết lại một sự vật/sự việc đã từng tiếp xúc trước đây",
+        ieltsSentence: "The board was quick to recognize the academic breakthroughs achieved by the research university.",
+        vietnameseTranslation: "Hội đồng quản trị đã nhanh chóng ghi nhận và công nhận những bước đột phá học thuật mà trường đại học nghiên cứu đạt được."
+      }
+    ]
+  },
+  {
+    id: "r109",
+    root: "DOC/DOCT",
+    meaning: "Dạy dỗ, Học thuyết, Tài liệu",
+    origin: "Latin (docere - to teach)",
+    description: "Từ dùng cho các văn bản lịch sử xã hội, triết học trường phái và các văn bản chỉ đạo của chính phủ.",
+    tip: "Nghĩ ngay tới 'Document' (Tài liệu - dùng để răn dạy, chỉ bảo) hoặc 'Doctor' (Tiến sĩ - người có học vị cao nhất đi dạy người khác).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "doctrine",
+        partOfSpeech: "n",
+        meaning: "Học thuyết, giáo lý, tôn chỉ chính trị",
+        visualBreakdown: "DOCT (dạy học) + RINE -> tập hợp các quy tắc chuẩn mực được giảng dạy và truyền bá rộng rãi",
+        ieltsSentence: "The Monroe Doctrine shaped early American foreign policy regarding continental spheres of influence.",
+        vietnameseTranslation: "Học thuyết Monroe đã định hình chính sách đối ngoại thời kỳ đầu của Mỹ đối với các phạm vi ảnh hưởng của châu lục."
+      },
+      {
+        word: "documentary",
+        partOfSpeech: "n, adj",
+        meaning: "Phim tài liệu, mang tính cung cấp tư liệu lịch sử thực tế",
+        visualBreakdown: "DOC (dạy học/dẫn chứng) + UMENTARY -> dữ liệu trực quan thực tế có tính chất đúc rút, khai sáng cho người xem",
+        ieltsSentence: "The television network broadcasted a detailed documentary about sustainable farming practices.",
+        vietnameseTranslation: "Mạng lưới truyền hình đã phát sóng một bộ phim tài liệu chi tiết về các thực hành canh tác bền vững."
+      }
+    ]
+  },
+  {
+    id: "r110",
+    root: "TECH",
+    meaning: "Kỹ nghệ, Kỹ thuật, Công nghệ",
+    origin: "Greek (techne - art, skill, craft)",
+    description: "Gặp liên tục trong các văn bản IELTS Reading bàn thảo về tự động hóa, chuyển đổi số và công nghệ tương lai.",
+    tip: "Cực kỳ cơ bản với 'Technology' (Công nghệ học) hay 'Technical' (Thuộc về kỹ thuật, ngõ ngách chi tiết).",
+    category: "Actions & Motion",
+    exampleWords: [
+      {
+        word: "technological",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về công nghệ, mang tính kỹ nghệ hóa",
+        visualBreakdown: "TECH (kỹ thuật, kỹ nghệ) + LOG (khoa học) + ICAL -> liên quan đến khoa học công nghệ",
+        ieltsSentence: "The rapid pace of technological change often outstrips the development of regulatory frameworks.",
+        vietnameseTranslation: "Tốc độ thay đổi công nghệ mãnh liệt thường vượt xa tốc độ xây dựng các khung pháp lý quản lý."
+      },
+      {
+        word: "technicality",
+        partOfSpeech: "n",
+        meaning: "Chi tiết kỹ thuật chuyên môn, tính chất chuyên biệt",
+        visualBreakdown: "TECH (kỹ thuật) + IC + ALITY -> khía cạnh đặc thù đòi hỏi nghiệp vụ sâu mới hiểu rõ",
+        ieltsSentence: "They were acquitted on a legal technicality despite clear evidence of procedural errors.",
+        vietnameseTranslation: "Họ đã được tuyên trắng án vì một chi tiết kỹ thuật pháp lý chuyên môn dù có bằng chứng rõ ràng về các lỗi thủ tục."
+      }
+    ]
+  },
+  {
+    id: "r111",
+    root: "NOV",
+    meaning: "Mới, Cải tiến, Đổi mới",
+    origin: "Latin (novus - new)",
+    description: "Duy trì vị trí cốt lõi trong các chủ đề khởi nghiệp, tư duy sáng tạo phát minh và thích ứng xã hội.",
+    tip: "Nhớ từ 'Novel' (Tiểu thuyết / mới mẻ chưa từng có) hoặc 'Renovate' (Sửa sang lại nhà cửa cho đổi mới).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "innovative",
+        partOfSpeech: "adj",
+        meaning: "Sáng tạo, có tính đổi mới, cải tiến đột phá",
+        visualBreakdown: "IN (làm cho) + NOV (mới) + ATIVE -> tìm cách thay đổi phương pháp, đổi mới diện mạo",
+        ieltsSentence: "The lab is famous for developing innovative solutions to persistent environmental challenges.",
+        vietnameseTranslation: "Phòng thí nghiệm nổi tiếng vì phát triển các giải pháp mang tính đổi mới cho những thách thức môi trường dai dẳng."
+      },
+      {
+        word: "novelty",
+        partOfSpeech: "n",
+        meaning: "Sự mới lạ, tính chất độc đáo chưa từng thấy",
+        visualBreakdown: "NOV (mới) + ELTY -> trạng thái mới mẻ thu hút tò mò",
+        ieltsSentence: "Online shopping has lost its novelty and became a mundane daily utility for millions of users.",
+        vietnameseTranslation: "Mua sắm trực tuyến đã mất đi sự mới lạ ban đầu của nó và trở thành một tiện ích hàng ngày bình thường cho hàng triệu người dùng."
+      }
+    ]
+  },
+  {
+    id: "r112",
+    root: "SCI",
+    meaning: "Biết, Tỉnh táo, Khoa học học thuật",
+    origin: "Latin (scire - to know)",
+    description: "Bộ rễ của từ vựng nghiên cứu học thuật, phương pháp luận và tâm lý tự thức tự tin.",
+    tip: "Quá quen thuộc với 'Science' (Khoa học - thu nạp kiến thức sâu sắc) và 'Conscious' (Có ý thức, tỉnh táo nhận biết xung quanh).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "conscious",
+        partOfSpeech: "adj",
+        meaning: "Có ý thức, tỉnh táo, tự nhận thức được việc làm",
+        visualBreakdown: "CON (cùng với) + SCI (hiểu biết) + OUS -> trạng thái nhận biết đầy đủ mọi kích thích",
+        ieltsSentence: "The marketing agency made a conscious effort to target eco-friendly demographic groups.",
+        vietnameseTranslation: "Đại lý tiếp thị đã nỗ lực tự nhận thức rõ ràng đầy chủ ý để nhắm mục tiêu vào các nhóm nhân khẩu học thân thiện với môi trường."
+      },
+      {
+        word: "omniscient",
+        partOfSpeech: "adj",
+        meaning: "Thông suốt mọi sự, toàn trí toàn năng",
+        visualBreakdown: "OMNI (tất cả) + SCI (hiểu biết) + ENT -> người thấu tỏ toàn bộ vạn vật",
+        ieltsSentence: "The omniscient narrator in the classic novel provides deep insight into characters' silent motives.",
+        vietnameseTranslation: "Người kể chuyện thông suốt mọi việc trong cuốn tiểu thuyết cổ điển mang lại góc nhìn sâu sắc về những động cơ thầm kín của nhân vật."
+      }
+    ]
+  },
+  {
+    id: "r113",
+    root: "VOC/VOK",
+    meaning: "Tiếng nói, Kêu gọi, Ngôn luận",
+    origin: "Latin (vocare - to call, voice)",
+    description: "Rất hay gặp trong chủ đề về marketing, vận động hành lang chính sách, truyền thông đại chúng và tuyển dụng học thuật.",
+    tip: "Gắn kết với 'Vocal' (Thuộc về giọng hát, tiếng nói) hoặc 'Vocabulary' (Hệ từ vựng dùng để gọi tên vạn vật).",
+    category: "Actions & Motion",
+    exampleWords: [
+      {
+        word: "advocate",
+        partOfSpeech: "v, n",
+        meaning: "Ủng hộ nhiệt thành, người biện hộ",
+        visualBreakdown: "AD (hướng tới) + VOC (gợi tiếng nói/kêu gọi) + ATIVE -> cùng lên tiếng nói để bảo vệ quyền lợi cho người khác",
+        ieltsSentence: "Humanitarian organizations strongly advocate for the immediate protection of refugees.",
+        vietnameseTranslation: "Các tổ chức nhân đạo mạnh mẽ ủng hộ cho sự bảo vệ ngay lập tức dành cho những người tị nạn."
+      },
+      {
+        word: "provocative",
+        partOfSpeech: "adj",
+        meaning: "Mang tính khiêu khích, kích thích sự bàn tán thảo luận",
+        visualBreakdown: "PRO (hướng về phía trước) + VOC (gợi tiếng nói/kêu gọi) + ATIVE -> khơi dậy làn sóng tranh luận, kích thích thảo luận nảy lửa",
+        ieltsSentence: "The lead researcher presented a provocative theory that challenged decades of astronomical consensus.",
+        vietnameseTranslation: "Nhà nghiên cứu dẫn đầu đã trình bày một lý thuyết kích thích sự tò mò tranh luận, thách thức hàng thập kỷ đồng thuận của giới thiên văn học."
+      }
+    ]
+  },
+  {
+    id: "r114",
+    root: "PATH",
+    meaning: "Cảm xúc, Đồng cảm, Thống khổ",
+    origin: "Greek (pathos - feeling, suffering)",
+    description: "Xuất hiện trong các bài đọc IELTS khai thác về trí tuệ cảm xúc (EQ), tâm lý học hành vi quảng cáo truyền thông.",
+    tip: "Nghĩ ngay tới 'Sympathy' (Sự thương cảm tương đồng) hoặc 'Empathy' (Khả năng đặt mình vào vị trí người khác để đồng cảm).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "empathy",
+        partOfSpeech: "n",
+        meaning: "Sự thấu cảm, đồng cảm sâu sắc",
+        visualBreakdown: "EM (bên trong) + PATH (cảm xúc) -> thấu hiểu cảm xúc từ tận sâu bên trong tâm can người khác",
+        ieltsSentence: "Developing empathy is considered a core skill in patient-centered clinical training.",
+        vietnameseTranslation: "Phát triển sự thấu cảm được coi là một kỹ năng cốt lõi trong đào tạo lâm sàng lấy bệnh nhân làm trung tâm."
+      },
+      {
+        word: "apathetic",
+        partOfSpeech: "adj",
+        meaning: "Thờ ơ, vô cảm, thiếu quan tâm",
+        visualBreakdown: "A (không, thiếu) + PATH (cảm xúc) + IC -> hoàn toàn trống rỗng cảm xúc, không thèm quan tâm",
+        ieltsSentence: "A growing number of citizens are becoming apathetic about national political reforms.",
+        vietnameseTranslation: "Một số lượng ngày càng tăng công dân đang trở nên thờ ơ vô cảm với các cuộc cải cách chính trị quốc gia."
+      }
+    ]
+  },
+  {
+    id: "r115",
+    root: "POLIS/POLIT",
+    meaning: "Thành bang, Chính trị, Đô thị chính quyền",
+    origin: "Greek (polis - city-state)",
+    description: "Trụ cột từ vựng của chủ đề Đô thị hóa (Urbanisation), Toàn cầu hóa và Khoa học chính trị trong IELTS.",
+    tip: "Nghĩ tới 'Police' (Cảnh sát giữ trật tự đô thị) hoặc 'Politics' (Chính trị quốc gia).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "metropolitan",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về khu vực đại đô thị, thành phố lớn",
+        visualBreakdown: "METRO (mẹ) + POLIS (thành phố) -> thành phố mẹ, đô thị trung tâm gánh vác cả vùng",
+        ieltsSentence: "Efficient traffic management is a paramount issue facing millions of metropolitan residents.",
+        vietnameseTranslation: "Quản lý giao thông hiệu quả là một vấn đề tối quan trọng đối với hàng triệu cư dân vùng đại đô thị."
+      },
+      {
+        word: "politicize",
+        partOfSpeech: "v",
+        meaning: "Chính trị hóa (biến sự việc thông dụng thành công cụ chính trị)",
+        visualBreakdown: "POLIT (chính trị) + IZE (biến đổi) -> nhuốm màu tranh danh đoạt lợi thể chế vào học thuật/khoa học",
+        ieltsSentence: "Discussions surrounding climate changes are highly politicized, hindering objective, science-first policy development.",
+        vietnameseTranslation: "Các cuộc thảo luận xung quanh biến đổi khí hậu bị chính trị hóa cao độ, cản trở việc xây dựng chính sách khách quan lấy khoa học làm đầu."
+      }
+    ]
+  },
+  {
+    id: "r116",
+    root: "JUR/JUST",
+    meaning: "Pháp luật, Toà pháp lý, Công lý",
+    origin: "Latin (juris - law, justus - right)",
+    description: "Bộ cốt lõi trong các chủ đề IELTS về luật pháp, hiến pháp, hành vi phạm tội và hệ thống tư pháp hình sự.",
+    tip: "Liên hệ trực tiếp với 'Jury' (Bồi thẩm đoàn xét xử) hoặc 'Justice' (Công lý tuyệt đối).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "jurisdiction",
+        partOfSpeech: "n",
+        meaning: "Quyền tài phán, thẩm quyền xét xử pháp lý",
+        visualBreakdown: "JUR (luật pháp) + DICT (tuyên bố) -> ranh giới được quyền công bố phán quyết pháp lý hợp pháp",
+        ieltsSentence: "The international court declared that the war crimes did not fall within its official jurisdiction.",
+        vietnameseTranslation: "Tòa án quốc tế tuyên bố rằng các tội ác chiến tranh không thuộc thẩm quyền xét xử chính thức của họ."
+      },
+      {
+        word: "justify",
+        partOfSpeech: "v",
+        meaning: "Biện minh, chứng minh tính đúng đắn, hợp lẽ phải",
+        visualBreakdown: "JUST (luật/đúng đắn) + FY (làm cho) -> biến một hành động gây tranh cãi trở nên đúng pháp luật và đạo đức",
+        ieltsSentence: "The government could not justify the extreme measures implemented in the tax reform program.",
+        vietnameseTranslation: "Chính phủ đã không thể biện hộ cho các biện phái cực đoan được thực hiện trong chương trình cải cách thuế."
+      }
+    ]
+  },
+  {
+    id: "r117",
+    root: "CRIM",
+    meaning: "Tội lỗi, Tội phạm, Khép tội",
+    origin: "Latin (crimen - fault, crime)",
+    description: "Duy nhất chuyên trị các chủ đề IELTS liên quan đến Tội phạm học (Criminology), biện pháp chế tài phòng chống tội phạm.",
+    tip: "Rất dễ nhờ qua từ 'Crime' (Tội ác) hoặc 'Criminal' (Tội phạm).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "criminology",
+        partOfSpeech: "n",
+        meaning: "Tội phạm học (ngành nghiên cứu hành vi phạm pháp)",
+        visualBreakdown: "CRIM (tội phạm) + OLOGY (ngành học khoa học) -> khoa học giải mã tâm lý và động cơ phạm pháp",
+        ieltsSentence: "He decided to pursue a master's degree in criminology to understand the socioeconomic roots of illegal acts.",
+        vietnameseTranslation: "Anh ấy quyết định theo đuổi bằng thạc sĩ về tội phạm học để hiểu nguồn gốc kinh tế - xã hội của các hành vi bất hợp pháp."
+      },
+      {
+        word: "incriminate",
+        partOfSpeech: "v",
+        meaning: "Buộc tội, đổ tội, liên đới trách nhiệm hình sự",
+        visualBreakdown: "IN (làm cho) + CRIM (tội) + ATE -> đưa người ta vào tình thế vướng phải vòng rào tù tội",
+        ieltsSentence: "The prosecution presented leaked electronic receipts to incriminate the corrupt politician.",
+        vietnameseTranslation: "Bên công tố đã xuất trình các biên lai điện tử bị rò rỉ để buộc tội chính trị gia tham nhũng."
+      }
+    ]
+  },
+  {
+    id: "r118",
+    root: "REG/REIG",
+    meaning: "Cai trị, Chính thể, Quy tắc điều hành",
+    origin: "Latin (regere - to rule, king)",
+    description: "Nói về cấu trúc quyền lực nhà nước, chế độ cai trị hoặc các biện pháp kiểm soát nghiêm ngặt của chính phủ.",
+    tip: "Liên tưởng 'Reign' (Triều đại cai trị của nhà vua) hoặc 'Regular' (Theo quy tắc, đều đặn).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "regime",
+        partOfSpeech: "n",
+        meaning: "Chế độ cai trị, chính thể chính trị",
+        visualBreakdown: "REG (cai trị) + IME -> hệ thống tổ chức bộ máy cai trị quốc gia",
+        ieltsSentence: "The country transition from a military regime to an electoral democracy in late 1990s.",
+        vietnameseTranslation: "Đất nước đã chuyển đổi từ chế độ quân sự sang một nền dân chủ bầu cử vào cuối những năm 1990."
+      },
+      {
+        word: "sovereign",
+        partOfSpeech: "n, adj",
+        meaning: "Chủ quyền tối cao, quốc gia độc lập có quyền tự quyết",
+        visualBreakdown: "SOV (trên cùng) + REIGN (cai trị) -> quyền thống trị tối cao không phụ thuộc bên ngoài",
+        ieltsSentence: "Every sovereign state has the absolute right to manage its internal legislative reforms.",
+        vietnameseTranslation: "Mỗi quốc gia có chủ quyền đều có quyền tuyệt đối trong việc quản lý các cải cải lập pháp nội bộ của mình."
+      }
+    ]
+  },
+  {
+    id: "r119",
+    root: "DEM",
+    meaning: "Nhân dân, Cộng đồng dân cư",
+    origin: "Greek (demos - people)",
+    description: "Chữ vàng trong các bài đọc IELTS Reading liên quan đến nhân khẩu học, sức sống đô thị và chính sách quốc tế.",
+    tip: "Học từ 'Democracy' (Chế độ dân chủ - người dân làm chủ) hoặc 'Epidemic' (Dịch bệnh lan tràn cả nước).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "demographics",
+        partOfSpeech: "n",
+        meaning: "Nhân khẩu học, các chỉ số phân tích cấu trúc dân cư",
+        visualBreakdown: "DEM (nhân dân) + GRAPH (ghi chú/bản đồ) + ICS -> khoa học đo đạc ghi chép đặc tính dân số",
+        ieltsSentence: "Sociologists analyzed changing metropolitan demographics to predict future housing demands.",
+        vietnameseTranslation: "Các nhà xã hội học đã phân tích biến động nhân khẩu học của vùng đô thị để dự báo nhu cầu nhà ở tương lai."
+      },
+      {
+        word: "democracy",
+        partOfSpeech: "n",
+        meaning: "Nền dân chủ, chế độ dân chủ xã hội",
+        visualBreakdown: "DEM (dân) + CRACY (thống trị/quyền điều hành) -> quyền cai trị đất nước thực chất nằm trong tay nhân dân bầu chọn",
+        ieltsSentence: "A free and independent press is historically deemed vital to the health of any democracy.",
+        vietnameseTranslation: "Báo chí tự do và độc lập trong lịch sử luôn được coi là cực kỳ quan trọng đối với sức sống của bất kỳ nền dân chủ nào."
+      }
+    ]
+  },
+  {
+    id: "r120",
+    root: "SAN",
+    meaning: "Sức khoẻ, Vệ sinh, Lành mạnh",
+    origin: "Latin (sanus - healthy)",
+    description: "Bộ gốc từ vựng thường xuất hiện trong bài đọc Y tế cộng đồng, Thủy lợi vệ sinh môi trường nông thôn trong IELTS.",
+    tip: "Nhớ đến 'Sanitary' (Vệ sinh phòng dịch bệnh) hay 'Sanity' (Tinh thần tỉnh táo, lành mạnh không hư hỏng đầu óc).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "sanitary",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về vệ sinh, sạch sẽ phòng bệnh",
+        visualBreakdown: "SAN (khỏe mạnh) + ITARY -> đảm bảo sạch sẽ không cho mầm bệnh phát sinh hại sức khỏe",
+        ieltsSentence: "Governments must provide safe drinking water and basic sanitary services to modern slums.",
+        vietnameseTranslation: "Chính phủ phải cung cấp nước uống an toàn và các dịch vụ vệ sinh cơ bản cho các khu ổ chuột hiện đại."
+      },
+      {
+        word: "sanity",
+        partOfSpeech: "n",
+        meaning: "Sự tỉnh táo, sự lành mạnh về tâm thần",
+        visualBreakdown: "SAN (khỏe mạnh) + ITY -> trạng thái có đầu óc lành mạnh, khỏe khoắn không bị điên rồ áp lực dồn nén",
+        ieltsSentence: "A relaxing stroll through nature can play an essential role in keeping your mental sanity.",
+        vietnameseTranslation: "Một chuyến đi dạo thư thái qua thiên nhiên có thể đóng vai trò thiết yếu trong việc giữ gìn sự tỉnh táo về tinh thần của bạn."
+      }
+    ]
+  },
+  {
+    id: "r121",
+    root: "VIV/VIT",
+    meaning: "Sống, Mãnh liệt, Sinh tồn",
+    origin: "Latin (vivere - to live)",
+    description: "Chữ gốc then chốt trong IELTS Reading thuộc mảng sinh học tiến hóa, dinh dưỡng học sức khỏe và hồi phục sinh thái.",
+    tip: "Từ quen thuộc 'Vitamin' (Chất tối thiết yếu cho sự sống) hay 'Survive' (Sống sót vượt bão giông cuộc đời).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "vitality",
+        partOfSpeech: "n",
+        meaning: "Sức sống mãnh liệt, năng lượng can trường dồi dào",
+        visualBreakdown: "VIT (sự sống) + ALITY -> phẩm chất đầy ắp sinh lực, khí thế bừng bừng bền bỉ",
+        ieltsSentence: "The influx of ambitious young professionals restored the commercial vitality of the dying town.",
+        vietnameseTranslation: "Sự tràn vào của các chuyên gia trẻ tuổi đầy hoài bão đã khôi phục lại sức sống thương mại của thị trấn đang héo úa."
+      },
+      {
+        word: "survival",
+        partOfSpeech: "n",
+        meaning: "Sự sống sót, sự sinh tồn sinh học",
+        visualBreakdown: "SUR (vượt lên) + VIV (sống) + AL -> vượt qua lằn ranh tử sinh để tiếp tục sống sót dai dẳng",
+        ieltsSentence: "Charles Darwin analyzed morphological adaptations critical for the survival of remote island birds.",
+        vietnameseTranslation: "Charles Darwin đã phân tích những thích nghi hình thái học mang tính sống còn đối với sự sinh tồn của các loài chim trên đảo xa xôi."
+      }
+    ]
+  },
+  {
+    id: "r122",
+    root: "ADMIN/MINIS",
+    meaning: "Phục phục, Điều hướng hành chính, Quản trị",
+    origin: "Latin (ministrare - to serve, direct)",
+    description: "Hay dùng trong các bài đọc về quản lý hành chính công, chính phủ lèo lái quốc gia, quản trị đại học.",
+    tip: "Kết nối sâu sắc với 'Admin/Administrator' (Người quản trị điều hành) hoặc 'Ministry' (Bộ - cơ quan hành chính cao thứ nhì phục vụ chính phủ).",
+    category: "Actions & Motion",
+    exampleWords: [
+      {
+        word: "administrative",
+        partOfSpeech: "adj",
+        meaning: "Thuộc về hành chính, thủ tục quản trị chỉ đạo",
+        visualBreakdown: "AD (hướng tới) + MINIS (phục vụ/quản lý) + TRATIVE -> thuộc về công việc tổ chức, phụng sự hệ thống",
+        ieltsSentence: "The education audit aimed to reduce heavy administrative red tape on science teachers.",
+        vietnameseTranslation: "Cuộc kiểm toán giáo dục nhằm giảm bớt nạn quan liêu hành chính nặng nề lên các giáo viên khoa học."
+      },
+      {
+        word: "administration",
+        partOfSpeech: "n",
+        meaning: "Ban quản trị, sự quản lý điều phối học thuật/doanh nghiệp",
+        visualBreakdown: "AD (hướng tới) + MINIS (quản lý điều phối) + TRATION -> bộ máy cầm cân nảy mực lèo lái hệ thống hành pháp",
+        ieltsSentence: "The university administration voted unanimously to build a cutting-edge nanotechnology library.",
+        vietnameseTranslation: "Ban giám hiệu trường đại học đã nhất trí biểu quyết xây dựng thư viện công nghệ nano tiên tiến."
+      }
+    ]
+  },
+  {
+    id: "r123",
+    root: "MERC",
+    meaning: "Thương mại, Mua bán hàng hoá, Buôn bán",
+    origin: "Latin (merx - merchandise)",
+    description: "Cốt tủy của từ vựng IELTS Reading Kinh tế cổ điển, chủ đề Giao dịch toàn cầu và Cách mạng công nghiệp.",
+    tip: "Nghĩ ngay tới 'Merchant' (Thương nhân ngồi chợ buôn bán) hay 'Merchandise' (Hàng hóa lưu niệm bán chạy).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "commercial",
+        partOfSpeech: "adj, n",
+        meaning: "Thuộc về thương mại, tìm kiếm lợi nhuận thương trường",
+        visualBreakdown: "COM (cùng nhau) + MERC (buôn bán) + IAL -> thuộc về thị trường trao đổi hàng hóa sinh lời",
+        ieltsSentence: "The initial research project was designed for purely academic interests, devoid of any commercial goals.",
+        vietnameseTranslation: "Dự án nghiên cứu ban đầu được thiết kế chỉ thuần túy vì mục đích học thuật, không có bất kỳ mục tiêu thương mại nào."
+      },
+      {
+        word: "merchandise",
+        partOfSpeech: "n",
+        meaning: "Hàng hóa trao đổi, sản phẩm giao lưu buôn bán",
+        visualBreakdown: "MERC (hàng hóa) + AND + ISE -> những sản phẩm vật lý lưu kho sẵn sàng đem bán kiếm tiền",
+        ieltsSentence: "The port was stacked with tons of exotic merchandise ready for transcontinental redistribution.",
+        vietnameseTranslation: "Cảng xếp đầy hàng tấn hàng hóa ngoại lai độc đáo sẵn sàng để phân phối lại khắp châu lục."
+      }
+    ]
+  },
+  {
+    id: "r124",
+    root: "FIS/FISC",
+    meaning: "Tài chính quốc gia, Ngân khố, Tiền tệ ngân sách",
+    origin: "Latin (fiscus - state treasury, purse)",
+    description: "Xuất hiện trong các báo cáo kinh tế học tầm vĩ mô của IELTS nói về thuế, chi tiêu tiền công của chính phủ.",
+    tip: "Bắt buộc nhớ tính từ 'Fiscal' (Thuộc tài khóa chính phủ, ví dụ: Fiscal policy - Chính sách tài khóa).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "fiscal",
+        partOfSpeech: "adj",
+        meaning: "Thuộc tài khóa, tài chính nhà nước, ngân sách công",
+        visualBreakdown: "FISC (ngân khố) + AL -> liên quan trực tiếp đến việc thu chi ngân lượng của chính quyền",
+        ieltsSentence: "Economists argue that structural fiscal reforms are required to combat the mounting national debt.",
+        vietnameseTranslation: "Các nhà kinh tế lập luận rằng các cải cách tài khóa theo cơ cấu là cần thiết để chống lại khoản nợ quốc gia đang gia tăng."
+      },
+      {
+        word: "confiscate",
+        partOfSpeech: "v",
+        meaning: "Tịch thu sung công quỹ, thu giữ tài sản phi pháp",
+        visualBreakdown: "CON (cùng nhau) + FISC (vào ngân khố) + ATE -> chuyển tài sản phi pháp của phạm nhân vào hòm tiền chung quốc gia",
+        ieltsSentence: "Customs authorities decided to confiscate illegal ivory shipments worth millions of dollars.",
+        vietnameseTranslation: "Cơ quan hải quan đã quyết định tịch thu các lô hàng ngà voi bất hợp pháp trị giá hàng triệu đô la."
+      }
+    ]
+  },
+  {
+    id: "r125",
+    root: "MIG/MIGR",
+    meaning: "Di chuyển, Di cư, Chuyển dịch sinh sống",
+    origin: "Latin (migrare - to move, travel)",
+    description: "Rất quan trọng trong các chủ đề Nhập cư (Immigration), sinh học động vật di cư xa thẳm, rào cản địa lý xã hội.",
+    tip: "Thường trực trong từ 'Migrate' (Di cư tránh rét của chim chóc) hay 'Immigrate' (Nhập cư định cư luôn tại xứ người).",
+    category: "Actions & Motion",
+    exampleWords: [
+      {
+        word: "migratory",
+        partOfSpeech: "adj",
+        meaning: "Di động, thuộc di cư theo mùa của động vật",
+        visualBreakdown: "MIGR (di chuyển bờ cõi) + ATORY -> mang tập tính di dời chỗ ở định kỳ để sinh tồn",
+        ieltsSentence: "The preservation of wetlands is essential to protect migratory birds during their long journeys.",
+        vietnameseTranslation: "Việc bảo tồn các vùng đất ngập nước là thiết yếu để bảo vệ chim di cư trong suốt những hành trình dài của chúng."
+      },
+      {
+        word: "immigrate",
+        partOfSpeech: "v",
+        meaning: "Nhập cư định cư hợp pháp",
+        visualBreakdown: "IM (vào trong) + MIGR (di chuyển) + ATE -> di chuyển qua biên giới để định cư lâu dài trong một nước khác",
+        ieltsSentence: "His grandfather chose to immigrate to Canada to build a stable farming business.",
+        vietnameseTranslation: "Ông nội của anh đã chọn nhập cư sang Canada để xây dựng công việc kinh doanh nông trại ổn định."
+      }
+    ]
+  },
+  {
+    id: "r126",
+    root: "VIA/VI",
+    meaning: "Đường đi, Lộ trình, Đi lại giao thông",
+    origin: "Latin (via - way, road)",
+    description: "Bộ gốc từ vựng mô tả lối thoát, lộ trình kế hoạch giao thông đô thị và tính hiện thực hóa.",
+    tip: "Học từ 'Via' (Đi thông qua con đường/địa điểm trung gian) hay tính từ 'Viable' (Khả thi - có đường đi thông suốt để sinh tồn).",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "viability",
+        partOfSpeech: "n",
+        meaning: "Khả năng tồn tại độc lập, tính khả thi có đường thực thi",
+        visualBreakdown: "VI (con đường sống sót) + ABILITY (khả năng) -> năng lực có cửa sinh, dễ dàng triển khai thành tựu cụ thể",
+        ieltsSentence: "The financial viability of the solar plant project remains speculative without government funding.",
+        vietnameseTranslation: "Khả năng sống sót tài chính bền vững của dự án nhà máy điện mặt trời vẫn mang tính đầu cơ phỏng đoán khi thiếu tài trợ chính phủ."
+      },
+      {
+        word: "deviate",
+        partOfSpeech: "v",
+        meaning: "Chệch hướng, đi xa khỏi lộ trình chuẩn ban đầu",
+        visualBreakdown: "DE (rời khỏi) + VIA (đường chính) + ATE -> lạc trôi bẻ lái ra khỏi làn đường đã cam kết",
+        ieltsSentence: "The experimental results did not deviate significantly from the theoretical predictions.",
+        vietnameseTranslation: "Các kết quả thực nghiệm đã không có sự lệch hướng đáng kể so với những dự đoán lý thuyết."
+      }
+    ]
+  },
+  {
+    id: "r127",
+    root: "CULT",
+    meaning: "Gieo trồng, Trau dồi, Tôn sùng di sản văn hoá",
+    origin: "Latin (colere - to till, care, worship)",
+    description: "Gặp liên tục trong IELTS Reading mảng Nhân chủng học, Văn hóa so sánh toàn cầu hóa học và sự đồng hóa.",
+    tip: "Nhớ từ 'Culture' (Văn hóa - trau dồi tâm hồn tập thể) hoặc 'Agriculture' (Nông nghiệp - gieo trồng trên cánh đồng đất đai).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "cultivate",
+        partOfSpeech: "v",
+        meaning: "Gieo trồng, vun đắp bồi dưỡng học vấn/mối quan hệ",
+        visualBreakdown: "CULT (chăm sóc gieo trồng) + IVATE -> cày cấy, nhẫn nại chăm sóc cho lớn mạnh tốt tươi",
+        ieltsSentence: "The mentor helped her cultivate the essential leadership skills necessary for high-level management.",
+        vietnameseTranslation: "Người cố vấn đã giúp cô bồi dưỡng các kỹ năng lãnh đạo thiết yếu cần có cho việc quản lý cấp cao."
+      },
+      {
+        word: "acculturation",
+        partOfSpeech: "n",
+        meaning: "Sự tiếp biến văn hóa, học hỏi thích ứng lối sống mới",
+        visualBreakdown: "AC (hướng tới) + CULT (văn hóa bản địa) + URATION -> quá trình dung hòa lối sống bản địa để nhập gia tùy tục xứ người",
+        ieltsSentence: "Academics examined how acculturation stress affects the scholastic performance of overseas students.",
+        vietnameseTranslation: "Các nhà học thuật đã nghiên cứu xem căng thẳng tiếp biến thích ứng văn hóa ảnh hưởng thế nào đến thành tích học tập của học viên nước ngoài."
+      }
+    ]
+  },
+  {
+    id: "r128",
+    root: "HERI/HERIT",
+    meaning: "Thừa kế, Di sản lưu truyền, Nền tảng thừa hưởng",
+    origin: "Latin (heres - heir)",
+    description: "Phát hiện trong các bài đọc bảo tồn thiên nhiên, cổ vật lịch sử và đặc tính bẩm sinh trong sinh học hành vi.",
+    tip: "Gắn liền với danh từ đắt giá 'Heritage' (Di sản vô giá của quốc gia) hay đặc tính bẩm sinh 'Inherent'.",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "heritage",
+        partOfSpeech: "n",
+        meaning: "Di sản thừa hưởng từ tổ tiên (bao gồm văn hóa/tự nhiên)",
+        visualBreakdown: "HERIT (thừa kế) + AGE -> báu vật phi vật thể hay vật thể tích lũy theo năm tháng được truyền cho đời sau",
+        ieltsSentence: "UNESCO serves to safeguard historical monuments defined as the collective heritage of humanity.",
+        vietnameseTranslation: "UNESCO đóng vai trò bảo vệ an toàn các di tích lịch sử đại diện cho di sản chung của toàn nhân loại."
+      },
+      {
+        word: "inherent",
+        partOfSpeech: "adj",
+        meaning: "Vốn có, nội tại bẩm sinh, không thể bóc tách",
+        visualBreakdown: "IN (bên trong) + HER (thừa kế di truyền) + ENT -> phẩm chất đã nằm sẵn trong gốc rễ gen di truyền ngay khi sinh ra",
+        ieltsSentence: "Every engineering venture carries some inherent risks that must be carefully managed.",
+        vietnameseTranslation: "Mọi dự án kỹ thuật hoành tráng đều đi kèm những rủi ro nội tại vốn có cần được quản lý hết sức thận trọng."
+      }
+    ]
+  },
+  {
+    id: "r129",
+    root: "ANTI- (Tiền tố)",
+    meaning: "Chống lại, Phủ định, Kháng, Đối nghịch",
+    origin: "Greek (anti - against, opposite)",
+    description: "Tiền tố cực mạnh trong IELTS để tạo ra các từ mang tính chất phòng vệ, phủ định, hoặc chống phá dòng chảy xã hội.",
+    tip: "Nhớ từ 'Antibiotic' (Kháng sinh chống vi khuẩn) hay 'Antiseptic' (Chất sát trùng khử trùng mạnh mẽ).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "antibodies",
+        partOfSpeech: "n",
+        meaning: "Kháng thể (trong hệ miễn dịch cơ thể)",
+        visualBreakdown: "ANTI (kháng/chống) + BODIES (các vật thể sinh học) -> protein ngăn chặn, khóa chặt virus độc hại xâm nhập",
+        ieltsSentence: "The body generates specialized antibodies after receiving an active vaccine dose.",
+        vietnameseTranslation: "Cơ thể sản sinh ra các kháng thể chuyên biệt sau khi nhận được một liều vắc-xin hoạt lực."
+      },
+      {
+        word: "antisocial",
+        partOfSpeech: "adj",
+        meaning: "Phá hoại trật tự xã hội, phản xã hội, sống khép kín",
+        visualBreakdown: "ANTI (chống lại) + SOCIAL (thuộc cộng đồng xã hội) -> có hành vi lệch lạc khiêu khích chống lại cộng đồng hoặc từ chối giao tiếp xã hội",
+        ieltsSentence: "Vandalism and public noise are classified as classic examples of antisocial behavior.",
+        vietnameseTranslation: "Hành vi phá hoại của công và tiếng ồn nơi công cộng được phân loại là những ví dụ điển hình của hành vi phản xã hội."
+      }
+    ]
+  },
+  {
+    id: "r130",
+    root: "CONTRA/COUNTER- (Tiền tố)",
+    meaning: "Đối đầu, Phản kháng, Ngược chiều gió",
+    origin: "Latin (contra - against)",
+    description: "Dùng để tạo nghĩa phản bác trong tranh biện học thuật, chỉ ra các phát hiện đối lập hoàn toàn trong thực nghiệm khoa học.",
+    tip: "Gợi nhớ bằng 'Contra' (Trò chơi đối kháng bắn súng nổi tiếng) hay 'Contradict' (Cải nhau chan chát, mâu thuẫn lẫn nhau).",
+    category: "Actions & Motion",
+    exampleWords: [
+      {
+        word: "contradict",
+        partOfSpeech: "v",
+        meaning: "Mâu thuẫn, phủ nhận hoặc bác bỏ luận điểm khác",
+        visualBreakdown: "CONTRA (ngược lại) + DICT (phát biểu/nói) -> tuyên bố luận điểm ngược chiều hoàn toàn để bác bỏ luận án của đối phương",
+        ieltsSentence: "Her empirical research results flatly contradict the established theories on soil degradation.",
+        vietnameseTranslation: "Các kết quả nghiên cứu thực nghiệm của cô bộc lộ mâu thuẫn thẳng thừng với các giả thuyết đã được xác lập về xói mòn đất."
+      },
+      {
+        word: "counteract",
+        partOfSpeech: "v",
+        meaning: "Kháng cự, triệt tiêu, hóa giải tác động bất lợi",
+        visualBreakdown: "COUNTER (đối kháng) + ACT (hành động) -> tiến hành hành lực đối kháng để bóp nghẹt, vô hiệu hiệu lực của chất có hại",
+        ieltsSentence: "The medical team administered a chemical antidote to counteract the deadly venom's stroke effect.",
+        vietnameseTranslation: "Đội ngũ y tế đã tiêm một liều thuốc giải hóa học để triệt tiêu ảnh hưởng gây đột quỵ của nọc độc chết người."
+      }
+    ]
+  },
+  {
+    id: "r131",
+    root: "FORE- (Tiền tố)",
+    meaning: "Đi trước, Tiên đoán, Tiên phong, Đằng trước",
+    origin: "Old English (fore - before)",
+    description: "Chỉ vị thế đi đầu của một xu hướng học thuật hoặc việc chuẩn bị chống đỡ thảm họa trước khi nó đổ bộ gieo rắc tàn phá.",
+    tip: "Nhớ từ 'Forecast' (Dự báo thời tiết / xu hướng tương lai trước khi nó diễn ra) hay dũng sĩ đi tuyến đầu 'Forefront'.",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "forecast",
+        partOfSpeech: "v, n",
+        meaning: "Dự báo, tuyên bố một phán đoán xu thế tương lai",
+        visualBreakdown: "FORE (trước) + CAST (tính toán/quăng lưới) -> quăng rải dữ liệu lịch sử để phán đoán chính xác hướng biến thiên",
+        ieltsSentence: "Meteorologists fail to forecast the exact severity of the flash floods in mount valleys.",
+        vietnameseTranslation: "Các nhà khí tượng học đã thất bại trong việc dự báo mức độ khắc nghiệt chính xác của các trận lũ quét tại các thung lũng núi."
+      },
+      {
+        word: "foreseeable",
+        partOfSpeech: "adj",
+        meaning: "Có thể lường trước, trông thấy trước trong tầm tay",
+        visualBreakdown: "FORE (trước) + SEE (nhìn thấy) + ABLE (có khả năng) -> có thể tiên liệu, lập kế hoạch ứng phó gọn gàng",
+        ieltsSentence: "The oil prices are expected to remain volatile for the foreseeable future under trade tensions.",
+        vietnameseTranslation: "Giá dầu dự kiến sẽ duy trì không ổn định trong tương lai gần có thể đoán trước dưới các áp lực căng thẳng thương mại."
+      }
+    ]
+  },
+  {
+    id: "r132",
+    root: "INTER- (Tiền tố)",
+    meaning: "Liên kết, Qua lại giữa các bên, Xen kẽ",
+    origin: "Latin (inter - between, among)",
+    description: "Tiền tố cực thịnh trong IELTS Reading toàn cầu hóa để nhấn mạnh sự đan quyện đùm bọc qua lại của thế giới đa cực.",
+    tip: "Dễ nhớ qua 'Internet' (Mạng lưới kết nối xuyên quốc gia đại cục) hay 'International' (Xuyên quốc gia, liên quốc tế giáo lưu).",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "interdependent",
+        partOfSpeech: "adj",
+        meaning: "Phụ thuộc lẫn nhau, nương tựa vào nhau",
+        visualBreakdown: "INTER (qua lại giữa các bên) + DEPENDENT (lệ thuộc) -> mối quan hệ ràng buộc đa bên cùng sống cùng chết sinh tử có nhau",
+        ieltsSentence: "Modern national economies are highly interdependent due to complex supply chains.",
+        vietnameseTranslation: "Các nền kinh tế quốc gia hiện đại phụ thuộc sâu sắc lẫn nhau do các chuỗi cung ứng phức tạp."
+      },
+      {
+        word: "interstellar",
+        partOfSpeech: "adj",
+        meaning: "Giữa các vì sao, liên sao vũ trụ",
+        visualBreakdown: "INTER (ở giữa) + STELLAR (thuộc về sao) -> không gian sâu thẳm nằm giữa các hành tinh ngôi sao xa lạ",
+        ieltsSentence: "The interstellar dust particles offer crucial chemical clues to early universe expansion theories.",
+        vietnameseTranslation: "Các hạt bụi liên sao chứa đựng những manh mối hóa học tối cốt lõi cho các giả thuyết giãn nở vũ trụ thuở hồng hoang."
+      }
+    ]
+  },
+  {
+    id: "r133",
+    root: "INTRA/INTRO- (Tiền tố)",
+    meaning: "Bên trong, Nội bộ sâu xa, Hướng nội tâm",
+    origin: "Latin (intra - within, inside)",
+    description: "Trái nghĩa với EXTRA-, tiền tố này khu trúc vấn đề nằm gọn rọc bên trong cơ cấu, không có yếu tố ngoại lai tác động xuyên tạc.",
+    tip: "Học từ 'Introvert' (Người hướng nội, giữ tâm tư kín kẽ trong lòng) hay 'Intravenous' (Trong tĩnh mạch cánh tay y học).",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "introvert",
+        partOfSpeech: "n, adj",
+        meaning: "Người hướng nội, tính cách trầm lặng khép mình",
+        visualBreakdown: "INTRO (vào trong) + VERT (bẻ hướng) -> bẻ cụp mọi hướng tư duy kích thích sâu vào trong thế giới nội tâm tinh tế cá nhân",
+        ieltsSentence: "An introvert typically charges their personal energy via quiet reflection, rather than social gathering.",
+        vietnameseTranslation: "Một người hướng nội thường nạp lại năng lượng cá nhân của họ qua suy ngẫm yên tĩnh, thay vì các cuộc tụ tập xã hội."
+      },
+      {
+        word: "intramural",
+        partOfSpeech: "adj",
+        meaning: "Nội bộ trong trường học, nội hạt bên trong bức tường tổ chức",
+        visualBreakdown: "INTRA (bên trong) + MUR (bức tường thành cổ) + AL -> chỉ diễn ra bó hẹp giữa tập thể bên trong, người ngoài không dự ké",
+        ieltsSentence: "The university athletic center organizes popular intramural football tournaments for non-professionals.",
+        vietnameseTranslation: "Trung tâm thể thao trường đại học tổ chức các giải đấu bóng đá nội bộ phổ biến dành cho các cầu thủ không chuyên."
+      }
+    ]
+  },
+  {
+    id: "r134",
+    root: "MIS- (Tiền tố)",
+    meaning: "Sai trái, Nhầm lẫn, Lệch lạc, Tồi tệ",
+    origin: "Old English (mis - bad, wrong)",
+    description: "Nhận diện tức khắc các lỗi đánh giá, rào cản truyền thông hoặc diễn dịch sai dữ liệu nghiên cứu khoa học.",
+    tip: "Nhớ từ 'Mistake' (Sai lầm đáng trách) hay 'Misunderstanding' (Sự hiểu lầm lệch hướng ý tứ truyền đạt).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "misconception",
+        partOfSpeech: "n",
+        meaning: "Quan niệm sai lầm, hiểu hiểu lệch lạc dính đầy định kiến",
+        visualBreakdown: "MIS (sai trái) + CONCEPT (khái niệm cốt lõi) + ION -> quá trình nhét vào đầu khái niệm méo mó lệch lạc xa thực tế",
+        ieltsSentence: "The scientific editorial aimed to clear up a common misconception about gene editing safety.",
+        vietnameseTranslation: "Bài xã luận khoa học nhằm mục đích làm sáng tỏ hoàn toàn một quan niệm sai lầm phổ biến về độ an toàn của chỉnh sửa gen."
+      },
+      {
+        word: "misinterpret",
+        partOfSpeech: "v",
+        meaning: "Giải thích sai lệch, hiểu sai ngữ cảnh văn bản gốc",
+        visualBreakdown: "MIS (sai) + INTERPRET (giải mã/thông dịch) -> thông dịch lúng túng làm sai lệch ý đồ truyền tải",
+        ieltsSentence: "Politicians frequently misinterpret raw economic indicators to back up their partisan bills.",
+        vietnameseTranslation: "Các chính trị gia thường xuyên giải giải sai các chỉ số kinh tế gốc để hỗ trợ cho các đạo luật đảng phái của họ."
+      }
+    ]
+  },
+  {
+    id: "r135",
+    root: "-ISM (Hậu tố)",
+    meaning: "Học thuyết, Chủ nghĩa, Hệ tư tưởng định danh",
+    origin: "Greek (ismos - doctrine, theory, state)",
+    description: "Hậu tố chuyển hóa tính từ/danh từ thành một trường phái tư tưởng, phong trào xã hội hoặc lối hành xử tâm lý triết học.",
+    tip: "Dễ nhận dạng qua 'Capitalism' (Chủ nghĩa tư bản cạnh tranh khốc liệt) hay 'Criticism' (Sự phê bình sắc sảo chỉ trích lỗi lầm).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "altruism",
+        partOfSpeech: "n",
+        meaning: "Lòng vị tha vĩ đại, chủ nghĩa hi sinh vô điều kiện vì tha nhân",
+        visualBreakdown: "ALTRU (người khác) + ISM (hệ tinh thần) -> tôn chỉ đặt quyền lợi sống còn của nhân loại lên trên tiền bạc cá nhân",
+        ieltsSentence: "The benevolent society was built purely on the principles of social altruism.",
+        vietnameseTranslation: "Hội từ thiện được xây dựng hoàn toàn dựa trên các nguyên lý của lòng vị tha xã hội sâu rộng."
+      },
+      {
+        word: "optimism",
+        partOfSpeech: "n",
+        meaning: "Tinh thần lạc quan, chủ nghĩa lạc quan tin tưởng tương lai tươi sáng",
+        visualBreakdown: "OPTIM (tốt đẹp nhất) + ISM (chủ nghĩa tinh thần) -> thói quen luôn hướng tầm mắt về khía cạnh khả quan nhất",
+        ieltsSentence: "The financial planners expressed cautious optimism regarding global trade recovery pace.",
+        vietnameseTranslation: "Các nhà hoạch định tài chính đã bày tỏ sự lạc quan thận trọng liên quan đến tốc độ phục hồi thương mại toàn cầu."
+      }
+    ]
+  },
+  {
+    id: "r136",
+    root: "-CENTRIC (Hậu tố)",
+    meaning: "Lấy làm trung tâm, Xoay quanh lõi",
+    origin: "Greek (kentrikos - center)",
+    description: "Xây dựng các từ học thuật cao bàn thảo về trọng tâm điều tiết chính sách, thiên kiến triết học coi mình là rốn vũ trụ.",
+    tip: "Gợi nhớ tốt nhất bằng 'Egocentric' (Bản sắc ích kỷ thượng tôn, coi cái tôi cá nhân mình là trung tâm vũ trụ).",
+    category: "Time & Space",
+    exampleWords: [
+      {
+        word: "anthropocentric",
+        partOfSpeech: "adj",
+        meaning: "Nhân loại trung tâm luận (coi con người là trung tâm thế giới)",
+        visualBreakdown: "ANTHROPO (con người) + CENTRIC (lõi trung tâm) -> niềm tin kiêu ngạo coi vạn vật tự nhiên sinh ra chỉ để phục vụ lợi ích loài người",
+        ieltsSentence: "The philosopher criticized anthropocentric views that excuse massive habitat degradation.",
+        vietnameseTranslation: "Nhà triết học đã chỉ trích các góc nhìn coi con người là trung tâm, vốn bao biện cho sự hủy hoại môi trường sống diện rộng."
+      },
+      {
+        word: "ethnocentric",
+        partOfSpeech: "adj",
+        meaning: "Thượng đẳng sắc tộc (coi văn hóa sắc tộc mình tự hào là nhất)",
+        visualBreakdown: "ETHNO (chủng tộc/văn hóa gốc) + CENTRIC (trụ cốt trung tâm) -> xu hướng xem tất cả các sắc dân khác là hạ đẳng thụt lùi",
+        ieltsSentence: "Corporate training programs are modified to eliminate ethnocentric biases in international negotiation.",
+        vietnameseTranslation: "Các chương trình đào tạo doanh nghiệp được tinh chỉnh để loại bỏ các định kiến thượng đẳng sắc tộc trong đàm phán quốc tế."
+      }
+    ]
+  },
+  {
+    id: "r137",
+    root: "-LOGY (Hậu tố)",
+    meaning: "Ngành khoa học, Môn nghiên cứu sâu",
+    origin: "Greek (logia - study of, science)",
+    description: "Bất diệt trong tên gọi của mọi bộ môn học thuật nghiên cứu ngóc ngách của đời sống vũ trụ vương triều.",
+    tip: "Liệt kê vô vàn với 'Biology' (Sinh vật học), 'Psychology' (Tâm lý học thần bí) hay 'Archaeology' (Khảo cổ học trầm tích).",
+    category: "People & Society",
+    exampleWords: [
+      {
+        word: "archaeology",
+        partOfSpeech: "n",
+        meaning: "Khảo cổ học chuyên đào bới cổ vật cổ miếu",
+        visualBreakdown: "ARCHAE (cổ xưa hồng hoang) + OLOGY (ngành học khoa học) -> môn học khai quật giải mã bí ẩn vương quốc cổ đại",
+        ieltsSentence: "Archaeology reveals that pre-industrial societies suffered from extensive copper poisoning.",
+        vietnameseTranslation: "Khảo cổ học tiết lộ rằng các xã hội tiền công nghiệp đã phải chịu đựng tình trạng nhiễm độc đồng trên diện rộng."
+      },
+      {
+        word: "methodology",
+        partOfSpeech: "n",
+        meaning: "Hệ phương pháp luận nghiên cứu khoa học chuẩn mực",
+        visualBreakdown: "METHOD (phương thức hành sự) + OLOGY (môn học nguyên lý) -> hệ thống các phương pháp thiết kế thực nghiệm gắt gao",
+        ieltsSentence: "Peers scrutinized the methodology used in the climate research before certifying the breakthrough.",
+        vietnameseTranslation: "Các đồng nghiệp đã soi xét cực kỳ kỹ lưỡng hệ phương pháp luận được sử dụng trong nghiên cứu khí hậu trước khi phê chuẩn bước đột phá."
+      }
+    ]
+  },
+  {
+    id: "r138",
+    root: "-ABLE/-IBLE (Hậu tố)",
+    meaning: "Đáng được làm, Khả thi có thể hành động gọn gàng",
+    origin: "Latin (abilis - capable of)",
+    description: "Hậu tố biến động từ thành các tính từ đại diện cho khả năng tồn sinh bộc lộ phẩm chất cần thẩm định kĩ càng.",
+    tip: "Học từ 'Sustainable' (Bền vững lâu dài - có thể chống đỡ mãi mãi) hay 'Feasible' (Khả thi - có thể thực thi suôn sẻ).",
+    category: "Quality & State",
+    exampleWords: [
+      {
+        word: "sustainable",
+        partOfSpeech: "adj",
+        meaning: "Có tính bền vững lâu dài, thân thiện môi trường",
+        visualBreakdown: "SUSTAIN (chống đỡ duy trì) + ABLE (có khả năng) -> có thể tồn tồn ổn ổn định không làm cạn kiệt tài nguyên môi sinh",
+        ieltsSentence: "Global nations are pressured to transition rapidly into sustainable agricultural practices.",
+        vietnameseTranslation: "Các quốc gia toàn cầu đang bị áp lực phải chuyển đổi nhanh chóng sang các hoạt động nông nghiệp bền vững."
+      },
+      {
+        word: "feasible",
+        partOfSpeech: "adj",
+        meaning: "Khả thi, có khả năng thực hiện đạt thành công thực tế",
+        visualBreakdown: "FEAS (làm nên việc) + IBLE (có thể làm) -> hoàn toàn triển khai được dưới nguồn lực tài chính hiện có",
+        ieltsSentence: "The mayor declared that building a metropolitan subway line is perfectly feasible given sufficient budget allocation.",
+        vietnameseTranslation: "Thị trưởng tuyên bố rằng việc xây dựng một tuyến tàu điện ngầm đại đô thị là hoàn toàn khả thi nếu phân bổ nguồn ngân sách đầy đủ."
+      }
+    ]
   }
 ];
