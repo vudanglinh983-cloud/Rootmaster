@@ -1,0 +1,6 @@
+{
+  "name": "IELTS Word Roots App",
+  "description": "Ứng dụng học tập từ vựng tiếng Anh tối ưu theo phương pháp lặp lại ngắt quãng dựa trên 100+ gốc từ Hy Lạp & Latin phổ biến bậc nhất trong bài thi IELTS Reading.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
