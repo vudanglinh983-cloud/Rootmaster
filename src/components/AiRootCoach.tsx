@@ -25,6 +25,7 @@ export const AiRootCoach: React.FC<AiRootCoachProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<ExtractedRootResult[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [notification, setNotification] = useState<{ message: string; type: "success" | "warning" } | null>(null);
   
   // Track which roots have been imported successfully to avoid double importing
   const [importedRoots, setImportedRoots] = useState<Record<string, boolean>>({});
@@ -49,6 +50,7 @@ export const AiRootCoach: React.FC<AiRootCoachProps> = ({
     setIsLoading(true);
     setError(null);
     setResults([]);
+    setNotification(null);
 
     try {
       const response = await fetch("/api/analyze-text", {
@@ -88,7 +90,12 @@ export const AiRootCoach: React.FC<AiRootCoachProps> = ({
     );
 
     if (isDuplicate) {
-      alert(`Gốc từ "${rootUpper}" đã tồn tại sẵn trong hệ thống học tập của bạn rồi nhé!`);
+      setNotification({
+        message: `Gốc từ "${rootUpper}" đã tồn tại sẵn trong hệ thống học tập của bạn nhé!`,
+        type: "warning"
+      });
+      // Auto clear after 4 seconds
+      setTimeout(() => setNotification(null), 4000);
       return;
     }
 
@@ -115,6 +122,11 @@ export const AiRootCoach: React.FC<AiRootCoachProps> = ({
 
     onImportCustomRoot(newRoot);
     setImportedRoots((prev) => ({ ...prev, [rootUpper]: true }));
+    setNotification({
+      message: `Đã lưu thành công gốc từ "${rootUpper}" vào đấu trường SRS của bạn!`,
+      type: "success"
+    });
+    setTimeout(() => setNotification(null), 4000);
   };
 
   return (
@@ -201,6 +213,21 @@ export const AiRootCoach: React.FC<AiRootCoachProps> = ({
             <h3 className="font-sans font-black text-[#0F172A] text-sm uppercase tracking-wider">Gốc Từ Chiết Tách Bởi AI ({results.length})</h3>
             <span className="text-xs text-gray-400 font-mono">Bảo chứng phân tích hiệu suất cao</span>
           </div>
+
+          {notification && (
+            <div className={`p-4 rounded-xl border-2 font-semibold text-xs transition-all flex items-center gap-2 animate-shake ${
+              notification.type === "success" 
+                ? "bg-emerald-50 border-emerald-500 text-emerald-950" 
+                : "bg-amber-50 border-amber-500 text-amber-955"
+            }`}>
+              {notification.type === "success" ? (
+                <CheckCircle className="w-5 h-5 shrink-0 text-emerald-600" />
+              ) : (
+                <AlertCircle className="w-5 h-5 shrink-0 text-amber-600" />
+              )}
+              <span>{notification.message}</span>
+            </div>
+          )}
 
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-16 text-center space-y-4 font-sans">

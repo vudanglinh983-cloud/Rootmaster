@@ -9,9 +9,10 @@ import { RootsBoulevard } from "./components/RootsBoulevard";
 import { SrsArena } from "./components/SrsArena";
 import { PracticeArena } from "./components/PracticeArena";
 import { AiRootCoach } from "./components/AiRootCoach";
+import { TopicVocabArena } from "./components/TopicVocabArena";
 
 // React icons
-import { LayoutDashboard, Compass, Calendar, Award, BrainCircuit } from "lucide-react";
+import { LayoutDashboard, Compass, Calendar, Award, BrainCircuit, Sparkles } from "lucide-react";
 
 export default function App() {
   // Navigation Tabs state
@@ -300,6 +301,19 @@ export default function App() {
             ĐẤU TRƯỜNG TRẮC NGHIỆM
           </button>
 
+          <button
+            onClick={() => startTransition(() => setActiveTab("topic_vocab"))}
+            disabled={isPending}
+            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
+              activeTab === "topic_vocab"
+                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
+                : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
+            }`}
+          >
+            <Sparkles className="w-4.5 h-4.5" />
+            VŨ TRỤ TỪ VỰNG CHỦ ĐỀ
+          </button>
+
           <div className="h-px bg-gray-100 my-4"></div>
 
           <button
@@ -353,6 +367,10 @@ export default function App() {
               onImportCustomRoot={handleImportCustomRoot}
               allRoots={mergedRoots}
             />
+          )}
+
+          {activeTab === "topic_vocab" && (
+            <TopicVocabArena />
           )}
         </div>
       </main>

@@ -88,11 +88,15 @@ export const SrsArena: React.FC<SrsArenaProps> = ({
 
   // Speaks out the IELTS words using speechSynthesis API (client-side only, non-blocking)
   const speakWord = (word: string) => {
-    if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance(word);
-      utterance.lang = "en-US";
-      utterance.rate = 0.85;
-      window.speechSynthesis.speak(utterance);
+    try {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = "en-US";
+        utterance.rate = 0.85;
+        window.speechSynthesis.speak(utterance);
+      }
+    } catch (error) {
+      console.warn("Speech synthesis is restricted or not supported in this frame context:", error);
     }
   };
 

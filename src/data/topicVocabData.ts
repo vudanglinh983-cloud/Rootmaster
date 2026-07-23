@@ -1,0 +1,3312 @@
+export interface TopicWord {
+  id: string;
+  word: string;
+  definition: string;
+  vietnamese: string;
+  category: string;
+  categoryEmoji: string;
+  memoryHook: string;
+  pronunciation?: string;
+  synonyms?: string;
+}
+
+export const topicVocabData: TopicWord[] = [
+  // II. Nhà bếp & Phòng ăn (Kitchen & Dining)
+  {
+    id: "v134",
+    word: "Refrigerator (Fridge)",
+    definition: "A large appliance used to keep food cold and fresh.",
+    vietnamese: "Tủ lạnh",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Từ 'fridge' hao hao từ 'freeze' (đông lạnh) — vật dụng khổng lồ giữ đồ ăn mát lạnh rười rượi."
+  },
+  {
+    id: "v135",
+    word: "Induction cooker",
+    definition: "A stove that cooks food using electromagnetic heat induction.",
+    vietnamese: "Bếp từ",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Induction' là cảm ứng điện từ. Một chiếc bếp hiện đại, đun nóng nồi mà bề mặt kính vẫn không bị đỏ lửa."
+  },
+  {
+    id: "v136",
+    word: "Microwave",
+    definition: "An oven that cooks or heats food rapidly using radiation.",
+    vietnamese: "Lò vi sóng",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Micro' (siêu nhỏ) + 'wave' (sóng). Chiếc lò kỳ diệu rung động phân tử nước bằng sóng cực ngắn để tự làm nóng."
+  },
+  {
+    id: "v137",
+    word: "Clay pot",
+    definition: "A traditional pot made of clay used for slow-cooking food.",
+    vietnamese: "Nồi đất",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Clay' nghĩa là đất sét. Nồi đất giữ nhiệt cực lâu và là 'bí kíp' cho món cá kho tộ đậm đà."
+  },
+  {
+    id: "v138",
+    word: "Kitchen scale",
+    definition: "A device used to measure the weight of ingredients.",
+    vietnamese: "Cân nhà bếp",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Scale' là cái cân. Phụ tá chuẩn xác nhất giúp các thợ làm bánh đong đếm từng gam bột."
+  },
+  {
+    id: "v139",
+    word: "Blender",
+    definition: "An electric machine used for mixing or puréeing liquids.",
+    vietnamese: "Máy xay sinh tố",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Động từ 'blend' mang nghĩa là hòa trộn lẫn nhau. Máy xay làm cho trái cây hòa quyện mịn màng."
+  },
+  {
+    id: "v140",
+    word: "Dishwasher",
+    definition: "An appliance that cleans and sanitizes dishes automatically.",
+    vietnamese: "Máy rửa bát",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Dish' (bát đĩa) + 'washer' (thiết bị rửa). 'Vị cứu tinh' giải phóng sức lao động sau những bữa tiệc."
+  },
+  {
+    id: "v141",
+    word: "Water purifier",
+    definition: "A device that filters tap water to make it safe for drinking.",
+    vietnamese: "Máy lọc nước",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Từ gốc 'pure' (tinh khiết), đuôi '-ifier' chỉ công cụ lọc sạch tạp chất cho dòng nước an lành."
+  },
+  {
+    id: "v142",
+    word: "Cutting board",
+    definition: "A flat board used as a protective surface for chopping food.",
+    vietnamese: "Thớt",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Mảnh bảng ('board') chịu mọi lực chém, thái ('cutting') sắc lẹm."
+  },
+  {
+    id: "v143",
+    word: "Chef's knife",
+    definition: "A large, sharp knife used for general kitchen cutting tasks.",
+    vietnamese: "Dao bếp chuyên dụng",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Chef' là bếp trưởng. Con dao đa năng sắc bén nhất đại diện cho uy quyền của người nấu chính."
+  },
+  {
+    id: "v144",
+    word: "Frying pan",
+    definition: "A flat metal pan with a long handle used for frying food.",
+    vietnamese: "Chảo rán",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Frying' chỉ việc chiên rán, 'pan' là dụng cụ đáy dẹt có tay cầm dài chống bỏng."
+  },
+  {
+    id: "v145",
+    word: "Rice cooker",
+    definition: "An automated electric appliance dedicated to boiling rice.",
+    vietnamese: "Nồi cơm điện",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "'Rice' là lúa gạo, cơm trắng. Thiết bị tự động nấu chín hạt ngọc trời của bữa cơm Á Đông."
+  },
+  {
+    id: "v146",
+    word: "Kettle",
+    definition: "A metal or plastic container used for boiling water rapidly.",
+    vietnamese: "Ấm đun nước",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Nghe tương tự như 'ké nước' reo vui trên bếp điện mỗi khi nước sôi sùng sục pha trà."
+  },
+  {
+    id: "v147",
+    word: "Sponge",
+    definition: "A piece of porous material used for washing dishes.",
+    vietnamese: "Miếng bọt biển rửa bát",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Liên tưởng đến isonom Spongebob màu vàng xốp, hút ngậm nước xà phòng để đánh bay dầu mỡ."
+  },
+  {
+    id: "v148",
+    word: "Dining table",
+    definition: "A table where meals are served and consumed.",
+    vietnamese: "Bàn ăn",
+    category: "Kitchen & Dining",
+    categoryEmoji: "🍳",
+    memoryHook: "Từ gốc 'dine' (ăn tiệc tối) phối hợp với bàn lớn nơi cả nhà sum vầy thưởng thức món ngon."
+  },
+
+  // III. Phòng ngủ (Bedroom)
+  {
+    id: "v149",
+    word: "Mattress",
+    definition: "A large, thick pad used as a soft surface on a bed.",
+    vietnamese: "Đệm giường",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "Tấm lót dày, êm ái nâng đỡ giấc ngủ của bạn sau ngày dài làm việc mệt mỏi."
+  },
+  {
+    id: "v150",
+    word: "Pillow",
+    definition: "A rectangular cloth bag filled with soft material to support the head.",
+    vietnamese: "Gối",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "Âm thanh gần giống 'pil-low' nhè nhẹ nâng niu phần đầu và gáy lúc chìm vào giấc mộng đẹp."
+  },
+  {
+    id: "v151",
+    word: "Blanket",
+    definition: "A large piece of warm cloth used as a bed cover.",
+    vietnamese: "Chăn",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "Một tấm vải ấm áp to rộng bảo trị cơ thể bạn chống lại cái lạnh thâu đêm."
+  },
+  {
+    id: "v152",
+    word: "Wardrobe",
+    definition: "A large tall cupboard or closet used for storing clothes.",
+    vietnamese: "Tủ quần áo",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "'Ward' (bảo quản) + 'robe' (áo choàng dài). Chiếc tủ đứng che chở cho toàn bộ bộ sưu tập thời trang."
+  },
+  {
+    id: "v153",
+    word: "Desk lamp",
+    definition: "A small lamp used on a table to provide focused light.",
+    vietnamese: "Đèn bàn",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "'Desk' là bàn học, bàn làm việc. Đèn rọi ánh sáng tập trung giúp bảo vệ đôi mắt ban đêm."
+  },
+  {
+    id: "v154",
+    word: "Desk / Workspace",
+    definition: "A flat surface table used specifically for working or writing.",
+    vietnamese: "Bàn làm việc",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "Khác với 'table' thông thường, 'desk' là hậu phương chuyên dùng cho ghi chép và làm việc trí sỹ."
+  },
+  {
+    id: "v155",
+    word: "Ergonomic chair",
+    definition: "A chair designed to support body posture during long sitting.",
+    vietnamese: "Ghế công thái học",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "'Ergonomic' nghĩa là công thái học — thiết kế tinh tế ôm sát đường cong cột sống người dùng."
+  },
+  {
+    id: "v156",
+    word: "Alarm clock",
+    definition: "A clock that can be set to make a loud sound at a specific time.",
+    vietnamese: "Đồng hồ báo thức",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "'Alarm' nghĩa là cảnh báo, báo động đổ chuông inh ỏi 'đấm' tan cơn ngái ngủ buổi sáng."
+  },
+  {
+    id: "v157",
+    word: "Mirror",
+    definition: "A glass surface that reflects images clearly.",
+    vietnamese: "Gương",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "Từ 'mir' có gốc chiêm ngưỡng kỳ quan (miracle). Vật hiển thị chân dung phản chiếu chân thực nhất."
+  },
+  {
+    id: "v158",
+    word: "Hanger",
+    definition: "A wire, wooden, or plastic loop used for hanging clothes upright.",
+    vietnamese: "Móc treo quần áo",
+    category: "Bedroom",
+    categoryEmoji: "🛏️",
+    memoryHook: "Gốc từ động từ 'hang' (treo, móc). Thiết bị nhỏ định hình dáng áo ngay ngắn trong tủ."
+  },
+
+  // IV. Nhà vệ sinh & Giặt giũ (Bathroom & Laundry)
+  {
+    id: "v159",
+    word: "Washing machine",
+    definition: "An appliance used to wash clothes and linens automatically.",
+    vietnamese: "Máy giặt",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "'Washing' (tẩy rửa) + 'machine' (máy móc). Cỗ máy xoáy dòng nước đánh bật mọi vết bẩn cứng đầu."
+  },
+  {
+    id: "v160",
+    word: "Clothes dryer",
+    definition: "An appliance used to remove moisture from wet laundry quickly.",
+    vietnamese: "Máy sấy quần áo",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "Từ gốc 'dry' (khô ráo) biến quần áo ướt nhẹp thành thơm tho, khô sấy mịn màng trong tíc tắc."
+  },
+  {
+    id: "v161",
+    word: "Water heater",
+    definition: "An appliance that heats and supplies hot water for showers.",
+    vietnamese: "Máy nước nóng",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "'Heater' bắt nguồn từ 'heat' (làm nóng). Cứu tinh sưởi ấm dòng nước lạnh những ngày giá đông."
+  },
+  {
+    id: "v162",
+    word: "Showerhead",
+    definition: "A fixture that directs a spray of water over a bather.",
+    vietnamese: "Vòi hoa sen",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "'Shower' (tắm mưa) + 'head' (cái đầu vòi). Đài phun tia nước li ti mát lạnh sảng khoái cơ thể."
+  },
+  {
+    id: "v163",
+    word: "Toilet",
+    definition: "A large bowl with a water-flushing system for body waste.",
+    vietnamese: "Bồn cầu",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "Cột trụ vệ sinh của mọi gia đình, sở hữu hệ thống xả thải nước sạch sẽ bảo vệ môi trường."
+  },
+  {
+    id: "v164",
+    word: "Sink (Basin)",
+    definition: "A bowl fixture attached to a wall with water taps for washing.",
+    vietnamese: "Bồn rửa mặt",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "Cái bồn sâu đọng nước gắn trực tiếp vòi rửa mặt và đánh răng buổi sáng."
+  },
+  {
+    id: "v165",
+    word: "Towel",
+    definition: "A piece of thick absorbent cloth used for drying the body.",
+    vietnamese: "Khăn tắm / Khăn lau",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "Nghĩ về âm thanh 'tao lau' chân tay bằng chiếc khăn bông to dày thấm nước siêu tốt."
+  },
+  {
+    id: "v166",
+    word: "Hair dryer",
+    definition: "An electrical device that blows hot air to dry wet hair.",
+    vietnamese: "Máy sấy tóc",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "Thiết bị nhỏ cầm tay thổi ra luồng gió nóng mạnh mẽ để sấy vuốt tạo kiểu tóc."
+  },
+  {
+    id: "v167",
+    word: "Toilet brush",
+    definition: "A tool with bristles used to scrub and clean the toilet bowl.",
+    vietnamese: "Chổi cọ bồn cầu",
+    category: "Bathroom & Laundry",
+    categoryEmoji: "🧼",
+    memoryHook: "Chiếc chổi ('brush') cầm tay có lông nhựa thô ráp giúp cọ chùi mảng bám bồn cầu."
+  },
+
+  // V. Ban công & Chăn nuôi đô thị (Balcony & Outdoor Ecosystem)
+  {
+    id: "v168",
+    word: "Watering can",
+    definition: "A container with a long spout used for watering plants manually.",
+    vietnamese: "Bình tưới cây",
+    category: "Balcony & Outdoor Ecosystem",
+    categoryEmoji: "🌿",
+    memoryHook: "Chiếc lon lớn đựng nước ('can') có vòi tưới phun mưa cho vườn cây nhỏ ngoài ban công."
+  },
+  {
+    id: "v169",
+    word: "Poultry coop",
+    definition: "A small wooden or metal cage designed to house chickens safely.",
+    vietnamese: "Chuồng chăn nuôi gia cầm",
+    category: "Balcony & Outdoor Ecosystem",
+    categoryEmoji: "🌿",
+    memoryHook: "'Poultry' là gia cầm (gà vịt nhốt trong cũi gỗ ấm áp tránh thú dữ bắt mất)."
+  },
+  {
+    id: "v170",
+    word: "Birdcage",
+    definition: "A cage made of wire or wood designed to protect pet birds.",
+    vietnamese: "Lồng chim",
+    category: "Balcony & Outdoor Ecosystem",
+    categoryEmoji: "🌿",
+    memoryHook: "'Bird' (chim chóc) + 'cage' (cái chuồng, lồng). Chiếc lồng đan tết xinh xắn đặt rặng hoa ban công."
+  },
+
+  // NHÓM 3: THIẾT BỊ VĂN PHÒNG & THIẾT BỊ KỸ THUẬT SỐ (OFFICE & DIGITAL WORKPLACE)
+  {
+    id: "v171",
+    word: "Desktop computer",
+    definition: "A personal computer designed to fit permanently on top of a desk.",
+    vietnamese: "Máy tính để bàn",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Desk' + 'top'. Chiếc máy tính cấu hình khủng cố định ngồi chễm chệ trên mặt bàn làm việc."
+  },
+  {
+    id: "v172",
+    word: "Dual-monitor setup",
+    definition: "Using two screens simultaneously to increase digital workspace.",
+    vietnamese: "Hệ thống hai màn hình",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Dual' là đôi, kép. Sử dụng 2 màn hình song song để nhân đôi năng suất lập trình và làm việc."
+  },
+  {
+    id: "v173",
+    word: "Printer / Scanner",
+    definition: "A device that duplicates text on paper or converts text to digital.",
+    vietnamese: "Máy in / Máy quét",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Print' là ấn loát in ra giấy; 'Scan' là quét ngược đưa văn bản gốc vào tệp máy tính."
+  },
+  {
+    id: "v174",
+    word: "Shredder",
+    definition: "A machine used to cut confidential documents into tiny strips.",
+    vietnamese: "Máy hủy tài liệu",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "Động từ gốc 'shred' (xé nhỏ, băm vụn). Khắc tinh của các gián điệp, xóa sổ tài liệu bảo mật tự động."
+  },
+  {
+    id: "v175",
+    word: "Whiteboard",
+    definition: "A smooth, glossy white surface used for writing with markers.",
+    vietnamese: "Bảng trắng",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'White' (trắng) + 'board' (bảng). Nơi phác thảo ý tưởng tranh vẽ ngẫu hứng bằng bút dạ bôi xóa cực nhanh."
+  },
+  {
+    id: "v176",
+    word: "Filing cabinet",
+    definition: "A piece of office furniture with drawers for storing document folders.",
+    vietnamese: "Tủ hồ sơ",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'File' là hồ sơ xếp ngăn nắp. Chiếc tủ sắt dập nhiều ngăn chuyên bảo quản tư liệu văn phòng."
+  },
+  {
+    id: "v177",
+    word: "Projector",
+    definition: "An optical device that projects digital images onto a large screen.",
+    vietnamese: "Máy chiếu",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Project' mang nghĩa phóng chiếu đi xa. Máy phát ánh sáng hiển thị màn hình siêu to trên tường phòng họp."
+  },
+  {
+    id: "v178",
+    word: "Paperclip",
+    definition: "A bent wire loop used to hold loose sheets of paper together.",
+    vietnamese: "Kẹp giấy",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Paper' (giấy) + 'clip' (kẹp chặt). Chiếc gọng sắt uốn lượn kẹp gọn các tờ giấy rời rạc."
+  },
+  {
+    id: "v179",
+    word: "Stapler",
+    definition: "A mechanical device that binds sheets of paper with a metal staple.",
+    vietnamese: "Dập ghim",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "Hãy nhớ đến chiếc kim bấm 'staple' găm vĩnh viễn cố định gáy các xấp báo báo cáo."
+  },
+  {
+    id: "v180",
+    word: "Highlighter",
+    definition: "A marker pen used to overlay bright transparent color on text.",
+    vietnamese: "Bút dạ quang / Bút nhớ",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'High' + 'light' (làm nổi bật nguồn sáng). Chiếc bút màu neon rạng rỡ quét qua các từ khóa then chốt."
+  },
+  {
+    id: "v181",
+    word: "Sticky note",
+    definition: "A small piece of paper with a re-adherable strip of glue on the back.",
+    vietnamese: "Giấy ghi chú (Post-it)",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Sticky' là dính nhớp. Miếng giấy màu vàng bắt mắt dán nhanh lên mép màn hình nhắc nhở nhiệm vụ gấp."
+  },
+  {
+    id: "v182",
+    word: "Notebook / Journal",
+    definition: "A book with blank or lined pages used for writing notes.",
+    vietnamese: "Sổ tay ghi chép",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "Cuốn sổ tay chứa dòng suy tư, kế hoạch hoặc nhật ký rèn luyện tư duy mỗi ngày."
+  },
+  {
+    id: "v183",
+    word: "Keyboard wrist rest",
+    definition: "A padded bar placed in front of a keyboard to support wrists.",
+    vietnamese: "Miếng đệm cổ tay bàn phím",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Wrist' (cổ tay) + 'rest' (nghỉ ngơi thư giãn). Vật bổ trợ cho các coder gõ phím không bị mỏi khớp tay."
+  },
+  {
+    id: "v184",
+    word: "Desk organizer",
+    definition: "A small container used to keep office stationery neatly arranged.",
+    vietnamese: "Khay đựng đồ văn phòng",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Organizer' nghĩa là người hoặc vật sắp xếp tổ chức ngăn nắp các loại bút, thước góc bàn."
+  },
+  {
+    id: "v185",
+    word: "External hard drive",
+    definition: "A portable storage device used to back up massive digital files.",
+    vietnamese: "Ổ cứng di động",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'External' là bên ngoài. Kho lưu trữ vách sắt cứu cánh lưu trữ hàng ngàn GB dữ liệu bí mật."
+  },
+  {
+    id: "v186",
+    word: "Laminator",
+    definition: "A machine that bonds a protective plastic film over documents.",
+    vietnamese: "Máy ép plastic",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "Thiết bị cán màng nhiệt phủ lớp nhựa bảo hiểm chứng chỉ, văn bằng bóng mượt không lo rách nát."
+  },
+  {
+    id: "v187",
+    word: "Badge holder",
+    definition: "A plastic case used to protect and display corporate ID cards.",
+    vietnamese: "Bao đựng thẻ nhân viên",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Badge' là chiếc phù hiệu danh giá đeo ngực khi ra vào công ty văn phòng cao ốc."
+  },
+  {
+    id: "v188",
+    word: "Conference phone",
+    definition: "A speakerphone designed for multi-party voice communication meetings.",
+    vietnamese: "Điện thoại hội nghị",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Conference' là hội thảo, hội nghị. Chiếc điện thoại dạng đĩa trung tâm bắt âm vòm 360 độ cực thính."
+  },
+  {
+    id: "v189",
+    word: "Water dispenser",
+    definition: "A machine that cools or heats water for immediate drinking.",
+    vietnamese: "Cây nước nóng lạnh",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Dispenser' chuyên phân chia rót nước nóng pha mì gói hoặc nước lạnh giải khát lập tức."
+  },
+  {
+    id: "v190",
+    word: "First aid kit",
+    definition: "A box containing basic medical supplies for immediate treatment.",
+    vietnamese: "Bộ đồ sơ cứu y tế",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'First aid' là sơ cứu đầu tiên cấp tốc. Hộp cứu trợ nhỏ chứa băng gạc, cồn sát khuẩn."
+  },
+  {
+    id: "v191",
+    word: "Noise-canceling headphones",
+    definition: "Headphones that minimize unwanted ambient background sounds.",
+    vietnamese: "Tai nghe chống ồn",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Noise' (tiếng ồn) + 'canceling' (hủy bỏ triệt tiêu). Đeo vào cô lập bản thân với thế giới để tập trung tuyệt đối."
+  },
+  {
+    id: "v192",
+    word: "Extension cord",
+    definition: "A flexible power cable with multiple sockets for reaching far outlets.",
+    vietnamese: "Ổ cắm điện kéo dài",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Extension' chỉ phần mở rộng dài thêm, 'cord' là dây sợi cáp truyền dẫn dòng điện tầm xa."
+  },
+  {
+    id: "v193",
+    word: "Swivel chair",
+    definition: "An office chair with a central pivot that allows 360 rotation.",
+    vietnamese: "Ghế xoay văn phòng",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "Động từ 'swivel' nghĩa là xoay hất quay đều quanh trục chính, mang lại cảm giác hoạt bát năng nổ."
+  },
+  {
+    id: "v194",
+    word: "Cubicle partition",
+    definition: "A temporary low wall used to divide desks into semi-private spaces.",
+    vietnamese: "Vách ngăn bàn làm việc",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Cubicle' là ngăn văn phòng nhỏ hình hộp vuông. Vách ngăn tạo ranh giới tập trung cá nhân hóa."
+  },
+  {
+    id: "v195",
+    word: "Paper trimmer / cutter",
+    definition: "A tool with a long blade used to slice stacks of paper precisely.",
+    vietnamese: "Bàn cắt giấy chuyên dụng",
+    category: "Office & Digital Workplace",
+    categoryEmoji: "🗄️",
+    memoryHook: "'Trimmer' giúp xén rìa gọn gàng tơi mịn nhờ chiếc lưỡi chém khổng lồ ngọt xớt."
+  },
+
+  // NHÓM 4: VẬT DỤNG QUÁN CÀ PHÊ & NGHỆ THUẬT PHA CHẾ (CAFE & SPECIALTY COFFEE SHOP)
+  {
+    id: "v196",
+    word: "Espresso machine",
+    definition: "A complex machine that brews rich coffee by forcing boiling water.",
+    vietnamese: "Máy pha cà phê Espresso",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Trái tim của quầy bar cà phê chuyên nghiệp, nén dòng nước áp suất siêu cao qua mạt cà phê mịn màng."
+  },
+  {
+    id: "v197",
+    word: "Coffee grinder",
+    definition: "A machine used to mill roasted coffee beans into granular powder.",
+    vietnamese: "Máy xay hạt cà phê",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Grinder' xuất phát từ 'grind' (nghiền nát, xát). Biến hạt cà phê rang khô giòn thành bột thơm nức mũi."
+  },
+  {
+    id: "v198",
+    word: "Milk frother",
+    definition: "A device used to inject air into hot milk to create thick foam.",
+    vietnamese: "Máy / Dụng cụ tạo bọt sữa",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Froth' là lớp bọt bông xốp. Dụng cụ đánh bông sữa bồng bềnh cho cốc Cappuccino lộng lẫy."
+  },
+  {
+    id: "v199",
+    word: "Pour-over kettle",
+    definition: "A water kettle with a narrow, curved spout for precise pouring.",
+    vietnamese: "Ấm cổ ngỗng pha cà phê drip",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Chiếc ấm có cái vòi uốn lượn duyên dáng dài thon như cổ ngỗng để kiểm soát dòng nước chảy nhẹ nhàng."
+  },
+  {
+    id: "v200",
+    word: "Coffee scale",
+    definition: "A digital scale used to portion coffee beans and water weights.",
+    vietnamese: "Cân điện tử pha cà phê",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Khác với cân thông thường, dòng cân này có bộ đếm thời gian (timer) để kiểm soát tỷ lệ chiết xuất."
+  },
+  {
+    id: "v201",
+    word: "Barstool",
+    definition: "A tall, narrow chair designed for seating at high cafe counters.",
+    vietnamese: "Ghế quầy bar",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Bar' + 'stool' (ghế đôn cao). Loại ghế chân dài miên man đặt sát kệ gỗ nơi khách vừa xem pha chế vừa nhâm nhi."
+  },
+  {
+    id: "v202",
+    word: "Pastry showcase",
+    definition: "A glass cabinet used to display cakes and desserts hygienically.",
+    vietnamese: "Tủ kính trưng bày bánh ngọt",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Pastry' là chiếc bánh ngọt nướng vàng, được trưng bày ('showcase') rực rỡ dưới ánh đèn tủ kính ấm cúng."
+  },
+  {
+    id: "v203",
+    word: "Menu board",
+    definition: "A large prominent sign listing the drinks and prices of a cafe.",
+    vietnamese: "Bảng thực đơn lớn",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Tấm bảng to treo cao đập ngay vào tầm mắt để khách xếp hàng thong thả lựa chọn đồ uống ưa thích."
+  },
+  {
+    id: "v204",
+    word: "Takeaway cup",
+    definition: "A disposable paper or plastic cup used for hot or iced drinks.",
+    vietnamese: "Ly / Cốc mang đi",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Takeaway' là mang đi khắp phố phường, bảo vệ nhiệt độ đồ uống trong cốc giấy bảo vệ môi trường."
+  },
+  {
+    id: "v205",
+    word: "Coaster",
+    definition: "A small pad placed under a glass to protect tables from moisture.",
+    vietnamese: "Miếng lót ly / lót cốc",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Tấm đệm bằng gỗ bần, silicon hoặc vải nỉ đặt đáy ly chống đọng nước bẩn ra mặt bàn gỗ bóng nhoáng."
+  },
+  {
+    id: "v206",
+    word: "Straw",
+    definition: "A thin tube used for sucking up liquids from a cup.",
+    vietnamese: "Ống hút",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Thực chất còn mang nghĩa là 'cọng rơm' xưa cổ. Ngày nay là ống hút tái chế dẻo nâng tầm thưởng trà."
+  },
+  {
+    id: "v207",
+    word: "Stirrer",
+    definition: "A small stick used to mix sugar or milk into a hot beverage.",
+    vietnamese: "Que khuấy cà phê",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Động từ 'stir' là khuấy hòa tan. Thanh dẹt nhỏ bằng gỗ mộc mạc chuyên quấy đều các lớp sữa syrup."
+  },
+  {
+    id: "v208",
+    word: "Napkin dispenser",
+    definition: "A small box container that holds and dispenses paper napkins.",
+    vietnamese: "Hộp đựng giấy ăn",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Hộp lò xo đẩy rút giấy ăn ('napkin') vô cùng mượt mà đặt rải rác các góc bàn khách."
+  },
+  {
+    id: "v209",
+    word: "Ice maker",
+    definition: "An automated commercial appliance that freezes water into ice cubes.",
+    vietnamese: "Máy làm đá viên",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Ice' + 'maker'. Người thợ máy thầm lặng biến nước tinh khiết thành triệu khối đá vuông vức mát lạnh."
+  },
+  {
+    id: "v210",
+    word: "Chalkboard",
+    definition: "A reusable dark board used for writing custom daily announcements.",
+    vietnamese: "Bảng viết phấn",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Chalk' (phấn viết) + 'board'. Mang phong cách cổ cổ hoài niệm tự phác thảo menu thay đổi theo ngày."
+  },
+  {
+    id: "v211",
+    word: "Mug",
+    definition: "A large heavy cup with a handle used for hot beverage options.",
+    vietnamese: "Ly sứ có quai / Cốc lớn",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Chiếc ly gốm tay cầm dày ấm thích hợp ủ ấm đôi bàn tay cùng sô-cô-la nóng hôi hổi trời mưa."
+  },
+  {
+    id: "v212",
+    word: "Syrup pump",
+    definition: "A plastic pump attached to bottles to dispense standard liquid flavor.",
+    vietnamese: "Vòi xịt si-rô",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Pump' là bơm xịt. Giúp nhân viên đong đúng liều lượng syrup caramel cho cốc trà sữa ngọt ngào."
+  },
+  {
+    id: "v213",
+    word: "Apron",
+    definition: "A protective fabric garment worn over clothing by a barista.",
+    vietnamese: "Tạp dề",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Bộ giáp bảo hộ đầy cá tính của barista chống tràn vấy bẩn bột cà phê vào quần áo đẹp."
+  },
+  {
+    id: "v214",
+    word: "Tumbler",
+    definition: "A reusable insulated cup designed to maintain drink temperatures.",
+    vietnamese: "Bình giữ nhiệt thể thao",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Chiếc bình đa năng phong cách, đồng hành cùng bạn từ phòng tập đến giảng đường đại học."
+  },
+  {
+    id: "v215",
+    word: "Coffee dripper (Phin/V60)",
+    definition: "A conical device used to extract coffee flavor via gravity filtration.",
+    vietnamese: "Phễu lọc / Phin pha cà phê",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "'Drip' chỉ dòng nhỏ giọt từng giọt ngưng sương lọc lấy tinh túy của bột cà phê rang."
+  },
+  {
+    id: "v216",
+    word: "Ambient lighting fixture",
+    definition: "Light sources designed to create a warm and cozy aesthetic mood.",
+    vietnamese: "Hệ thống đèn tạo không khí",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Hệ thống đèn sợi đốt tỏa sắc cam dìu dịu biến góc quán trở nên trầm ấm tĩnh mịch tối đa."
+  },
+  {
+    id: "v217",
+    word: "Background music speaker",
+    definition: "An audio device used to play soft jazz or lo-fi tunes for a relaxing vibe.",
+    vietnamese: "Loa phát nhạc nền",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Thiết bị phát lo-fi du dương xoa dịu tâm trí, đặt bọc kẽ khe trần nhà tăng thêm phần chill thư giãn."
+  },
+  {
+    id: "v218",
+    word: "Serving tray",
+    definition: "A flat, broad piece of wood or plastic used for carrying orders.",
+    vietnamese: "Khay phục vụ đồ uống",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Chiếc mẹt phẳng ('tray') nhẹ tênh hỗ trợ lèo lái bưng bê 4 chén nước qua các kẽ bàn đông đúc."
+  },
+  {
+    id: "v219",
+    word: "Bean bag",
+    definition: "A large fabric cushion filled with plastic beads used as a chair.",
+    vietnamese: "Ghế lười hạt đậu",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Chiếc bao nhồi hạt bọt biển dẻo ôm lún cả thân hình khi bạn thả người tựa lưng lướt sách."
+  },
+  {
+    id: "v220",
+    word: "Sugar bowl",
+    definition: "A small ceramic container used to hold loose granulated sugar.",
+    vietnamese: "Hũ đựng đường tự phục vụ",
+    category: "Cafe & Specialty",
+    categoryEmoji: "☕",
+    memoryHook: "Chén hũ xinh xắn gốm đặt góc quầy tự phục vụ kèm chiếc thìa bạc nhỏ đong tơi hạt đường trắng."
+  },
+  // VI. Thời tiết & Thiên tai (Weather & Natural Disasters)
+  {
+    id: "v221",
+    word: "Weather",
+    definition: "The state of the atmosphere at a place and time as regards heat, dryness, sunshine, wind, rain, etc.",
+    vietnamese: "Thời tiết",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Gần giống 'whether' (liệu rằng). Cho dù thời tiết (weather) ra sao, ta vẫn quyết tâm học giỏi!",
+    pronunciation: "/ˈweðər/",
+    synonyms: "atmospheric conditions, climate conditions"
+  },
+  {
+    id: "v222",
+    word: "Climate",
+    definition: "The weather conditions prevailing in an area in general or over a long period.",
+    vietnamese: "Khí hậu",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nhớ tới cụm 'climate change' (biến đổi khí hậu). Khí hậu là thứ ổn định dài lâu, phân biệt với thời tiết thay đổi hằng ngày.",
+    pronunciation: "/ˈklaɪmət/",
+    synonyms: "long-term weather patterns, climatic conditions"
+  },
+  {
+    id: "v223",
+    word: "Temperature",
+    definition: "The degree or intensity of heat present in a substance or object.",
+    vietnamese: "Nhiệt độ",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nhớ tới 'temp' (tạm thời) + 'rate' (tỷ lệ). Thang đo tạm thời lượng nhiệt hâm hấp của không khí.",
+    pronunciation: "/ˈtemprətʃər/",
+    synonyms: "thermal level, heat intensity"
+  },
+  {
+    id: "v224",
+    word: "Forecast",
+    definition: "A prediction or estimate of future events, especially coming weather.",
+    vietnamese: "Dự báo",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Fore' là đằng trước, 'cast' là tung ra. Quăng tầm nhìn về phía trước để dự báo thời tiết mai sau.",
+    pronunciation: "/ˈfɔːrkæst/",
+    synonyms: "prediction, projection, outlook"
+  },
+  {
+    id: "v225",
+    word: "Meteorology",
+    definition: "The branch of science concerned with the processes and phenomena of the atmosphere, especially for forecasting weather.",
+    vietnamese: "Khí tượng học",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nhớ tới 'meteor' (thiên thạch rực lửa) rơi từ tầng khí quyển cao vút - nơi ngành khí tượng học theo dõi ngày đêm.",
+    pronunciation: "/ˌmiːtiəˈrɒlədʒi/",
+    synonyms: "atmospheric science"
+  },
+  {
+    id: "v226",
+    word: "Meteorologist",
+    definition: "An expert in or student of meteorology; a weather forecaster.",
+    vietnamese: "Nhà khí tượng học",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Đuôi '-ist' chỉ người. Vị chuyên gia túc trực đài khí tượng để đưa tin bão khẩn cấp cho cả nước.",
+    pronunciation: "/ˌmiːtiəˈrɒlədʒɪst/",
+    synonyms: "weather scientist"
+  },
+  {
+    id: "v227",
+    word: "Atmosphere",
+    definition: "The envelope of gases surrounding the earth or another planet.",
+    vietnamese: "Khí quyển",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Atmo' là hơi ẩm khí sương, 'sphere' là quả cầu. Lớp vỏ bọc không khí che chở cho cả địa cầu tròn xoe.",
+    pronunciation: "/ˈætməsfɪr/",
+    synonyms: "air layer, atmospheric system"
+  },
+  {
+    id: "v228",
+    word: "Humidity",
+    definition: "The state or quality of being humid; the amount of water vapor in the atmosphere.",
+    vietnamese: "Độ ẩm",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nhớ đến tính từ 'humid' (ẩm ướt). Nước sương nồm ẩm làm bức tường đổ mồ hôi ướt nhẹp.",
+    pronunciation: "/hjuːˈmɪdəti/",
+    synonyms: "moisture level, atmospheric moisture"
+  },
+  {
+    id: "v229",
+    word: "Precipitation",
+    definition: "Rain, snow, sleet, or hail that falls to the ground.",
+    vietnamese: "Lượng mưa, giáng thủy",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Thuật ngữ khoa học siêu sang chảnh chỉ tất cả các giọt nước tụ tụ từ đám mây rơi tự do xuống đất liền.",
+    pronunciation: "/prɪˌsɪpɪˈteɪʃən/",
+    synonyms: "rainfall, atmospheric water discharge"
+  },
+  {
+    id: "v230",
+    word: "Rainfall",
+    definition: "The quantity of rain falling within a given area in a given time.",
+    vietnamese: "Lượng mưa",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Rain' (mưa) + 'fall' (sự rơi). Thước đo xem có bao nhiêu khối nước trút xuống khu rừng rậm rạp.",
+    pronunciation: "/ˈreɪnfɔːl/",
+    synonyms: "precipitation, downpour"
+  },
+  {
+    id: "v231",
+    word: "Drizzle",
+    definition: "Light rain falling in very fine drops.",
+    vietnamese: "Mưa phùn",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Phát âm 'dri-zl' êm ru lướt qua. Cơn mưa bụi dạo xuân lất phất làm mờ sương kính xe.",
+    pronunciation: "/ˈdrɪzl/",
+    synonyms: "light rain, fine rain"
+  },
+  {
+    id: "v232",
+    word: "Shower",
+    definition: "A brief and usually light fall of rain, hail, or snow.",
+    vietnamese: "Mưa rào",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Như chiếc vòi hoa sen 'shower' trong phòng tắm: xối xả rơi ào một cái rồi nắng ráo tưng bừng.",
+    pronunciation: "/ˈʃaʊər/",
+    synonyms: "brief rainfall, passing rain"
+  },
+  {
+    id: "v233",
+    word: "Downpour",
+    definition: "A heavy fall of rain.",
+    vietnamese: "Mưa lớn",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Down' là đi xuống, 'pour' là rót tràn. Trận mưa tầm tã ào ạt chảy thành sông ngập bánh xe.",
+    pronunciation: "/ˈdaʊnpɔːr/",
+    synonyms: "torrential rain, heavy rainfall"
+  },
+  {
+    id: "v234",
+    word: "Torrential rain",
+    definition: "Very heavy, rapid, and severe rain falling in great quantities.",
+    vietnamese: "Mưa xối xả",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Torrent' là dòng thác lũ cuồn cuộn. Cơn bão cực lớn dội từng đợt nước xối xả trắng xóa cả trời chiều.",
+    pronunciation: "/təˈrenʃəl reɪn/",
+    synonyms: "extreme rainfall, heavy precipitation"
+  },
+  {
+    id: "v235",
+    word: "Storm",
+    definition: "A violent disturbance of the atmosphere with strong winds and usually rain, thunder, lightning, or snow.",
+    vietnamese: "Bão",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Từ kinh điển mô tả cơn giông lốc tàn phá xé gió u u suốt đêm trường.",
+    pronunciation: "/stɔːrm/",
+    synonyms: "severe weather event, violent weather"
+  },
+  {
+    id: "v236",
+    word: "Thunderstorm",
+    definition: "A storm with thunder and lightning and typically also heavy rain or hail.",
+    vietnamese: "Giông bão",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Thunder' (tiếng sấm rền rĩ) ghép với 'storm'. Hiện tượng giông sét rùng rợn dọa trẻ nhỏ run cầm cập.",
+    pronunciation: "/ˈθʌndərstɔːrm/",
+    synonyms: "electrical storm"
+  },
+  {
+    id: "v237",
+    word: "Lightning",
+    definition: "The occurrence of a natural electrical discharge of very short duration and high voltage between a cloud and the ground.",
+    vietnamese: "Tia chớp",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Gốc từ 'light' (ánh sáng). Luồng tia điện cao thế nổ xoèn xoẹt sáng loà rạch xéo nền mây đen.",
+    pronunciation: "/ˈlaɪtnɪŋ/",
+    synonyms: "electrical discharge"
+  },
+  {
+    id: "v238",
+    word: "Thunder",
+    definition: "A loud rumbling or crashing noise heard after a lightning flash due to the expansion of rapidly heated air.",
+    vietnamese: "Tiếng sấm",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Sấm nổ đùng đoàng đập rung cửa kính ngay sau vệt chớp sáng loà.",
+    pronunciation: "/ˈθʌndər/",
+    synonyms: "sonic shock wave"
+  },
+  {
+    id: "v239",
+    word: "Wind",
+    definition: "The perceptible natural movement of the air, especially in the form of a current of air blowing from a particular direction.",
+    vietnamese: "Gió",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Hơi thở của thiên nhiên lay động cành cây rung rinh dạt dào râm ran.",
+    pronunciation: "/wɪnd/",
+    synonyms: "air current, airflow"
+  },
+  {
+    id: "v240",
+    word: "Strong wind",
+    definition: "Winds of high speed capable of causing noticeable displacement and minor damage to vegetation.",
+    vietnamese: "Gió mạnh",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Cấp độ gió lốc lộng lẫy đủ bẻ gãy các cành lá khẳng khiu mục rỗng.",
+    pronunciation: "/strɔːŋ wɪnd/",
+    synonyms: "powerful gusts, high-speed winds"
+  },
+  {
+    id: "v241",
+    word: "Gale",
+    definition: "A very strong wind, typically used as a scientific category on the Beaufort scale.",
+    vietnamese: "Gió giật mạnh",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Đọc nghe dọa dẫm giống 'ghê' — luồng gió cực mạnh bẻ gãy cột biển quảng cáo ngoài phố.",
+    pronunciation: "/ɡeɪl/",
+    synonyms: "strong wind, violent gust"
+  },
+  {
+    id: "v242",
+    word: "Hurricane",
+    definition: "A tropical storm with winds of 74 miles per hour or greater, particularly in the Atlantic Ocean.",
+    vietnamese: "Bão cuồng phong",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Dòng siêu bão kinh hoàng khởi phát ở Đại Tây Dương cuốn sập cả cao ốc.",
+    pronunciation: "/ˈhʌrɪkeɪn/",
+    synonyms: "tropical cyclone, severe storm"
+  },
+  {
+    id: "v243",
+    word: "Typhoon",
+    definition: "A tropical storm in the region of the Indian or western Pacific oceans.",
+    vietnamese: "Bão nhiệt đới",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nghe giống Hán Việt 'Đại Phong' (gió cực lớn). Cơn bão rầm rộ ghé thăm vùng biển nhiệt đới Đông Nam Á.",
+    pronunciation: "/taɪˈfuːn/",
+    synonyms: "tropical cyclone"
+  },
+  {
+    id: "v244",
+    word: "Cyclone",
+    definition: "A system of winds rotating inward to an area of low atmospheric pressure.",
+    vietnamese: "Xoáy thuận nhiệt đới",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Cycle' là vòng tròn xoay. Cột xoáy áp thấp khổng lồ lùa không khí cuồn cuộn vào giữa.",
+    pronunciation: "/ˈsaɪkloʊn/",
+    synonyms: "rotating storm system"
+  },
+  {
+    id: "v245",
+    word: "Tornado",
+    definition: "A mobile, destructive vortex of violently rotating winds having the appearance of a funnel-shaped cloud.",
+    vietnamese: "Lốc xoáy",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nhớ tới cụm 'vòi rồng' xoáy tít luồn từ trời xuống đất, nhấc bổng ô tô lên mây.",
+    pronunciation: "/tɔːrˈneɪdoʊ/",
+    synonyms: "twister, violent wind vortex"
+  },
+  {
+    id: "v246",
+    word: "Blizzard",
+    definition: "A severe snowstorm with high winds and low visibility.",
+    vietnamese: "Bão tuyết",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Tuyết trắng xóa tung bay quay cuồng quất tê dại da thịt kèm theo luồng gió hú rùng rợn.",
+    pronunciation: "/ˈblɪzərd/",
+    synonyms: "snowstorm, severe winter storm"
+  },
+  {
+    id: "v247",
+    word: "Snowfall",
+    definition: "The fall of snow, or the quantity of snow that falls during a given period.",
+    vietnamese: "Tuyết rơi",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Snow' (tuyết) + 'fall' (rơi). Khung cảnh lãng mạn lướt dưới đèn đường mùa Giáng sinh lung linh.",
+    pronunciation: "/ˈsnoʊfɔːl/",
+    synonyms: "snow precipitation"
+  },
+  {
+    id: "v248",
+    word: "Frost",
+    definition: "A deposit of small white ice crystals formed on the ground or other surfaces when the temperature falls below freezing.",
+    vietnamese: "Sương giá",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Lớp sương đêm hóa thành tuyết đá mỏng đóng dính trắng xóa lá rau lúc rạng đông giá buốt.",
+    pronunciation: "/frɔːst/",
+    synonyms: "freezing temperature effect"
+  },
+  {
+    id: "v249",
+    word: "Ice storm",
+    definition: "A winter storm characterized by freezing rain that coats exposed surfaces with ice.",
+    vietnamese: "Bão băng",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Cơn mưa lạnh khi rớt chạm xuống cây liền đóng băng lấp lánh như thủy tinh trơn tuột.",
+    pronunciation: "/aɪs stɔːrm/",
+    synonyms: "freezing rain event"
+  },
+  {
+    id: "v250",
+    word: "Heatwave",
+    definition: "A prolonged period of abnormally hot weather.",
+    vietnamese: "Đợt nắng nóng",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Heat' (nóng) + 'wave' (sóng). Đợt nóng thiêu đốt kéo dài hầm hập nung đỏ mặt đường nhựa.",
+    pronunciation: "/ˈhiːtweɪv/",
+    synonyms: "extreme heat event, hot spell"
+  },
+  {
+    id: "v251",
+    word: "Drought",
+    definition: "A prolonged period of abnormally low rainfall, leading to a shortage of water.",
+    vietnamese: "Hạn hán",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nghe giống 'dry out' (khô cạn hoàn toàn) — đồng ruộng nứt toẻ, lòng sông phơi đất sét nứt nẻ.",
+    pronunciation: "/draʊt/",
+    synonyms: "water scarcity, prolonged dry period"
+  },
+  {
+    id: "v252",
+    word: "Aridity",
+    definition: "The state of being extremely dry, having little or no rain to support life or agriculture.",
+    vietnamese: "Sự khô hạn",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Chỉ trạng thái cằn cỗi hoang vu ngàn đời của những đồi cát sa mạc mịt mùng gió cát.",
+    pronunciation: "/əˈrɪdəti/",
+    synonyms: "dryness, lack of moisture"
+  },
+  {
+    id: "v253",
+    word: "Wildfire",
+    definition: "A large, destructive fire that spreads quickly over woodland or brush.",
+    vietnamese: "Cháy rừng",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Wild' (hoang dã) + 'fire' (ngọn lửa). Trận hỏa hoạn hung ác liếm sạch cây cối muông thú chốn rừng hoang.",
+    pronunciation: "/ˈwaɪldfaɪər/",
+    synonyms: "forest fire, uncontrolled fire"
+  },
+  {
+    id: "v254",
+    word: "Flood",
+    definition: "An overflowing of a large amount of water beyond its normal confines, especially over what is normally dry land.",
+    vietnamese: "Lũ lụt",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Nước dâng tràn qua cả cửa sổ khiến mọi người di tản khốn khổ.",
+    pronunciation: "/flʌd/",
+    synonyms: "inundation, overflow"
+  },
+  {
+    id: "v255",
+    word: "Flash flood",
+    definition: "A sudden local flood, typically due to heavy rain, that arrives without warning.",
+    vietnamese: "Lũ quét",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Flash' nhanh như ánh đèn máy ảnh. Lũ ống thượng nguồn giận dữ càn quét cuốn phăng cầu cống.",
+    pronunciation: "/flæʃ flʌd/",
+    synonyms: "sudden flooding, rapid inundation"
+  },
+  {
+    id: "v256",
+    word: "Landslide",
+    definition: "The sliding down of a mass of earth or rock from a mountain or cliff.",
+    vietnamese: "Sạt lở đất",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Land' (vùng đất) + 'slide' (trượt dài). Cả quả đồi sũng nước trôi tuột xuống lấp sạch quốc lộ đêm mưa.",
+    pronunciation: "/ˈlændslaɪd/",
+    synonyms: "soil collapse, slope failure"
+  },
+  {
+    id: "v257",
+    word: "Avalanche",
+    definition: "A mass of snow, ice, and rocks falling rapidly down a mountainside.",
+    vietnamese: "Tuyết lở",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Phát âm 'a-vơ-lan-chơ' — hàng triệu tấn tuyết trắng rầm rập truợt xối xả nuốt chửng khu trượt tuyết.",
+    pronunciation: "/ˈævəlɑːnʃ/",
+    synonyms: "snow slide, ice collapse"
+  },
+  {
+    id: "v258",
+    word: "Earthquake",
+    definition: "A sudden and violent shaking of the ground, sometimes causing great destruction, as a result of movements within the earth's crust.",
+    vietnamese: "Động đất",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Earth' (vách đất địa cầu) + 'quake' (rung lắc bần bật). Thảm họa gầm rú sập sạt mọi công trình.",
+    pronunciation: "/ˈɜːrθkweɪk/",
+    synonyms: "seismic event, tectonic disturbance"
+  },
+  {
+    id: "v260",
+    word: "Volcano",
+    definition: "A mountain or hill, typically conical, having a crater or vent through which lava, rock fragments, hot vapor, and gas are being or have been erupted.",
+    vietnamese: "Núi lửa",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Mang tên vị thần rèn rực lửa Vulcan. Đỉnh núi chực chờ phóng pháo dòng nham thạch bỏng rát.",
+    pronunciation: "/vɒlˈkeɪnoʊ/",
+    synonyms: "volcanic system"
+  },
+  {
+    id: "v259",
+    word: "Tremor",
+    definition: "An involuntary quivering movement; a slight earthquake or seismic vibration.",
+    vietnamese: "Rung chấn",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Làn chấn động âm thầm dưới lòng chân rục rịch báo hiệu cơn địa chấn khổng lồ sắp bùng nổ.",
+    pronunciation: "/ˈtremər/",
+    synonyms: "seismic vibration"
+  },
+  {
+    id: "v261",
+    word: "Volcanic eruption",
+    definition: "The sudden, violent discharge of steam, ash, and lava from an active volcano.",
+    vietnamese: "Phun trào núi lửa",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Eruption' là sự nổ toác phì ra. Tro bụi núi lửa mù trời xám xịt làm gián đoạn mọi chuyến bay.",
+    pronunciation: "/vɒlˈkænɪk ɪˈrʌpʃən/",
+    synonyms: "volcanic activity"
+  },
+  {
+    id: "v262",
+    word: "Tsunami",
+    definition: "A long, high sea wave caused by an earthquake or other disturbance.",
+    vietnamese: "Sóng thần",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Gốc Nhật ngữ 'tsu' (bến cảng) + 'nami' (lớp sóng). Bức tường nước khổng lồ nuốt chửng dải bờ biển.",
+    pronunciation: "/tsuːˈnɑːmi/",
+    synonyms: "seismic sea wave"
+  },
+  {
+    id: "v263",
+    word: "Disaster",
+    definition: "A sudden accident or a natural catastrophe that causes great damage or loss of life.",
+    vietnamese: "Thảm họa",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Dis-' (tội tệ) + 'aster' (ngôi sao chỉ lối). Tinh tú trật nhịp reo rắc vận xui và tai họa khắp nhân gian.",
+    pronunciation: "/dɪˈzæstər/",
+    synonyms: "catastrophe, calamity"
+  },
+  {
+    id: "v264",
+    word: "Natural disaster",
+    definition: "A natural event such as a flood, earthquake, or hurricane that causes great damage or loss of life.",
+    vietnamese: "Thiên tai",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Cơn thịnh nộ tàn khốc của tự nhiên thử thách tinh thần kiên cường của nhân loại.",
+    pronunciation: "/ˈnætʃrəl dɪˈzæstər/",
+    synonyms: "environmental catastrophe"
+  },
+  {
+    id: "v265",
+    word: "Catastrophe",
+    definition: "An event causing great and often sudden damage or suffering; a disaster.",
+    vietnamese: "Thảm họa nghiêm trọng",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Từ vựng band điểm cao mô tả sự đổ vỡ tan hoang, thảm bại cùng cực.",
+    pronunciation: "/kəˈtæstrəfi/",
+    synonyms: "devastating event, calamity"
+  },
+  {
+    id: "v266",
+    word: "Destruction",
+    definition: "The action or process of causing so much damage to something that it no longer exists or cannot be repaired.",
+    vietnamese: "Sự phá hủy",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Trái nghĩa với 'construction' (kiến tạo dựng xây) — bão lũ quét bay phá sạch trơn.",
+    pronunciation: "/dɪˈstrʌkʃən/",
+    synonyms: "devastation, damage"
+  },
+  {
+    id: "v267",
+    word: "Devastation",
+    definition: "Great destruction or damage; the state of being devastated.",
+    vietnamese: "Sự tàn phá",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Khung cảnh đổ nát trơ trụi xót xa nơi bão cuồng phong càn quét qua ngày trước.",
+    pronunciation: "/ˌdevəˈsteɪʃən/",
+    synonyms: "severe destruction"
+  },
+  {
+    id: "v268",
+    word: "Damage",
+    definition: "Physical harm caused to something in such a way as to impair its value, usefulness, or normal function.",
+    vietnamese: "Thiệt hại",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Được bồi thường tổn thất hư hỏng vật chất sau sự cố rủi ro.",
+    pronunciation: "/ˈdæmɪdʒ/",
+    synonyms: "destruction, impairment"
+  },
+  {
+    id: "v269",
+    word: "Casualty",
+    definition: "A person killed or injured in a war or accident, especially a natural disaster.",
+    vietnamese: "Thương vong",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Đếm số nạn nhân không may gặp nạn ngã xuống sau cuộc địa chấn kinh hoàng.",
+    pronunciation: "/ˈkæʒuəlti/",
+    synonyms: "victim, fatality"
+  },
+  {
+    id: "v270",
+    word: "Evacuation",
+    definition: "The action of evacuating a person or a place; withdrawing people from an endangered zone.",
+    vietnamese: "Sơ tán",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Hành động dọn dẹp trống rỗng ('vacate') khẩn trương di tản đồng bào vùng ngập lụt đi tránh bão.",
+    pronunciation: "/ɪˌvækjuˈeɪʃən/",
+    synonyms: "relocation, emergency withdrawal"
+  },
+  {
+    id: "v271",
+    word: "Emergency",
+    definition: "A serious, unexpected, and often dangerous situation requiring immediate action.",
+    vietnamese: "Tình trạng khẩn cấp",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Gió giật đổ sụp cột điện, còi báo động hụ vang - toàn tỉnh bước vào thế khẩn cấp cứu hộ.",
+    pronunciation: "/ɪˈmɜːrdʒənsi/",
+    synonyms: "crisis situation"
+  },
+  {
+    id: "v272",
+    word: "Relief",
+    definition: "Assistance, especially in the form of food, clothing, or money, given to those in special need or difficulty.",
+    vietnamese: "Cứu trợ",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Như được 'thở phào nhẹ nhõm' (relieved) khi nhận được mì tôm, áo phao kịp thời từ ca nô cứu hộ cứu trợ.",
+    pronunciation: "/rɪˈliːf/",
+    synonyms: "humanitarian assistance, aid"
+  },
+  {
+    id: "v273",
+    word: "Recovery",
+    definition: "The action or process of recovering, especially returning to a normal state after a disaster.",
+    vietnamese: "Phục hồi",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Bắt đầu bằng 're-' (quay lại). Tái thiết cơ sở vật chất, hồi sinh nền kinh tế sau bão lũ.",
+    pronunciation: "/rɪˈkʌvəri/",
+    synonyms: "reconstruction, rehabilitation"
+  },
+  {
+    id: "v274",
+    word: "Resilience",
+    definition: "The capacity to recover quickly from difficulties; toughness and adaptability.",
+    vietnamese: "Khả năng chống chịu",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Khả năng đàn hồi dẻo dai của cộng đồng, kiên cường đứng dậy sau vấp ngã thảm họa.",
+    pronunciation: "/rɪˈzɪliəns/",
+    synonyms: "adaptive capacity, resistance"
+  },
+  {
+    id: "v275",
+    word: "Vulnerability",
+    definition: "The quality or state of being exposed to the possibility of being attacked or harmed, either physically or emotionally.",
+    vietnamese: "Tính dễ bị tổn thương",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Bản chất yếu ớt, mỏng manh dễ bị sóng to gió lớn cuốn phăng do thiếu gia cố chuẩn bị chắc chắn.",
+    pronunciation: "/ˌvʌlnərəˈbɪləti/",
+    synonyms: "susceptibility, exposure"
+  },
+  {
+    id: "v276",
+    word: "Climate change",
+    definition: "A change in global or regional climate patterns, attributed largely to the increased levels of atmospheric carbon dioxide produced by the use of fossil fuels.",
+    vietnamese: "Biến đổi khí hậu",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Vấn nạn nhức nhối toàn hành tinh khiến hạn hán thiên tai dồn dập thất thường.",
+    pronunciation: "/ˈklaɪmət tʃeɪndʒ/",
+    synonyms: "global climate transformation"
+  },
+  {
+    id: "v277",
+    word: "Global warming",
+    definition: "A gradual increase in the overall temperature of the earth's atmosphere generally attributed to the greenhouse effect.",
+    vietnamese: "Nóng lên toàn cầu",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Global' (toàn cầu) + 'warming' (làm nóng). Thăng nhiệt làm tan băng hai đầu cực, dâng nước biển dọa ngập đồng bằng.",
+    pronunciation: "/ˈɡloʊbəl ˈwɔːrmɪŋ/",
+    synonyms: "rising global temperature"
+  },
+  {
+    id: "v278",
+    word: "Greenhouse effect",
+    definition: "The trapping of the sun's warmth in a planet's lower atmosphere, due to the greater transparency of the atmosphere to visible radiation from the sun than to infrared radiation emitted from the planet's surface.",
+    vietnamese: "Hiệu ứng nhà kính",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Trái đất hầm hập giống hệt lớp nylon bọc giữ nhiệt ở nhà trồng rau quả ôn đới.",
+    pronunciation: "/ˈgriːnhaʊs ɪˈfekt/",
+    synonyms: "atmospheric warming mechanism"
+  },
+  {
+    id: "v279",
+    word: "Carbon emission",
+    definition: "The release of carbon dioxide into the atmosphere, especially from industrial activity or combustion.",
+    vietnamese: "Phát thải carbon",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "Cột khói xám từ bô xe máy, ống khói nhà máy đầu độc bầu không khí xanh tươi.",
+    pronunciation: "/ˈkɑːrbən ɪˈmɪʃən/",
+    synonyms: "greenhouse gas emission"
+  },
+  {
+    id: "v280",
+    word: "Environmental degradation",
+    definition: "The deterioration of the environment through depletion of resources such as quality of air, water and soil; the destruction of ecosystems.",
+    vietnamese: "Suy thoái môi trường",
+    category: "Weather & Natural Disasters",
+    categoryEmoji: "⛈️",
+    memoryHook: "'Degradation' là sự tụt dốc, suy giảm chất lượng thảm thương của đất đai nguồn nước và sinh cảnh.",
+    pronunciation: "/ɪnˌvaɪrənˈmentəl ˌdeɡrəˈdeɪʃən/",
+    synonyms: "ecological decline"
+  },
+  // VII. Ẩm thực & Dinh dưỡng (Food & Nutrition)
+  {
+    id: "v281",
+    word: "Palatable",
+    definition: "Pleasant to taste; acceptable or satisfactory to eat (often used in formal contexts).",
+    vietnamese: "Ngon, hợp khẩu vị",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Nhớ đến 'plate' (cái đĩa). Thức ăn ngon trình bày trên đĩa ('plate') sang trọng làm cho thực khách vô cùng hài lòng.",
+    pronunciation: "/ˈpælətəbəl/",
+    synonyms: "tasty, appetizing, delicious, flavorful (Antonym: unpalatable)"
+  },
+  {
+    id: "v282",
+    word: "Savory",
+    definition: "Belonging to the category that is salty or spicy rather than sweet; having a rich, appetizing flavor.",
+    vietnamese: "Có vị mặn, đậm đà",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Nghe giống 'save' (tiết kiệm) + 'ry' (nhụy hoa). Đồ ăn mặn thơm nồng khiến ta muốn cất giữ ('save') ăn dần.",
+    pronunciation: "/ˈseɪvəri/",
+    synonyms: "salty, spicy, piquant, flavorful (Antonym: sweet)"
+  },
+  {
+    id: "v283",
+    word: "Insipid",
+    definition: "Lacking flavor; weak, tasteless, or bland.",
+    vietnamese: "Nhạt nhẽo, vô vị",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Phát âm 'in-sip-id' gần giống 'uống từng hớp' (sip) nước lã nhạt tếch không một hạt muối.",
+    pronunciation: "/ɪnˈsɪpɪd/",
+    synonyms: "bland, tasteless, flavorless, weak"
+  },
+  {
+    id: "v284",
+    word: "Succulent",
+    definition: "Tender, juicy, and tasty (especially of meat or fruit).",
+    vietnamese: "Mọng nước",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Nghe giống 'suck' (bú, mút dòng nước ngọt lành). Miếng thịt nướng mềm tan mọng nước cắn một miếng sướng tê người.",
+    pronunciation: "/ˈsʌkjələnt/",
+    synonyms: "juicy, tender, moist, luscious"
+  },
+  {
+    id: "v285",
+    word: "Rancid",
+    definition: "Smelling or tasting unpleasant as a result of being old and stale (especially of foods containing fat or oil).",
+    vietnamese: "Ôi thiu, biến chất (dầu mỡ, hạt)",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gần giống 'ran' (chạy) + 'acid'. Dầu mỡ để lâu sinh ra acid chua loét làm ta phải chạy xa vì hôi.",
+    pronunciation: "/ˈrænsɪd/",
+    synonyms: "stale, spoiled, sour, putrid"
+  },
+  {
+    id: "v286",
+    word: "Stale",
+    definition: "No longer fresh and pleasant to eat; hard, musty, or dry (especially of bread or biscuits).",
+    vietnamese: "Cũ, cũ xì, ỉu/cứng (bánh mì, bánh quy)",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Phát âm gần giống 'stay' (ở lại) lâu ngày. Bánh mì cứ để 'stay' ngoài không khí mấy ngày liền nên bị cứng đơ.",
+    pronunciation: "/steɪl/",
+    synonyms: "dry, hardened, old, musty"
+  },
+  {
+    id: "v287",
+    word: "Marinate",
+    definition: "Soak (meat, fish, or other food) in a marinade (a seasoned liquid) before cooking.",
+    vietnamese: "Tẩm ướp",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gốc 'marine' liên quan đến biển/muối. Ta rắc muối biển tẩm ướp gia vị đều tay trước khi nướng lò.",
+    pronunciation: "/ˈmærɪneɪt/",
+    synonyms: "season, soak, steep (Noun: marinade)"
+  },
+  {
+    id: "v288",
+    word: "Infuse",
+    definition: "Soak (tea, herbs, etc.) in liquid to extract the flavor or healing properties; fill with a quality.",
+    vietnamese: "Ngâm, hãm (trà, thảo mộc, dầu)",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Hậu tố '-fuse' (chảy, đổ). Ta đổ nước sôi vào bình ngâm trà hoa cúc hãm hương thơm ngát.",
+    pronunciation: "/ɪnˈfjuːz/",
+    synonyms: "steep, soak, brew, saturate"
+  },
+  {
+    id: "v289",
+    word: "Simmer",
+    definition: "Stay just below the boiling point while bubbling gently (of water or food being cooked).",
+    vietnamese: "Ninh nhỏ lửa, om",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Phát âm 'sim-mờ' lách tách nhẹ nhàng. Tiếng nước sủi bọt mờ ảo râm ran dưới ngọn lửa ninh nhỏ liu riu.",
+    pronunciation: "/ˈsɪmər/",
+    synonyms: "stew, boil gently, bubble slowly"
+  },
+  {
+    id: "v290",
+    word: "Garnish",
+    definition: "Decorate or embellish (something, especially food) with a small colorful ingredient.",
+    vietnamese: "Trang trí món ăn; đồ trang trí",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gần giống 'garment' (quần áo đẹp). Khoác thêm manh áo 'quần áo đẹp' bằng rau thơm, hoa cỏ trang trí cho món đĩa tiệc.",
+    pronunciation: "/ˈɡɑːrnɪʃ/",
+    synonyms: "decorate, embellish, adorn, ornament"
+  },
+  {
+    id: "v291",
+    word: "Condiment",
+    definition: "A substance such as salt, mustard, or pickle that is used to add flavor to food at the table.",
+    vietnamese: "Gia vị ăn kèm (đặt sẵn trên bàn)",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Đầu 'Con' (con cái) + 'di-ment' (tỉ mỉ). Cha mẹ tỉ mỉ xếp từng chai tương ớt, nước mắm ăn kèm ngoài bàn ăn.",
+    pronunciation: "/ˈkɑːndɪmənt/",
+    synonyms: "seasoning, dressing, sauce (different from cooking spice)"
+  },
+  {
+    id: "v292",
+    word: "Culinary",
+    definition: "Of or relating to kitchen, cooking, or the culinary arts.",
+    vietnamese: "(Thuộc về) Ẩm thực, bếp núc",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Nghe giống 'cool' + 'line'. Đường dây đầu bếp cực 'cool' bảo tồn di sản ẩm thực (culinary heritage) ngàn năm.",
+    pronunciation: "/ˈkʌlɪneri/",
+    synonyms: "cooking, gastronomic, dietary (Collocations: culinary heritage, culinary arts)"
+  },
+  {
+    id: "v293",
+    word: "Gastronomy",
+    definition: "The practice or art of choosing, cooking, and eating good food; culinary science.",
+    vietnamese: "Nghệ thuật sành ăn, khoa học ẩm thực",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gốc 'gastro' (dạ dày) + 'nomy' (nguyên lý học). Khoa học nghiên cứu dạ dày của những kẻ sành ăn tinh tế.",
+    pronunciation: "/ɡæˈstrɒnəmi/",
+    synonyms: "culinary art, epicurism, gourmet dining"
+  },
+  {
+    id: "v294",
+    word: "Nourishment",
+    definition: "The food or other substances necessary for growth, health, and good condition.",
+    vietnamese: "Chất dinh dưỡng, sự nuôi dưỡng",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Từ gốc 'nurse' (chăm sóc) + 'nourish' (nuôi nấng). Dòng sữa ấm ngọt lành mang lại sự nuôi dưỡng đầy đủ cho trẻ sơ sinh.",
+    pronunciation: "/ˈnɜːrɪʃmənt/",
+    synonyms: "nutrition, nutrients, sustenance, food"
+  },
+  {
+    id: "v295",
+    word: "Perishable",
+    definition: "Likely to decay or go bad quickly (especially of fresh food).",
+    vietnamese: "Dễ ôi thiu, dễ hỏng (rau, thịt tươi)",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gốc 'perish' (phân hủy, biến mất hoàn toàn). Các loại rau xanh mướt nếu không cất tủ lạnh sẽ phân hủy rất nhanh.",
+    pronunciation: "/ˈperɪʃəbəl/",
+    synonyms: "biodegradable, decayable (Antonym: non-perishable)"
+  },
+  {
+    id: "v296",
+    word: "Adulterated",
+    definition: "Rendered poorer in quality by adding another substance, typically an inferior or harmful one.",
+    vietnamese: "Bị pha tạp, không nguyên chất (thực phẩm bẩn)",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Nhớ 'adult' (người lớn) mưu mẹo. Chiêu trò của một số người lớn tham lam pha tạp hóa chất vào thực phẩm để trục lợi.",
+    pronunciation: "/əˈdʌltəreɪtɪd/",
+    synonyms: "contaminated, tainted, impure, cheapened"
+  },
+  {
+    id: "v297",
+    word: "Fortified",
+    definition: "Having vitamins, minerals, or other nutrients added to increase nutritional value.",
+    vietnamese: "Được tăng cường/bổ sung vi chất",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gốc 'fort' (pháo đài kiên cố). Sữa được củng cố thêm vitamin D kiên cố như pháo đài bảo vệ xương vững chắc.",
+    pronunciation: "/ˈfɔːrtɪfaɪd/",
+    synonyms: "enriched, enhanced, strengthened"
+  },
+  {
+    id: "v298",
+    word: "Staple",
+    definition: "A main or important element of something, especially of a diet or crop.",
+    vietnamese: "Sản phẩm chủ lực, thực phẩm thiết yếu",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Chiếc ghim giấy 'staple' cố định tài liệu quan trọng nhất. Gạo là lương thực thiết yếu ghim chặt trong bữa cơm Việt.",
+    pronunciation: "/ˈsteɪpəl/",
+    synonyms: "essential, principal, basic, chief"
+  },
+  {
+    id: "v299",
+    word: "Wholesome food",
+    definition: "Food that is healthy, pure, and good for your body and overall well-being.",
+    vietnamese: "Thực phẩm lành mạnh, bổ dưỡng",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "'Whole' (toàn vẹn, nguyên lành) + 'some'. Đồ ăn nguyên cám, tươi sạch bồi bổ toàn bộ cơ thể khỏe khoắn.",
+    pronunciation: "/ˈhoʊlsəm fuːd/",
+    synonyms: "healthy food, nutritious food, clean eating"
+  },
+  {
+    id: "v300",
+    word: "Artificial additives",
+    definition: "Chemical substances added to food to preserve its flavor or enhance its appearance, which are not natural.",
+    vietnamese: "Chất phụ gia nhân tạo",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "'Artificial' (nhân tạo) + 'additives' (vật thêm vào). Các hạt màu tổng hợp thêm vào kẹo dẻo để thu hút trẻ em.",
+    pronunciation: "/ˌɑːrtɪˈfɪʃəl ˈædətɪvz/",
+    synonyms: "chemical preservatives, synthetic colorants"
+  },
+  {
+    id: "v301",
+    word: "Dietary restrictions",
+    definition: "Limitations on what foods a person can eat due to allergies, medical conditions, or religious beliefs.",
+    vietnamese: "Các hạn chế về chế độ ăn uống",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "'Dietary' (thuộc chế độ ăn) + 'restrictions' (giới hạn). Quy định nghiêm ngặt né tránh thịt heo hay đậu phộng.",
+    pronunciation: "/ˈdaɪətəri rɪˈstrɪkʃənz/",
+    synonyms: "dietary limitations, food exclusions"
+  },
+  {
+    id: "v302",
+    word: "Exquisite cuisine",
+    definition: "Extremely beautiful, delicate, and high-quality cooking style or dishes.",
+    vietnamese: "Ẩm thực tinh tế, tuyệt hảo",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "'Exquisite' (tuyệt mỹ, tinh xảo) + 'cuisine' (nền ẩm thực). Bữa tối 5 sao chuẩn Michelin với bài trí nghệ thuật xuất thần.",
+    pronunciation: "/ɪkˈskwɪzɪt kwɪˈziːn/",
+    synonyms: "gourmet cooking, fine dining, top-tier dishes"
+  },
+  {
+    id: "v303",
+    word: "Food intolerance",
+    definition: "A detrimental system response, usually in the digestive system, to a specific food or ingredient (like lactose).",
+    vietnamese: "Sự nhạy cảm/không dung nạp thực phẩm",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "'In-' (không) + 'tolerance' (chịu đựng, dung thứ). Cơ thể không chịu nổi đường sữa nên đau bụng tơi bời.",
+    pronunciation: "/fuːd ɪnˈtɑːlərəns/",
+    synonyms: "food sensitivity, digestive sensitivity"
+  },
+  {
+    id: "v304",
+    word: "Devour",
+    definition: "Eat (food or prey) hungrily or quickly; consume greedily.",
+    vietnamese: "Ăn một cách ngấu nghiến",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Nhớ đến 'de-' (triệt để) + 'vour' (nhai ngậm). Chú chó quá đói ngốn sạch dĩa bít tết mọng nước chỉ trong 3 giây.",
+    pronunciation: "/dɪˈvaʊər/",
+    synonyms: "consume, gulp down, gobble up, feast on"
+  },
+  {
+    id: "v305",
+    word: "Satiate",
+    definition: "Satisfy (a desire or an appetite) to the full or to excess.",
+    vietnamese: "Làm cho no nê, thỏa mãn cơn đói",
+    category: "Food",
+    categoryEmoji: "🥗",
+    memoryHook: "Gần giống 'satisfy' (làm thỏa mãn). Đánh chén xong đĩa cơm sườn béo ngậy làm thỏa mãn hoàn toàn cái bụng rỗng tuếch.",
+    pronunciation: "/ˈseɪʃieɪt/",
+    synonyms: "satisfy, sate, fill, overfill"
+  },
+  // TOPIC 5: SOCIETY & CULTURE
+  {
+    id: "v306",
+    word: "Activist",
+    definition: "A person who campaigns to bring about political or social change.",
+    vietnamese: "Nhà hoạt động xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Active (năng nổ) -> Người đi đầu kêu gọi thay đổi luật pháp, xã hội.",
+    pronunciation: "/ˈæk.tɪ.vɪst/",
+    synonyms: "campaigner, advocate, reformer"
+  },
+  {
+    id: "v307",
+    word: "Contemporary",
+    definition: "Belonging to or occurring in the present time; modern.",
+    vietnamese: "Đương đại, hiện đại",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Con- (cùng) + Tempus (thời gian) -> Thuộc về kỷ nguyên chúng ta đang sống.",
+    pronunciation: "/kənˈtem.pər.ər.i/",
+    synonyms: "modern, present-day, current"
+  },
+  {
+    id: "v308",
+    word: "Discrimination",
+    definition: "The unjust or prejudicial treatment of different categories of people, especially on the grounds of race, age, or sex.",
+    vietnamese: "Sự phân biệt đối xử",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Discriminate -> Hành vi bất công dựa trên màu da, giới tính, tôn giáo.",
+    pronunciation: "/dɪˌskrɪm.ɪˈneɪ.ʃən/",
+    synonyms: "prejudice, bias, bigotry, intolerance"
+  },
+  {
+    id: "v309",
+    word: "Diversity",
+    definition: "The state of being diverse; a range of different things or people.",
+    vietnamese: "Sự đa dạng",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Diverse (khác nhau) -> Sự phong phú về chủng tộc, văn hóa trong cộng đồng.",
+    pronunciation: "/daɪˈvɜː.sə.ti/",
+    synonyms: "variety, multiplicity, range"
+  },
+  {
+    id: "v310",
+    word: "Heritage",
+    definition: "Property, traditions, or values that are passed down from previous generations.",
+    vietnamese: "Di sản quốc gia",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Inherit (thừa kế) -> Những giá trị tinh thần/vật chất lịch sử để lại cho đời sau.",
+    pronunciation: "/ˈher.ɪ.tɪdʒ/",
+    synonyms: "legacy, tradition, inheritance"
+  },
+  {
+    id: "v311",
+    word: "Indigenous",
+    definition: "Originating or occurring naturally in a particular place; native.",
+    vietnamese: "Bản địa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "In- (bên trong) + Gignere (sinh ra) -> Cộng đồng người sinh sống lâu đời từ gốc ở đó.",
+    pronunciation: "/ɪnˈdɪdʒ.ɪ.nəs/",
+    synonyms: "native, aboriginal, local"
+  },
+  {
+    id: "v312",
+    word: "Integration",
+    definition: "The process of combining or assimilating into a social group or society.",
+    vietnamese: "Sự hội nhập, hòa nhập",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Danh từ của Integrate -> Quy trình các nhóm thiểu số thích nghi vào xã hội lớn.",
+    pronunciation: "/ˌɪn.tɪˈɡreɪ.ʃən/",
+    synonyms: "assimilation, inclusion, incorporation"
+  },
+  {
+    id: "v313",
+    word: "Migration",
+    definition: "Movement of people or animals from one area or country to another.",
+    vietnamese: "Sự di cư",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Migrate -> Làn sóng di chuyển dân cư giữa các vùng miền hoặc quốc gia.",
+    pronunciation: "/maɪˈɡreɪ.ʃən/",
+    synonyms: "movement, relocation, exodus"
+  },
+  {
+    id: "v314",
+    word: "Poverty",
+    definition: "The state of being extremely poor.",
+    vietnamese: "Sự nghèo đói",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Đọc giống 'Bo-với-ti' -> Nghèo quá nên ăn uống phải bo từng tí một -> Sự nghèo khổ.",
+    pronunciation: "/ˈpɒv.ə.ti/",
+    synonyms: "destitution, penury, impoverishment"
+  },
+  {
+    id: "v315",
+    word: "Radical",
+    definition: "Relating to or affecting the fundamental nature of something; far-reaching or thorough.",
+    vietnamese: "Triệt để, căn bản",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Đọc giống 'Ra-đi-co' -> Thay đổi triệt để tận gốc rễ khiến cấu trúc cũ ra đi co lại.",
+    pronunciation: "/ˈræd.ɪ.kəl/",
+    synonyms: "fundamental, extreme, drastic"
+  },
+  {
+    id: "v316",
+    word: "Assimilate",
+    definition: "Take in and fully understand information, ideas, or culture, or cause a group to resemble another.",
+    vietnamese: "Hòa nhập văn hóa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Nhập cư cố gắng thay đổi thói quen để giống người bản xứ.",
+    pronunciation: "/əˈsɪm.ɪ.leɪt/",
+    synonyms: "blend in, integrate, adapt"
+  },
+  {
+    id: "v317",
+    word: "Demographics",
+    definition: "Statistical data relating to the population and particular groups within it.",
+    vietnamese: "Số liệu nhân khẩu học",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Demo- (người dân) + Graphics (biểu đồ) -> Dữ liệu về tuổi tác, giới tính của dân số.",
+    pronunciation: "/ˌdem.əˈɡræf.ɪks/",
+    synonyms: "population data, census data"
+  },
+  {
+    id: "v318",
+    word: "Prevalent",
+    definition: "Widespread in a particular area or at a particular time.",
+    vietnamese: "Phổ biến, chiếm ưu thế",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Mô tả một xu hướng lối sống đang bao trùm giới trẻ.",
+    pronunciation: "/ˈprev.əl.ənt/",
+    synonyms: "widespread, prevailing, dominant"
+  },
+  {
+    id: "v319",
+    word: "Segregation",
+    definition: "The enforced separation of different racial, religious, or social groups.",
+    vietnamese: "Sự phân biệt chủng tộc/tách riêng",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Se- (tách ra) + Grex (bầy đàn) -> Ép buộc một nhóm người phải sống tách biệt ra ngoài.",
+    pronunciation: "/ˌseɡ.rɪˈɡeɪ.ʃən/",
+    synonyms: "separation, isolation, partition"
+  },
+  {
+    id: "v320",
+    word: "Stereotype",
+    definition: "A widely held but fixed and oversimplified image or idea of a particular type of person or thing.",
+    vietnamese: "Định kiến, khuôn mẫu",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Đọc giống 'Sờ-te-ri-ô-típ' -> Cái nhìn rập khuôn, thiếu khách quan về một nhóm người.",
+    pronunciation: "/ˈster.i.ə.taɪp/",
+    synonyms: "fixed image, cliché, generalization"
+  },
+  {
+    id: "v321",
+    word: "Acculturation",
+    definition: "Assimilation to a different culture, typically the dominant one.",
+    vietnamese: "Sự tiếp nhận văn hóa mới",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Ad- (vào) + Culture (văn hóa) -> Quá trình học hỏi và tiếp thu các giá trị văn hóa khác.",
+    pronunciation: "/əˌkʌl.tʃəˈreɪ.ʃən/",
+    synonyms: "cultural adaptation, integration"
+  },
+  {
+    id: "v322",
+    word: "Homogeneous",
+    definition: "Consisting of parts or people that are all of the same kind.",
+    vietnamese: "Đồng nhất, giống nhau",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Homo- (giống nhau) + Genos (chủng loại) -> Xã hội có cấu trúc dân cư và văn hóa một màu.",
+    pronunciation: "/ˌhɒm.əˈdʒiː.ni.əs/",
+    synonyms: "uniform, identical, unvaried"
+  },
+  {
+    id: "v323",
+    word: "Heterogeneous",
+    definition: "Diverse in character or content; originative from different sources.",
+    vietnamese: "Đa dạng, hỗn tạp",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Hetero- (khác nhau) + Genos (chủng loại) -> Cộng đồng gồm nhiều sắc dân khác nhau.",
+    pronunciation: "/ˌhet.ər.əˈdʒiː.ni.əs/",
+    synonyms: "varied, diverse, mixed"
+  },
+  {
+    id: "v324",
+    word: "Marginalize",
+    definition: "Treat (a person, group, or concept) as insignificant or peripheral.",
+    vietnamese: "Đẩy ra rìa xã hội, cô lập",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Margin (lề, rìa) -> Đối xử bất công khiến một nhóm người mất đi quyền lực.",
+    pronunciation: "/ˈmɑː.dʒɪ.nəl.aɪz/",
+    synonyms: "isolate, sideline, alienate"
+  },
+  {
+    id: "v325",
+    word: "Multiculturalism",
+    definition: "The presence of, or support for the presence of, several distinct cultural or ethnic groups within a society.",
+    vietnamese: "Chủ nghĩa đa văn hóa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Multi- (nhiều) + Culture (văn hóa) -> Chính sách khuyến khích các văn hóa cùng sống chung.",
+    pronunciation: "/ˌmʌl.tiˈkʌl.tʃər.əl.ɪ.zəm/",
+    synonyms: "pluralism, cultural diversity"
+  },
+  {
+    id: "v326",
+    word: "Sovereignty",
+    definition: "Supreme power or authority; the authority of a state to govern itself.",
+    vietnamese: "Chủ quyền độc lập quốc gia",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Bảo vệ chủ quyền văn hóa trước làn sóng toàn cầu hóa.",
+    pronunciation: "/ˈsɒv.rɪn.ti/",
+    synonyms: "independence, self-government, autonomy"
+  },
+  {
+    id: "v327",
+    word: "Prejudice",
+    definition: "Preconceived opinion that is not based on reason or actual experience.",
+    vietnamese: "Thành kiến, ác cảm",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Pre- (trước) + Judicium (phán xét) -> Đưa ra phán xét tiêu cực về ai đó trước khi hiểu họ.",
+    pronunciation: "/ˈpredʒ.ə.dɪs/",
+    synonyms: "bias, partiality, intolerance"
+  },
+  {
+    id: "v328",
+    word: "Xenophobia",
+    definition: "Dislike of or prejudice against people from other countries.",
+    vietnamese: "Hội chứng sợ/ghét người lạ",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Xenos (người lạ) + Phobia (nỗi sợ) -> Tâm lý bài xích, cực đoan với người nhập cư.",
+    pronunciation: "/ˌzen.əˈfəʊ.bi.ə/",
+    synonyms: "racism, anti-immigrant sentiment"
+  },
+  {
+    id: "v329",
+    word: "Norm",
+    definition: "A standard or pattern, especially of social behavior, that is typical or expected.",
+    vietnamese: "Chuẩn mực xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Normal (bình thường) -> Quy tắc ứng xử ngầm được số đông chấp nhận.",
+    pronunciation: "/nɔːm/",
+    synonyms: "standard, rule, benchmark"
+  },
+  {
+    id: "v330",
+    word: "Ethnocentrism",
+    definition: "Evaluation of other cultures according to preconceptions originating in the standards and customs of one's own culture.",
+    vietnamese: "Thuyết vị chủng",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Ethnos (sắc tộc) + Centrism (trung tâm) -> Coi văn hóa mình là rốn vũ trụ, hạ thấp văn hóa khác.",
+    pronunciation: "/ˌeθ.nəʊˈsen.trɪ.zəm/",
+    synonyms: "cultural pride, cultural chauvinism"
+  },
+  {
+    id: "v331",
+    word: "Assimilation",
+    definition: "The process of taking in and fully understanding information or ideas; absorbing a cultural group into another.",
+    vietnamese: "Sự đồng hóa văn hóa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Danh từ của Assimilate -> Quy trình hòa tan hoàn toàn văn hóa gốc vào nước sở tại.",
+    pronunciation: "/əˌsɪm.ɪˈleɪ.ʃən/",
+    synonyms: "integration, absorption"
+  },
+  {
+    id: "v332",
+    word: "Customary",
+    definition: "According to the customs or usual practices associated with a particular society, place, or set of circumstances.",
+    vietnamese: "Thuộc về phong tục",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Custom (phong tục) -> Hành vi được làm theo thói quen truyền thống lâu đời.",
+    pronunciation: "/ˈkʌs.tə.mər.i/",
+    synonyms: "traditional, conventional, habitual"
+  },
+  {
+    id: "v333",
+    word: "Egalitarian",
+    definition: "Believing in or based on the principle that all people are equal and deserve equal rights and opportunities.",
+    vietnamese: "Bình đẳng xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Áp dụng viết về mô hình xã hội lý tưởng, không giai cấp.",
+    pronunciation: "/ɪˌɡæl.ɪˈteə.ri.ən/",
+    synonyms: "equal, democratic, classless"
+  },
+  {
+    id: "v334",
+    word: "Expatriate",
+    definition: "A person who lives outside their native country.",
+    vietnamese: "Người sống ở nước ngoài",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Ex- (ra ngoài) + Patria (tổ quốc) -> Chuyên gia di chuyển sang quốc gia khác làm việc.",
+    pronunciation: "/ekˈspæt.ri.ət/",
+    synonyms: "migrant worker, emigrant, expat"
+  },
+  {
+    id: "v335",
+    word: "Discourse",
+    definition: "Written or spoken communication or debate on a topic.",
+    vietnamese: "Cuộc đối thoại xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Các cuộc thảo luận công khai về chính sách phúc lợi xã hội.",
+    pronunciation: "/ˈdɪs.kɔːs/",
+    synonyms: "discussion, dialogue, debate"
+  },
+  {
+    id: "v336",
+    word: "Socio-economic",
+    definition: "Relating to or concerned with the interaction of social and economic factors.",
+    vietnamese: "Thuộc kinh tế xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Socio (xã hội) + Economic (kinh tế) -> Các yếu tố định hình tầng lớp công dân.",
+    pronunciation: "/ˌsəʊ.si.əʊˌiː.kəˈnɒm.ɪk/",
+    synonyms: "class-related, social-economic"
+  },
+  {
+    id: "v337",
+    word: "Stratification",
+    definition: "The arrangement or classification of something into different groups or layers.",
+    vietnamese: "Sự phân tầng xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Stratum (tầng, lớp) -> Việc chia xã hội thành các bậc giàu nghèo khác nhau.",
+    pronunciation: "/ˌstræt.ɪ.fɪˈkeɪ.ʃən/",
+    synonyms: "hierarchy, layering, ranking"
+  },
+  {
+    id: "v338",
+    word: "Civic",
+    definition: "Relating to a city or town, especially its administration; municipal or citizen duties.",
+    vietnamese: "Thuộc công dân",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Citizen (công dân) -> Trách nhiệm và quyền lợi của một người với cộng đồng.",
+    pronunciation: "/ˈsɪv.ɪk/",
+    synonyms: "public, municipal, civil"
+  },
+  {
+    id: "v339",
+    word: "Fringe",
+    definition: "The border or outer edges of an area or group; unconventional ideas or groups.",
+    vietnamese: "Nhóm rìa, bên lề",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Đọc giống 'Phờ-rinh' -> Các nhóm tiểu văn hóa nằm ở rìa, không thuộc dòng chính.",
+    pronunciation: "/frɪndʒ/",
+    synonyms: "marginal, peripheral, extreme"
+  },
+  {
+    id: "v340",
+    word: "Peer-pressure",
+    definition: "Influence from members of one's peer group to conform to their behaviors or attitudes.",
+    vietnamese: "Áp lực đồng lứa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Peer (người bằng vai phải lứa) + Pressure (áp lực) -> Tâm lý bắt chước bạn bè xung quanh.",
+    pronunciation: "/ˈpɪəˌpreʃ.ər/",
+    synonyms: "group influence, social pressure"
+  },
+  {
+    id: "v341",
+    word: "Philanthropy",
+    definition: "The desire to promote the welfare of others, expressed especially by the generous donation of money to good causes.",
+    vietnamese: "Lòng bác ái, từ thiện",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Philo- (yêu thương) + Anthropos (con người) -> Hành động quyên góp tài sản giúp xã hội.",
+    pronunciation: "/fɪˈlæn.θrə.pi/",
+    synonyms: "charity, benevolence, altruism"
+  },
+  {
+    id: "v342",
+    word: "Demographic",
+    definition: "Relating to the structure of populations.",
+    vietnamese: "Thuộc nhân khẩu học",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Thuộc về các chỉ số đo lường đặc điểm dân cư.",
+    pronunciation: "/ˌdem.əˈɡræf.ɪk/",
+    synonyms: "population-related"
+  },
+  {
+    id: "v343",
+    word: "Desecrate",
+    definition: "Treat (a sacred place or thing) with violent disrespect; violate.",
+    vietnamese: "Mạo phạm di sản/nơi thiêng",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "De- (ngược) + Sacred (thiêng liêng) -> Hành vi hủy hoại các di tích văn hóa lịch sử.",
+    pronunciation: "/ˈdes.ɪ.kreɪt/",
+    synonyms: "defile, violate, profane"
+  },
+  {
+    id: "v344",
+    word: "Preservationist",
+    definition: "A person who advocates for the conservation of historic buildings, arts, or natural environments.",
+    vietnamese: "Nhà bảo tồn văn hóa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Preserve -> Người đấu tranh giữ gìn các kiến trúc cũ không bị đập phá.",
+    pronunciation: "/ˌprez.əˈveɪ.ʃən.ɪst/",
+    synonyms: "conservator, protectionist"
+  },
+  {
+    id: "v345",
+    word: "Wholly",
+    definition: "Entirely; fully.",
+    vietnamese: "Hoàn toàn",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Nhấn mạnh một lối sống bị ảnh hưởng hoàn toàn bởi phương Tây.",
+    pronunciation: "/ˈhəʊl.li/",
+    synonyms: "completely, fully, entirely"
+  },
+  {
+    id: "v346",
+    word: "Anomie",
+    definition: "Lack of the usual social or ethical standards in an individual or group.",
+    vietnamese: "Tình trạng vô chuẩn mực",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "A- (không) + Nomos (luật) -> Trạng thái khủng hoảng tâm lý xã hội khi các quy tắc bị vỡ.",
+    pronunciation: "/ˈæn.ə.mi/",
+    synonyms: "lawlessness, normlessness, instability"
+  },
+  {
+    id: "v347",
+    word: "Cohesion",
+    definition: "The action or fact of forming a united whole; togetherness.",
+    vietnamese: "Sự gắn kết xã hội",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Cohere (dính nhau) -> Tinh thần đoàn kết, đồng lòng giữa các thành viên xã hội.",
+    pronunciation: "/kəʊˈhiː.ʒən/",
+    synonyms: "unity, togetherness, solidarity"
+  },
+  {
+    id: "v348",
+    word: "Heritage-listed",
+    definition: "Officially recognized as having historic or cultural significance and protected from demolition.",
+    vietnamese: "Được xếp hạng di sản",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Heritage (di sản) + Listed (lên danh sách) -> Các tòa nhà cổ được pháp luật bảo vệ.",
+    pronunciation: "/ˈher.ɪ.tɪdʒˌlɪs.tɪd/",
+    synonyms: "protected, landmark-designated"
+  },
+  {
+    id: "v349",
+    word: "Globalized",
+    definition: "Developed or operating on an international scale; influenced by global trade and media.",
+    vietnamese: "Toàn cầu hóa",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Dạng tính từ của Globalization -> Thế giới phẳng, các quốc gia có chung lối sống.",
+    pronunciation: "/ˈɡləʊ.bəl.aɪzd/",
+    synonyms: "westernized, internationalized"
+  },
+  {
+    id: "v350",
+    word: "Tangible",
+    definition: "Perceptible by touch; physical or concrete.",
+    vietnamese: "Vật thể, hữu hình",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Kết hợp với văn hóa để chỉ các di tích như đình, chùa, cung điện.",
+    pronunciation: "/ˈtæn.dʒə.bəl/",
+    synonyms: "physical, concrete, touchable"
+  },
+  {
+    id: "v351",
+    word: "Intangible",
+    definition: "Unable to be touched or grasped; not having physical presence.",
+    vietnamese: "Phi vật thể, vô hình",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "In- (không) + Tangible (vật thể) -> Các giá trị như nhã nhạc, quan họ, phong tục tập quán.",
+    pronunciation: "/ɪnˈtæn.dʒə.bəl/",
+    synonyms: "non-physical, abstract, spiritual"
+  },
+  {
+    id: "v352",
+    word: "Folklore",
+    definition: "The traditional beliefs, customs, and stories of a community, passed through generations by word of mouth.",
+    vietnamese: "Văn hóa dân gian",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Folk (người dân) + Lore (tri thức) -> Các câu chuyện truyền thuyết, ca dao lưu truyền.",
+    pronunciation: "/ˈfəʊk.lɔːr/",
+    synonyms: "traditions, mythology, lore"
+  },
+  {
+    id: "v353",
+    word: "Embody",
+    definition: "Be an expression of or give a tangible form to an idea or quality.",
+    vietnamese: "Hiện thân cho, đại diện",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Em- (vào) + Body (cơ thể) -> Đưa một giá trị tinh thần trừu tượng hiện hình rõ ràng.",
+    pronunciation: "/ɪmˈbɒd.i/",
+    synonyms: "represent, personify, exemplify"
+  },
+  {
+    id: "v354",
+    word: "Generational",
+    definition: "Relating to or characteristic of a particular generation.",
+    vietnamese: "Thuộc thế hệ",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Generation (thế hệ) -> Khoảng cách suy nghĩ giữa các lứa tuổi trong nhà.",
+    pronunciation: "/ˌdʒen.əˈreɪ.ʃən.əl/",
+    synonyms: "age-related, age-gap"
+  },
+  {
+    id: "v355",
+    word: "Kinship",
+    definition: "Blood relationship; a sharing of characteristics or origins.",
+    vietnamese: "Tình thân tộc, họ hàng",
+    category: "Society & Culture",
+    categoryEmoji: "🏛️",
+    memoryHook: "Gốc từ Kin (họ hàng) -> Mối quan hệ máu mủ, gắn bó chặt chẽ trong cấu trúc gia đình xưa.",
+    pronunciation: "/ˈkɪn.ʃɪp/",
+    synonyms: "family ties, blood relations"
+  },
+
+  // TOPIC 6: HEALTH & WELL-BEING
+  {
+    id: "v356",
+    word: "Acute",
+    definition: "(Of a disease or health issue) severe and sudden in onset; short-term but intense.",
+    vietnamese: "Cấp tính (bệnh)",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Chỉ những đợt đau dữ dội hoặc khủng hoảng sức khỏe ngắn hạn.",
+    pronunciation: "/əˈkjuːt/",
+    synonyms: "severe, critical, sudden"
+  },
+  {
+    id: "v357",
+    word: "Chronic",
+    definition: "(Of an illness) persisting for a long time or constantly recurring.",
+    vietnamese: "Mãn tính, kéo dài",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Chỉ những căn bệnh đeo đẳng như tiểu đường, béo phì, tim mạch.",
+    pronunciation: "/ˈkrɒn.ɪk/",
+    synonyms: "long-term, persistent, lingering"
+  },
+  {
+    id: "v358",
+    word: "Deficiency",
+    definition: "A lack or shortage of something, especially an essential nutrient in the body.",
+    vietnamese: "Sự thiếu hụt chất",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Viết về việc suy dinh dưỡng do thiếu hụt vitamin trong khẩu phần.",
+    pronunciation: "/dɪˈfɪʃ.ən.si/",
+    synonyms: "shortage, lack, inadequacy"
+  },
+  {
+    id: "v359",
+    word: "Epidemic",
+    definition: "A widespread occurrence of an infectious disease in a community at a particular time.",
+    vietnamese: "Trận dịch bệnh lớn",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Có thể dùng ẩn dụ cho 'nạn béo phì' toàn cầu.",
+    pronunciation: "/ˌep.ɪˈdem.ɪk/",
+    synonyms: "outbreak, plague, surge"
+  },
+  {
+    id: "v360",
+    word: "Sedentary",
+    definition: "(Of a person or lifestyle) tending to spend much time seated; somewhat inactive.",
+    vietnamese: "Thụ động, ít vận động",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Phê phán lối sống chỉ ngồi trước màn hình của dân văn phòng.",
+    pronunciation: "/ˈsed.ən.tər.i/",
+    synonyms: "inactive, seated, desk-bound"
+  },
+  {
+    id: "v361",
+    word: "Well-being",
+    definition: "The state of being comfortable, healthy, or happy.",
+    vietnamese: "Trạng thái hạnh phúc, khỏe mạnh",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Well (tốt) + Being (sự tồn tại) -> Chất lượng cuộc sống cả về thể chất lẫn tinh thần.",
+    pronunciation: "/ˌwelˈbiː.ɪŋ/",
+    synonyms: "welfare, health, happiness"
+  },
+  {
+    id: "v362",
+    word: "Alleviate",
+    definition: "Make (suffering, deficiency, or a problem) less severe.",
+    vietnamese: "Làm dịu bớt, xoa dịu",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Bác sĩ dùng thuốc để giảm bớt cơn đau cho bệnh nhân.",
+    pronunciation: "/əˈliː.vi.eɪt/",
+    synonyms: "relieve, ease, soothe, lessen"
+  },
+  {
+    id: "v363",
+    word: "Anxiety",
+    definition: "A feeling of worry, nervousness, or unease, typically about an imminent event or something with an uncertain outcome.",
+    vietnamese: "Chứng lo âu, bồn chồn",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Gốc từ Anxious (lo lắng) -> Trạng thái tinh thần bất ổn do áp lực cuộc sống hiện đại.",
+    pronunciation: "/æŋˈzaɪ.ə.ti/",
+    synonyms: "worry, apprehension, distress"
+  },
+  {
+    id: "v364",
+    word: "Appetite",
+    definition: "A natural desire to satisfy a bodily need, especially for food.",
+    vietnamese: "Sự ngon miệng, thèm ăn",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc là 'Ap-pê-tít' -> Hệ tiêu hóa tốt giúp bạn ăn ngon phê tít mắt.",
+    pronunciation: "/ˈæp.ə.taɪt/",
+    synonyms: "hunger, craving, relish"
+  },
+  {
+    id: "v365",
+    word: "Nutritious",
+    definition: "Efficient as food; nourishing and healthy.",
+    vietnamese: "Giàu dinh dưỡng",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Gốc từ Nutrition -> Thực phẩm cung cấp đầy đủ các chất thiết yếu cho cơ thể.",
+    pronunciation: "/njuːˈtrɪʃ.əs/",
+    synonyms: "nourishing, wholesome, healthy"
+  },
+  {
+    id: "v366",
+    word: "Immunity",
+    definition: "The ability of an organism to resist a particular infection or toxin by the action of specific antibodies.",
+    vietnamese: "Hệ miễn dịch, sức đề kháng",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Gốc từ Immune -> Khả năng tự vệ của cơ thể trước sự tấn công của virus.",
+    pronunciation: "/ɪˈmjuː.nə.ti/",
+    synonyms: "resistance, protection, defense"
+  },
+  {
+    id: "v367",
+    word: "Therapy",
+    definition: "Treatment intended to relieve or heal a disorder or medical condition.",
+    vietnamese: "Liệu pháp điều trị tâm lý/thể chất",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc giống 'Thở-ra-đi' -> Đến gặp bác sĩ tâm lý để trút bỏ gánh nặng, thở ra nhẹ nhõm.",
+    pronunciation: "/ˈθer.ə.pi/",
+    synonyms: "treatment, counseling, healing"
+  },
+  {
+    id: "v368",
+    word: "Trauma",
+    definition: "A deeply distressing or disturbing experience or emotional injury.",
+    vietnamese: "Chấn thương tâm lý/thể xác",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc giống 'Trâu-mả' -> Bị trâu húc phải ra mã để lại nỗi sợ hãi chấn thương lâu dài.",
+    pronunciation: "/ˈtrɔː.mə/",
+    synonyms: "shock, wound, emotional injury"
+  },
+  {
+    id: "v369",
+    word: "Deteriorate",
+    definition: "Become progressively worse.",
+    vietnamese: "Suy giảm, xấu đi",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Sức khỏe bệnh nhân sụt giảm nghiêm trọng do tuổi tác.",
+    pronunciation: "/dɪˈtɪə.ri.ə.reɪt/",
+    synonyms: "worsen, decline, degenerate"
+  },
+  {
+    id: "v370",
+    word: "Cognitive",
+    definition: "Relating to cognition; concerned with the act or process of knowing, perceiving, etc.",
+    vietnamese: "Thuộc trí tuệ/nhận thức",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Sự suy giảm trí nhớ ở người già (bệnh Alzheimer).",
+    pronunciation: "/ˈkɒɡ.nə.tɪv/",
+    synonyms: "mental, intellectual, perceptual"
+  },
+  {
+    id: "v371",
+    word: "Disorder",
+    definition: "An illness that disrupts normal physical or mental functions.",
+    vietnamese: "Sự rối loạn chức năng",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Dis- (ngược) + Order (trật tự) -> Cơ thể bị mất trật tự vận hành -> Bệnh lý.",
+    pronunciation: "/dɪsˈɔː.dər/",
+    synonyms: "illness, ailment, condition"
+  },
+  {
+    id: "v372",
+    word: "Pathogen",
+    definition: "A bacterium, virus, or other microorganism that can cause disease.",
+    vietnamese: "Mầm bệnh, kháng nguyên",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Pathos (bệnh tật) + Genis (sinh ra) -> Tác nhân trực tiếp sinh ra bệnh truyền nhiễm.",
+    pronunciation: "/ˈpæθ.ə.dʒən/",
+    synonyms: "germ, virus, bacterium, microbe"
+  },
+  {
+    id: "v373",
+    word: "Predisposition",
+    definition: "A liability to a specified disease, condition, or action.",
+    vietnamese: "Tình trạng dễ mắc bệnh bẩm sinh",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Pre- (trước) + Dispose (sắp đặt) -> Cơ địa đã được sắp đặt sẵn từ gen là dễ đổ bệnh.",
+    pronunciation: "/ˌpriː.dɪs.pəˈzɪʃ.ən/",
+    synonyms: "susceptibility, inclination, tendency"
+  },
+  {
+    id: "v374",
+    word: "Malnutrition",
+    definition: "Lack of proper nutrition, caused by not having enough to eat or not eating the right things.",
+    vietnamese: "Nạn suy dinh dưỡng",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Mal- (xấu/sai) + Nutrition (dinh dưỡng) -> Ăn uống sai cách, thiếu chất trầm trọng.",
+    pronunciation: "/ˌmæl.njuːˈtrɪʃ.ən/",
+    synonyms: "undernourishment, starvation"
+  },
+  {
+    id: "v375",
+    word: "Metabolism",
+    definition: "The chemical processes that occur within a living organism in order to maintain life.",
+    vietnamese: "Sự trao đổi chất",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc giống 'Mẹ-ta-bảo-săm' -> Mẹ bảo xăm mình giúp tăng tốc độ trao đổi chất đốt mỡ.",
+    pronunciation: "/məˈtæb.əl.ɪ.zəm/",
+    synonyms: "energy conversion, metabolic rate"
+  },
+  {
+    id: "v376",
+    word: "Longevity",
+    definition: "Long life or long existence.",
+    vietnamese: "Sự trường thọ, tuổi thọ",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Long- (dài) + Aevum (tuổi tác) -> Sống thọ nhờ thói quen sinh hoạt lành mạnh.",
+    pronunciation: "/lɒnˈdʒev.ə.ti/",
+    synonyms: "life expectancy, long life"
+  },
+  {
+    id: "v377",
+    word: "Prognosis",
+    definition: "The likely course of a medical condition or disease.",
+    vietnamese: "Tiên lượng bệnh",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Pro- (trước) + Gnosis (kiến thức) -> Nhận thức trước về khả năng hồi phục của bệnh nhân.",
+    pronunciation: "/prɒɡˈnəʊ.sɪs/",
+    synonyms: "medical forecast, outlook"
+  },
+  {
+    id: "v378",
+    word: "Physique",
+    definition: "The form, size, and development of a person's body.",
+    vietnamese: "Vóc dáng thể chất",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc giống 'Phí-thì-vứt' -> Tập luyện để có vóc dáng đẹp, đừng lười biếng phí thì vứt.",
+    pronunciation: "/fɪˈziːk/",
+    synonyms: "body shape, build, figure"
+  },
+  {
+    id: "v379",
+    word: "Hygiene",
+    definition: "Conditions or practices conducive to maintaining health and preventing disease, especially through cleanliness.",
+    vietnamese: "Vệ sinh cá nhân",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc giống 'Hai-gìn' (Hai tay giữ gìn) -> Giữ gìn đôi tay sạch sẽ để bảo vệ vệ sinh.",
+    pronunciation: "/ˈhaɪ.dʒiːn/",
+    synonyms: "cleanliness, sanitation"
+  },
+  {
+    id: "v380",
+    word: "Combat",
+    definition: "Take action to reduce or prevent (something bad or undesirable).",
+    vietnamese: "Chiến đấu, ngăn chặn",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Đọc như 'Cơm-bát' -> Ăn cơm đầy bát để có sức chiến đấu chống lại bệnh tật.",
+    pronunciation: "/ˈkɒm.bæt/",
+    synonyms: "fight, counter, tackle"
+  },
+  {
+    id: "v381",
+    word: "Cumulative",
+    definition: "Increasing or increased in quantity, degree, or force by successive additions.",
+    vietnamese: "Tích lũy dồn dập",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Các tác hại chồng chất của việc hút thuốc lá trong nhiều năm.",
+    pronunciation: "/ˈkjuː.mjə.lə.tɪv/",
+    synonyms: "accumulated, progressive, growing"
+  },
+  {
+    id: "v382",
+    word: "Inherent",
+    definition: "Existing in something as a permanent, essential, or characteristic attribute.",
+    vietnamese: "Luôn đi kèm, cố hữu",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Các tác dụng phụ luôn đi kèm với việc hóa trị liệu.",
+    pronunciation: "/ɪnˈhɪə.rənt/",
+    synonyms: "intrinsic, innate, essential"
+  },
+  {
+    id: "v383",
+    word: "Syndrome",
+    definition: "A group of symptoms which consistently occur together, or a condition characterized by a set of associated symptoms.",
+    vietnamese: "Hội chứng bệnh",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Syn- (cùng nhau) + Dromos (chạy) -> Các triệu chứng cùng chạy ra một lúc tạo thành bệnh.",
+    pronunciation: "/ˈsɪn.drəʊm/",
+    synonyms: "condition, disorder, set of symptoms"
+  },
+  {
+    id: "v384",
+    word: "Sedentary-related",
+    definition: "Caused by or associated with a lack of physical activity.",
+    vietnamese: "Liên quan đến ít vận động",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Sedentary (ngồi một chỗ) + Related (liên quan) -> Bệnh do lười di chuyển gây ra.",
+    pronunciation: "/ˈsed.ən.tər.i rɪˈleɪ.tɪd/",
+    synonyms: "inactivity-caused"
+  },
+  {
+    id: "v385",
+    word: "Epidemiology",
+    definition: "The branch of medicine which deals with the incidence, distribution, and possible control of diseases.",
+    vietnamese: "Dịch tễ học",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ nâng cao của Epidemic -> Ngành khoa học nghiên cứu sự lây lan của dịch bệnh.",
+    pronunciation: "/ˌep.ɪ.diː.miˈɒl.ə.dʒi/",
+    synonyms: "disease study, disease tracking"
+  },
+  {
+    id: "v386",
+    word: "Deficient",
+    definition: "Not having enough of a specified quality or ingredient.",
+    vietnamese: "Thiếu hụt chất",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Dạng tính từ của Deficiency -> Cơ thể không được cung cấp đủ một dinh dưỡng nào đó.",
+    pronunciation: "/dɪˈfɪʃ.ənt/",
+    synonyms: "lacking, inadequate, short"
+  },
+  {
+    id: "v387",
+    word: "Alleviation",
+    definition: "The action of making suffering, deficiency, or a problem less severe.",
+    vietnamese: "Sự giảm bớt cơn đau",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ của Alleviate -> Quy trình làm dịu đi những đau đớn thể xác.",
+    pronunciation: "/əˌliː.viˈeɪ.ʃən/",
+    synonyms: "relief, easing, mitigation"
+  },
+  {
+    id: "v388",
+    word: "Adverse-effect",
+    definition: "An harmful or undesired secondary effect of a medication or medical treatment.",
+    vietnamese: "Tác dụng phụ có hại",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Adverse (bất lợi) + Effect (ảnh hưởng) -> Phản ứng nguy hiểm của cơ thể với thuốc.",
+    pronunciation: "/ˈæd.vɜːs ɪˈfekt/",
+    synonyms: "side-effect, harmful reaction"
+  },
+  {
+    id: "v389",
+    word: "Nutrient-dense",
+    definition: "Food that is high in nutrients but relatively low in calories.",
+    vietnamese: "Dồi dào chất dinh dưỡng",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Nutrient (chất) + Dense (đặc, dày) -> Thực phẩm có mật độ dinh dưỡng cực cao.",
+    pronunciation: "/ˈnjuː.tri.ənt dens/",
+    synonyms: "superfood, highly nutritious"
+  },
+  {
+    id: "v390",
+    word: "Psychological",
+    definition: "Relating to the mental and emotional state of a person.",
+    vietnamese: "Thuộc về tâm lý",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Gốc từ Psychology (tâm lý học) -> Các yếu tố định hình trạng thái tinh thần.",
+    pronunciation: "/ˌsaɪ.kəlˈɒdʒ.ɪ.kəl/",
+    synonyms: "mental, emotional"
+  },
+  {
+    id: "v391",
+    word: "Therapist",
+    definition: "A person trained in the use of physical or mental therapy.",
+    vietnamese: "Bác sĩ trị liệu",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ chỉ người của Therapy -> Chuyên gia tư vấn giải tỏa các sang chấn tâm lý.",
+    pronunciation: "/ˈθer.ə.pɪst/",
+    synonyms: "counselor, psychologist, practitioner"
+  },
+  {
+    id: "v392",
+    word: "Traumatic",
+    definition: "Deeply disturbing or distressing; causing emotional shock.",
+    vietnamese: "Gây chấn thương tinh thần",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Dạng tính từ của Trauma -> Trải nghiệm kinh hoàng để lại vết sẹo tâm lý lớn.",
+    pronunciation: "/trɔːˈmæt.ɪk/",
+    synonyms: "shocking, distressing, harrowing"
+  },
+  {
+    id: "v393",
+    word: "Deterioration",
+    definition: "The process of becoming progressively worse.",
+    vietnamese: "Sự sụt giảm sức khỏe",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ của Deteriorate -> Quá trình thể chất ngày càng suy yếu, tồi tệ đi.",
+    pronunciation: "/dɪˌtɪə.ri.əˈreɪ.ʃən/",
+    synonyms: "worsening, decline, decay"
+  },
+  {
+    id: "v394",
+    word: "Cognition",
+    definition: "The mental action or process of acquiring knowledge and understanding through thought, experience, and the senses.",
+    vietnamese: "Năng lực nhận thức",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ của Cognitive -> Khả năng tư duy, xử lý thông tin của bộ não con người.",
+    pronunciation: "/kɒɡˈnɪʃ.ən/",
+    synonyms: "mental capacity, awareness, perception"
+  },
+  {
+    id: "v395",
+    word: "Eradication",
+    definition: "The complete destruction of something, especially a disease or pest.",
+    vietnamese: "Sự xóa sổ dịch bệnh",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ của Eradicate -> Chiến dịch quét sạch hoàn toàn một mầm bệnh khỏi thế giới.",
+    pronunciation: "/ɪˌræd.ɪˈkeɪ.ʃən/",
+    synonyms: "elimination, extermination, wiping out"
+  },
+  {
+    id: "v396",
+    word: "Sovereign",
+    definition: "(Of a cure or remedy) effective, powerful, or supreme.",
+    vietnamese: "Tối cao, cực kỳ hiệu quả",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Nghĩa cổ là vua -> Nghĩa y tế hiện đại chỉ một phương thuốc có quyền năng chữa dứt điểm bệnh.",
+    pronunciation: "/ˈsɒv.rɪn/",
+    synonyms: "supreme, ultimate, paramount"
+  },
+  {
+    id: "v397",
+    word: "Inherent-risk",
+    definition: "A danger that naturally belongs to a procedure or treatment.",
+    vietnamese: "Rủi ro tiềm ẩn vốn có",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Inherent (vốn có) + Risk (rủi ro) -> Nguy hiểm không thể tách rời khỏi ca phẫu thuật.",
+    pronunciation: "/ɪnˈhɪə.rənt rɪsk/",
+    synonyms: "intrinsic danger, embedded threat"
+  },
+  {
+    id: "v398",
+    word: "Wellness",
+    definition: "The state of being in good health, especially as an actively pursued goal.",
+    vietnamese: "Lối sống khỏe toàn diện",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Gốc từ Well -> Xu hướng chủ động chăm sóc bản thân để ngăn ngừa bệnh tật.",
+    pronunciation: "/ˈwel.nəs/",
+    synonyms: "healthy living, holistic health"
+  },
+  {
+    id: "v399",
+    word: "Imminent-threat",
+    definition: "A danger that is likely to happen very soon.",
+    vietnamese: "Mối đe dọa cận kề",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Imminent (sắp xảy ra) + Threat (hiểm họa) -> Nguy cơ bùng phát dịch bệnh rất lớn.",
+    pronunciation: "/ˈɪm.ɪ.nənt θret/",
+    synonyms: "impending danger, looming threat"
+  },
+  {
+    id: "v400",
+    word: "Prevalence-rate",
+    definition: "The proportion of a population that has a specific condition or disease at a given point in time.",
+    vietnamese: "Tỷ lệ mắc bệnh phổ biến",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Prevalence (sự tràn lan) + Rate (tỷ lệ) -> Chỉ số đo lường số ca nhiễm trong dân cư.",
+    pronunciation: "/ˈprev.əl.əns reɪt/",
+    synonyms: "frequency, disease occurrence rate"
+  },
+  {
+    id: "v401",
+    word: "Feasibility",
+    definition: "The state or degree of being easily or conveniently done.",
+    vietnamese: "Tính khả thi của phác đồ",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Danh từ của Feasible -> Khả năng một phương pháp điều trị có thể thực hiện thành công.",
+    pronunciation: "/ˌfiː.zəˈbɪl.ə.ti/",
+    synonyms: "viability, practicability"
+  },
+  {
+    id: "v402",
+    word: "Prognostic",
+    definition: "Serving to predict the likely course of a medical condition.",
+    vietnamese: "Thuộc về tiên lượng bệnh",
+    category: "Health & Well-being",
+    categoryEmoji: "🩺",
+    memoryHook: "Dạng tính từ của Prognosis -> Các dấu hiệu giúp đưa ra dự đoán về tương lai sức khỏe.",
+    pronunciation: "/prɒɡˈnɒs.tɪk/",
+    synonyms: "predictive, foretelling"
+  },
+
+  // TOPIC 7: ENTERTAINMENT & MEDIA
+  {
+    id: "v403",
+    word: "Aesthetic",
+    definition: "Concerned with beauty or the appreciation of beauty, especially in art or media.",
+    vietnamese: "Thuộc về thẩm mỹ nghệ thuật",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Phân tích vẻ đẹp của một bộ phim hoặc bức tranh nghệ thuật.",
+    pronunciation: "/esˈθet.ɪk/",
+    synonyms: "artistic, creative, tasteful"
+  },
+  {
+    id: "v404",
+    word: "Anticipate",
+    definition: "Regard as probable; expect or look forward to with excitement.",
+    vietnamese: "Chờ đợi, mong đợi",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Đọc là 'Ăn-ti-si-pết' -> Khán giả ăn tí bánh ngọt ngồi chờ đợi bộ phim bom tấn ra rạp.",
+    pronunciation: "/ænˈtɪs.ɪ.peɪt/",
+    synonyms: "expect, await, look forward to"
+  },
+  {
+    id: "v405",
+    word: "Coverage",
+    definition: "The treatment of an issue, event, or news story by the media.",
+    vietnamese: "Việc đưa tin của báo chí",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Cover (bao phủ) -> Mức độ phủ sóng của một tin tức trên các phương tiện truyền thông.",
+    pronunciation: "/ˈsʌv.ər.ɪdʒ/",
+    synonyms: "reporting, broadcasting, exposure"
+  },
+  {
+    id: "v406",
+    word: "Depict",
+    definition: "Represent or show by a drawing, painting, or other art form; portray in words.",
+    vietnamese: "Khắc họa, mô tả nhân vật",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "De- (xuống) + Pict (bức tranh) -> Dùng ngôn từ hoặc diễn xuất để vẽ nên hình tượng nhân vật.",
+    pronunciation: "/dɪˈpɪkt/",
+    synonyms: "portray, represent, illustrate"
+  },
+  {
+    id: "v407",
+    word: "Distort",
+    definition: "Give a misleading or false account or impression of; twist out of shape.",
+    vietnamese: "Bóp méo (sự thật/thông tin)",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Nghe như 'Đi-tòa' -> Hành động bóp méo thông tin làm sai lệch sự thật có ngày phải đi tòa.",
+    pronunciation: "/dɪˈstɔːt/",
+    synonyms: "twist, misrepresent, slant"
+  },
+  {
+    id: "v408",
+    word: "Evoke",
+    definition: "Bring or recall a feeling, memory, or image to the conscious mind.",
+    vietnamese: "Gợi lên cảm xúc mạnh",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Một bài hát hoặc bộ phim khơi dậy nỗi nhớ quê hương cho người xem.",
+    pronunciation: "/iˈvəʊk/",
+    synonyms: "arouse, awaken, kindle"
+  },
+  {
+    id: "v409",
+    word: "Influential",
+    definition: "Having great influence on someone or something.",
+    vietnamese: "Có sức ảnh hưởng lớn",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Influence -> Các kênh truyền thông định hình sâu sắc tư duy công chúng.",
+    pronunciation: "/ˌɪn.fluˈen.ʃəl/",
+    synonyms: "powerful, dominant, impactful"
+  },
+  {
+    id: "v410",
+    word: "Mainstream",
+    definition: "Belonging to or characteristic of the dominant trend in opinion or style.",
+    vietnamese: "Chính thống, đại chúng",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Main (chính) + Stream (dòng chảy) -> Luồng văn hóa/báo chí được đại đa số đón nhận.",
+    pronunciation: "/ˈmeɪn.striːm/",
+    synonyms: "conventional, dominant, widespread"
+  },
+  {
+    id: "v411",
+    word: "Publicity",
+    definition: "Notice or attention given to someone or something by the media.",
+    vietnamese: "Sự công khai thu hút chú ý",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Public (công chúng) -> Chiến dịch truyền thông làm cho thương hiệu nổi tiếng.",
+    pronunciation: "/pʌbˈlɪs.ə.ti/",
+    synonyms: "media attention, promotion, exposure"
+  },
+  {
+    id: "v412",
+    word: "Thought-provoking",
+    definition: "Stimulating careful consideration or attention.",
+    vietnamese: "Đáng suy ngẫm, sâu sắc",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Thought (suy nghĩ) + Provoke (kích thích) -> Tác phẩm nghệ thuật khơi gợi tư duy sâu.",
+    pronunciation: "/ˈθɔːt.prəˌvəʊ.kɪŋ/",
+    synonyms: "inspiring, stimulating, profound"
+  },
+  {
+    id: "v413",
+    word: "Censorship",
+    definition: "The suppression or prohibition of any parts of books, films, news, etc. that are considered obscene, politically unacceptable, or a threat to security.",
+    vietnamese: "Sự kiểm duyệt nội dung",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Censor (người kiểm duyệt) -> Việc cắt bỏ phần nhạy cảm trong phim ảnh/báo chí.",
+    pronunciation: "/ˈsen.sə.ʃɪp/",
+    synonyms: "restriction, suppression, control"
+  },
+  {
+    id: "v414",
+    word: "Propaganda",
+    definition: "Information, especially of a biased or misleading nature, used to promote a political cause or point of view.",
+    vietnamese: "Sự tuyên truyền chính trị",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Đọc giống 'Prô-pa-gân-đơ' -> Chiến dịch dùng loa đài phát thanh tuyên truyền rầm rộ.",
+    pronunciation: "/ˌprɒp.əˈɡæn.də/",
+    synonyms: "promotion, indoctrination, publicity"
+  },
+  {
+    id: "v415",
+    word: "Sensationalism",
+    definition: "(Especially in journalism) the use of exciting or shocking stories or language at the expense of accuracy, in order to provoke public interest or excitement.",
+    vietnamese: "Xu hướng giật gân (báo chí)",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Sensation (sự giật gân) -> Kiểu viết báo lá cải dùng tiêu đề sốc để câu view.",
+    pronunciation: "/senˈseɪ.ʃən.əl.ɪ.zəm/",
+    synonyms: "hype, sensational reporting, exaggeration"
+  },
+  {
+    id: "v416",
+    word: "Broadcaster",
+    definition: "An organization or person that transmits a program or news by radio or television.",
+    vietnamese: "Đài phát thanh/truyền hình",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Broad (rộng) + Cast (phát tín hiệu) -> Đơn vị chịu trách nhiệm sản xuất chương trình.",
+    pronunciation: "/ˈbrɔːd.kɑː.stər/",
+    synonyms: "network, TV channel, media group"
+  },
+  {
+    id: "v417",
+    word: "Commercialized",
+    definition: "Managed or exploitation in a way designed to make a profit.",
+    vietnamese: "Thương mại hóa",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Commerce (thương mại) -> Nghệ thuật bị biến thành công cụ chạy theo tiền bạc.",
+    pronunciation: "/kəˈmɜː.ʃəl.aɪzd/",
+    synonyms: "profit-driven, market-oriented"
+  },
+  {
+    id: "v418",
+    word: "Endorse",
+    definition: "Declare one's public approval or support of (a product or brand in exchange for payment).",
+    vietnamese: "Quảng cáo, đại diện thương hiệu",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Người nổi tiếng nhận tiền để đứng ra khen ngợi sản phẩm.",
+    pronunciation: "/ɪnˈdɔːs/",
+    synonyms: "support, back, sponsor, promote"
+  },
+  {
+    id: "v419",
+    word: "Infotainment",
+    definition: "Broadcast material which is intended both to entertain and to inform.",
+    vietnamese: "Truyền hình thực tế giải trí",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Information (thông tin) + Entertainment (giải trí) -> Chương trình nửa học nửa chơi.",
+    pronunciation: "/ˌɪn.fəʊˈteɪn.mənt/",
+    synonyms: "soft news, edutainment"
+  },
+  {
+    id: "v420",
+    word: "Obscure",
+    definition: "Not discovered or known about; uncertain or hard to understand.",
+    vietnamese: "Ít người biết / Che khuất",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Đọc như 'Ốp-sờ-cu-ơ' -> Bộ phim nghệ thuật sâu sắc quá nên chỉ có một nhóm nhỏ hiểu.",
+    pronunciation: "/əbˈskjʊər/",
+    synonyms: "little-known, hidden, cryptic"
+  },
+  {
+    id: "v421",
+    word: "Plausible",
+    definition: "(Of an argument or statement) seeming reasonable or probable.",
+    vietnamese: "Nghe có vẻ hợp lý",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Một kịch bản phim logic, thuyết phục người xem.",
+    pronunciation: "/ˈplɔː.zə.bəl/",
+    synonyms: "believable, credible, logical"
+  },
+  {
+    id: "v422",
+    word: "Ubiquitous",
+    definition: "Present, appearing, or found everywhere.",
+    vietnamese: "Tràn lan khắp nơi",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Sự hiện diện của quảng cáo ở mọi góc phố và ứng dụng điện thoại.",
+    pronunciation: "/juːˈbɪk.wɪ.təs/",
+    synonyms: "everywhere, omnipresent, pervasive"
+  },
+  {
+    id: "v423",
+    word: "Unprecedented",
+    definition: "Never done or known before.",
+    vietnamese: "Chưa từng có tiền lệ",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Tốc độ lan truyền thông tin chóng mặt của một clip viral trên mạng.",
+    pronunciation: "/unˈpres.ɪ.den.tɪd/",
+    synonyms: "unparalleled, extraordinary, novel"
+  },
+  {
+    id: "v424",
+    word: "Viable",
+    definition: "Capable of working successfully; feasible.",
+    vietnamese: "Khả thi kinh tế",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Mô hình báo điện tử thu phí người đọc có thể sống sót được hay không.",
+    pronunciation: "/ˈvaɪ.ə.bəl/",
+    synonyms: "feasible, sustainable, workable"
+  },
+  {
+    id: "v425",
+    word: "Outstrip",
+    definition: "Exceed or overtake in quantity, speed, or quality.",
+    vietnamese: "Vượt xa (về lượt xem)",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Số lượng người xem truyền hình số vượt xa truyền hình cáp truyền thống.",
+    pronunciation: "/ˌaʊtˈstrɪp/",
+    synonyms: "surpass, exceed, outperform"
+  },
+  {
+    id: "v426",
+    word: "Empower",
+    definition: "Give (someone) the authority or power to do something or make them feel stronger and more confident.",
+    vietnamese: "Trao quyền năng truyền thông",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Báo chí độc lập giúp người dân lên tiếng nói bảo vệ quyền lợi.",
+    pronunciation: "/ɪmˈpaʊər/",
+    synonyms: "enable, authorize, strengthen"
+  },
+  {
+    id: "v427",
+    word: "Anticipation",
+    definition: "The action of anticipating something; expectation or excitement.",
+    vietnamese: "Sự mong đợi của khán giả",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Anticipate -> Không khí háo hức trước đêm nhạc của ngôi sao lớn.",
+    pronunciation: "/ænˌtɪs.ɪˈpeɪ.ʃən/",
+    synonyms: "expectation, suspense, excitement"
+  },
+  {
+    id: "v428",
+    word: "Distortion",
+    definition: "The action of giving a misleading or false account or impression.",
+    vietnamese: "Sự bóp méo sự thật",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Distort -> Chiến thuật tung tin giả để làm lệch lạc nhận thức dư luận.",
+    pronunciation: "/dɪˈstɔː.ʃən/",
+    synonyms: "misrepresentation, bias, slant"
+  },
+  {
+    id: "v429",
+    word: "Evocative",
+    definition: "Bringing strong images, memories, or feelings to mind.",
+    vietnamese: "Gợi nhớ, đầy cảm xúc",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Dạng tính từ của Evoke -> Những thước phim màu hoài cổ khơi gợi ký ức xưa cũ.",
+    pronunciation: "/ɪˈvɒk.ə.tɪv/",
+    synonyms: "reminiscent, expressive, vivid"
+  },
+  {
+    id: "v430",
+    word: "Mainstream-media",
+    definition: "Traditional and established news organizations trusted by the general public.",
+    vietnamese: "Truyền thông chính thống",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Mainstream + Media -> Các đài truyền hình lớn, uy tín lâu năm như CNN, BBC.",
+    pronunciation: "/ˈmeɪn.striːm ˈmiː.di.ə/",
+    synonyms: "established news, traditional press"
+  },
+  {
+    id: "v431",
+    word: "Censor",
+    definition: "Examine (a book, movie, etc.) and suppress unacceptable parts.",
+    vietnamese: "Kiểm duyệt nội dung",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Động từ của Censorship -> Hành động gạch bỏ những phân cảnh bạo lực trước khi chiếu.",
+    pronunciation: "/ˈsen.sər/",
+    synonyms: "cut out, sanitize, edit out"
+  },
+  {
+    id: "v432",
+    word: "Plausibility",
+    definition: "The quality of seeming reasonable or probable.",
+    vietnamese: "Độ chân thực, tính hợp lý",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Plausible -> Mức độ đáng tin cậy của một cốt truyện tiểu thuyết.",
+    pronunciation: "/ˌplɔː.zəˈbɪl.ə.ti/",
+    synonyms: "believability, credibility"
+  },
+  {
+    id: "v433",
+    word: "Wholly-owned",
+    definition: "Owned completely by another company or network.",
+    vietnamese: "Sở hữu hoàn toàn",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Wholly (hoàn toàn) + Owned (sở hữu) -> Kênh truyền hình thuộc quyền kiểm soát độc quyền.",
+    pronunciation: "/ˈhəʊl.li əʊnd/",
+    synonyms: "fully controlled, proprietary"
+  },
+  {
+    id: "v434",
+    word: "Prevalence",
+    definition: "The fact or state of being common or widespread.",
+    vietnamese: "Sự tràn lan, phổ biến",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Prevalent -> Tình trạng tin giả (fake news) xuất hiện dày đặc trên facebook.",
+    pronunciation: "/ˈprev.əl.əns/",
+    synonyms: "widespreadness, frequency, ubiquity"
+  },
+  {
+    id: "v435",
+    word: "Sovereign-right",
+    definition: "The ultimate authority and power of a state over its media and digital space.",
+    vietnamese: "Quyền tối cao quốc gia",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Sovereign + Right -> Quyền tối cao của một nước kiểm soát không gian mạng quốc gia.",
+    pronunciation: "/ˈsɒv.rɪn raɪt/",
+    synonyms: "ultimate authority, national jurisdiction"
+  },
+  {
+    id: "v436",
+    word: "Implicit",
+    definition: "Implied though not plainly expressed.",
+    vietnamese: "Ngầm hiểu, không nói ra",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Ngược nghĩa với Explicit -> Thông điệp quảng cáo được cài cắm tinh tế, gián tiếp.",
+    pronunciation: "/ɪmˈplɪs.ɪt/",
+    synonyms: "implied, hidden, unstated"
+  },
+  {
+    id: "v437",
+    word: "Exemplification",
+    definition: "The act of providing an example to illustrate something.",
+    vietnamese: "Sự lấy ví dụ minh họa",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Exemplify -> Đoạn phim ngắn đóng vai trò làm bằng chứng cho thực trạng.",
+    pronunciation: "/ɪɡˌzem.plɪ.fɪˈkeɪ.ʃən/",
+    synonyms: "illustration, demonstration, instance"
+  },
+  {
+    id: "v438",
+    word: "Allusion",
+    definition: "An expression designed to call something to mind without mentioning it explicitly; an indirect or passing reference.",
+    vietnamese: "Sự ám chỉ điển tích",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Allude -> Lời thoại phim nhắc khéo đến một sự kiện lịch sử nổi tiếng.",
+    pronunciation: "/əˈluː.ʒən/",
+    synonyms: "reference, hint, insinuation"
+  },
+  {
+    id: "v439",
+    word: "Audience-rating",
+    definition: "A measurement of the percentage of TV or radio viewers watching a specific broadcast.",
+    vietnamese: "Chỉ số người xem (Rating)",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Audience (khán giả) + Rating (đánh giá) -> Thước đo sự thành công của gameshow.",
+    pronunciation: "/ˈɔː.di.əns ˌreɪ.tɪŋ/",
+    synonyms: "viewership data, Nielsen rating"
+  },
+  {
+    id: "v440",
+    word: "Commercialization",
+    definition: "The process of managing or running something principally for financial gain.",
+    vietnamese: "Sự thương mại hóa",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Danh từ của Commercialized -> Xu hướng đặt doanh thu lên trên giá trị nghệ thuật của phim.",
+    pronunciation: "/kəˌmɜː.ʃəl.aɪˈzeɪ.ʃən/",
+    synonyms: "profit focus, monetization"
+  },
+  {
+    id: "v441",
+    word: "Sensationalize",
+    definition: "Present information in a way that causes excitement or shock, at the expense of accuracy.",
+    vietnamese: "Giật gân hóa thông tin",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Động từ của Sensationalism -> Hành vi cố tình thổi phồng vụ án nhỏ để câu khách.",
+    pronunciation: "/senˈseɪ.ʃən.əl.aɪz/",
+    synonyms: "hype up, exaggerate, dramatize"
+  },
+  {
+    id: "v442",
+    word: "Mass-media",
+    definition: "Diverse media technologies that reach a large audience via mass communication.",
+    vietnamese: "Phương tiện thông tin đại chúng",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Mass (đại chúng) + Media -> Hệ thống báo đài tiếp cận hàng triệu người cùng lúc.",
+    pronunciation: "/mæs ˈmiː.di.ə/",
+    synonyms: "public media, press, news outlets"
+  },
+  {
+    id: "v443",
+    word: "Stereotypical",
+    definition: "Relating to or conforming to a widely held but fixed image or idea.",
+    vietnamese: "Mang tính rập khuôn",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Dạng tính từ của Stereotype -> Cách xây dựng nhân vật nghèo nàn, lặp lại định kiến cũ.",
+    pronunciation: "/ˌster.i.əˈtɪp.ɪ.kəl/",
+    synonyms: "clichéd, formulaic, conventional"
+  },
+  {
+    id: "v444",
+    word: "Monopolize",
+    definition: "(Of an organization or individual) obtain exclusive control of a trade or service.",
+    vietnamese: "Độc quyền phát sóng",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Động từ của Monopoly -> Một nhà đài thâu tóm toàn bộ bản quyền giải đấu thể thao lớn.",
+    pronunciation: "/məˈnɒp.əl.aɪz/",
+    synonyms: "dominate, control, corner"
+  },
+  {
+    id: "v445",
+    word: "Fabrication",
+    definition: "An invention or lie; the action or process of manufacturing or inventing something.",
+    vietnamese: "Sự bịa đặt thông tin",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Fabricate (bịa chuyện) -> Bài báo hoàn toàn là sản phẩm hư cấu vô căn cứ.",
+    pronunciation: "/ˌfæb.rɪˈkeɪ.ʃən/",
+    synonyms: "invention, lie, falsehood, fake news"
+  },
+  {
+    id: "v446",
+    word: "Opinion-forming",
+    definition: "Capable of influencing or shaping what people think about an issue.",
+    vietnamese: "Định hình dư luận",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Opinion (ý kiến) + Forming (tạo hình) -> Sức mạnh của báo chí định hướng suy nghĩ dân chúng.",
+    pronunciation: "/əˈpɪn.jən ˌfɔː.mɪŋ/",
+    synonyms: "mind-shaping, influential"
+  },
+  {
+    id: "v447",
+    word: "Immersive",
+    definition: "(Of a computer display or system) generating a three-dimensional image in which the viewer appears to be surrounded.",
+    vietnamese: "Trải nghiệm nhập vai/sống động",
+    category: "Entertainment & Media",
+    categoryEmoji: "📺",
+    memoryHook: "Gốc từ Immerse (nhúng chìm) -> Công nghệ kính VR khiến người xem chìm đắm như thật.",
+    pronunciation: "/ɪˈmɜː.sɪv/",
+    synonyms: "absorbing, engaging, realistic"
+  }
+];
