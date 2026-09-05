@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useMemo, useCallback } from "react"
 import * as d3 from "d3";
 import { WordRoot, IELTSWordExample } from "../types";
 import { SpeechService, getRootPronunciation, getWordPronunciation } from "../lib/speechSynthesis";
+import { MindmapWordDetailView } from "./MindmapWordDetailView";
 import {
   ZoomIn,
   ZoomOut,
@@ -19,7 +20,9 @@ import {
   Info,
   Compass,
   CheckCircle2,
-  Tag
+  Tag,
+  BookOpen,
+  X
 } from "lucide-react";
 
 interface D3RootsMindmapProps {
@@ -78,6 +81,8 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
   // Inspector State (Selected Root or Word for memory tip & association)
   const [inspectedRoot, setInspectedRoot] = useState<WordRoot | null>(null);
   const [inspectedWord, setInspectedWord] = useState<IELTSWordExample | null>(null);
+  const [showFloatingCard, setShowFloatingCard] = useState<boolean>(true);
+  const [isFloatingCardMinimized, setIsFloatingCardMinimized] = useState<boolean>(false);
 
   // Filter & View Options
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -350,6 +355,10 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
           } else {
             setInspectedWord(d.data.rootData.exampleWords?.[0] || null);
           }
+          setShowFloatingCard(true);
+          setIsFloatingCardMinimized(false);
+          // Smoothly zoom toward the clicked node
+          smoothZoomToNode(d.y + 70, d.x, 1.25);
         } else if (d.data.trunkNumber) {
           // Zoom into this cluster
           smoothZoomToNode(d.y + 70, d.x, 1.4);
@@ -482,21 +491,32 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
         el.append("rect")
           .attr("x", -6)
           .attr("y", -13)
-          .attr("width", 145)
-          .attr("height", 26)
+          .attr("width", isCurrent ? 148 : 145)
+          .attr("height", isCurrent ? 28 : 26)
           .attr("rx", 6)
-          .attr("fill", isCurrent ? "#312E81" : "#1E293B")
-          .attr("stroke", isCurrent ? "#818CF8" : (isC2 ? "#F43F5E" : "#38BDF8"))
-          .attr("stroke-width", isCurrent ? 2 : 1)
-          .attr("filter", "url(#mindmap-shadow)");
+          .attr("fill", isCurrent ? "#1E1B4B" : "#1E293B")
+          .attr("stroke", isCurrent ? "#F59E0B" : (isC2 ? "#F43F5E" : "#38BDF8"))
+          .attr("stroke-width", isCurrent ? 2.5 : 1)
+          .attr("filter", isCurrent ? "url(#mindmap-glow)" : "url(#mindmap-shadow)");
+
+        // Active indicator dot
+        if (isCurrent) {
+          el.append("circle")
+            .attr("cx", -6)
+            .attr("cy", 1)
+            .attr("r", 3.5)
+            .attr("fill", "#F59E0B")
+            .attr("stroke", "#FFFFFF")
+            .attr("stroke-width", 1);
+        }
 
         // Word Text
         el.append("text")
           .attr("x", 6)
           .attr("y", 0)
-          .attr("fill", "#FFFFFF")
+          .attr("fill", isCurrent ? "#FDE68A" : "#FFFFFF")
           .attr("font-size", "10px")
-          .attr("font-weight", "700")
+          .attr("font-weight", isCurrent ? "800" : "700")
           .text(d.data.name);
 
         // Level pill
@@ -521,7 +541,7 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
         el.append("text")
           .attr("x", 6)
           .attr("y", 10)
-          .attr("fill", "#94A3B8")
+          .attr("fill", isCurrent ? "#CBD5E1" : "#94A3B8")
           .attr("font-size", "8px")
           .text(d.data.meaning ? (d.data.meaning.length > 20 ? d.data.meaning.slice(0, 18) + "…" : d.data.meaning) : "");
       });
@@ -785,227 +805,97 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
           <svg ref={svgRef} className="w-full h-full block" />
 
           {/* Canvas Guide Pill */}
-          <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2 pointer-events-none">
+          <div className="absolute top-3 left-3 bg-slate-900/85 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-800 text-[11px] text-slate-300 flex items-center gap-2 pointer-events-none shadow-md z-10">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>Lăn chuột để Zoom • Kéo để Di chuyển • Nhấp vào nhánh để Xem liên tưởng</span>
+            <span>Nhấp vào bất kỳ từ nào để xem giải nghĩa, từ liên kết & mẹo gợi nhớ</span>
           </div>
-        </div>
 
-        {/* Mẹo Liên Tưởng & Giải Phẫu Hình Thái Học (Interactive Inspector) */}
-        <div className="w-full lg:w-[380px] bg-slate-900/95 border-t lg:border-t-0 lg:border-l border-slate-800 p-4 md:p-5 flex flex-col justify-between overflow-y-auto max-h-[520px] lg:max-h-[620px] shadow-xl">
-          {inspectedRoot ? (
-            <div className="space-y-4">
-              {/* Header: Root Stem, Phonetic, Audio */}
-              <div className="border-b border-slate-800 pb-3">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-800/40">
-                      Gốc Từ Hình Thái Học
-                    </span>
-                    <h4 className="font-sans text-2xl font-black text-white mt-1">
-                      {inspectedRoot.root}
-                    </h4>
-                  </div>
-
-                  {/* Audio Button */}
+          {/* Floating In-Canvas Detail Card when node is clicked */}
+          {showFloatingCard && (inspectedWord || inspectedRoot) && (
+            <div
+              id="mindmap-floating-card"
+              className={`absolute z-30 transition-all duration-300 shadow-2xl ${
+                isFloatingCardMinimized
+                  ? "bottom-3 right-3 sm:bottom-4 sm:right-4 bg-slate-900/95 border border-blue-500/50 rounded-full px-4 py-2 flex items-center gap-2.5 backdrop-blur-md cursor-pointer hover:bg-slate-800"
+                  : "bottom-3 right-3 sm:bottom-4 sm:right-4 w-[calc(100%-24px)] sm:w-[410px] max-h-[82%] bg-slate-900/95 backdrop-blur-md rounded-2xl border-2 border-blue-500/40 flex flex-col overflow-hidden text-slate-100"
+              }`}
+            >
+              {isFloatingCardMinimized ? (
+                <div
+                  className="flex items-center gap-2 text-xs"
+                  onClick={() => setIsFloatingCardMinimized(false)}
+                >
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="font-bold text-white">
+                    {inspectedWord?.word || inspectedRoot?.root}
+                  </span>
+                  <span className="text-slate-400 truncate max-w-[120px] text-[11px]">
+                    {inspectedWord?.meaning || inspectedRoot?.meaning}
+                  </span>
                   <button
                     type="button"
-                    onClick={(e) =>
-                      handlePlayAudio(
-                        currentRootPron.spokenText || inspectedRoot.root,
-                        `inspect-root-${inspectedRoot.id}`,
-                        e
-                      )
-                    }
-                    className={`p-2 rounded-xl transition-all cursor-pointer border ${
-                      isSpeaking === `inspect-root-${inspectedRoot.id}`
-                        ? "bg-amber-500 text-white border-amber-600 animate-pulse"
-                        : "bg-blue-600 text-white hover:bg-blue-500 border-blue-500 shadow-md"
-                    }`}
-                    title="Nghe phát âm chuẩn gốc từ"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsFloatingCardMinimized(false);
+                    }}
+                    className="ml-1 text-blue-400 font-bold hover:underline cursor-pointer text-[11px]"
                   >
-                    <Volume2 className="w-4 h-4" />
+                    Mở rộng
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowFloatingCard(false);
+                    }}
+                    className="p-1 hover:bg-slate-800 rounded text-slate-400 hover:text-white cursor-pointer"
+                  >
+                    <X className="w-3.5 h-3.5" />
                   </button>
                 </div>
-
-                {/* Pronunciation Badges */}
-                <div className="flex flex-wrap items-center gap-1.5 mt-2">
-                  <span className="text-[11px] font-mono font-bold text-slate-300 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
-                    IPA: {inspectedRoot.phonetic || currentRootPron.ipa}
-                  </span>
-                  <span className="text-[11px] font-sans text-amber-300 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/40">
-                    Đọc: <strong>{inspectedRoot.pronunciationGuide || currentRootPron.vietnameseGuide}</strong>
-                  </span>
-                </div>
-
-                <p className="text-xs text-slate-300 mt-2 font-medium">
-                  <strong>Ý nghĩa cốt lõi:</strong> {inspectedRoot.meaning}
-                </p>
-                {inspectedRoot.origin && (
-                  <p className="text-[11px] text-slate-400 italic mt-0.5">
-                    Nguồn gốc: {inspectedRoot.origin}
-                  </p>
-                )}
-              </div>
-
-              {/* Mẹo Liên Tưởng Gợi Nhớ (Mnemonic Association Card) */}
-              <div className="p-3.5 rounded-xl bg-gradient-to-br from-amber-950/40 to-slate-900 border border-amber-500/30 text-amber-200 space-y-1.5 shadow-sm">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-amber-400">
-                  <Lightbulb className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>Mẹo Liên Tưởng Gợi Nhớ Nhanh</span>
-                </div>
-                <p className="text-xs text-amber-100/90 leading-relaxed italic">
-                  "{inspectedRoot.tip || inspectedRoot.description}"
-                </p>
-              </div>
-
-              {/* Morphological Association Equation (Hình Vẽ / Sơ Đồ Liên Kết Từ) */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-                    Sơ Đồ Giải Phẫu Hình Thái Từ
-                  </span>
-                  <span className="text-[10px] text-slate-400 font-mono">
-                    {inspectedRoot.exampleWords?.length || 0} từ C1/C2
-                  </span>
-                </div>
-
-                {/* Word Select Tabs / Pills */}
-                <div className="flex flex-wrap gap-1.5">
-                  {inspectedRoot.exampleWords.map((w, idx) => {
-                    const isSelected = inspectedWord?.word === w.word;
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setInspectedWord(w)}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
-                          isSelected
-                            ? "bg-blue-600 text-white border-blue-400 shadow-sm ring-1 ring-blue-400"
-                            : "bg-slate-800 text-slate-300 hover:bg-slate-700 border-slate-700"
-                        }`}
-                      >
-                        {w.word}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Active Inspected Word Equation Card */}
-                {inspectedWord && (
-                  <div className="bg-slate-800/80 rounded-xl p-3 border border-slate-700 space-y-2">
-                    <div className="flex items-center justify-between border-b border-slate-700/60 pb-2">
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-white">{inspectedWord.word}</span>
-                        <span className="text-[10px] font-mono text-slate-400">({inspectedWord.partOfSpeech})</span>
-                        <span
-                          className={`text-[9px] font-black px-1.5 py-0.5 rounded ${
-                            inspectedWord.level === "C2" ? "bg-rose-900 text-rose-200" : "bg-blue-900 text-blue-200"
-                          }`}
-                        >
-                          {inspectedWord.level || "C1"}
-                        </span>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={(e) =>
-                          handlePlayAudio(inspectedWord.word, `inspect-word-${inspectedWord.word}`, e)
-                        }
-                        className="p-1 rounded hover:bg-slate-700 text-blue-400 cursor-pointer"
-                        title="Nghe phát âm từ này"
-                      >
-                        <Volume2 className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-
-                    {/* Visual Breakdown Equation / Morphological Diagram */}
-                    {inspectedWord.visualBreakdown && (
-                      <div className="bg-slate-900/95 rounded-xl p-3 border border-slate-700 space-y-2">
-                        <div className="flex items-center justify-between">
-                          <span className="text-[10px] font-bold text-amber-400 uppercase tracking-wide flex items-center gap-1">
-                            <Layers className="w-3.5 h-3.5 text-amber-400" />
-                            Sơ Đồ Ghép Từ & Liên Kết Hình Thái:
-                          </span>
-                        </div>
-
-                        {/* Interactive Equation Flow */}
-                        <div className="flex flex-wrap items-center gap-1.5 py-1">
-                          {inspectedWord.visualBreakdown.split(/\s*(\+|\=)\s*/).filter(Boolean).map((part, pIdx) => {
-                            if (part === "+") {
-                              return (
-                                <span key={pIdx} className="text-slate-500 font-black text-xs px-0.5">
-                                  +
-                                </span>
-                              );
-                            }
-                            if (part === "=") {
-                              return (
-                                <span key={pIdx} className="text-amber-400 font-black text-xs px-0.5 flex items-center">
-                                  <ArrowRight className="w-3.5 h-3.5" />
-                                </span>
-                              );
-                            }
-                            const isResult = inspectedWord.visualBreakdown?.indexOf("=") !== -1 && 
-                              inspectedWord.visualBreakdown?.indexOf(part) > (inspectedWord.visualBreakdown?.indexOf("=") || 0);
-
-                            return (
-                              <span
-                                key={pIdx}
-                                className={`px-2 py-1 rounded-md text-[11px] font-mono font-medium transition-transform hover:scale-105 border ${
-                                  isResult
-                                    ? "bg-amber-500/20 text-amber-200 border-amber-500/40 font-bold"
-                                    : part.includes("-")
-                                    ? "bg-blue-900/40 text-blue-300 border-blue-700/50"
-                                    : "bg-emerald-950/50 text-emerald-300 border-emerald-700/50"
-                                }`}
-                              >
-                                {part}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-
-                    {inspectedWord.collocation && (
-                      <div className="text-[11px] text-indigo-300 bg-indigo-950/40 px-2 py-1 rounded border border-indigo-800/40 flex items-center gap-1">
-                        <Tag className="w-3 h-3 text-indigo-400 shrink-0" />
-                        <span>{inspectedWord.collocation}</span>
-                      </div>
-                    )}
-
-                    <div className="text-xs text-slate-300 leading-relaxed bg-slate-900/50 p-2 rounded border-l-2 border-blue-500">
-                      <p className="italic text-slate-200">"{inspectedWord.ieltsSentence}"</p>
-                      <p className="text-[11px] text-slate-400 mt-1">
-                        👉 <strong>Nghĩa:</strong> {inspectedWord.vietnameseTranslation}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Action Button: Jump to Boulevard List */}
-              <button
-                type="button"
-                onClick={() => {
-                  if (onSelectRoot && inspectedRoot) {
-                    onSelectRoot(inspectedRoot);
-                  }
-                  document.getElementById(`root-item-${inspectedRoot.id}`)?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="w-full mt-2 py-2 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md cursor-pointer"
-              >
-                <span>Xem Thẻ Chi Tiết Trên Đại Lộ</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          ) : (
-            <div className="text-center py-12 text-slate-400 space-y-2">
-              <Compass className="w-8 h-8 mx-auto text-slate-600 animate-spin" />
-              <p className="text-xs">Nhấp vào bất kỳ nốt gốc từ nào trong mindmap để kích hoạt kính lúp liên tưởng.</p>
+              ) : (
+                <MindmapWordDetailView
+                  inspectedRoot={inspectedRoot}
+                  inspectedWord={inspectedWord}
+                  onSelectWord={(w) => setInspectedWord(w)}
+                  onSelectRoot={onSelectRoot}
+                  onPlayAudio={handlePlayAudio}
+                  isSpeaking={isSpeaking}
+                  allRoots={allRoots}
+                  compact={true}
+                  onClose={() => setShowFloatingCard(false)}
+                />
+              )}
             </div>
           )}
+
+          {/* Quick reopen button if floating card closed */}
+          {!showFloatingCard && (inspectedWord || inspectedRoot) && (
+            <button
+              type="button"
+              onClick={() => {
+                setShowFloatingCard(true);
+                setIsFloatingCardMinimized(false);
+              }}
+              className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold shadow-xl border border-blue-400/40 flex items-center gap-2 cursor-pointer backdrop-blur-md transition-all animate-in fade-in"
+            >
+              <BookOpen className="w-4 h-4 text-amber-300" />
+              <span>Xem Giải Nghĩa & Từ Liên Kết</span>
+            </button>
+          )}
+        </div>
+
+        {/* Mẹo Liên Tưởng & Giải Phẫu Hình Thái Học (Side Inspector Panel) */}
+        <div className="w-full lg:w-[380px] bg-slate-900/95 border-t lg:border-t-0 lg:border-l border-slate-800 flex flex-col justify-between overflow-hidden max-h-[520px] lg:max-h-[620px] shadow-xl">
+          <MindmapWordDetailView
+            inspectedRoot={inspectedRoot}
+            inspectedWord={inspectedWord}
+            onSelectWord={(w) => setInspectedWord(w)}
+            onSelectRoot={onSelectRoot}
+            onPlayAudio={handlePlayAudio}
+            isSpeaking={isSpeaking}
+            allRoots={allRoots}
+          />
         </div>
       </div>
     </div>
