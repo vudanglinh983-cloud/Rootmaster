@@ -178,3 +178,195 @@ export interface AILinguistAnswer {
   };
 }
 
+export interface TopicWord {
+  id: string;
+  word: string;
+  definition: string;
+  vietnamese: string;
+  category: string;
+  categoryEmoji: string;
+  memoryHook: string;
+  pronunciation?: string;
+  synonyms?: string;
+  b2Equivalent?: string;
+  b2Synonyms?: string[];
+  level?: "B2" | "C1" | "C2";
+}
+
+export interface MnemonicStoryItem {
+  word: string;
+  ipa?: string;
+  vietnamese: string;
+  superHook: string;
+  ieltsCollocation: string;
+  commonTrap?: string;
+  b2Equivalent?: string;
+}
+
+export interface QuizQuestionItem {
+  question: string;
+  options: string[];
+  answer: string;
+  memoryRationale: string;
+}
+
+export interface ComprehensiveQuizQuestion {
+  id: string;
+  type: "context_choice" | "synonym_upgrade" | "collocation_precision" | "error_detection" | "definition_match";
+  typeLabel: string;
+  question: string;
+  options: string[];
+  answer: string;
+  explanation: string;
+  memoryHookReminder?: string;
+  difficulty?: "B2" | "C1" | "C2";
+}
+
+export interface WordInDepthAnalysis {
+  word: string;
+  ipa?: string;
+  pos?: string;
+  vietnamese: string;
+  morphology: {
+    origin: string;
+    root: string;
+    prefix?: string;
+    suffix?: string;
+    rootMeaning: string;
+  };
+  wordFamily?: {
+    noun?: string;
+    verb?: string;
+    adj?: string;
+    adv?: string;
+  };
+  academicRegister: {
+    b2Contrast: string;
+    bandLiftReason: string;
+    nuance: string;
+  };
+  examPitfalls: {
+    listeningTrap: string;
+    spellingOrGrammar: string;
+    collocationRule: string;
+  };
+  sentenceFrames: {
+    writingTask2: string;
+    speakingPart3: string;
+  };
+}
+
+export interface AITopicLesson {
+  id: string;
+  lessonTitle: string;
+  topic: string;
+  macroDomain?: string;
+  summary: string;
+  mnemonicStories: MnemonicStoryItem[];
+  connectingNarrative: {
+    title: string;
+    text: string;
+    translation: string;
+    keyWordsUsed: string[];
+  };
+  quickRecallQuiz: QuizQuestionItem[];
+  diverseTestQuestions?: ComprehensiveQuizQuestion[];
+  inDepthAnalysis?: WordInDepthAnalysis[];
+  examProTips: string[];
+}
+
+export interface AITutorCrossLink {
+  type: "root" | "topic" | "listening" | "paraphrase";
+  title: string;
+  detail: string;
+  badge?: string;
+}
+
+export interface AITutorB2Upgrade {
+  b2Word: string;
+  b2Meaning: string;
+  c1Upgrade: string;
+  contextUsage: string;
+  bandImpact: string;
+}
+
+export interface BiteSizedSection {
+  sectionNumber: number;
+  sectionTitle: string;
+  textEn: string;
+  textVi: string;
+  keyWordsInSection: string[];
+  keyStructures?: string;
+}
+
+export interface AITutorReadingPassage {
+  title: string;
+  totalWordCount: number;
+  fullTextEn: string;
+  fullTextVi: string;
+  sections: BiteSizedSection[];
+}
+
+export interface AITutorLesson {
+  id: string;
+  tutorGreeting: string;
+  lessonTheme: string;
+  keyTargetWords: {
+    word: string;
+    ipa: string;
+    vietnamese: string;
+    b2Equivalent: string;
+    memoryHook: string;
+    ieltsCollocation: string;
+    partOfSpeech?: string;
+  }[];
+  readingPassage?: AITutorReadingPassage;
+  digitalCrossLinks: AITutorCrossLink[];
+  b2ToC1Upgrades: AITutorB2Upgrade[];
+  mnemonicStory: {
+    title: string;
+    contentEn: string;
+    contentVi: string;
+    retentionSecret: string;
+  };
+  tutorChallenge: {
+    question: string;
+    options: string[];
+    correctAnswer: string;
+    tutorExplanation: string;
+  };
+  diverseTestQuestions?: ComprehensiveQuizQuestion[];
+  inDepthAnalysis?: WordInDepthAnalysis[];
+  tutorAdvice: string;
+  suggestedFollowUps: string[];
+}
+
+export interface SavedLessonRecord {
+  id: string;
+  type: "tutor" | "topic_lesson";
+  title: string;
+  topic: string;
+  macroDomain?: string;
+  createdAt: number;
+  updatedAt: number;
+  status: "in-progress" | "completed";
+  wordsLearned: string[];
+  totalWords: number;
+  testScore: {
+    totalQuestions: number;
+    correctAnswers: number;
+    percentage: number;
+    passed: boolean;
+  } | null;
+  savedAnswers: Record<string | number, string>;
+  lessonData: AITutorLesson | AITopicLesson;
+}
+
+export interface AITutorMessage {
+  id: string;
+  sender: "user" | "tutor";
+  text: string;
+  timestamp: string;
+  lessonData?: AITutorLesson;
+}
+

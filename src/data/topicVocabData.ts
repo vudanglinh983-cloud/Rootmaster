@@ -1,16 +1,8 @@
-export interface TopicWord {
-  id: string;
-  word: string;
-  definition: string;
-  vietnamese: string;
-  category: string;
-  categoryEmoji: string;
-  memoryHook: string;
-  pronunciation?: string;
-  synonyms?: string;
-}
+import { listeningVocabData } from "./listeningVocabData";
+import { TopicWord } from "../types";
+export type { TopicWord };
 
-export const topicVocabData: TopicWord[] = [
+const baseTopicVocabData: TopicWord[] = [
   // II. Nhà bếp & Phòng ăn (Kitchen & Dining)
   {
     id: "v134",
@@ -14848,4 +14840,9 @@ export const topicVocabData: TopicWord[] = [
     pronunciation: "/daɪˈvɜː.sə.ti/",
     synonyms: "Cultural diversity • Inclusivity"
   }
+];
+
+export const topicVocabData: TopicWord[] = [
+  ...baseTopicVocabData,
+  ...listeningVocabData
 ];

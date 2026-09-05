@@ -1,6 +1,6 @@
 {
   "name": "IELTS Word Roots App",
-  "description": "Hệ thống học tập từ vựng IELTS chuyên sâu theo 18 Trục Gốc từ Morphological Stems và Bảng Paraphrase Chuẩn C1/C2 Academic.",
+  "description": "Hệ thống học tập từ vựng IELTS chuyên sâu theo Sơ đồ Mindmap 18 Trục Gốc từ và 9 Đại Nhóm Vũ Trụ Từ Vựng Chủ Đề & IELTS Listening 4 Parts.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

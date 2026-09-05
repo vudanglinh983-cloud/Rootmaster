@@ -6,18 +6,45 @@ import { initializeSRSDatabase, saveSRSDatabase } from "./lib/srsHelper";
 // Import Modular Subcomponents
 import { Dashboard } from "./components/Dashboard";
 import { RootsBoulevard } from "./components/RootsBoulevard";
-import { SrsArena } from "./components/SrsArena";
-import { PracticeArena } from "./components/PracticeArena";
 import { AiRootCoach } from "./components/AiRootCoach";
 import { TopicVocabArena } from "./components/TopicVocabArena";
 
 // React icons
-import { LayoutDashboard, Compass, Calendar, Award, BrainCircuit, Sparkles } from "lucide-react";
+import { LayoutDashboard, Compass, BrainCircuit, Sparkles, Maximize2, Minimize2 } from "lucide-react";
 
 export default function App() {
   // Navigation Tabs state
   const [activeTab, setActiveTab] = useState<string>("dashboard");
   const [isPending, startTransition] = useTransition();
+
+  // Full-Screen Focus Mode for PC / Laptop (Hides navigation sidebar and expands workspace)
+  const [isFullScreenFocus, setIsFullScreenFocus] = useState<boolean>(false);
+
+  const toggleFullScreenFocus = () => {
+    setIsFullScreenFocus((prev) => {
+      const next = !prev;
+      if (next) {
+        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        }
+      } else {
+        if (document.fullscreenElement && document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    const handleFsChange = () => {
+      if (!document.fullscreenElement && isFullScreenFocus) {
+        // user pressed ESC to leave native fullscreen, we can sync or keep layout
+      }
+    };
+    document.addEventListener("fullscreenchange", handleFsChange);
+    return () => document.removeEventListener("fullscreenchange", handleFsChange);
+  }, [isFullScreenFocus]);
 
   // Active study parameters mapping to SRS
   const [studyMode, setStudyMode] = useState<"due" | "new" | "all">("due");
@@ -193,9 +220,8 @@ export default function App() {
     saveSRSDatabase(newDb);
   };
 
-  const startSrsStudySession = (mode: "due" | "new" | "all") => {
-    setStudyMode(mode);
-    setActiveTab("srs");
+  const startSrsStudySession = (_mode?: "due" | "new" | "all") => {
+    setActiveTab("boulevard");
   };
 
   // Calculate dynamic progress percent for header progress tracking
@@ -226,10 +252,24 @@ export default function App() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* Fullscreen focus toggle button in header */}
+            <button
+              onClick={toggleFullScreenFocus}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                isFullScreenFocus
+                  ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                  : "bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200"
+              }`}
+              title={isFullScreenFocus ? "Thoát toàn màn hình (Hiện lại mục lục)" : "Toàn màn hình (Ẩn mục lục để xem từ vựng tối ưu)"}
+            >
+              {isFullScreenFocus ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+              <span className="hidden sm:inline">{isFullScreenFocus ? "Hiện mục lục" : "Toàn màn hình"}</span>
+            </button>
+
             <div className="hidden md:flex items-center gap-2 text-right">
               <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">TIẾN ĐỘ HỌC</span>
-              <div className="w-32 bg-gray-100 h-2 rounded-full overflow-hidden">
+              <div className="w-28 bg-gray-100 h-2 rounded-full overflow-hidden">
                 <div className="bg-[#2563EB] h-full transition-all" style={{ width: `${progressPercent}%` }}></div>
               </div>
               <span className="text-xs font-mono font-bold text-[#0F172A]">{progressPercent}%</span>
@@ -242,93 +282,86 @@ export default function App() {
         </div>
       </header>
 
+      {/* Full-Screen notification bar if sidebar is hidden */}
+      {isFullScreenFocus && (
+        <div className="bg-blue-50/90 border-b border-blue-200 px-4 py-2 text-xs flex items-center justify-between text-blue-900">
+          <div className="flex items-center gap-2 font-medium">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span>Chế độ Toàn Màn Hình đang bật: Mục lục học phần đã được ẩn để hiển thị tối đa nội dung từ vựng.</span>
+          </div>
+          <button
+            onClick={toggleFullScreenFocus}
+            className="text-xs font-bold text-blue-700 hover:text-blue-900 underline flex items-center gap-1 cursor-pointer"
+          >
+            <Minimize2 className="w-3 h-3" />
+            Hiện lại mục lục
+          </button>
+        </div>
+      )}
+
       {/* Main app grid frame */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-6">
+      <main className={`flex-1 w-full mx-auto py-6 flex flex-col md:flex-row gap-6 ${isFullScreenFocus ? "max-w-none px-3 md:px-8" : "max-w-7xl px-4 sm:px-6 lg:px-8"}`}>
         
-        {/* Responsive Drawer navigation toolbar */}
-        <nav className="w-full md:w-64 shrink-0 bg-white border border-gray-200 rounded-2xl p-4 h-fit md:sticky md:top-22 space-y-1.5 shadow-sm">
-          <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-3 mb-2 block">Mục lục Học Phần</span>
-          
-          <button
-            onClick={() => startTransition(() => setActiveTab("dashboard"))}
-            disabled={isPending}
-            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
-              activeTab === "dashboard"
-                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
-                : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
-            }`}
-          >
-            <LayoutDashboard className="w-4.5 h-4.5" />
-            BẢNG ĐIỀU KHIỂN
-          </button>
+        {/* Responsive Drawer navigation toolbar (Hidden in full-screen focus mode) */}
+        {!isFullScreenFocus && (
+          <nav className="w-full md:w-64 shrink-0 bg-white border border-gray-200 rounded-2xl p-4 h-fit md:sticky md:top-22 space-y-1.5 shadow-sm">
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-3 mb-2 block">Mục lục Học Phần</span>
+            
+            <button
+              onClick={() => startTransition(() => setActiveTab("dashboard"))}
+              disabled={isPending}
+              className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
+                activeTab === "dashboard"
+                  ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
+                  : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
+              }`}
+            >
+              <LayoutDashboard className="w-4.5 h-4.5" />
+              BẢNG ĐIỀU KHIỂN
+            </button>
 
-          <button
-            onClick={() => startTransition(() => setActiveTab("boulevard"))}
-            disabled={isPending}
-            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
-              activeTab === "boulevard"
-                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
-                : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
-            }`}
-          >
-            <Compass className="w-4.5 h-4.5" />
-            ĐẠI LỘ GỐC TỪ
-          </button>
+            <button
+              onClick={() => startTransition(() => setActiveTab("boulevard"))}
+              disabled={isPending}
+              className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
+                activeTab === "boulevard"
+                  ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
+                  : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
+              }`}
+            >
+              <Compass className="w-4.5 h-4.5" />
+              ĐẠI LỘ GỐC TỪ
+            </button>
 
-          <button
-            onClick={() => startTransition(() => setActiveTab("srs"))}
-            disabled={isPending}
-            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
-              activeTab === "srs"
-                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
-                : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
-            }`}
-          >
-            <Calendar className="w-4.5 h-4.5" />
-            THẺ SRS ÔN TẬP
-          </button>
+            <button
+              onClick={() => startTransition(() => setActiveTab("topic_vocab"))}
+              disabled={isPending}
+              className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
+                activeTab === "topic_vocab"
+                  ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
+                  : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
+              }`}
+            >
+              <Sparkles className="w-4.5 h-4.5" />
+              VŨ TRỤ TỪ VỰNG CHỦ ĐỀ
+            </button>
 
-          <button
-            onClick={() => startTransition(() => setActiveTab("practice"))}
-            disabled={isPending}
-            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
-              activeTab === "practice"
-                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
-                : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
-            }`}
-          >
-            <Award className="w-4.5 h-4.5" />
-            ĐẤU TRƯỜNG TRẮC NGHIỆM
-          </button>
+            <div className="h-px bg-gray-100 my-4"></div>
 
-          <button
-            onClick={() => startTransition(() => setActiveTab("topic_vocab"))}
-            disabled={isPending}
-            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
-              activeTab === "topic_vocab"
-                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
-                : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
-            }`}
-          >
-            <Sparkles className="w-4.5 h-4.5" />
-            VŨ TRỤ TỪ VỰNG CHỦ ĐỀ
-          </button>
-
-          <div className="h-px bg-gray-100 my-4"></div>
-
-          <button
-            onClick={() => startTransition(() => setActiveTab("coach"))}
-            disabled={isPending}
-            className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
-              activeTab === "coach"
-                ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
-                : "text-[#2563EB] bg-blue-50/50 border-blue-150 hover:bg-blue-50"
-            }`}
-          >
-            <BrainCircuit className="w-4.5 h-4.5" />
-            CHUYÊN GIA LINGUIST AI
-          </button>
-        </nav>
+            <button
+              onClick={() => startTransition(() => setActiveTab("coach"))}
+              disabled={isPending}
+              className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
+                activeTab === "coach"
+                  ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
+                  : "text-[#2563EB] bg-blue-50/50 border-blue-150 hover:bg-blue-50"
+              }`}
+            >
+              <BrainCircuit className="w-4.5 h-4.5" />
+              CHUYÊN GIA LINGUIST AI
+            </button>
+          </nav>
+        )}
 
         {/* Principal Central Workspace Area */}
         <div className="flex-1 min-w-0">
@@ -344,21 +377,10 @@ export default function App() {
 
           {activeTab === "boulevard" && <RootsBoulevard allRoots={mergedRoots} />}
 
-          {activeTab === "srs" && (
-            <SrsArena
-              allRoots={mergedRoots}
-              srsData={srsData}
-              onStateUpdate={handleSrsStateUpdate}
-              studyMode={studyMode}
-              onSetStudyMode={setStudyMode}
-            />
-          )}
-
-          {activeTab === "practice" && (
-            <PracticeArena
-              allRoots={mergedRoots}
-              onCorrectAnswer={handleCorrectPracticeAnswer}
-              onTotalAnswer={handleTotalPracticeAnswer}
+          {activeTab === "topic_vocab" && (
+            <TopicVocabArena
+              isFullScreenFocus={isFullScreenFocus}
+              onToggleFullScreen={toggleFullScreenFocus}
             />
           )}
 
@@ -369,10 +391,6 @@ export default function App() {
               userStats={stats}
               onNavigate={(tab) => setActiveTab(tab)}
             />
-          )}
-
-          {activeTab === "topic_vocab" && (
-            <TopicVocabArena />
           )}
         </div>
       </main>

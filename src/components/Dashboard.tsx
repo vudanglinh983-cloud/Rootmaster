@@ -1,13 +1,13 @@
 import React, { useMemo } from "react";
 import { WordRoot, SRSState, UserStats } from "../types";
-import { BookOpen, Award, CheckCircle2, RefreshCw, Zap, Flame, BrainCircuit, Compass } from "lucide-react";
+import { BookOpen, Award, CheckCircle2, RefreshCw, Zap, Flame, BrainCircuit, Compass, Sparkles, Network } from "lucide-react";
 
 interface DashboardProps {
   allRoots: WordRoot[];
   srsData: Record<string, SRSState>;
   stats: UserStats;
   onNavigate: (tab: string) => void;
-  onStartStudy: (mode: "due" | "new" | "all") => void;
+  onStartStudy?: (mode: "due" | "new" | "all") => void;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
@@ -77,25 +77,20 @@ export const Dashboard: React.FC<DashboardProps> = ({
           
           <div className="flex flex-wrap gap-3 mt-6">
             <button
-              id="btn-study-due"
-              onClick={() => onStartStudy("due")}
-              className={`px-5 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
-                dueCount > 0 
-                  ? "bg-[#2563EB] hover:bg-blue-700 text-white shadow-md active:scale-95" 
-                  : "bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed"
-              }`}
-              disabled={dueCount === 0}
+              id="btn-navigate-boulevard"
+              onClick={() => onNavigate("boulevard")}
+              className="px-5 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer bg-[#2563EB] hover:bg-blue-700 text-white shadow-md active:scale-95"
             >
-              <RefreshCw className={`w-4 h-4 ${dueCount > 0 ? "animate-spin-slow" : ""}`} />
-              ÔN TẬP ĐẾN HẠN ({dueCount})
+              <Compass className="w-4 h-4" />
+              SƠ ĐỒ ĐẠI LỘ GỐC TỪ ({allRoots.length})
             </button>
             <button
-              id="btn-study-new"
-              onClick={() => onStartStudy("new")}
+              id="btn-navigate-topic"
+              onClick={() => onNavigate("topic_vocab")}
               className="bg-white hover:bg-gray-100 text-[#0F172A] px-5 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer shadow-md active:scale-95"
             >
-              <BookOpen className="w-4 h-4" />
-              HỌC TỪ GỐC MỚI ({newCardsAvailable})
+              <Sparkles className="w-4 h-4 text-blue-600" />
+              VŨ TRỤ TỪ VỰNG CHỦ ĐỀ & LISTENING (1,763 TỪ)
             </button>
           </div>
         </div>
@@ -285,11 +280,11 @@ export const Dashboard: React.FC<DashboardProps> = ({
               KHÁM PHÁ ĐẠI LỘ GỐC TỪ
             </button>
             <button
-              onClick={() => onNavigate("practice")}
+              onClick={() => onNavigate("topic_vocab")}
               className="flex-1 border-2 border-[#2563EB]/40 hover:border-[#2563EB] text-[#2563EB] hover:bg-blue-50 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all"
             >
-              <Award className="w-4 h-4" />
-              ĐẤU TRƯỜNG TRẮC NGHIỆM
+              <Sparkles className="w-4 h-4" />
+              VŨ TRỤ TỪ VỰNG CHỦ ĐỀ
             </button>
           </div>
         </div>
