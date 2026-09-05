@@ -26,7 +26,46 @@ import {
   Soup,
   Users,
   HeartPulse,
-  Film
+  Film,
+  Landmark,
+  Brain,
+  Compass,
+  Globe,
+  Megaphone,
+  Building2,
+  Scale,
+  Microscope,
+  Palette,
+  Shield,
+  ShoppingBag,
+  GraduationCap,
+  UserCheck,
+  Home,
+  Plane,
+  Dumbbell,
+  ShoppingCart,
+  Stethoscope,
+  Ticket,
+  CreditCard,
+  MapPin,
+  HeartHandshake,
+  ShieldAlert,
+  History,
+  Leaf,
+  Radio,
+  UserPlus,
+  Mountain,
+  FileText,
+  FlaskConical,
+  Award,
+  Mic,
+  School,
+  Clock,
+  Network,
+  Library,
+  Dna,
+  Cpu,
+  Activity
 } from "lucide-react";
 
 export const TopicVocabArena: React.FC = () => {
@@ -92,6 +131,114 @@ export const TopicVocabArena: React.FC = () => {
         return { icon: <HeartPulse className="w-4 h-4" />, color: "bg-teal-50 text-teal-700 border-teal-200", badgeColor: "bg-teal-100 text-teal-800" };
       case "Entertainment & Media":
         return { icon: <Film className="w-4 h-4" />, color: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200", badgeColor: "bg-fuchsia-100 text-fuchsia-800" };
+      case "Politics, Law & Government":
+        return { icon: <Landmark className="w-4 h-4" />, color: "bg-slate-50 text-slate-700 border-slate-200", badgeColor: "bg-slate-100 text-slate-800" };
+      case "Psychology & Emotions":
+        return { icon: <Brain className="w-4 h-4" />, color: "bg-pink-50 text-pink-700 border-pink-200", badgeColor: "bg-pink-100 text-pink-800" };
+      case "Travel, Tourism & Heritage":
+        return { icon: <Compass className="w-4 h-4" />, color: "bg-cyan-50 text-cyan-700 border-cyan-200", badgeColor: "bg-cyan-100 text-cyan-800" };
+      case "International Relations & Global Issues":
+        return { icon: <Globe className="w-4 h-4" />, color: "bg-blue-50 text-blue-700 border-blue-200", badgeColor: "bg-blue-100 text-blue-800" };
+      case "Advertising, Marketing & Consumerism":
+        return { icon: <Megaphone className="w-4 h-4" />, color: "bg-violet-50 text-violet-700 border-violet-200", badgeColor: "bg-violet-100 text-violet-800" };
+      case "Urbanization & Architecture":
+        return { icon: <Building2 className="w-4 h-4" />, color: "bg-amber-50 text-amber-700 border-amber-200", badgeColor: "bg-amber-100 text-amber-800" };
+      case "Crime, Punishment & Justice":
+        return { icon: <Scale className="w-4 h-4" />, color: "bg-red-50 text-red-700 border-red-200", badgeColor: "bg-red-100 text-red-800" };
+      case "Mental Health & Wellness":
+        return { icon: <HeartPulse className="w-4 h-4" />, color: "bg-emerald-50 text-emerald-700 border-emerald-200", badgeColor: "bg-emerald-100 text-emerald-800" };
+      case "Science, Research & Academic Inquiry":
+        return { icon: <Microscope className="w-4 h-4" />, color: "bg-indigo-50 text-indigo-700 border-indigo-200", badgeColor: "bg-indigo-100 text-indigo-800" };
+      case "Art, Literature & Aesthetics":
+        return { icon: <Palette className="w-4 h-4" />, color: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200", badgeColor: "bg-fuchsia-100 text-fuchsia-800" };
+      case "Workplace, Employment & Careers":
+        return { icon: <Briefcase className="w-4 h-4" />, color: "bg-blue-50 text-blue-700 border-blue-200", badgeColor: "bg-blue-100 text-blue-800" };
+      case "Public Policy & Welfare":
+        return { icon: <Shield className="w-4 h-4" />, color: "bg-teal-50 text-teal-700 border-teal-200", badgeColor: "bg-teal-100 text-teal-800" };
+      case "Consumer Behavior & Retail":
+        return { icon: <ShoppingBag className="w-4 h-4" />, color: "bg-orange-50 text-orange-700 border-orange-200", badgeColor: "bg-orange-100 text-orange-800" };
+      case "Advanced IELTS Academic Vocabulary":
+        return { icon: <GraduationCap className="w-4 h-4" />, color: "bg-yellow-50 text-yellow-700 border-yellow-200", badgeColor: "bg-yellow-100 text-yellow-800" };
+      case "Personal Information & Registration":
+        return { icon: <UserCheck className="w-4 h-4" />, color: "bg-sky-50 text-sky-700 border-sky-200", badgeColor: "bg-sky-100 text-sky-800" };
+      case "Housing & Accommodation":
+        return { icon: <Home className="w-4 h-4" />, color: "bg-indigo-50 text-indigo-700 border-indigo-200", badgeColor: "bg-indigo-100 text-indigo-800" };
+      case "Travel, Tourism & Transport":
+        return { icon: <Plane className="w-4 h-4" />, color: "bg-teal-50 text-teal-700 border-teal-200", badgeColor: "bg-teal-100 text-teal-800" };
+      case "Leisure, Sports & Fitness":
+        return { icon: <Dumbbell className="w-4 h-4" />, color: "bg-emerald-50 text-emerald-700 border-emerald-200", badgeColor: "bg-emerald-100 text-emerald-800" };
+      case "Work & Employment":
+        return { icon: <Briefcase className="w-4 h-4" />, color: "bg-blue-50 text-blue-700 border-blue-200", badgeColor: "bg-blue-100 text-blue-800" };
+      case "Shopping, Goods & Services":
+        return { icon: <ShoppingCart className="w-4 h-4" />, color: "bg-amber-50 text-amber-700 border-amber-200", badgeColor: "bg-amber-100 text-amber-800" };
+      case "Health & Medical Care":
+        return { icon: <Stethoscope className="w-4 h-4" />, color: "bg-rose-50 text-rose-700 border-rose-200", badgeColor: "bg-rose-100 text-rose-800" };
+      case "Events & Entertainment":
+        return { icon: <Ticket className="w-4 h-4" />, color: "bg-purple-50 text-purple-700 border-purple-200", badgeColor: "bg-purple-100 text-purple-800" };
+      case "Banking & Finance":
+        return { icon: <CreditCard className="w-4 h-4" />, color: "bg-slate-50 text-slate-700 border-slate-200", badgeColor: "bg-slate-100 text-slate-800" };
+      case "Food & Dining":
+        return { icon: <Utensils className="w-4 h-4" />, color: "bg-orange-50 text-orange-700 border-orange-200", badgeColor: "bg-orange-100 text-orange-800" };
+      case "Local Facilities & Venues":
+        return { icon: <Landmark className="w-4 h-4" />, color: "bg-slate-50 text-slate-700 border-slate-200", badgeColor: "bg-slate-100 text-slate-800" };
+      case "Maps & Directions":
+        return { icon: <MapPin className="w-4 h-4" />, color: "bg-emerald-50 text-emerald-700 border-emerald-200", badgeColor: "bg-emerald-100 text-emerald-800" };
+      case "Volunteering & Community Projects":
+        return { icon: <HeartHandshake className="w-4 h-4" />, color: "bg-rose-50 text-rose-700 border-rose-200", badgeColor: "bg-rose-100 text-rose-800" };
+      case "Safety & Rules":
+        return { icon: <ShieldAlert className="w-4 h-4" />, color: "bg-amber-50 text-amber-700 border-amber-200", badgeColor: "bg-amber-100 text-amber-800" };
+      case "History & Heritage":
+        return { icon: <History className="w-4 h-4" />, color: "bg-stone-50 text-stone-700 border-stone-200", badgeColor: "bg-stone-100 text-stone-800" };
+      case "Environmental Projects":
+        return { icon: <Leaf className="w-4 h-4" />, color: "bg-green-50 text-green-700 border-green-200", badgeColor: "bg-green-100 text-green-800" };
+      case "Radio Broadcasts & Announcements":
+        return { icon: <Radio className="w-4 h-4" />, color: "bg-violet-50 text-violet-700 border-violet-200", badgeColor: "bg-violet-100 text-violet-800" };
+      case "Workplace Orientation":
+        return { icon: <UserPlus className="w-4 h-4" />, color: "bg-cyan-50 text-cyan-700 border-cyan-200", badgeColor: "bg-cyan-100 text-cyan-800" };
+      case "Exhibitions & Museums":
+        return { icon: <Palette className="w-4 h-4" />, color: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200", badgeColor: "bg-fuchsia-100 text-fuchsia-800" };
+      case "Outdoor Expeditions":
+        return { icon: <Mountain className="w-4 h-4" />, color: "bg-teal-50 text-teal-700 border-teal-200", badgeColor: "bg-teal-100 text-teal-800" };
+      case "Assignments & Coursework":
+        return { icon: <FileText className="w-4 h-4" />, color: "bg-blue-50 text-blue-700 border-blue-200", badgeColor: "bg-blue-100 text-blue-800" };
+      case "Research & Methodology":
+        return { icon: <FlaskConical className="w-4 h-4" />, color: "bg-purple-50 text-purple-700 border-purple-200", badgeColor: "bg-purple-100 text-purple-800" };
+      case "Course Selection & Curriculum":
+        return { icon: <BookOpen className="w-4 h-4" />, color: "bg-indigo-50 text-indigo-700 border-indigo-200", badgeColor: "bg-indigo-100 text-indigo-800" };
+      case "Academic Performance & Feedback":
+        return { icon: <Award className="w-4 h-4" />, color: "bg-emerald-50 text-emerald-700 border-emerald-200", badgeColor: "bg-emerald-100 text-emerald-800" };
+      case "Presentation & Public Speaking":
+        return { icon: <Mic className="w-4 h-4" />, color: "bg-rose-50 text-rose-700 border-rose-200", badgeColor: "bg-rose-100 text-rose-800" };
+      case "University Facilities & Services":
+        return { icon: <Library className="w-4 h-4" />, color: "bg-sky-50 text-sky-700 border-sky-200", badgeColor: "bg-sky-100 text-sky-800" };
+      case "Education Systems & Pedagogies":
+        return { icon: <School className="w-4 h-4" />, color: "bg-amber-50 text-amber-700 border-amber-200", badgeColor: "bg-amber-100 text-amber-800" };
+      case "Scientific Studies & Fieldwork":
+        return { icon: <Microscope className="w-4 h-4" />, color: "bg-teal-50 text-teal-700 border-teal-200", badgeColor: "bg-teal-100 text-teal-800" };
+      case "Time Management & Study Skills":
+        return { icon: <Clock className="w-4 h-4" />, color: "bg-orange-50 text-orange-700 border-orange-200", badgeColor: "bg-orange-100 text-orange-800" };
+      case "Interdisciplinary Topics":
+        return { icon: <Network className="w-4 h-4" />, color: "bg-cyan-50 text-cyan-700 border-cyan-200", badgeColor: "bg-cyan-100 text-cyan-800" };
+      case "Business, Economics & Industry":
+        return { icon: <Briefcase className="w-4 h-4" />, color: "bg-blue-50 text-blue-700 border-blue-200", badgeColor: "bg-blue-100 text-blue-800" };
+      case "Environmental Science & Ecosystems":
+        return { icon: <Globe className="w-4 h-4" />, color: "bg-emerald-50 text-emerald-700 border-emerald-200", badgeColor: "bg-emerald-100 text-emerald-800" };
+      case "History, Anthropology & Archaeology":
+        return { icon: <Landmark className="w-4 h-4" />, color: "bg-amber-50 text-amber-700 border-amber-200", badgeColor: "bg-amber-100 text-amber-800" };
+      case "Biology, Zoology & Botany":
+        return { icon: <Dna className="w-4 h-4" />, color: "bg-teal-50 text-teal-700 border-teal-200", badgeColor: "bg-teal-100 text-teal-800" };
+      case "Psychology & Human Behavior":
+        return { icon: <Brain className="w-4 h-4" />, color: "bg-purple-50 text-purple-700 border-purple-200", badgeColor: "bg-purple-100 text-purple-800" };
+      case "Architecture, Urban Planning & Engineering":
+        return { icon: <Building2 className="w-4 h-4" />, color: "bg-slate-50 text-slate-700 border-slate-200", badgeColor: "bg-slate-100 text-slate-800" };
+      case "Geography, Geology & Meteorology":
+        return { icon: <Compass className="w-4 h-4" />, color: "bg-sky-50 text-sky-700 border-sky-200", badgeColor: "bg-sky-100 text-sky-800" };
+      case "Health, Medicine & Nutrition":
+        return { icon: <Activity className="w-4 h-4" />, color: "bg-rose-50 text-rose-700 border-rose-200", badgeColor: "bg-rose-100 text-rose-800" };
+      case "Technology, AI & Materials Science":
+        return { icon: <Cpu className="w-4 h-4" />, color: "bg-indigo-50 text-indigo-700 border-indigo-200", badgeColor: "bg-indigo-100 text-indigo-800" };
+      case "Society, Culture & Media":
+        return { icon: <Users className="w-4 h-4" />, color: "bg-violet-50 text-violet-700 border-violet-200", badgeColor: "bg-violet-100 text-violet-800" };
       default:
         return { icon: <BookOpen className="w-4 h-4" />, color: "bg-slate-50 text-slate-700 border-slate-200", badgeColor: "bg-slate-100 text-slate-800" };
     }

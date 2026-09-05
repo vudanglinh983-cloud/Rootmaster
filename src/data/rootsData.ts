@@ -1,3003 +1,6044 @@
-import { WordRoot } from "../types";
+// Morphological Roots & IELTS Mindmap System
+// Generated 4-Trunk Academic Architecture: 17 Root Stems with 400+ C1/C2 Academic Words
 
-export const rootsData: WordRoot[] = [
-  // === CATEGORY: Quality & State (30 Roots) ===
-  {
-    id: "r1",
-    root: "BENE/BON",
-    meaning: "Tốt, Lành, Hay",
-    origin: "Latin (bene - well, bonus - good)",
-    description: "Xuất hiện trong các bài đọc IELTS nói về lợi ích khoa học, tâm lý hoặc phúc lợi xã hội.",
-    tip: "Nghĩ ngay đến 'Benefit' (Lợi ích) hoặc 'Bonus' (Thưởng). Gốc BENE luôn mang nghĩa tích cực.",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "beneficial",
-        partOfSpeech: "adj",
-        meaning: "Có lợi, có ích",
-        visualBreakdown: "BENE (tốt) + FIC (làm) -> làm việc tốt, có lợi",
-        ieltsSentence: "A stable family environment is highly beneficial to a child's psychological development.",
-        vietnameseTranslation: "Một môi trường gia đình ổn định rất có lợi cho sự phát triển tâm lý của trẻ."
-      },
-      {
-        word: "benevolent",
-        partOfSpeech: "adj",
-        meaning: "Nhân từ, rộng lượng, từ thiện",
-        visualBreakdown: "BENE (tốt) + VOL (ý muốn) -> có ý muốn tốt đẹp cho người khác",
-        ieltsSentence: "The company was founded as a benevolent society to help local workers.",
-        vietnameseTranslation: "Công ty được thành lập như một hội từ thiện để giúp đỡ các công nhân địa phương."
-      }
-    ]
-  },
-  {
-    id: "r2",
-    root: "MAL",
-    meaning: "Xấu, Tệ, Thiết bị lỗi, Độc hại",
-    origin: "Latin (malus - bad)",
-    description: "Nhận dạng trong các chủ đề y tế, bệnh tật, kỹ thuật hoặc phê phán trong IELTS.",
-    tip: "Nhớ từ 'Malaria' (Sốt rét - khí độc) hoặc 'Malfunction' (Trục trặc kỹ thuật). Trái ngược hoàn toàn với BENE-.",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "malfunction",
-        partOfSpeech: "n, v",
-        meaning: "Trục trặc, sự cố hoạt động",
-        visualBreakdown: "MAL (tệ) + FUNCTION (hoạt động) -> hoạt động tồi tệ/bị lỗi",
-        ieltsSentence: "The spacecraft’s flight computer suffered a temporary malfunction.",
-        vietnameseTranslation: "Máy tính bay của tàu vũ trụ đã gặp phải một sự cố hoạt động tạm thời."
-      },
-      {
-        word: "malignant",
-        partOfSpeech: "adj",
-        meaning: "Ác tính (y học), độc hại, nguy hiểm",
-        visualBreakdown: "MAL (tệ) + GEN (sinh ra) + ANT -> sinh ra thứ độc hại",
-        ieltsSentence: "The biopsy revealed that the tumor was malignant, requiring immediate surgery.",
-        vietnameseTranslation: "Kết quả sinh thiết tiết lộ khối u là ác tính, cần phẫu thuật ngay lập tức."
-      }
-    ]
-  },
-  {
-    id: "r3",
-    root: "MAGN/MEGA",
-    meaning: "To, Lớn, Vĩ đại",
-    origin: "Latin (magnus - great), Greek (megas - large)",
-    description: "Dùng để nhấn mạnh quy mô, tầm quan trọng của các nghiên cứu hoặc hiện tượng tự nhiên.",
-    tip: "Nghĩ về 'Magnify' (Kính phóng to) hay 'Megacity' (Siêu đô thị > 10 triệu dân).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "magnitude",
-        partOfSpeech: "n",
-        meaning: "Tầm lớn, độ rộng, cường độ (động đất)",
-        visualBreakdown: "MAGN (rộng lớn) + TUDE (trạng thái) -> độ lớn của sự việc",
-        ieltsSentence: "The scientific community failed to realize the full magnitude of the ecological threat.",
-        vietnameseTranslation: "Cộng đồng khoa học đã thất bại trong việc nhận ra toàn bộ tầm nghiêm trọng của mối đe dọa sinh thái."
-      },
-      {
-        word: "magnificent",
-        partOfSpeech: "adj",
-        meaning: "Tráng lệ, tuyệt vời, nguy nga",
-        visualBreakdown: "MAGN (lớn) + FIC (làm) + ENT -> được làm một cách hoành tráng",
-        ieltsSentence: "The ancient cathedral is a magnificent example of historical architecture.",
-        vietnameseTranslation: "Nhà thờ cổ kính là một ví dụ tráng lệ của kiến trúc lịch sử."
-      }
-    ]
-  },
-  {
-    id: "r4",
-    root: "MINI/MICRO",
-    meaning: "Nhỏ, Rất nhỏ",
-    origin: "Latin (minus - less), Greek (mikros - small)",
-    description: "Gặp nhiều trong bài đọc về sinh học, điện tử thông minh, công nghệ nano.",
-    tip: "Liên tưởng đến 'Miniature' (Thu nhỏ) hoặc 'Microbiology' (Vi sinh học).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "diminish",
-        partOfSpeech: "v",
-        meaning: "Giảm bớt, thu nhỏ lại",
-        visualBreakdown: "DI (đi) + MINI (nhỏ) + ISH -> làm cho nhỏ đi dần",
-        ieltsSentence: "The natural resources of this region are expected to diminish rapidly over the next decade.",
-        vietnameseTranslation: "Tài nguyên thiên nhiên của vùng này dự kiến sẽ suy giảm nhanh chóng trong thập kỷ tới."
-      },
-      {
-        word: "microscopic",
-        partOfSpeech: "adj",
-        meaning: "Siêu nhỏ, phải nhìn qua kính hiển vi",
-        visualBreakdown: "MICRO (nhỏ) + SCOPE (quan sát) + IC -> liên quan đến việc quan sát vật siêu nhỏ",
-        ieltsSentence: "The oceans are populated by billions of microscopic organisms essential to the food chain.",
-        vietnameseTranslation: "Đại dương là nơi sinh sống của hàng tỷ sinh vật siêu nhỏ cần thiết cho chuỗi thức ăn."
-      }
-    ]
-  },
-  {
-    id: "r5",
-    root: "EQU",
-    meaning: "Cân bằng, Bằng nhau, Như nhau",
-    origin: "Latin (aequus - equal)",
-    description: "Sử dụng nhiều trong thảo luận công bằng xã hội, khoa học hóa học và kinh tế học.",
-    tip: "Nhớ từ 'Equal' (Công bằng/Bằng nhau), 'Equation' (Phương trình toán học).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "equivalent",
-        partOfSpeech: "adj, n",
-        meaning: "Tương đương",
-        visualBreakdown: "EQU (bằng) + VAL (giá trị) + ENT -> có giá trị ngang nhau",
-        ieltsSentence: "A high-sugar diet can have an health impact equivalent to smoking a pack of cigarettes daily.",
-        vietnameseTranslation: "Một chế độ ăn nhiều đường có thể có tác động sức khỏe tương đương với việc hút một bao thuốc lá mỗi ngày."
-      },
-      {
-        word: "equilibrium",
-        partOfSpeech: "n",
-        meaning: "Trạng thái cân bằng (hóa học, lực lượng)",
-        visualBreakdown: "EQU (bằng) + LIBR (cái cân) + IUM -> trạng thái cân bằng tuyệt đối",
-        ieltsSentence: "Species in this ecosystem have established a delicate ecological equilibrium.",
-        vietnameseTranslation: "Các loài trong hệ sinh thái này đã thiết lập một sự cân bằng sinh thái mong manh."
-      }
-    ]
-  },
-  {
-    id: "r6",
-    root: "MULT/POLY",
-    meaning: "Nhiều, Đa dạng",
-    origin: "Latin (multus - many), Greek (polys - many)",
-    description: "Chủ đề toàn cầu hóa, xã hội học, cấu trúc phân tử sinh hóa học.",
-    tip: "Liên tưởng 'Multicultural' (Đa văn hóa) hoặc 'Polygon' (Hình đa giác).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "multitude",
-        partOfSpeech: "n",
-        meaning: "Vô số, đám đông, một lượng lớn",
-        visualBreakdown: "MULT (nhiều) + TUDE (trạng thái) -> trạng thái số lượng cực đông",
-        ieltsSentence: "Urban expansion brings with it a multitude of social and infrastructural challenges.",
-        vietnameseTranslation: "Sự bành trướng đô thị mang lại vô số thách thức về xã hội và cơ sở hạ tầng."
-      },
-      {
-        word: "proliferation",
-        partOfSpeech: "n",
-        meaning: "Sự tăng nhanh, sinh sôi nảy nở",
-        visualBreakdown: "PROLI (con cháu/nhiều) + FERE (mang lại) -> sinh sản ra cực kỳ nhiều",
-        ieltsSentence: "The rapid proliferation of digital misinformation posing a threat to local democracies.",
-        vietnameseTranslation: "Sự gia tăng nhanh chóng của thông tin sai lệch kỹ thuật số đang đe dọa các nền dân chủ địa phương."
-      }
-    ]
-  },
-  {
-    id: "r7",
-    root: "UNI/MONO",
-    meaning: "Một, Đơn lẻ, Duy nhất",
-    origin: "Latin (unus - one), Greek (monos - single)",
-    description: "Nói về độc quyền thị trường, tính nhất quán của hệ thống, hoặc sự hài hòa văn hóa.",
-    tip: "Liên hệ 'Unique' (Duy nhất), 'Monopoly' (Độc quyền).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "unify",
-        partOfSpeech: "v",
-        meaning: "Thống nhất, hợp nhất thành một",
-        visualBreakdown: "UNI (một) + FY (làm cho) -> gom lại làm một",
-        ieltsSentence: "The primary objective of the European Union is to unify economic regulations among member states.",
-        vietnameseTranslation: "Mục tiêu chính của Liên minh châu Âu là thống nhất các quy định kinh tế giữa các quốc gia thành viên."
-      },
-      {
-        word: "monsoon",
-        partOfSpeech: "n",
-        meaning: "Gió mùa (mang tính chu kỳ định hướng duy nhất)",
-        visualBreakdown: "MONO (duy nhất) + SOON -> loại gió định kỳ quét một hướng cố định",
-        ieltsSentence: "The agricultural yield in Southeast Asia is heavily reliant on the predictable arrival of the summer monsoon.",
-        vietnameseTranslation: "Sản lượng nông nghiệp ở Đông Nam Á phụ thuộc lớn vào sự đổ bộ đúng dự kiến của gió mùa mùa hè."
-      }
-    ]
-  },
-  {
-    id: "r8",
-    root: "BI/DI",
-    meaning: "Hai, Đôi, Phân đôi",
-    origin: "Latin (bis - twice), Greek (di - twice)",
-    description: "Xuất hiện trong phân định ranh giới học tập song ngữ, sự lưỡng lự chọn lựa, phản ứng hóa học 2 pha.",
-    tip: "Nghĩ đến 'Bicycle' (Xe 2 bánh), 'Bilingual' (Song ngữ).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "bilingual",
-        partOfSpeech: "adj",
-        meaning: "Song ngữ, sử dụng lưu loát hai ngôn ngữ",
-        visualBreakdown: "BI (hai) + LINGU (ngôn ngữ) + AL -> thuộc về hai ngôn ngữ",
-        ieltsSentence: "Cognitive researchers suggest that bilingual children possess superior problem-solving skills.",
-        vietnameseTranslation: "Các nhà nghiên cứu nhận thức cho rằng trẻ em song ngữ sở hữu kỹ năng giải quyết vấn đề vượt trội."
-      },
-      {
-        word: "diverge",
-        partOfSpeech: "v",
-        meaning: "Phân nhánh, rẽ ra các ngả khác nhau, bất đồng ý kiến",
-        visualBreakdown: "DI (hai) + VERG (hướng về) -> tách đi theo hai hướng khác nhau",
-        ieltsSentence: "The prehistoric pathways of human evolution began to diverge millions of years ago.",
-        vietnameseTranslation: "Các con đường tiền sử của sự tiến hóa loài người đã bắt đầu rẽ nhánh từ hàng triệu năm trước."
-      }
-    ]
-  },
-  {
-    id: "r9",
-    root: "ACR/ACU",
-    meaning: "Sắc bén, Nhọn, Cay độc",
-    origin: "Latin (acer - sharp/sour, acutus - sharp)",
-    description: "Áp dụng trong các vấn đề tranh chấp chính trị hiểm nghèo, cơn đau đột ngột hay trí tuệ sắc sảo.",
-    tip: "Nhớ từ 'Acute' (Cấp tính, nhạy bén) hoặc 'Acid' (Axit - chua/cay).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "acute",
-        partOfSpeech: "adj",
-        meaning: "Nghiêm trọng, cấp tính (y tế), sắc sảo nhạy bén",
-        visualBreakdown: "ACU (nhọn, buốt) + TE -> diễn ra nhanh, đau đớn dữ dội",
-        ieltsSentence: "There is an acute shortage of skilled medical personnel in developing countries.",
-        vietnameseTranslation: "Đang có sự thiếu hụt nghiêm trọng nhân viên y tế lành nghề ở các nước đang phát triển."
-      },
-      {
-        word: "acumen",
-        partOfSpeech: "n",
-        meaning: "Sự nhạy bén, đầu óc sắc sảo",
-        visualBreakdown: "ACU (sắc nhọn) + MEN (tâm trí) -> tâm trí nhạy như mũi kim",
-        ieltsSentence: "Her business acumen allowed her to spot profitable tech investment opportunities before others.",
-        vietnameseTranslation: "Sự nhạy bén trong kinh doanh đã giúp cô phát hiện ra các cơ hội đầu tư công nghệ sinh lời trước những người khác."
-      }
-    ]
-  },
-  {
-    id: "r10",
-    root: "VER",
-    meaning: "Sự thật, Đúng đắn",
-    origin: "Latin (verus - true)",
-    description: "Các đoạn văn liên quan đến xác thực dữ liệu khảo cổ, chứng cứ tòa án, tính trung thực khoa học.",
-    tip: "Nhớ từ 'Verify' (Xác nhận tính đúng đắn), 'Verdict' (Phán quyết tòa án).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "verify",
-        partOfSpeech: "v",
-        meaning: "Xác minh, kiểm chứng tính chính xác",
-        visualBreakdown: "VER (sự thật) + FY (làm cho) -> chứng minh thứ gì đó là thật và chính xác",
-        ieltsSentence: "Peer-reviewers have been asked to verify the experimental results before publication.",
-        vietnameseTranslation: "Hội đồng bình duyệt đã được yêu cầu xác minh kết quả thực nghiệm trước khi công bố."
-      },
-      {
-        word: "veracity",
-        partOfSpeech: "n",
-        meaning: "Tính chân thực, tính xác thực",
-        visualBreakdown: "VER (sự thật) + ACITY (tính chất) -> chất lượng của việc đúng sự thật",
-        ieltsSentence: "The investigators questioned the veracity of the witness's statements.",
-        vietnameseTranslation: "Các điều tra viên đã nghi ngờ tính chân thực của những tuyên bố từ nhân chứng."
-      }
-    ]
-  },
-  // Nốt 20 roots Quality nữa viết nhanh, cô đọng
-  {
-    id: "r11",
-    root: "PSEUDO",
-    meaning: "Giả tạo, Không thật",
-    origin: "Greek (pseudes - false)",
-    description: "Thường gặp trong thảo luận về 'Ngụy khoa học' (Pseudoscience).",
-    tip: "Phát âm là 'Siu-đô'. Ngụy tạo.",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "pseudoscience",
-        partOfSpeech: "n",
-        meaning: "Ngụy khoa học (giả danh khoa học)",
-        visualBreakdown: "PSEUDO (giả) + SCIENCE (khoa học)",
-        ieltsSentence: "Astrology is broadly categorized as a pseudoscience by modern academic circles.",
-        vietnameseTranslation: "Chiêm tinh học được phân loại rộng rãi là một ngụy khoa học bởi các học viện hiện đại."
-      }
-    ]
-  },
-  {
-    id: "r12",
-    root: "NOV",
-    meaning: "Mới, Cải tiến",
-    origin: "Latin (novus - new)",
-    description: "Chủ đề phát minh sáng chế, ý tưởng cách tân.",
-    tip: "Nhớ từ 'Novelty' (Sự mới lạ độc đáo), 'Innovation' (Sáng tạo, đổi mới).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "innovative",
-        partOfSpeech: "adj",
-        meaning: "Mang tính sáng tạo đột phá, mới mẻ",
-        visualBreakdown: "IN (bên trong) + NOV (mới) + ATIVE -> khơi dậy cái mới",
-        ieltsSentence: "He came up with an innovative solution to mitigate urban noise pollution.",
-        vietnameseTranslation: "Anh ấy đã đưa ra một giải pháp sáng tạo để giảm thiểu ô nhiễm tiếng ồn đô thị."
-      }
-    ]
-  },
-  {
-    id: "r13",
-    root: "SEN",
-    meaning: "Già nua, Lớn tuổi",
-    origin: "Latin (senex - old)",
-    description: "Sử dụng ở chủ đề già hóa dân số, lão học cứu cánh.",
-    tip: "Như 'Senior' (Người lớn tuổi, cấp cao).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "senescence",
-        partOfSpeech: "n",
-        meaning: "Quá trình lão hóa của sinh vật",
-        visualBreakdown: "SEN (già) + ESCENCE (bắt đầu hành trình) -> bắt đầu biểu hiện tuổi già",
-        ieltsSentence: "Cellular senescence plays a crucial role in preventing cancer cells from growing uncontrollably.",
-        vietnameseTranslation: "Sự lão hóa tế bào đóng một vai trò quan trọng trong việc ngăn chặn các tế bào ung thư phát triển không kiểm soát."
-      }
-    ]
-  },
-  {
-    id: "r14",
-    root: "GRAV",
-    meaning: "Nặng nề, Trầm trọng",
-    origin: "Latin (gravis - heavy)",
-    description: "Xuất hiện mô tả tính chất tồi tệ của bệnh tật hoặc khủng hoảng kinh tế.",
-    tip: "Nhớ từ 'Gravity' (Trọng lực / Sức hút vô cùng nặng nề).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "aggravate",
-        partOfSpeech: "v",
-        meaning: "Làm nghiêm trọng thêm, trầm trọng hóa",
-        visualBreakdown: "AG (hướng tới) + GRAV (nặng) + ATE -> làm cho nặng nề thêm",
-        ieltsSentence: "Carbon emissions aggravate the effects of climate change worldwide.",
-        vietnameseTranslation: "Khí thải carbon làm trầm trọng thêm tác động của biến đổi khí hậu trên toàn cầu."
-      }
-    ]
-  },
-  {
-    id: "r15",
-    root: "LEV",
-    meaning: "Nhẹ, Nâng lên",
-    origin: "Latin (levis - light)",
-    description: "Nhẹ bớt khủng hoảng, xoa dịu vết thương hoặc nâng cấp tinh thần.",
-    tip: "Nhớ từ 'Elevator' (Thang máy dùng nâng lên nhẹ nhàng) hay 'Alleviate' (Giảm đau).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "alleviate",
-        partOfSpeech: "v",
-        meaning: "Làm giảm bớt, xoa dịu (gánh nặng, nỗi đau)",
-        visualBreakdown: "AL (hướng tới) + LEV (nhẹ) + IATE -> làm cho nhẹ bớt đi",
-        ieltsSentence: "The state program was initiated to alleviate poverty in rural areas.",
-        vietnameseTranslation: "Chương trình của bang được bắt đầu để giảm bớt đói nghèo ở các vùng nông thôn."
-      }
-    ]
-  },
-  {
-    id: "r16",
-    root: "DUR",
-    meaning: "Cứng cắt, Bền bỉ, Lâu bền",
-    origin: "Latin (durus - hard, durare - to last)",
-    description: "Gặp trong nghiên cứu vật liệu học, hoặc độ bền cơ bắp của con người.",
-    tip: "Nhớ từ 'Duration' (Thời lượng), 'Durable' (Bền bỉ, dùng lâu mới hỏng).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "endure",
-        partOfSpeech: "v",
-        meaning: "Chịu đựng, tồn tại lâu bền",
-        visualBreakdown: "EN (làm cho) + DUR (bền bỉ) -> chịu đựng để sống sót lâu dài",
-        ieltsSentence: "The ancient structures have managed to endure centuries of weather damage.",
-        vietnameseTranslation: "Các cấu trúc cổ đại đã xoay xở để chịu đựng hàng thế kỷ tàn phá của thời tiết."
-      }
-    ]
-  },
-  {
-    id: "r17",
-    root: "SACR/SANCT",
-    meaning: "Thiêng liêng, Thần thánh, Phê duyệt",
-    origin: "Latin (sacer - sacred, sanctus - holy)",
-    description: "Chủ đề tôn giáo cổ đại, khu bảo tồn động vật, sắc lệnh xử phạt kinh tế quốc tế.",
-    tip: "Nghĩ về 'Sanctuary' (Khu bảo tồn hoang dã an toàn linh thiêng) hoặc 'Sanction' (Sắc lệnh trừng phạt chính trị).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "sanction",
-        partOfSpeech: "n, v",
-        meaning: "Sự phê chuẩn chính thức, lệnh trừng phạt (kinh tế)",
-        visualBreakdown: "SANCT (luật thiêng) + ION -> sự ràng buộc pháp lý áp đặt từ trên cao",
-        ieltsSentence: "The United Nations voted to impose economic sanctions to restore peace.",
-        vietnameseTranslation: "Liên Hợp Quốc đã bỏ phiếu áp dụng các biện pháp trừng phạt kinh tế để khôi phục hòa bình."
-      }
-    ]
-  },
-  {
-    id: "r18",
-    root: "AMB/AMPHI",
-    meaning: "Cả hai, Hai mặt, Xung quanh",
-    origin: "Latin (ambo - both), Greek (amphi - both/around)",
-    description: "Sử dụng cho các trường nghĩa mập mờ, loài lưỡng cư, tình huống tiến thoái lưỡng nan.",
-    tip: "Nghĩ về 'Ambiguity' (Mơ hồ - có thể hiểu theo cả 2 nghĩa) hoặc 'Amphibian' (Lưỡng cư).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "ambiguous",
-        partOfSpeech: "adj",
-        meaning: "Mơ hồ, mập mờ, khó hiểu rõ ràng",
-        visualBreakdown: "AMBI (hai lối) + AGERE (lái đi) -> bị lái theo hai ngả không biết lối nào đúng",
-        ieltsSentence: "The results of the preliminary study were ambiguous, requiring further experiments.",
-        vietnameseTranslation: "Kết quả của nghiên cứu sơ bộ còn mơ hồ, cần phải thử nghiệm thêm."
-      }
-    ]
-  },
-  {
-    id: "r19",
-    root: "OMNI",
-    meaning: "Tất cả, Toàn bộ",
-    origin: "Latin (omnis - all)",
-    description: "Liên quan đến đặc tính sinh học (động vật ăn tạp), sự phủ rộng văn hóa học.",
-    tip: "Nhớ từ 'Omnivore' (Động vật ăn tạp - ăn tất cả thịt và cỏ).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "omnipresent",
-        partOfSpeech: "adj",
-        meaning: "Có mặt ở khắp mọi nơi",
-        visualBreakdown: "OMNI (tất cả) + PRESENT (hiện diện) -> hiện diện ở mọi chỗ",
-        ieltsSentence: "With the proliferation of smartphones, access to social media has become omnipresent.",
-        vietnameseTranslation: "Với sự gia tăng của điện thoại thông minh, việc truy cập mạng xã hội đã xuất hiện khắp mọi nơi."
-      }
-    ]
-  },
-  {
-    id: "r20",
-    root: "FORT/FORC",
-    meaning: "Mạnh mẽ, Sức mạnh",
-    origin: "Latin (fortis - strong)",
-    description: "Củng cố nghiên cứu khoa học, gia cố pháo đài kiến trúc.",
-    tip: "Nhớ từ 'Force' (Lực lượng, sức mạnh) hoặc 'Fortress' (Pháo đài kiên cố).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "reinforce",
-        partOfSpeech: "v",
-        meaning: "Tăng cường, củng cố (nhận thức, kết cấu nhà)",
-        visualBreakdown: "RE (lại) + IN (vào) + FORCE (sức mạnh) -> cấp thêm sức mạnh cho chắc chắn",
-        ieltsSentence: "These data reinforce the argument that early education promotes lifelong success.",
-        vietnameseTranslation: "Những dữ liệu này củng cố lập luận rằng giáo dục sớm thúc đẩy thành công lâu dài."
-      }
-    ]
-  },
-  {
-    id: "r21",
-    root: "VAC",
-    meaning: "Trống rỗng, Bỏ trống",
-    origin: "Latin (vacuare - to empty)",
-    description: "Di tản dân cư thiên tai, phòng thí nghiệm hút chân không.",
-    tip: "Từ 'Vacuum' (Máy hút bụi/chân không) hoặc 'Vacant' (Phòng trống).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "evacuate",
-        partOfSpeech: "v",
-        meaning: "Sơ tán, triệt thoái cứu nạn",
-        visualBreakdown: "E (ra ngoài) + VAC (trống rỗng) + UATE -> dọn sạch người ra ngoài",
-        ieltsSentence: "Residents were ordered to evacuate the coastal city immediately before the hurricane made landfall.",
-        vietnameseTranslation: "Cư dân được lệnh sơ tán khỏi thành phố ven biển ngay lập tức trước khi cơn bão đổ bộ vào đất liền."
-      }
-    ]
-  },
-  {
-    id: "r22",
-    root: "MORT",
-    meaning: "Chết chóc, Tử vong",
-    origin: "Latin (mors - death)",
-    description: "Bài đọc về dịch tễ học, tỉ lệ tử vong trẻ em, hoặc sự bất tử trong truyền thuyết cổ đại.",
-    tip: "Nhớ từ 'Mortal' (Phàm trần, phải chết) hoặc 'Mortality rate' (Tỉ lệ tử vong).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "mortality",
-        partOfSpeech: "n",
-        meaning: "Sự tử vong, tỉ lệ chết",
-        visualBreakdown: "MORT (chết) + ALITY (tính chất) -> giới hạn sinh mệnh",
-        ieltsSentence: "Improved sanitation systems significantly reduced infant mortality in the mid-20th century.",
-        vietnameseTranslation: "Hệ thống vệ sinh được cải thiện đã làm giảm đáng kể tỷ lệ tử vong ở trẻ sơ sinh vào giữa thế kỷ 20."
-      }
-    ]
-  },
-  {
-    id: "r23",
-    root: "VIV/VIT",
-    meaning: "Sống, Sức sống, Tồn tại",
-    origin: "Latin (vivere - to live, vita - life)",
-    description: "Học thuyết tiến hóa, hồi sinh thảm thực vật rừng sau đám cháy.",
-    tip: "Nhớ từ 'Vitamin' (Chất tối quan trọng cho cuộc sống), 'Survive' (Sống sót vượt qua rào cản).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "vitality",
-        partOfSpeech: "n",
-        meaning: "Sức sống toàn diện, năng lượng dồi dào",
-        visualBreakdown: "VIT (sống) + ALITY -> nguồn gốc năng lượng duy trì sự sinh tồn",
-        ieltsSentence: "Modern physical therapy programs are designed to restore physical vitality and mobility.",
-        vietnameseTranslation: "Các chương trình vật lý trị liệu hiện đại được thiết kế để khôi phục sức sống và khả năng vận động thể chất."
-      }
-    ]
-  },
-  {
-    id: "r24",
-    root: "GEN/NAT",
-    meaning: "Sinh ra, Nguồn gốc, Bản địa",
-    origin: "Latin (natus - born, genus - race/birth)",
-    description: "Rất hay gặp trong chủ đề di truyền học, sinh sản thiên nhiên, động vật bản địa đại dương.",
-    tip: "Nhớ 'Generate' (Tạo ra nguồn điện) hoặc 'Native' (Bản địa).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "indigenous",
-        partOfSpeech: "adj",
-        meaning: "Bản địa, thuộc về đất đai vốn có từ lâu",
-        visualBreakdown: "INDU (bên trong) + GEN (sinh ra) + OUS -> tự sinh ra ở địa phương gốc",
-        ieltsSentence: "The study of indigenous agricultural practices reveals sustainable ecological knowledge.",
-        vietnameseTranslation: "Nghiên cứu về các thực hành nông nghiệp bản địa cho thấy tri thức sinh thái bền vững."
-      }
-    ]
-  },
-  {
-    id: "r25",
-    root: "CORP",
-    meaning: "Thân thể, Tập thể, Pháp nhân",
-    origin: "Latin (corpus - body)",
-    description: "Liên quan đến thế giới doanh nghiệp, thi thể khảo cổ hoang dã.",
-    tip: "Từ 'Corporation' (Tập đoàn lớn - gom nhiều thể thống làm một).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "incorporate",
-        partOfSpeech: "v",
-        meaning: "Hợp nhất, kết hợp chặt chẽ vào một cấu trúc",
-        visualBreakdown: "IN (vào trong) + CORP (thân thể) + ATE -> gom hẳn vào trong một thân thể chung",
-        ieltsSentence: "Schools have been encouraged to incorporate local ecological studies into their core syllabus.",
-        vietnameseTranslation: "Các trường học đã được khuyến khích kết hợp nghiên cứu sinh thái địa phương vào chương trình giảng dạy chính của họ."
-      }
-    ]
-  },
-  {
-    id: "r26",
-    root: "FID/FED",
-    meaning: "Tin tưởng, Lòng trung thành, Liên minh",
-    origin: "Latin (fides - trust/faith)",
-    description: "Xuất hiện trong câu chuyện tâm lý xã hội học, hệ thống liên bang toàn cầu.",
-    tip: "Nhớ từ 'Confidence' (Sự tự tin - tin tưởng sâu sắc vào bản thân).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "diffident",
-        partOfSpeech: "adj",
-        meaning: "Rụt rè, nhút nhát, thiếu tự tin",
-        visualBreakdown: "DIS (không/chia rẽ) + FID (tin tưởng) -> mất niềm tin vào chính mình",
-        ieltsSentence: "Unlike his outspoken brother, Andrew was diffident and preferred to avoid public attention.",
-        vietnameseTranslation: "Không giống như người anh trai bộc trực của mình, Andrew rụt rè và thích tránh sự chú ý của công chúng."
-      }
-    ]
-  },
-  {
-    id: "r27",
-    root: "SIMIL/SIMUL",
-    meaning: "Giống nhau, Mô phỏng, Cùng lúc",
-    origin: "Latin (similis - like, simul - together)",
-    description: "Chủ đề học máy trí tuệ nhân tạo, sự tương đồng sinh học.",
-    tip: "Nhớ 'Similar' (Tương tự), 'Simulate' (Mô phỏng chân thực).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "simultaneous",
-        partOfSpeech: "adj",
-        meaning: "Đồng thời, xảy ra cùng một lúc",
-        visualBreakdown: "SIMUL (cùng lúc) + TANEOUS -> các hành động song hành đồng bộ",
-        ieltsSentence: "The government announced simultaneous tax cuts and infrastructure investments.",
-        vietnameseTranslation: "Chính phủ đã công bố cắt giảm thuế và đầu tư cơ sở hạ tầng đồng thời."
-      }
-    ]
-  },
-  {
-    id: "r28",
-    root: "ACID/ACRI",
-    meaning: "Chua, Cay độc, Gay gắt",
-    origin: "Latin (acidus - sour, acer - sharp)",
-    description: "Phê phán mâu thuẫn xã hội, hoặc nồng độ axit hủy hoại đất trồng trồng trọt.",
-    tip: "Nhớ 'Acid' (Axit hủy diệt) hay 'Acrimonious' (Tranh cãi nảy lửa độc hại).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "acrimonious",
-        partOfSpeech: "adj",
-        meaning: "Cay độc, gay gắt, đầy hằn học (lời nói, tranh chấp)",
-        visualBreakdown: "ACRI (cay đắng) + MONY (trạng thái) + OUS -> trạng thái xỉa xói đau lòng",
-        ieltsSentence: "The dissolution of the partnership was marked by months of acrimonious legal debates.",
-        vietnameseTranslation: "Sự giải thể của mối quan hệ hợp tác đã được ghi dấu bởi những tháng tranh biện pháp lý gay gắt."
-      }
-    ]
-  },
-  {
-    id: "r29",
-    root: "FIN",
-    meaning: "Kết thúc, Giới hạn, Hoàn thiện",
-    origin: "Latin (finis - end, boundary)",
-    description: "Bài đọc kinh tế về nguồn tài nguyên có hạn, hoàn thiện sản phẩm.",
-    tip: "Nhớ từ 'Finish' (Hoàn thành), 'Finite' (Hữu hạn - có giới hạn điểm dừng).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "infinite",
-        partOfSpeech: "adj",
-        meaning: "Vô hạn, không có điểm kết",
-        visualBreakdown: "IN (không) + FINITE (giới hạn) -> bao la vô chừng",
-        ieltsSentence: "Mathematical calculations suggest that the universe is vast, though not necessarily infinite.",
-        vietnameseTranslation: "Các tính toán toán học cho thấy vũ trụ bao la, mặc dù không nhất thiết là vô hạn."
-      }
-    ]
-  },
-  {
-    id: "r30",
-    root: "PLEN/PLET",
-    meaning: "Đầy đủ, Đo đếm đầy",
-    origin: "Latin (plenus - full)",
-    description: "Hao hụt năng lượng sinh quyển, lấp đầy kho dự trữ ngũ cốc.",
-    tip: "Nghĩ ngay tới 'Plenty' (Nhiều vô kể) hay 'Deplete' (Làm cạn kiệt nguồn lực).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "deplete",
-        partOfSpeech: "v",
-        meaning: "Làm cạn kiệt, hao mòn lượng lớn",
-        visualBreakdown: "DE (xuống/phủ định) + PLET (đầy) -> lấy bớt ra khỏi cái vốn đầy ắp",
-        ieltsSentence: "Intensive farming practices have been criticized for running to deplete vital soil nutrients.",
-        vietnameseTranslation: "Các hoạt động canh tác thâm canh đã bị chỉ trích vì có xu hướng làm cạn kiệt các chất dinh dưỡng quan trọng của đất."
-      }
-    ]
-  },
+import { WordRoot } from '../types';
+import { extraRoots } from './rootsDataExtra';
+import { trunk10To13Roots } from './rootsDataTrunk10_13';
+import { trunk14To18Roots } from './rootsDataTrunk14_18';
 
-  // === CATEGORY: Actions & Motion (30 Roots) ===
-  {
-    id: "r31",
-    root: "PORT",
-    meaning: "Mang, Vác, Cầu cảng, Vận chuyển",
-    origin: "Latin (portare - to carry, portus - harbor)",
-    description: "Thường xuyên xuất hiện trong địa lý vận tải, chuỗi cung ứng, xuất nhập khẩu mậu dịch toàn cầu.",
-    tip: "Từ 'Transport' (Vận chuyển từ A-B) hay 'Export' (Xuất khẩu hàng hóa qua cảng).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "portable",
-        partOfSpeech: "adj",
-        meaning: "Có thể xách tay, gọn nhẹ dễ mang đi",
-        visualBreakdown: "PORT (mang vác) + ABLE (có thể) -> tháo vát dễ mang bên người",
-        ieltsSentence: "The invention of portable medical devices revolutionized healthcare delivery in remote villages.",
-        vietnameseTranslation: "Phát minh ra các thiết bị y tế xách tay đã cách mạng hóa việc cung cấp chăm sóc sức khỏe ở các ngôi làng vùng sâu vùng xa."
-      }
-    ]
-  },
-  {
-    id: "r32",
-    root: "TRACT",
-    meaning: "Kéo, Thu hút, Thương thuyết",
-    origin: "Latin (trahere - to pull/draw)",
-    description: "Các vấn đề tâm lý phân tâm học, khai thác quặng mỏ tài nguyên, hợp đồng kinh tế.",
-    tip: "Nhớ từ 'Attract' (Kéo tình cảm về phía mình - thu hút), 'Distract' (Kéo sự chú ý ra hướng khác).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "extract",
-        partOfSpeech: "v, n",
-        meaning: "Chiết xuất, trích xuất dữ liệu, khai hoang quặng",
-        visualBreakdown: "EX (ra ngoài) + TRACT (kéo) -> lôi phăng thứ gì đó từ sâu thẳm ra ngoài",
-        ieltsSentence: "Chemists were able to extract the active compound from native medical herbs.",
-        vietnameseTranslation: "Các nhà hóa học đã có thể chiết xuất hợp chất hoạt tính từ các loại thảo mộc y học bản địa."
-      }
-    ]
-  },
-  {
-    id: "r33",
-    root: "STRUCT",
-    meaning: "Xây dựng, Sắp xếp, Thiết lập",
-    origin: "Latin (struere - to build)",
-    description: "Gặp liên tục trong bài đọc kiến trúc, cải tổ hành chính đô thị, tàn phá môi trường.",
-    tip: "Tập trung vào 'Construct' (Xây dựng) hoặc 'Structure' (Cấu trúc kết cấu).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "infrastructure",
-        partOfSpeech: "n",
-        meaning: "Cơ sở hạ tầng (đường xá, cầu cống, mạng điện)",
-        visualBreakdown: "INFRA (ở dưới) + STRUCTURE (cấu trúc xây dựng) -> bệ phóng xây dựng cốt lõi nằm bên dươí",
-        ieltsSentence: "Developing countries must invest heavily in infrastructure to attract foreign investments.",
-        vietnameseTranslation: "Các nước đang phát triển phải đầu tư mạnh mẽ vào cơ sở hạ tầng để thu hút đầu tư nước ngoài."
-      }
-    ]
-  },
-  {
-    id: "r34",
-    root: "SCRIB/SCRIPT",
-    meaning: "Viết, Ghi chép",
-    origin: "Latin (scribere - to write)",
-    description: "Tài liệu ngôn ngữ cổ đại văn tự, bác sĩ kê đơn thuốc, sao chép mã gen sinh học.",
-    tip: "Nhớ phím bấm 'Scribe' (Người ghi chép lịch sử gốc), 'Prescribe' (Bác sĩ viết đơn ra toa trước khi mua thuốc).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "transcribe",
-        partOfSpeech: "v",
-        meaning: "Chuyển biên, sao chép lại từ âm thanh sang dạng văn bản",
-        visualBreakdown: "TRANS (vượt qua/chuyển dịch) + SCRIBE (viết) -> chuyển thể từ âm thanh sang mặt chữ viết",
-        ieltsSentence: "Scholars have spent decades trying to transcribe ancient stone tablet inscriptions.",
-        vietnameseTranslation: "Các học giả đã dành nhiều thập kỷ để cố gắng phiên dịch lại các ký tự khắc trên bia đá cổ đại."
-      }
-    ]
-  },
-  {
-    id: "r35",
-    root: "JECT",
-    meaning: "Ném, Đẩy ra, Quăng",
-    origin: "Latin (jacere - to throw)",
-    description: "Hành trình máy bay thoát hiểm, bơm tiêm vắc xin y học, phóng tên lửa đạn đạo.",
-    tip: "Từ 'Eject' (Đẩy nút bật đĩa ra hoặc phi công thoát hiểm cứu mạng) hay 'Reject' (Ném trả lại - từ chối thẳng thừng).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "conjecture",
-        partOfSpeech: "n, v",
-        meaning: "Sự phỏng đoán, ước đoán chưa có bằng chứng xác đáng",
-        visualBreakdown: "CON (cùng nhau) + JECT (ném ý tưởng) -> cùng gom suy luận thô rồi quăng đại ra phỏng đoán",
-        ieltsSentence: "The theory about the collapse of the Mayan civilization remains a matter of scientific conjecture.",
-        vietnameseTranslation: "Lý thuyết về sự sụp đổ của nền văn minh Maya vẫn là một vấn đề phỏng đoán khoa học."
-      }
-    ]
-  },
-  {
-    id: "r36",
-    root: "VERT/VERS",
-    meaning: "Xoay quanh, Biến đổi, Hướng về",
-    origin: "Latin (vertere - to turn)",
-    description: "Chuyển giao năng lượng xanh, tính năng đa dụng của robot, kẻ thù thách thức.",
-    tip: "Nhớ từ 'Convert' (Chuyển đổi tiền tệ/năng lượng), 'Universe' (Toàn vũ trụ xoay chuyển một khối thống nhất).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "versatile",
-        partOfSpeech: "adj",
-        meaning: "Linh hoạt, đa tài, đa năng biến hóa",
-        visualBreakdown: "VERS (nhanh xoay chuyển) + ATILE -> có tài xoay sở nhanh lẹ mọi vị trí",
-        ieltsSentence: "The design of the new drone makes it an extremely versatile tool for ecological surveying.",
-        vietnameseTranslation: "Thiết kế của chiếc flycam mới khiến nó trở thành một công cụ cực kỳ linh hoạt để khảo sát sinh thái."
-      }
-    ]
-  },
-  {
-    id: "r37",
-    root: "MIT/MISS",
-    meaning: "Gửi đi, Phác ra, Thải ra",
-    origin: "Latin (mittere - to send)",
-    description: "Lượng khí thải ô nhiễm môi trường, truyền dữ liệu vô tuyến, bãi chức từ nhiệm.",
-    tip: "Từ 'Transmit' (Truyền đạt tín hiệu TV/internet) hay 'Emit' (Thải khói bụi độc hại).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "emit",
-        partOfSpeech: "v",
-        meaning: "Phát ra, thải ra (ánh sáng, âm thanh, khí thải carbon)",
-        visualBreakdown: "E (ra ngoại) + MIT (gửi đi) -> phóng xả chất bẩn ra môi trường ngoài",
-        ieltsSentence: "Vessels designed for shipping must satisfy strict standards on the amount of sulfur they emit.",
-        vietnameseTranslation: "Các tàu được thiết kế để vận tải biển phải thỏa mãn các tiêu chuẩn nghiêm ngặt về lượng lưu huỳnh mà chúng thải ra."
-      }
-    ]
-  },
-  {
-    id: "r38",
-    root: "DUC/DUCT",
-    meaning: "Dẫn dắt, Điều hướng",
-    origin: "Latin (ducere - to lead)",
-    description: "Tổ chức điều hành dự án giáo dục, suy luận logic toán học, thu hút hành vi khách hàng.",
-    tip: "Nhớ 'Conduct' (Hướng dẫn hành vi/ dẫn truyền dòng điện) hay 'Education' (Dẫn lối trí thức lên cao).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "induce",
-        partOfSpeech: "v",
-        meaning: "Xui khiến, kích hoạt xảy ra, gây ra (biến đổi sinh lý)",
-        visualBreakdown: "IN (vào trong) + DUCE (dẫn dắt) -> khơi động cảm xúc dẫn dụ tới hành động",
-        ieltsSentence: "Certain species of bacteria produce chemicals that induce cellular replication in host organisms.",
-        vietnameseTranslation: "Một số loài vi khuẩn sản xuất ra các hóa chất kích hoạt sự phân chia tế bào ở sinh vật chủ."
-      }
-    ]
-  },
-  {
-    id: "r39",
-    root: "CAP/CIP/CEPT",
-    meaning: "Nắm lấy, Đoạt được, Đón nhận",
-    origin: "Latin (capere - to take/seize/hold)",
-    description: "Thuyết thu nạp ý kiến mới, đánh chặn lực lượng xâm lăng, bắt giữ tội phạm thông tin.",
-    tip: "Nhớ từ 'Capture' (Bắt giữ chụp ảnh màn hình) hay 'Receive' / 'Receptive' (Rất dễ tiếp thu ý kiến mới).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "receptive",
-        partOfSpeech: "adj",
-        meaning: "Dễ tiếp thu, dễ tiếp nhận cái mới dồi dào",
-        visualBreakdown: "RE (trở lại) + CEPT (nắm lấy) + IVE -> luôn mở lòng giữ lấy ý tưởng hay ho mang về",
-        ieltsSentence: "Managers who are receptive to feedbacks tend to foster a productive team work culture.",
-        vietnameseTranslation: "Những nhà quản lý dễ tiếp nhận phản hồi có xu hướng thúc đẩy văn hóa làm việc nhóm hiệu quả."
-      }
-    ]
-  },
-  {
-    id: "r40",
-    root: "PEL/PULS",
-    meaning: "Đẩy, Thúc giục, Trục xuất",
-    origin: "Latin (pellere - to drive/push)",
-    description: "Lực từ trường đẩy nhau, cưỡng chế trục xuất người nhập cư trái phép, thôi thúc chi tiêu mua sắm.",
-    tip: "Nhớ từ 'Compel' (Thúc ép/buộc phải làm) hay 'Repel' (Đẩy lùi côn trùng cắn phá).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "compel",
-        partOfSpeech: "v",
-        meaning: "Bắt buộc, thúc ép hành động mạnh mẽ",
-        visualBreakdown: "CON (cùng nhau) + PEL (đẩy) -> hợp lực dồn ép dồn tới chân tường",
-        ieltsSentence: "Socioeconomic conditions often compel impoverished villagers to migrate into major cities.",
-        vietnameseTranslation: "Các điều kiện kinh tế xã hội thường thúc ép những người dân làng nghèo khổ di cư vào các thành phố lớn."
-      }
-    ]
-  },
-  // Nốt 20 actions ngắn dứt khoát
-  {
-    id: "r41",
-    root: "CEDE/CEED/CESS",
-    meaning: "Đi, Nhường lại, Tiếp cận",
-    origin: "Latin (cedere - to go/yield)",
-    description: "Nhượng địa chính trị quốc tế, khủng hoảng thoái lui kinh tế.",
-    tip: "Nhớ 'Precede' (Đi trước thiết lập tiền lệ) hay 'Recession' (Kinh tế đi thụt lùi).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "recession",
-        partOfSpeech: "n",
-        meaning: "Sự suy thoái kinh tế",
-        visualBreakdown: "RE (lùi lại) + CESS (đi) -> nền kinh tế đi giật lùi",
-        ieltsSentence: "The structural reform was initiated during a period of global economic recession.",
-        vietnameseTranslation: "Cuộc cải cách cơ cấu đã được khởi xướng trong thời kỳ suy thoái kinh tế toàn cầu."
-      }
-    ]
-  },
-  {
-    id: "r42",
-    root: "GRAD/GRES",
-    meaning: "Đi, Bước, Tiến triển dần",
-    origin: "Latin (gradus - step)",
-    description: "Suy thoái phẩm chất đất nông nghiệp, đột phá tiến trình nghiên cứu.",
-    tip: "Nghĩ ngay tới 'Gradual' (Dần dần theo từng bước) hoặc 'Progress' (Bản báo cáo tiến độ).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "degrade",
-        partOfSpeech: "v",
-        meaning: "Làm suy thoái, hạ cấp chất lượng bảo tồn rừng bạt ngàn",
-        visualBreakdown: "DE (xuống) + GRADE (bước bậc) -> dậm chân đạp lùi cấp độ",
-        ieltsSentence: "Uncontrolled tourism can degrade fragile ecosystems in mountainous areas.",
-        vietnameseTranslation: "Du lịch không kiểm soát có thể làm suy thoái các hệ sinh thái mỏng manh ở vùng núi."
-      }
-    ]
-  },
-  {
-    id: "r43",
-    root: "CURR/CURS",
-    meaning: "Chạy, Lưu truyền rộng rãi",
-    origin: "Latin (currere - to run)",
-    description: "Sự hiện hành thời gian biểu hiện tại, dòng điện truyền dẫn, báo hiệu đi trước đón chặn.",
-    tip: "Từ 'Current' (Dòng chảy hiện tại của sự việc) hoặc 'Currency' (Đồng tiền lưu thông chạy từ túi này sang túi khác).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "precursor",
-        partOfSpeech: "n",
-        meaning: "Tiền thân, người đi trước mở đường đón ngọn",
-        visualBreakdown: "PRE (trước) + CURS (chạy) -> kẻ chạy tiên phong mở lối",
-        ieltsSentence: "The manual abacus was the basic precursor to the modern electronic computer.",
-        vietnameseTranslation: "Bàn tính thủ công là tiền thân cơ bản cho máy tính điện tử hiện đại."
-      }
-    ]
-  },
-  {
-    id: "r44",
-    root: "FRACT/FRAG",
-    meaning: "Bẻ gãy, Đập vỡ vụn",
-    origin: "Latin (frangere - to break)",
-    description: "Hạt bụi gãy vụn trong khí quyển, xâm hại bản quyền sáng chế.",
-    tip: "Nhớ 'Fragile' (Dễ vỡ dễ hỏng cần chống va đập) hoặc 'Fraction' (Phân số đập gãy số nguyên).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "infringe",
-        partOfSpeech: "v",
-        meaning: "Xâm phạm, phạm pháp điều luật quy chuẩn",
-        visualBreakdown: "IN (vào trong) + FRINGE (gãy vụn) -> tác động lực bẻ gãy ranh giới quy chuẩn bảo hộ",
-        ieltsSentence: "Developing proprietary software illegally might infringe on digital copyright laws.",
-        vietnameseTranslation: "Việc phát triển trái phép phần mềm độc quyền có thể xâm phạm luật bản quyền kỹ thuật số."
-      }
-    ]
-  },
-  {
-    id: "r45",
-    root: "PLIC/PLY",
-    meaning: "Gấp, Cuộn dính, Liên quan",
-    origin: "Latin (plicare - to fold)",
-    description: "Bài diễn thuyết giải thích ngầm mờ nhạt, cấu trúc tế bào nhân đôi đột phá.",
-    tip: "Nhớ 'Complicate' (Phức tạp - nhiều mối cuộn gấp vào nhau) hay 'Imply' (Lời nói ngụ ý lẩn khuất).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "implicit",
-        partOfSpeech: "adj",
-        meaning: "Hàm ý ngầm, tiềm ẩn định kiến",
-        visualBreakdown: "IN (bên trong) + PLIC (gấp lại) -> lý lẽ giấu gấp sâu xa không phơi ra",
-        ieltsSentence: "There is an implicit consensus among researchers that the old theory is obsolete.",
-        vietnameseTranslation: "Có một sự đồng thuận ngầm giữa các nhà nghiên cứu rằng lý thuyết cũ đã lỗi thời."
-      }
-    ]
-  },
-  {
-    id: "r46",
-    root: "POS/PON/POUND",
-    meaning: "Đặt, Để, Sắp đặt",
-    origin: "Latin (ponere - to place/put)",
-    description: "Vị trí đặt cọc tài nguyên đất đai, áp đặt thuế hải quan nặng nề.",
-    tip: "Nghĩ tới 'Postpone' (Hành động đặt dời lịch lại phía sau) hay 'Impose' (Áp đặt luật khó khăn).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "impose",
-        partOfSpeech: "v",
-        meaning: "Áp đặt thuế mới, cưỡng bách tư tưởng",
-        visualBreakdown: "IN (lên trên) + POSE (đặt) -> vác gánh nặng đè trực tiếp đặt lên đầu ai",
-        ieltsSentence: "The government decided to impose strict restriction rules on chemical usage.",
-        vietnameseTranslation: "Chính phủ quyết định áp đặt các quy tắc hạn chế nghiêm ngặt đối với việc sử dụng hóa chất."
-      }
-    ]
-  },
-  {
-    id: "r47",
-    root: "SIST/STA",
-    meaning: "Đứng vững, Duy trì nguyên trạng",
-    origin: "Latin (sistere - to stand/stop)",
-    description: "Nhất nhất kiên trì học hỏi, vật cản ngáng đường kiến tạo đổi mới.",
-    tip: "Nhớ từ 'Persistent' (Kiên trì bền chí suốt đời đứng vững) hoặc 'Obstacle' (Vật cản chân đứng nghênh ngang).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "persist",
-        partOfSpeech: "v",
-        meaning: "Bền bỉ, kiên trì theo đuổi, kéo dài âm ỉ không dứt",
-        visualBreakdown: "PER (đến cùng) + SIST (đứng vững) -> đứng hiên ngang đến giây phút cuối",
-        ieltsSentence: "If the geological symptoms persist, researchers must initiate the emergency protocol.",
-        vietnameseTranslation: "Nếu các triệu chứng địa chất vẫn tiếp tục kéo dài, các nhà nghiên cứu phải khởi động quy trình khẩn cấp."
-      }
-    ]
-  },
-  {
-    id: "r48",
-    root: "VEN/VENT",
-    meaning: "Đến, Hội tụ, Tìm cách",
-    origin: "Latin (venire - to come)",
-    description: "Sự đột ngột ra đời công nghệ đột phá, nỗ lực can thiệp ngăn chặn dịch bệnh bùng nổ.",
-    tip: "Nhớ 'Prevent' (Ngăn chặn trước khi xảy đến) hoặc 'Intervene' (Chạy nhảy chen tầm giữa can thiệp).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "intervene",
-        partOfSpeech: "v",
-        meaning: "Can thiệp giải hòa ổn định khủng hoảng",
-        visualBreakdown: "INTER (ở giữa) + VEN (đến) -> chen sâu tiến vào chính giữa làm dịu tranh chấp",
-        ieltsSentence: "The central bank had to intervene to stabilize the local currency market.",
-        vietnameseTranslation: "Ngân hàng trung ương đã phải can thiệp để ổn định thị trường nội tệ."
-      }
-    ]
-  },
-  {
-    id: "r49",
-    root: "VOLV/VOLU",
-    meaning: "Xoay quanh, Cuộn tròn, Tiến hóa dần",
-    origin: "Latin (volvere - to roll/turn)",
-    description: "Lịch sử tiến hóa sinh học trải qua trăm triệu năm, cuộc cách mạng thay đổi xã hội.",
-    tip: "Nhớ ngay từ 'Evolve' (Tiến hóa sinh học liên tục) hoặc 'Revolution' (Cuộc cải cách cách mạng lật đổ xoay chiều).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "evolve",
-        partOfSpeech: "v",
-        meaning: "Tiến hóa sinh vật, cải tiến dần định hướng",
-        visualBreakdown: "EX (ra ngoài) + VOLVE (cuộn xoay) -> mở rộng lột xác trải dài qua thời gian",
-        ieltsSentence: "Mammals began to evolve swiftly after the extinction of dinosaurs.",
-        vietnameseTranslation: "Động vật có vú bắt đầu tiến hóa nhanh chóng sau sự tuyệt chủng của khủng long."
-      }
-    ]
-  },
-  {
-    id: "r50",
-    root: "FLU/FLUX",
-    meaning: "Chảy tràn, Biến động, Trôi chảy",
-    origin: "Latin (fluere - to flow)",
-    description: "Ngôn ngữ diễn đạt trôi chảy mạch lạc, sự biến động tỉ giá hối đoái liên tục.",
-    tip: "Nhớ từ 'Fluent' (Nói năng lưu loát như nước chảy) hoặc 'Fluctuate' (Biến đổi trồi sụt không cố định).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "fluctuate",
-        partOfSpeech: "v",
-        meaning: "Biến động thất thường, dao động lên xuống",
-        visualBreakdown: "FLU (nước trôi chảy) + ATE -> chảy dập dềnh không chịu đứng yên một điểm",
-        ieltsSentence: "Global oil prices continue to fluctuate due to political uncertainties in the Middle East.",
-        vietnameseTranslation: "Giá dầu thế giới tiếp tục biến động do những bất ổn chính trị ở Trung Đông."
-      }
-    ]
-  },
-  {
-    id: "r51",
-    root: "LABOR",
-    meaning: "Lao động, Làm việc cần cù",
-    origin: "Latin (labor - work)",
-    description: "Sự chung tay hợp tác khoa học đa quốc gia, làm việc cực nhọc.",
-    tip: "Nhớ từ 'Collaborate' (Cùng chung tay nhau làm việc hợp tác).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "collaborate",
-        partOfSpeech: "v",
-        meaning: "Hợp tác, cộng tác thực hiện nghiên cứu",
-        visualBreakdown: "CON (cùng nhau) + LABOR (làm việc) -> kề vai sát cánh gánh vác sứ mệnh khoa học",
-        ieltsSentence: "Scientists from multiple nations gather to collaborate on the Arctic research project.",
-        vietnameseTranslation: "Các nhà khoa học từ nhiều quốc gia tập hợp để hợp tác trong dự án nghiên cứu Bắc Cực."
-      }
-    ]
-  },
-  {
-    id: "r52",
-    root: "LOG/LOQU",
-    meaning: "Nói, Lời văn, Diễn văn biểu cảm",
-    origin: "Greek (logos - word/reason), Latin (loqui - to speak)",
-    description: "Nhà hùng biện thuyết phục tài tình, bài đối thoại học thuật.",
-    tip: "Nhớ ngay từ 'Dialogue' (Buổi hội đàm đối thoại) hoặc 'Eloquent' (Hùng biện cuốn hút lưu loát).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "eloquent",
-        partOfSpeech: "adj",
-        meaning: "Hùng biện tài tình, có tài thuyết phục bằng ngôn từ",
-        visualBreakdown: "EX (ra ngoài) + LOQU (nói) + ENT -> tuôn lời nói vang xa cuốn hút đám đông",
-        ieltsSentence: "Her eloquent speech at the convention managed to persuade several potential investors.",
-        vietnameseTranslation: "Bài phát biểu hùng biện của cô tại hội nghị đã thuyết phục được một số nhà đầu tư tiềm năng."
-      }
-    ]
-  },
-  {
-    id: "r53",
-    root: "VOC/VOK",
-    meaning: "Gọi, Tiếng nói, Kêu gọi",
-    origin: "Latin (vox - voice, vocare - to call)",
-    description: "Ủng hộ luật cải cách xã hội, khiêu khích nổ phát súng chiến tranh.",
-    tip: "Nhớ từ 'Vocal' (Ca sĩ hát chính phát giọng nói) hay 'Advocate' (Kêu gọi đứng lên bảo vệ, ủng hộ).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "advocate",
-        partOfSpeech: "v, n",
-        meaning: "Người ủng hộ tích cực, biện hộ cho lẽ phải",
-        visualBreakdown: "AD (hướng tới) + VOC (gọi điện/kêu tiếng lớn) -> hô to kêu gọi mọi người cùng đứng lên bảo vệ",
-        ieltsSentence: "Environmental activists advocate for stricter laws regarding single-use plastics.",
-        vietnameseTranslation: "Các hoạt động môi trường ủng hộ các đạo luật nghiêm khắc hơn đối với nhựa dùng một lần."
-      }
-    ]
-  },
-  {
-    id: "r54",
-    root: "SPEC/SPIC",
-    meaning: "Nhìn, Quan sát, Thấy, Kính mắt",
-    origin: "Latin (specere - to look at)",
-    description: "Bài đọc miêu tả thắng cảnh ngoạn mục hùng vĩ, thanh tra rà soát lỗi sản xuất.",
-    tip: "Nhớ ngay 'Spectacular' (Ngoạn mục ngập tràn thị giác) hoặc 'Inspect' (Thanh tra ngắm rà soát tìm vết).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "spectacular",
-        partOfSpeech: "adj",
-        meaning: "Ngoạn mục, hùng vĩ bắt mắt",
-        visualBreakdown: "SPEC (nhìn ngắm) + ACULAR -> đẹp hoành tráng đến mức ai cũng trố mắt nhìn",
-        ieltsSentence: "The conservation area provides tourists with a spectacular view of active volcanic craters.",
-        vietnameseTranslation: "Khu bảo tồn cung cấp cho du khách một góc nhìn ngoạn mục về các miệng núi lửa đang hoạt động."
-      }
-    ]
-  },
-  {
-    id: "r55",
-    root: "AUD/AUS",
-    meaning: "Nghe, Âm thanh",
-    origin: "Latin (audire - to hear)",
-    description: "Khán phòng tổ chức hội nghị lớn, thiết bị nghe nhìn bổ trợ giáo dục.",
-    tip: "Nhớ phím 'Auditory' (Bộ phận giác quan nghe) hay 'Audience' (Khán giả dỏng tai lắng nghe buổi nhạc).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "audible",
-        partOfSpeech: "adj",
-        meaning: "Có thể nghe thấy rõ, rõ mồn một",
-        visualBreakdown: "AUD (nghe) + ABLE (có thể) -> âm lượng vừa tầm tiếp thu của tai",
-        ieltsSentence: "The acoustic feedback in the auditorium was barely audible from the back rows.",
-        vietnameseTranslation: "Tiếng vang âm thanh trong khán phòng hầu như không thể nghe thấy rõ từ những hàng ghế cuối."
-      }
-    ]
-  },
-  {
-    id: "r56",
-    root: "VIS/VID",
-    meaning: "Thấy rõ, Bản đồ tầm nhìn",
-    origin: "Latin (videre - to see)",
-    description: "Nhận bằng chứng rõ như ban ngày, giám sát hành trình hoạt động.",
-    tip: "Nhớ từ 'Visible' (Có thể nhìn thấy) hay 'Evidence' (Chứng cứ rõ rành rành đập vào mắt).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "conspicuous",
-        partOfSpeech: "adj",
-        meaning: "Dễ nhận thấy, lộ liễu, thu hút mắt quan sát",
-        visualBreakdown: "CON (mọi người) + SPIC (nhìn) + UOUS -> rực rỡ đến mức đứng giữa dòng người ai cũng nhận ra",
-        ieltsSentence: "In high-altitude regions, yellow vests are highly conspicuous and key for alpine rescue safety.",
-        vietnameseTranslation: "Ở các vùng độ cao lớn, áo khoác vàng cực kỳ dễ nhận thấy và là chìa khóa cho sự an toàn cứu nạn trên núi."
-      }
-    ]
-  },
-  {
-    id: "r57",
-    root: "COGN",
-    meaning: "Nhận thức, Hiểu biết tự nhiên",
-    origin: "Latin (cognoscere - to know)",
-    description: "Gặp dồn dập ở các bài thuộc bộ môn khoa học nhận thức, hành vi suy lý động vật bậc cao.",
-    tip: "Nhớ từ 'Cognitive development' (Quá trình phát triển nhận thức não bộ) hay 'Recognize' (Nhận ra chuyện xưa người cũ).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "cognitive",
-        partOfSpeech: "adj",
-        meaning: "Liên quan đến nhận thức, quá trình tư duy lính hội của não",
-        visualBreakdown: "COGN (nhận thức hiểu biết) + ITIVE -> thuộc về tư duy phán đoán",
-        ieltsSentence: "Solving intricate puzzles regularly helps sustain healthy cognitive functions in old age.",
-        vietnameseTranslation: "Giải các câu đố phức tạp thường xuyên giúp duy trì các chức năng nhận thức lành mạnh ở tuổi già."
-      }
-    ]
-  },
-  {
-    id: "r58",
-    root: "CRED",
-    meaning: "Tin cậy, Sự uy tín tín ngưỡng",
-    origin: "Latin (credere - to believe)",
-    description: "Tài liệu kiểm định chứng chỉ năng lực, luận lý khoa học thuyết phục có độ tin cậy tuyệt đối.",
-    tip: "Nhớ 'Incredible' (Không thể tin nổi tuyệt vời quá) hoặc 'Credibility' (Độ uy tín của tờ báo lớn).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "credible",
-        partOfSpeech: "adj",
-        meaning: "Có uy tín lớn, rất đáng tin cậy",
-        visualBreakdown: "CRED (tin tưởng) + ABLE (có thể) -> vững vàng để người khác đặt trọn niềm tin",
-        ieltsSentence: "Historians require multiple credible sources before validating any claim about the old war.",
-        vietnameseTranslation: "Các nhà sử học yêu cầu nhiều nguồn đáng tin cậy trước khi xác thực bất kỳ công bố nào về cuộc chiến xưa."
-      }
-    ]
-  },
-  {
-    id: "r59",
-    root: "TANG/TACT",
-    meaning: "Chạm tay, Tiếp xúc thể lý",
-    origin: "Latin (tangere - to touch)",
-    description: "Bản báo cáo giá trị tài sản hữu hình, gìn giữ hiện trạng khảo cổ nguyên vẹn.",
-    tip: "Từ 'Contact' (Liên hệ tiếp nối chạm nhau) hay 'Tangible benefit' (Lợi ích thực tế có thể sờ chạm đo lường được).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "tangible",
-        partOfSpeech: "adj",
-        meaning: "Hữu hình, hiển hiện rõ ràng có thể cân đo đong đếm được",
-        visualBreakdown: "TANG (sờ chạm) + IBLE (có thể) -> thô ráp có thật chứ không phải mộng tưởng xa xăm",
-        ieltsSentence: "Investing in green infrastructure resulted in tangible economic growth for the district.",
-        vietnameseTranslation: "Đầu tư vào cơ sở hạ tầng xanh đã dẫn đến tăng trưởng kinh tế hữu hình cho toàn quận."
-      }
-    ]
-  },
-  {
-    id: "r60",
-    root: "GENERATE",
-    meaning: "Khởi tạo nguồn, Phát đẻ giống",
-    origin: "Latin (generare - to produce)",
-    description: "Khởi nguồn phát dòng dòng điện tái tạo, hình thành lớp ý tưởng đột phá.",
-    tip: "Nghĩ ngay tới dòng điện xoay chiều 'Generator' (Máy phát điện dự phòng).",
-    category: "Actions & Motion",
-    exampleWords: [
-      {
-        word: "generator",
-        partOfSpeech: "n",
-        meaning: "Máy phát ra năng lượng chủ chốt",
-        visualBreakdown: "GEN (sinh lực) + ER + ATOR -> cỗ máy sừng sững tự sinh xuất dòng dưỡng lực",
-        ieltsSentence: "The scientific lab is guarded by an electrical generator in case grid power fails.",
-        vietnameseTranslation: "Phòng thí nghiệm khoa học được bảo vệ bởi một máy phát điện trong trường hợp mất điện lưới quốc gia."
-      }
-    ]
-  },
-
-  // === CATEGORY: Time & Space (20 Roots) ===
-  {
-    id: "r61",
-    root: "CHRON",
-    meaning: "Thời gian chu trình",
-    origin: "Greek (chronos - time)",
-    description: "Bệnh lý mãn tính kéo dài dai dẳng, niên lịch lịch sử khảo cổ học.",
-    tip: "Học từ 'Chronic disease' (Bệnh mãn tính chữa mãi khó dứt điểm) hoặc 'Chronological' (Thứ tự dòng thời gian lịch sử xưa cũ).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "chronic",
-        partOfSpeech: "adj",
-        meaning: "Mãn tính (y tế), kéo dài hàng năm trời khó dứt",
-        visualBreakdown: "CHRON (thời gian) + IC -> bám rễ dai dẳng theo dòng thời gian vô hạn",
-        ieltsSentence: "Chronic exposure to urban noise pollution can lead to increased stress and blood pressure.",
-        vietnameseTranslation: "Tiếp xúc mãn tính với ô nhiễm tiếng ồn đô thị có thể dẫn đến tăng căng thẳng và huyết áp."
-      }
-    ]
-  },
-  {
-    id: "r62",
-    root: "TEMP",
-    meaning: "Thời gian, Thời đại",
-    origin: "Latin (tempus - time)",
-    description: "Ứng dụng giải quyết khủng hoảng tạm thời, thơ văn thời đại đương đại.",
-    tip: "Nghĩ ngay từ 'Temporary' (Mang tính chất tạm bợ nhất thời dứt điểm nhanh) hay 'Contemporary literature' (Văn học thời đại đương đại).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "contemporary",
-        partOfSpeech: "adj, n",
-        meaning: "Đương đại, cùng sống ở thời điểm hiện nay",
-        visualBreakdown: "CON (cùng) + TEMP (thời gian) + ORARY -> cùng dắt tay nhau sống chung một múi thời đại",
-        ieltsSentence: "The museum exhibits both historical artifacts and contemporary art installations.",
-        vietnameseTranslation: "Bảo tàng trưng bày cả các hiện vật lịch sử và các tác phẩm sắp đặt nghệ thuật đương đại."
-      }
-    ]
-  },
-  {
-    id: "r63",
-    root: "ANNI/ENNI",
-    meaning: "Năm chu kỳ",
-    origin: "Latin (annus - year)",
-    description: "Kỷ niệm sự kiện vàng, thảm thực vật nở rộ quanh năm.",
-    tip: "Nhớ từ 'Anniversary' (Ngày lễ kỷ niệm hằng năm) hoặc 'Perennial plants' (Cây sống lâu năm nở đi nở lại).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "perennial",
-        partOfSpeech: "adj",
-        meaning: "Quanh năm, trường tồn lâu năm dai dẳng",
-        visualBreakdown: "PER (xuốt dọc) + ENNI (năm) + AL -> kéo dài tuần hoàn năm này qua năm khác",
-        ieltsSentence: "Lack of fresh water is a perennial problem for small islands.",
-        vietnameseTranslation: "Thiếu nước ngọt là vấn đề dai dẳng quanh năm đối với các hòn đảo nhỏ."
-      }
-    ]
-  },
-  {
-    id: "r64",
-    root: "GEO",
-    meaning: "Trái đất, Địa chất",
-    origin: "Greek (ge - earth)",
-    description: "Nghiên cứu cấu trúc mỏ khoáng sản sâu thẳm, phân tích vành đai địa chính trị toàn cầu.",
-    tip: "Nhớ 'Geography' (Môn học Địa lý toàn cầu) hay 'Geology' (Bộ môn Địa chất đất đá khảo cổ sâu rộng).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "geothermal",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về địa nhiệt (năng lượng nóng tỏa ra từ tấm lòng quả đất)",
-        visualBreakdown: "GEO (đất đá trái đất) + THERM (nhiệt lượng) + AL -> nguồn năng lượng nóng bừng tỏa tỏa dưới lòng đất sâu",
-        ieltsSentence: "Iceland generates most of its heating electricity from geothermal power plants.",
-        vietnameseTranslation: "Iceland tạo ra hầu hết điện sưởi ấm từ các nhà máy điện địa nhiệt."
-      }
-    ]
-  },
-  {
-    id: "r65",
-    root: "TERR",
-    meaning: "Đất đai, Lãnh thổ rộng",
-    origin: "Latin (terra - earth/land)",
-    description: "Khu vực phân định tranh chấp chủ quyền, sinh sống loài động vật trên cạn.",
-    tip: "Nhớ từ 'Territory' (Lãnh thổ toàn quyền kiểm soát) hay 'Terrain' (Địa hình trập trùng đồi núi hiểm nghèo).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "terrestrial",
-        partOfSpeech: "adj",
-        meaning: "Sống trên cạn, thuộc đất liền sinh quyển",
-        visualBreakdown: "TERR (mặt đất đá) + ESTRIAL -> có thuộc tính sinh sống trực tiếp trên cạn hoàn toàn",
-        ieltsSentence: "The dinosaur fossil was categorized as a terrestrial predator.",
-        vietnameseTranslation: "Hóa thạch khủng long được phân loại là một loài săn mồi trên cạn."
-      }
-    ]
-  },
-  {
-    id: "r66",
-    root: "CIRCUM",
-    meaning: "Xung quanh, Bao quanh đường",
-    origin: "Latin (circum - around)",
-    description: "Vòng vây rào cản ngăn chặn sự xâm lấn bão cát sa mạc, tình thế môi trường đặc thù.",
-    tip: "Từ 'Circumstance' (Hoàn cảnh tọc mạch bao vây xung quanh chúng ta) hoặc 'Circumvent' (Tìm cách luồn lách đi vòng quanh né luật pháp).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "circumvent",
-        partOfSpeech: "v",
-        meaning: "Né tránh, đi đường vòng lách luật sâu hại",
-        visualBreakdown: "CIRCUM (vòng xéo) + VEN (đi) -> len lỏi né vật cản đi hiên ngang vòng qua sau lưng",
-        ieltsSentence: "Several multinational firms actively set up offshore offices to circumvent high corporate taxes.",
-        vietnameseTranslation: "Một số công ty đa quốc gia chủ động thành lập văn phòng ở nước ngoài để lách thuế doanh nghiệp cao."
-      }
-    ]
-  },
-  {
-    id: "r67",
-    root: "SUB",
-    meaning: "Dưới, Thấp hơn, Lép vế",
-    origin: "Latin (sub - under/below)",
-    description: "Nhà máy thủy kích ngầm dưới mặt đất sâu, viện trợ trợ cấp tài chính dồi dào cứu nguy.",
-    tip: "Nhớ ngay 'Subway' (Hầm tàu chạy dưới lòng đất) hoặc 'Subsidize' (Trợ cấp lót đế nâng đỡ đời sống).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "subsidize",
-        partOfSpeech: "v",
-        meaning: "Trợ cấp tiền lương, hỗ trợ nguồn vốn từ chính phủ vững",
-        visualBreakdown: "SUB (vị thế ở dưới đỡ) + SID (ngồi vững) -> dùng tiền tấn kê đệm lót ở dưới cho ngồi thảnh thơi vững vàng",
-        ieltsSentence: "The cabinet decided to subsidize renewable energy initiatives globally.",
-        vietnameseTranslation: "Nội các quyết định tài trợ ngân quỹ trợ giá cho các sáng kiến năng lượng tái tạo trên toàn cầu."
-      }
-    ]
-  },
-  {
-    id: "r68",
-    root: "SUPER/SUR",
-    meaning: "Trên, Vượt hẳn, Thặng dư khủng",
-    origin: "Latin (super - above/over)",
-    description: "Chữ viết hời hợt nông cạn bề nổi ngoài lề, phân tích thặng dư mậu dịch lớn.",
-    tip: "Nghĩ về 'Superman' (Siêu nhân siêu phàm vượt bậc) hay 'Surplus' (Lượng hàng hóa sản xuất thặng dư thừa thải).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "superficial",
-        partOfSpeech: "adj",
-        meaning: "Hời hợt, nông cạn, thiển cận ngoài da",
-        visualBreakdown: "SUPER (ở trên) + FACE (bề mặt) + IAL -> chỉ sờ nhẹ hớt phần da mỏng bên ngoài chứ không đào sâu",
-        ieltsSentence: "The analysis of the housing crisis was too superficial to address the root factors.",
-        vietnameseTranslation: "Phân tích về cuộc khủng hoảng nhà ở quá hời hợt để có thể giải quyết các yếu tố gốc rễ."
-      }
-    ]
-  },
-  {
-    id: "r69",
-    root: "TRANS",
-    meaning: "Vượt qua ranh giới, Chuyển giao",
-    origin: "Latin (trans - across/over)",
-    description: "Trực quan trong suốt dễ dàng ánh sáng xuyên qua thấu kính dồi dào, chuyển giao công nghệ mới.",
-    tip: "Từ 'Translate' (Dịch thuật chuyển ngôn ngữ từ nước A qua nước B) or 'Transparent' (Trong suốt nhìn xuyên qua vô tư).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "transparent",
-        partOfSpeech: "adj",
-        meaning: "Trong suốt (vật lý), minh bạch rõ mắt (thông tin mấu chốt)",
-        visualBreakdown: "TRANS (xuyên qua) + PAR (xuất đầu hiện diện) -> ánh sáng chiếu phăng thoải mái lọt tỏ nguyên hình",
-        ieltsSentence: "All financial records must be transparent and ready for regular audit checks.",
-        vietnameseTranslation: "Tất cả hồ sơ tài chính phải minh bạch và sẵn sàng cho các đợt kiểm tra kiểm toán định kỳ."
-      }
-    ]
-  },
-  {
-    id: "r70",
-    root: "INTRA/INTRO",
-    meaning: "Bên trong, Hướng nội sâu nội bộ",
-    origin: "Latin (intra - within/inside)",
-    description: "Lượng chất dịch nằm gói gọn trong tế bào cơ thể, xu hướng tính cách tịnh lén âm thầm.",
-    tip: "Nhớ từ 'Introvert' (Người hướng nội - hướng toàn bộ năng lượng tịnh tâm vào bên trong).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "intracellular",
-        partOfSpeech: "adj",
-        meaning: "Trong tế bào cơ thể sâu",
-        visualBreakdown: "INTRA (bên trong nội bộ) + CELLULAR -> chỉ lưu chuyển tuần hoàn khép kín bên trong lớp vách tế bào",
-        ieltsSentence: "Viruses require intracellular nutrients to execute replication cycles.",
-        vietnameseTranslation: "Virus yêu cầu các chất dinh dưỡng bên trong tế bào để thực hiện các chu kỳ nhân bản."
-      }
-    ]
-  },
-  {
-    id: "r71",
-    root: "EXTRA/EXTRO",
-    meaning: "Bên ngoài, Phi thường siêu đẳng",
-    origin: "Latin (extra - outside)",
-    description: "Hiện tượng bất thường quái dị xảy ra ngoài luồng dự kiến thông thường, tiêu xài phung phí.",
-    tip: "Nhớ ngay 'Extraordinary' (Kỳ lạ, phi thường nổi trội hơn mức bình dân).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "extraordinary",
-        partOfSpeech: "adj",
-        meaning: "Phi thường, kỳ lạ ngoài tầm thường nhật",
-        visualBreakdown: "EXTRA (vượt ra ngoài) + ORDINARY (mức bình thường phổ cập) -> đỉnh cao tách biệt hẳn mức tầm phào",
-        ieltsSentence: "She showed an extraordinary aptitude for advanced mathematical calculations from a young age.",
-        vietnameseTranslation: "Cô ấy đã thể hiện một năng khiếu phi thường đối với các tính toán toán học cao cấp từ khi còn nhỏ."
-      }
-    ]
-  },
-  {
-    id: "r72",
-    root: "AER",
-    meaning: "Không khí, Bay lượng trên cao",
-    origin: "Greek (aer - air)",
-    description: "Công nghê nghiên cứu hàng không vũ trụ hiện đại bậc nhất, thể dục hiếu khí hô hấp.",
-    tip: "Nghĩ ngay 'Aerospace' (Ngành vũ trụ hàng không cực kỳ khó học) hay 'Aerobic dynamic' (Động lực học chất khí lượng cao).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "aerospace",
-        partOfSpeech: "n",
-        meaning: "Hàng không vũ trụ bao la",
-        visualBreakdown: "AER (bụi khí mây bay) + SPACE (không gian vũ trụ) -> bay bổng tuần hoàn thám hiểm tầng mây",
-        ieltsSentence: "The government boosted investments in private aerospace manufacturers this year.",
-        vietnameseTranslation: "Chính phủ đã tăng cường đầu tư vào các nhà sản xuất hàng không vũ trụ tư nhân trong năm nay."
-      }
-    ]
-  },
-  {
-    id: "r73",
-    root: "HYDRO/AQUA",
-    meaning: "Nước, Nước lỏng sủi bọt",
-    origin: "Greek (hudor - water), Latin (aqua - water)",
-    description: "Nhà máy thủy điện xả đập, cơ thể mất nước trầm trọng lúc sốt cao cực hạn.",
-    tip: "Nhớ từ 'Dehydrate' (Rút hết sạch phân tử nước - mất nước bơ phờ) hay 'Aquarium' (Hồ kính nuôi sinh vật biển nhảy nhót).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "aquatic",
-        partOfSpeech: "adj",
-        meaning: "Sống dưới nước hoàn lưu sinh vật",
-        visualBreakdown: "AQUA (dòng nước mát) + TIC -> sở hữu đặc tính liên đới bơi lội hít oxy dưới đại dương sâu",
-        ieltsSentence: "Rapid ecological pollution threatens rare aquatic species in freshwater rivers.",
-        vietnameseTranslation: "Ô nhiễm sinh thái nhanh chóng đe dọa các loài thủy sinh quý hiếm ở các dòng sông nước ngọt."
-      }
-    ]
-  },
-  {
-    id: "r74",
-    root: "PRE",
-    meaning: "Trước, Thành kiến định đoạt trước",
-    origin: "Latin (prae - before)",
-    description: "Thành kiến độc hại ăn sâu vào óc, vị tiền nhân thiết lập chuẩn mực ban sơ.",
-    tip: "Nhớ từ 'Prepare' (Chuẩn bị từ trước bão giông) hay 'Prejudice' (Thành kiến - phán quyết vội vã lúc chưa hiểu rành người khác).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "precedent",
-        partOfSpeech: "n",
-        meaning: "Tiền lệ lâu đời, chuẩn mẫu hành xử lịch sử",
-        visualBreakdown: "PRE (trước hoàn mỹ) + CEDE (đi) -> hành động đi tiên phong thiết lập chuẩn cho hậu thế sau này",
-        ieltsSentence: "The historic supreme court's verdict set a landmark precedent for digital privacy laws.",
-        vietnameseTranslation: "Phán quyết lịch sử của tòa án tối cao đã thiết lập một tiền lệ mang tính bước ngoặt cho luật bảo mật kỹ thuật số."
-      }
-    ]
-  },
-  {
-    id: "r75",
-    root: "POST",
-    meaning: "Sau, Phía sau đuôi, Tiếp nối",
-    origin: "Latin (post - after/behind)",
-    description: "Trì hoãn hội nghị, hậu thế thừa kế di sản khổng lồ.",
-    tip: "Học từ 'Postpone' (Hành động trì hoãn dời ngày tịnh tiến ra sau) hay 'Posterity' (Các thế hệ con cháu tịnh tiến sinh nở về sau).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "posterity",
-        partOfSpeech: "n",
-        meaning: "Hậu thế, đời sau thừa hưởng tinh hoa kiến thức",
-        visualBreakdown: "POST (sau này) + ERITY -> lũ dòng dõi con cháu nở rộ tiếp nối đằng sau dải đời mình",
-        ieltsSentence: "We must preserve these pristine rain-forests for the absolute benefit of our posterity.",
-        vietnameseTranslation: "Chúng ta phải bảo tồn những khu rừng mưa nguyên sinh này vì lợi ích tuyệt đối của hậu thế chúng ta."
-      }
-    ]
-  },
-  {
-    id: "r76",
-    root: "TELE",
-    meaning: "Ở xa xôi hẻo lánh",
-    origin: "Greek (tele - far off)",
-    description: "Làm việc từ xa chống ùn tắc kẹt xe giờ cao điểm, kính thiên văn ngắm tinh cầu xa thẳm.",
-    tip: "Học từ 'Telescope' (Kính viễn vọng ngắm sao cực kỳ xa) hay 'Telecommute' (Làm việc online tại nhà cách biệt cơ quan).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "telecommute",
-        partOfSpeech: "v",
-        meaning: "Làm việc từ xa kết nối online không cần đến văn phòng",
-        visualBreakdown: "TELE (khoảng cách xa) + COMMUTE (di chuyển đi làm) -> không di chuyển thể xác mà xử ký công văn lướt sóng đám mây",
-        ieltsSentence: "The technological shift allowed millions of skilled white-collar workers to telecommute daily.",
-        vietnameseTranslation: "Sự chuyển dịch công nghệ đã cho phép hàng triệu lao động trí thức có thể làm việc từ xa hàng ngày."
-      }
-    ]
-  },
-  {
-    id: "r77",
-    root: "INTER",
-    meaning: "Giữa các nhóm, Tương tác qua lại",
-    origin: "Latin (inter - between/among)",
-    description: "Tập trung tìm hiểu sự giao thoa tương tác hành vi đa phân vùng, đánh chặn tin tức.",
-    tip: "Nghĩ ngay đến 'Interact' (Tương tác qua lại hai hướng) hay 'Interceptor' (Chiến cơ đánh chặn dập tắt nguy cơ giữa đường bay).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "intercept",
-        partOfSpeech: "v",
-        meaning: "Đánh chặn hành trình di chuyển, chặn đầu rò rỉ thông tin mật",
-        visualBreakdown: "INTER (ở giữa đường đi) + CEPT (nắm lấy đoạt lấy) -> thọc tay bắt giữ phăng bọc thư ngay giữa lộ",
-        ieltsSentence: "Security hackers tried to intercept the financial transaction data packets.",
-        vietnameseTranslation: "Các hacker bảo mật đã cố gắng đánh chặn các gói dữ liệu giao dịch tài chính."
-      }
-    ]
-  },
-  {
-    id: "r78",
-    root: "RE",
-    meaning: "Trở lại, Làm lại, Thặng dư lặp",
-    origin: "Latin (re - back/again)",
-    description: "Gia cố nhận thức sâu sắc hơn, thừa mứa nhân lực dư đọng kềm hãm nền kinh tế.",
-    tip: "Cực quen trong 'Reinforce' (Gia cố tăng cường sinh lực dồi dào) or 'Redundant' (Dư thừa vô ích vô dụng tàn đọng).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "redundant",
-        partOfSpeech: "adj",
-        meaning: "Dư thừa bỏ phí, lỗi thời vô ích",
-        visualBreakdown: "RE (lại cuốn) + UNDA (sóng cuộn) -> sóng dồn dập dội đi dội lại nhiều quá hóa thừa thải vô ý",
-        ieltsSentence: "The installation of the secondary safety backup valve made the manual alarm redundant.",
-        vietnameseTranslation: "Việc lắp đặt van an toàn phụ thứ cấp đã khiến hệ thống cảnh báo thủ công trở nên dư thừa dôi ra."
-      }
-    ]
-  },
-  {
-    id: "r79",
-    root: "CON/COM/COL",
-    meaning: "Cùng nhau hội tụ thống nhất",
-    origin: "Latin (cum - with/together)",
-    description: "Tìm sự đồng thuận ý chí của đại hội học thuật, thiết kế máy móc vận hành tương thích hoàn hảo.",
-    tip: "Nhớ từ 'Consensus' (Sự đồng thuận nhất trí cao ý chí đồng lòng) Or 'Compatible' (Thiết kế tương thích khớp nhau cùng dắt tay chạy).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "consensus",
-        partOfSpeech: "n",
-        meaning: "Sự đồng thuận chung chí của tổ chức lớn",
-        visualBreakdown: "CON (cùng hội tụ) + SENS (cảm nhận trí) -> mọi khối óc cùng gật đầu đồng ý chung một nhịp tim",
-        ieltsSentence: "Reaching an absolute global consensus on carbon caps requires intense diplomatic battles.",
-        vietnameseTranslation: "Đạt được một sự đồng thuận toàn cầu tuyệt đối về hạn ngạch carbon đòi hỏi các cuộc chiến ngoại giao dữ dội."
-      }
-    ]
-  },
-  {
-    id: "r80",
-    root: "DIS/DIF",
-    meaning: "Tách rẽ đôi ngả, Bác bỏ lấp liếm",
-    origin: "Latin (dis - apart)",
-    description: "Phát hiện sự bất tương đồng chênh lệch dữ liệu khảo cổ học, giải tán đại hội bất đồng.",
-    tip: "Tương truyền có từ 'Diverge' (Rẽ đôi ngả nẻo đi riêng biệt) hay 'Discrepancy' (Sự khác biệt số liệu đáng ngờ).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "discrepancy",
-        partOfSpeech: "n",
-        meaning: "Sự bất đồng nhất sai lệch đáng tiếc (giữa các tờ sao kê)",
-        visualBreakdown: "DIS (rẽ rã tách) + CREPARE (vỡ kêu lách cách) -> dữ liệu cọ sát nứt gãy lòi ra kẻ hở nghèo",
-        ieltsSentence: "The audits revealed a glaring discrepancy between reported revenues and real cash flow.",
-        vietnameseTranslation: "Các cuộc kiểm toán đã tiết lộ một sự sai lệch rõ ràng giữa doanh thu được báo cáo và dòng tiền mặt thực tế."
-      }
-    ]
-  },
-
-  // === CATEGORY: People & Society (22 Roots) ===
-  {
-    id: "r81",
-    root: "DEM",
-    meaning: "Nhân dân, Người dân cư địa phương",
-    origin: "Greek (demos - people)",
-    description: "Phân tích cấu trúc phân bố dân cư học, đại dịch lây lan trong cộng đồng xã hội rộng lớn.",
-    tip: "Nhớ cực rõ 'Demographic population' (Cấu trúc nhân số học giới tính tuổi tác) hay 'Epidemic' (Dịch bệnh dữ dội bùng quét nhân dân).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "demographics",
-        partOfSpeech: "n",
-        meaning: "Số liệu thống kê nhân khẩu học",
-        visualBreakdown: "DEM (dân cư) + GRAPH (bài toán vẽ biểu đồ) -> kỹ nghệ vẽ biểu đồ cấu trúc giai tầng xã hội",
-        ieltsSentence: "The rapid shift in urban demographics forced municipal leaders to redesign low-cost shelters.",
-        vietnameseTranslation: "Sự thay đổi nhanh chóng trong nhân khẩu học đô thị đã buộc các nhà lãnh đạo thành phố phải thiết kế lại các nhà ở chi phí thấp."
-      }
-    ]
-  },
-  {
-    id: "r82",
-    root: "POP",
-    meaning: "Công chúng, Dân cư sinh sống địa hạt",
-    origin: "Latin (populus - people)",
-    description: "Các bài đọc châm biếm bùng nổ dân số hành tinh xanh, đô thị đông nghẹt thở.",
-    tip: "Từ 'Population' (Quy mô dân số loài người) or 'Populous' (Nơi đô thành chật chội cực đông dân dã).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "populous",
-        partOfSpeech: "adj",
-        meaning: "Đông dân cư, nhung nhúc đầy người rậm",
-        visualBreakdown: "POP (nhân gian con người) + OUS (quá nhiều) -> nghẹt thở vì mật độ người phân bổ chen lấn",
-        ieltsSentence: "Java island is one of the most populous agricultural regions on the entire globe.",
-        vietnameseTranslation: "Đảo Java là một trong những vùng nông nghiệp đông dân nhất trên toàn cầu."
-      }
-    ]
-  },
-  {
-    id: "r83",
-    root: "SOCIO",
-    meaning: "Giao tiếp xã hội giai tầng",
-    origin: "Latin (socius - companion/member)",
-    description: "Xem xét thấu đáo các vấn đề biến đổi tập quán xã hội học, tác động tâm lý xã hội quần chúng.",
-    tip: "Nhớ từ 'Sociology' (Bộ môn Khoa Xã Hội Học chuyên sâu) hay 'Association' (Hiệp hội liên minh thành viên bầu bạn thân cận).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "sociology",
-        partOfSpeech: "n",
-        meaning: "Xã hội học, khoa học tường tận xã hội loài người",
-        visualBreakdown: "SOCIO (bạn quần chúng) + LOGY (học thuyết) -> con đường nghiên cứu tương tác nếp sống giai tầng",
-        ieltsSentence: "Applying advanced sociology theories helps clarify complex behaviors in contemporary megacities.",
-        vietnameseTranslation: "Áp dụng các lý thuyết xã hội học tiên tiến giúp làm rõ các hành vi phức tạp trong các siêu đô thị đương đại."
-      }
-    ]
-  },
-  {
-    id: "r84",
-    root: "PSYCH",
-    meaning: "Tâm lý lực, Linh hồn thầm lặng",
-    origin: "Greek (psukhe - breath/soul/mind)",
-    description: "Bộ môn khám phá thế giới tinh thần nội tâm của bệnh nhân tâm thần học.",
-    tip: "Gần gũi 'Psychologist' (Chuyên gia thám hiểm nội tâm gầy - Bác sĩ tâm lý trị liệu dỗ dành).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "psychiatry",
-        partOfSpeech: "n",
-        meaning: "Tâm thần y học cứu trị người hóa điên",
-        visualBreakdown: "PSYCH (tâm lý lực) + IATRY (y thuật chữa bệnh) -> nỗ lực chuyên khoa y tế chữa hư tổn thần kinh não sâu",
-        ieltsSentence: "The drug treatment program was designed in complete collaboration with the psychiatry department.",
-        vietnameseTranslation: "Chương trình điều trị bằng thuốc được thiết kế trong sự hợp tác hoàn toàn với khoa tâm thần."
-      }
-    ]
-  },
-  {
-    id: "r85",
-    root: "PHIL",
-    meaning: "Yêu thích sâu đậm, Đóng góp thiện nguyện",
-    origin: "Greek (philos - loving)",
-    description: "Các nhà hảo tâm quyên góp tiền bạc xây dựng trung tâm văn hóa lớn học tập.",
-    tip: "Thích học bài thuốc 'Philosophy' (Mến yêu sâu sắc trí tuệ - Môn Triết học khổng lồ) hay 'Philanthropy' (Lòng hảo tâm quyên tiền cứu dân nghèo).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "philanthropy",
-        partOfSpeech: "n",
-        meaning: "Lòng bác ái, hoạt động dốc tiền làm từ thiện lớn lao",
-        visualBreakdown: "PHIL (yêu thương) + ANTHROP (đồng loại con người) -> tình yêu vĩ đại cống hiến nâng đỡ loài người bần cùng",
-        ieltsSentence: "The university’s library was built through the generous philanthropy of local digital billionaires.",
-        vietnameseTranslation: "Thư viện của trường đại học được xây dựng nhờ sự đóng góp bác ái hào phóng của các tỷ phú công nghệ số tại địa phương."
-      }
-    ]
-  },
-  {
-    id: "r86",
-    root: "SCI",
-    meaning: "Hiểu biết tường tận, Thấu cảm tri thức",
-    origin: "Latin (scire - to know)",
-    description: "Ý thức lương tri mách bảo hành vi thiện lương, người vạn năng biết tuốt.",
-    tip: "Quá quen từ 'Science' (Hệ thống Khoa hoc rộng lớn) hay 'Conscience' (Lương tâm - sâu thẳm đạo đức răn nhắc trong lòng).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "conscience",
-        partOfSpeech: "n",
-        meaning: "Lương tâm đạo đức, nhận thức rõ đúng sai",
-        visualBreakdown: "CON (cùng găm giữ) + SCI (hiểu biết thấu đáo) -> mang tri thức đạo đức thâm sâu bảo vệ chuẩn mực con người",
-        ieltsSentence: "The developer claimed his conscience did not allow him to code private intrusive tracking algorithms.",
-        vietnameseTranslation: "Nhà phát triển tuyên bố lương tâm của anh không cho phép anh lập trình các thuật toán theo dõi xâm phạm quyền riêng tư."
-      }
-    ]
-  },
-  {
-    id: "r87",
-    root: "CIV",
-    meaning: "Công dân, Trình độ văn minh đô hội",
-    origin: "Latin (civis - citizen)",
-    description: "Lịch sử sự trỗi dậy thảm hại của các nền văn minh nhân loại thời tiền sử, bổn phận dân cư.",
-    tip: "Nhớ từ 'Civilization' (Nền văn minh rực rỡ vàng son cổ đại) hay 'Civic duty' (Nữ công bổn phận công dân đô thị).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "civilization",
-        partOfSpeech: "n",
-        meaning: "Nền văn minh nhân loại phát triển cao",
-        visualBreakdown: "CIV (công dân hợp tụ) + ILIZATION -> tổ chức xã hội lớn đạt tầm khoa học văn hóa cao ngất",
-        ieltsSentence: "The rapid desertification of the valley led to the decay of this agricultural civilization.",
-        vietnameseTranslation: "Sự sa mạc hóa nhanh chóng của thung lũng đã dẫn đến sự suy tàn của nền văn minh nông nghiệp này."
-      }
-    ]
-  },
-  {
-    id: "r88",
-    root: "CAPIT",
-    meaning: "Bộ não đầu não, Bị chặt đầu tội ác",
-    origin: "Latin (caput - head)",
-    description: "Sự phân chia nguồn vốn tư bản đầu bành hoạt động, án tử hình tàn nhẫn.",
-    tip: "Nghĩ ngay đến 'Capitalism' (Chủ nghĩa tư bản lấy vốn sinh lời làm đầu não) hay 'Decapitate' (Án chém đầu hành quyết dã man xưa).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "capital",
-        partOfSpeech: "n, adj",
-        meaning: "Thủ đô đầu não, tổng nguồn vốn để đẻ lãi lớn",
-        visualBreakdown: "CAPIT (cái đầu tiên khởi hành) + AL -> trung tâm điều phối rẽ lối hoạt động then chốt",
-        ieltsSentence: "Small tech startups often struggle to raise sufficient seed capital in their first operating quarter.",
-        vietnameseTranslation: "Các công ty khởi nghiệp công nghệ nhỏ thường đấu tranh để huy động đủ vốn hạt giống trong quý hoạt động đầu tiên của họ."
-      }
-    ]
-  },
-  {
-    id: "r89",
-    root: "MANU/MAN",
-    meaning: "Bàn tay thô sơ xách kéo",
-    origin: "Latin (manus - hand)",
-    description: "Quy trình chế tạo công nghiệp cơ khí xuất xưởng đại trà, các thao tác lèo lái thao túng.",
-    tip: "Nhớ ngay 'Manual book' (Sách tờ hướng dẫn tự tay làm lụng tỉ mẩn) hay 'Manipulate' (Múa tay thao túng lừa bịp tinh vi).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "manipulate",
-        partOfSpeech: "v",
-        meaning: "Thao túng tâm lý dữ liệu, điều khiển xảo diệu",
-        visualBreakdown: "MAN (đôi tay thô) + PUL (kéo đầy) + ATE -> tự tay khéo léo uốn nắn điều chỉnh dắt mũi con người",
-        ieltsSentence: "Geneticists have learned how to manipulate specific genes to make crops highly drought-resistant.",
-        vietnameseTranslation: "Các nhà di truyền học đã học cách thao túng các gen cụ thể để giúp cây trồng có khả năng chịu hạn cực cao."
-      }
-    ]
-  },
-  {
-    id: "r90",
-    root: "PED/POD",
-    meaning: "Cẳng chân, Bộ hành bước đi gác",
-    origin: "Latin (pes - foot), Greek (pous - foot)",
-    description: "Nhóm người dạo bộ ven đô thị xanh, chiếc tripod 3 chân gác máy quay phim chuyên nghiệp.",
-    tip: "Nhớ phím 'Pedestrian crossing' (Đường kẻ vạch bước đi sang lộ của người đi bộ) hay 'Tripod' (Bệ đứng vững 3 chân đá chống).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "pedestrian",
-        partOfSpeech: "n, adj",
-        meaning: "Người đi bộ, nếp tẻ nhạt thường nhật thường",
-        visualBreakdown: "PED (đôi chân dẹp bước) + ESTRIAN -> kẻ cặm cụi lê đôi bàn chân lê vỉa hè",
-        ieltsSentence: "The historic city center has been turned into a pedestrian zone to reduce vehicle emissions.",
-        vietnameseTranslation: "Trung tâm thành phố lịch sử đã được chuyển thành khu phố đi bộ để giảm lượng khí thải từ phương tiện giao thông."
-      }
-    ]
-  },
-  {
-    id: "r91",
-    root: "ARCH",
-    meaning: "Người cầm quyền tối cao, Khuôn mẫu ban đầu",
-    origin: "Greek (arkhos - ruler/leader, arkhe - beginning)",
-    description: "Hệ thống tôn ti nghiêm cẩn hành chính, mảng hồ sơ văn thư lưu trữ từ thủa hồng hoang.",
-    tip: "Học từ 'Hierarchy' (Hệ thóng phân cấp bậc quyền bính nghiêm quyền) hoặc 'Archetype' (Hình mẫu khuôn mẫu gốc sơ khai nhất kinh điển của tiểu thuyết).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "hierarchy",
-        partOfSpeech: "n",
-        meaning: "Hệ thống cấp bậc nghiêm cẩn quyền lực",
-        visualBreakdown: "HIER (thánh thần thiêng) + ARCH (vua cầm đầu quyền) -> tôn ti trật tự phân tầng trị vì tuyệt đối",
-        ieltsSentence: "In military organizations, the official command hierarchy must be respected without exception.",
-        vietnameseTranslation: "Trong các tổ chức quân sự, hệ thống cấp bậc chỉ huy chính thức phải được tôn trọng tuyệt đối không có ngoại lệ."
-      }
-    ]
-  },
-  {
-    id: "r92",
-    root: "CRACY/CRAT",
-    meaning: "Giai tầng cai trị, Hệ thống hành chính cứng",
-    origin: "Greek (kratos - power/rule)",
-    description: "Mô hình quan liêu bàn giấy trì trệ nhà nước, xã hội dân chủ bầu chọn tự do biểu quyết.",
-    tip: "Nhớ cực sâu 'Democracy' (Chánh thể dân chủ tự quyền của dân) hay 'Bureaucracy' (Tệ nạn quan liêu bàn giấy lằng nhằng hạch sách).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "bureaucracy",
-        partOfSpeech: "n",
-        meaning: "Chế độ quan liêu, tệ nạn bàn giấy chậm trễ phức tạp",
-        visualBreakdown: "BUREAU (cái bàn làm việc) + CRACY (quyền cai trị) -> quyền bính phát ra từ bàn giấy hống hách lướt tờ đơn",
-        ieltsSentence: "International businesses often express frustration regarding local government bureaucracy.",
-        vietnameseTranslation: "Các doanh nghiệp quốc tế thường bày tỏ sự bực bội liên quan đến thủ tục quan liêu của chính quyền địa phương."
-      }
-    ]
-  },
-  {
-    id: "r93",
-    root: "LEG/LEX",
-    meaning: "Luật pháp quốc gia, Kho từ vựng",
-    origin: "Latin (lex - law, legere - to read/gather), Greek (lexis - word)",
-    description: "Ủng hộ việc ban bố quốc hội lập pháp sáng tỏ, hệ thống từ điển cho sinh viên ngôn ngữ.",
-    tip: "Nhớ từ 'Legislate' (Hành động soạn thảo ban bố luật pháp) hay 'Lexicon' (Khối từ vựng đặc chủng của bộ môn học).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "legislate",
-        partOfSpeech: "v",
-        meaning: "Lập pháp, soạn thảo ban bố điều luật mới",
-        visualBreakdown: "LEX (luật pháp rọ) + LAT (gánh vác mang lại) -> vác soạn thảo điều luật chính thức trình quốc hội duyệt",
-        ieltsSentence: "Parliament has been pressured recently to legislate safety measures for artificial intelligence.",
-        vietnameseTranslation: "Nghị viện đã chịu nhiều áp lực gần đây để ban hành luật đối với các biện pháp an toàn cho trí tuệ nhân tạo."
-      }
-    ]
-  },
-  {
-    id: "r94",
-    root: "GREG",
-    meaning: "Bầy đàn tụ tập đông nghẹt",
-    origin: "Latin (grex - flock/herd)",
-    description: "Tính tình thích tụ tập hội nhóm đông của khỉ, chính sách phân ly rẽ ly cô độc người da đen.",
-    tip: "Từ 'Gregarious' (Tính cách bầy đàn - Thích náo nhiệt tụ tập hướng ngoại rộng) hay 'Segregate' (Tách ly chia rẽ rọ bầy đàn ra riêng lẻ).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "gregarious",
-        partOfSpeech: "adj",
-        meaning: "Thích đàn đúm tụ họp, ưa thích giao du kết bạn náo nhiệt",
-        visualBreakdown: "GREG (bầy cừu bầy chim) + ARIOUS -> vui vẻ thích vây bọc trong hơi nóng đồng loại",
-        ieltsSentence: "Dolphins are highly gregarious marine mammals, forming tight pods for hunting together.",
-        vietnameseTranslation: "Cá heo là loài động vật có vú biển cực kỳ thích giao du bầy đàn, thành lập các đàn chặt chẽ để cùng săn mồi."
-      }
-    ]
-  },
-  {
-    id: "r95",
-    root: "MEM",
-    meaning: "Ghi nhớ, Kỷ vật xưa cũ",
-    origin: "Latin (memor - mindful-remembering)",
-    description: "Tổ chức đại lễ tưởng niệm liệt sĩ can trường lập công quốc gia, vật lưu niệm bé nhỏ.",
-    tip: "Nhớ từ 'Memory' (Bộ nhớ điện thoại hay não bộ) hay 'Commemorate' (Cùng kỷ niệm tưởng nhớ công ơn xưa).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "commemorate",
-        partOfSpeech: "v",
-        meaning: "Tưởng niệm sự kiện trọng đại lịch sử",
-        visualBreakdown: "CON (cùng tập trung) + MEMOR (nhớ thương) + ATE -> cùng tụ hội hát ca dâng hoa tưởng nhớ anh hùng sững",
-        ieltsSentence: "The community decided to build an obelisk monument to commemorate the local war victims.",
-        vietnameseTranslation: "Cộng đồng đã quyết định xây dựng một tượng đài tháp nhọn để tưởng niệm các nạn nhân chiến tranh địa phương."
-      }
-    ]
-  },
-  {
-    id: "r96",
-    root: "ANIM",
-    meaning: "Tâm hồn, Hơi thở sống động, Lòng oán hận",
-    origin: "Latin (anima - breath/soul/spirit, animus - mind/hatred)",
-    description: "Biểu hiện tâm thế oán thù hiểm độc, hành vi đồng lòng nhất trí bỏ phiếu.",
-    tip: "Học từ 'Animosity' (Lòng căm phẫn thù hận sôi bừng) hay 'Unanimous' (Nhất trí đồng lòng - Một linh hồn duy nhất gật đầu).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "unanimous",
-        partOfSpeech: "adj",
-        meaning: "Đồng lòng, nhất trí 100% của đại hội",
-        visualBreakdown: "UNI (một) + ANIMUS (tâm hồn ý chí) + OUS -> toàn bộ tập thể hòa chung thành 1 linh hồn biểu quyết",
-        ieltsSentence: "The committee reached a unanimous verdict to disqualify the fraudulent athlete.",
-        vietnameseTranslation: "Ủy ban đã đạt được một phán quyết nhất trí để truất quyền thi đấu của vận động viên gian lận."
-      }
-    ]
-  },
-  {
-    id: "r97",
-    root: "SOPH",
-    meaning: "Trí tuệ, Cao cấp thông thái, Ngụy biện",
-    origin: "Greek (sophia - wisdom)",
-    description: "Người có học thức tinh vi trải nghiệm sâu sắc văn minh nghệ thuật thẩm mỹ bậc cao, ranh mãnh lọc lừa.",
-    tip: "Học từ 'Sophisticated architecture' (Hệ thống kết cấu kiến trúc cực kỳ phức tạp tinh vi sang xịn mịn).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "sophisticated",
-        partOfSpeech: "adj",
-        meaning: "Phức tạp tinh vi, sành điệu, có chiều sâu tri thức",
-        visualBreakdown: "SOPH (trí tuệ rộng) + IST + ICATED -> được mài giũa nhiều kỹ nghệ cao tay chạm tới vẹn toàn",
-        ieltsSentence: "Modern financial markets rely on extremely sophisticated trading algorithms running on supercomputers.",
-        vietnameseTranslation: "Thị trường tài chính hiện đại dựa trên các thuật toán giao dịch cực kỳ phức tạp tinh vi chạy trên siêu máy tính."
-      }
-    ]
-  },
-  {
-    id: "r98",
-    root: "ANTHROP",
-    meaning: "Con người nhân chủng học",
-    origin: "Greek (anthropos - human)",
-    description: "Môn nhân học nghiên cứu tập tính vạc đá xưa, người bác ái phát chẩn từ tâm.",
-    tip: "Có từ 'Anthropology' (Nhân học cứu lịch sử tập tính con người) hay 'Misanthrope' (Kẻ cực đoan căm ghét lánh xa xã hội loài người).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "anthropology",
-        partOfSpeech: "n",
-        meaning: "Nhân học, khoa học tường tận con người lịch sử",
-        visualBreakdown: "ANTHROP (con người sơ khai) + LOGY (học thuyết khoa bảng) -> con đường khai quật hành vi đời trước tiến hóa",
-        ieltsSentence: "Cultural anthropology examines how ancient mythologies shaped modern communal systems.",
-        vietnameseTranslation: "Nhân học văn hóa xem xét cách các câu chuyện thần thoại cổ đại định hình các hệ thống cộng đồng hiện đại."
-      }
-    ]
-  },
-  {
-    id: "r99",
-    root: "ETHN",
-    meaning: "Bộ tộc, Sắc tộc thiểu số văn học",
-    origin: "Greek (ethnos - nation/people/tribe)",
-    description: "Các xung đột bản sắc bộ tộc, khảo sát lối sống khu nhà cộng cư sắc tộc thiểu số.",
-    tip: "Học từ 'Ethnic minority' (Đồng bào dân tộc thiểu số vùng cao bản địa) Or 'Ethnocentrism' (Thái độ tự cao xem bộ tộc mình là trung tâm vũ trụ).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "ethnic",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về sắc tộc, mang đậm bản sắc văn hóa tộc người",
-        visualBreakdown: "ETHN (bộ tộc bản địa cổ) + IC -> gắn liền đặc thù sắc thái tập quán một sắc dân",
-        ieltsSentence: "The festival offers city dwellers a chance to explore diverse traditional ethnic cuisines.",
-        vietnameseTranslation: "Lễ hội mang đến cho người dân thành thị cơ hội khám phá nền ẩm thực đặc sắc đa dạng của các dân tộc truyền thống."
-      }
-    ]
-  },
-  {
-    id: "r100",
-    root: "ACREDIT",
-    meaning: "Bảo chứng quyền năng, Cấp chứng nhận y khoa",
-    origin: "Latin (accreditare - to trust/believe to)",
-    description: "Ủy ban quản lý cấp bằng kiểm định chuẩn chất lượng giáo dục đại học.",
-    tip: "Hợp nhất bởi 'Credit' (Sự tin tưởng tiền gửi ngân hàng) + 'Accredit' (Ủy quyền bảo đảm uy tín).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "accreditation",
-        partOfSpeech: "n",
-        meaning: "Sự kiểm định chất lượng, cấp chứng chỉ chuẩn năng lực chính thức",
-        visualBreakdown: "AC (hướng đến) + CRED (gửi niềm tin) + ATION -> quá trình rà soát gắt gao rồi gật đầu dán nhãn chuẩn mực",
-        ieltsSentence: "The business school received international accreditation for its high academic standards.",
-        vietnameseTranslation: "Trường kinh doanh đã nhận được chứng chỉ kiểm định chất lượng quốc tế nhờ các tiêu chuẩn học thuật cao của mình."
-      }
-    ]
-  },
-  {
-    id: "r101",
-    root: "THEO",
-    meaning: "Thần thánh tôn giáo học",
-    origin: "Greek (theos - god)",
-    description: "Các quốc gia quân chủ thần quyền cổ đại, học thuyết nghiên cứu tín ngưỡng.",
-    tip: "Nhớ từ 'Theology' (Thần học huyền môn bí mật) Or 'Atheist' (Người vô thần - Không tin bất cứ chúa trời nào).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "atheist",
-        partOfSpeech: "n",
-        meaning: "Người vô thần",
-        visualBreakdown: "A (không, phủ định) + THEO (Chúa/Thần) + IST (người chuyên hoạt động) -> người không thừa nhận bất cứ đấng sáng tạo nào",
-        ieltsSentence: "Though raised in a highly religious household, Clara became an atheist in her university years.",
-        vietnameseTranslation: "Mặc dù lớn lên trong một gia đình sùng đạo, Clara đã trở thành một người vô thần trong những năm học đại học."
-      }
-    ]
-  },
-  {
-    id: "r102",
-    root: "DOM",
-    meaning: "Quyền thống trị, Địa hạt cai quản, Căn nhà tổ ấm",
-    origin: "Latin (domus - home, dominus - lord/master)",
-    description: "Sự áp đảo lèo lái của một cường quốc thị trường, sở thích nội gia thuần hóa thuần nông học.",
-    tip: "Tập trung học 'Dominant species' (Loài sinh vật áp đảo số lượng tàn phá hệ sinh thái) Or 'Domestic sector' (Khu vực kinh tế quốc nội bên trong nước).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "dominant",
-        partOfSpeech: "adj",
-        meaning: "Lấn át thống trị, chiếm ưu thế tuyệt đối",
-        visualBreakdown: "DOM (quyền làm chủ bờ cõi) + INANT -> đè đầu cưỡi cổ nắm trọn dây cương lèo lái cuộc chơi",
-        ieltsSentence: "The dominant factor behind urban migration remains the search for lucrative career paths.",
-        vietnameseTranslation: "Yếu tố thống trị đằng sau việc di cư đô thị vẫn là cuộc tìm kiếm các con đường sự nghiệp béo bở."
-      }
-    ]
-  },
-  {
-    id: "r103",
-    root: "ECO",
-    meaning: "Môi trường, Sinh thái",
-    origin: "Greek (oikos - house, environment)",
-    description: "Xuất hiện dày đặc trong bài đọc IELTS phần Môi trường, Biến đổi khí hậu và Sinh thái học.",
-    tip: "Nghĩ ngay tới 'Ecosystem' (Hệ sinh thái) hay 'Ecology' (Sinh thái học). ECO chỉ mối tương quan giữa sinh vật và ngôi nhà chung Trái Đất.",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "ecosystem",
-        partOfSpeech: "n",
-        meaning: "Hệ sinh thái",
-        visualBreakdown: "ECO (môi trường) + SYSTEM (hệ thống) -> một hệ thống tuần hoàn của môi trường sống tự nhiên",
-        ieltsSentence: "Deforestation has caused irreversible damage to the local forest ecosystem.",
-        vietnameseTranslation: "Nạn phá rừng đã gây ra những tổn hại không thể đảo ngược đối với hệ sinh thái rừng địa phương."
+const baseRoots: WordRoot[] = [
+  {
+    "id": "stem-con-com",
+    "root": "CON/COM/COL/COR-",
+    "meaning": "Gắn kết, cùng nhau, cộng hưởng, tăng cường",
+    "origin": "Tiền tố Latin (con-, com-, col-, cor-)",
+    "description": "Biểu thị sự kết nối nhiều thành phần thành một thể thống nhất, đồng thuận ý chí, hoặc tăng cường tối đa mức độ hành động.",
+    "tip": "Nhớ đến Connect (kết nối) hoặc Combine (kết hợp) – mọi thứ gom tụ về một mối hoặc đẩy mạnh uy lực.",
+    "category": "Trục 1: Tiền Tố Định Hướng & Biến Đổi",
+    "axis": "Trục 1",
+    "axisTitle": "TRỤC 1: TIỀN TỐ ĐỊNH HƯỚNG & BIẾN ĐỔI",
+    "axisSubtitle": "Action & Vector (Gắn kết & Tác động)",
+    "stemKey": "CON/COM-",
+    "exampleWords": [
+      {
+        "word": "Consolidate",
+        "partOfSpeech": "v",
+        "meaning": "Củng cố, hợp nhất vị thế",
+        "visualBreakdown": "Con- (cùng nhau) + solid (vững chắc) + -ate (động từ)",
+        "ieltsSentence": "The conglomerate sought to consolidate its market share through aggressive mergers.",
+        "vietnameseTranslation": "Tập đoàn tìm cách củng cố thị phần của mình thông qua các thương vụ sáp nhập quyết liệt.",
+        "level": "C1",
+        "collocation": "Consolidate market position / Consolidate power"
       },
       {
-        word: "ecology",
-        partOfSpeech: "n",
-        meaning: "Sinh thái học, hệ sinh thái học",
-        visualBreakdown: "ECO (môi trường) + LOGY (ngành học) -> môn học nghiên cứu về môi trường sống",
-        ieltsSentence: "Ocean ecology is highly vulnerable to increasing global temperatures and chemical pollution.",
-        vietnameseTranslation: "Sinh thái học đại dương cực kỳ dễ bị tổn thương trước tình trạng nhiệt độ toàn cầu gia tăng và ô nhiễm hóa chất."
+        "word": "Contaminate",
+        "partOfSpeech": "v",
+        "meaning": "Làm ô nhiễm, nhiễm độc chéo",
+        "visualBreakdown": "Con- (cùng nhau) + tamin (chạm vào, vấy bẩn) + -ate",
+        "ieltsSentence": "Industrial effluent can severely contaminate freshwater aquifers if left untreated.",
+        "vietnameseTranslation": "Nước thải công nghiệp có thể làm ô nhiễm nghiêm trọng các tầng ngậm nước ngọt nếu không được xử lý.",
+        "level": "C1",
+        "collocation": "Severely contaminate / Contaminate groundwater"
+      },
+      {
+        "word": "Combustion",
+        "partOfSpeech": "n",
+        "meaning": "Sự bốc cháy, quá trình đốt cháy hoàn toàn",
+        "visualBreakdown": "Com- (hoàn toàn) + bust (cháy) + -ion (danh từ)",
+        "ieltsSentence": "Incomplete combustion of fossil fuels yields hazardous particulate emissions.",
+        "vietnameseTranslation": "Quá trình đốt cháy không hoàn toàn của nhiên liệu hóa thạch tạo ra lượng phát thải bụi mịn nguy hại.",
+        "level": "C2",
+        "collocation": "Internal combustion engine / Spontaneous combustion"
+      },
+      {
+        "word": "Coherent",
+        "partOfSpeech": "adj",
+        "meaning": "Mạch lạc, gắn kết logic chặt chẽ",
+        "visualBreakdown": "Co- (cùng nhau) + her (dính kết) + -ent (tính từ)",
+        "ieltsSentence": "Candidates must present a coherent line of argument throughout their academic essay.",
+        "vietnameseTranslation": "Thí sinh phải trình bày một mạch lập luận gắn kết và mạch lạc xuyên suốt bài luận học thuật.",
+        "level": "C1",
+        "collocation": "Coherent argument / Coherent policy framework"
+      },
+      {
+        "word": "Congregate",
+        "partOfSpeech": "v",
+        "meaning": "Tụ tập, tập hợp số đông",
+        "visualBreakdown": "Con- (cùng nhau) + greg (bầy đàn) + -ate",
+        "ieltsSentence": "Thousands of migratory birds congregate in this coastal estuary during late autumn.",
+        "vietnameseTranslation": "Hàng ngàn con chim di cư tụ tập tại cửa sông ven biển này vào cuối mùa thu.",
+        "level": "C1",
+        "collocation": "Congregate in large numbers / Lawful congregation"
+      },
+      {
+        "word": "Conspire",
+        "partOfSpeech": "v",
+        "meaning": "Cùng mưu tính ngầm, thông đồng",
+        "visualBreakdown": "Con- (cùng nhau) + spire (thở, toan tính)",
+        "ieltsSentence": "Unforeseen logistical bottlenecks conspired to delay the infrastructure rollout.",
+        "vietnameseTranslation": "Những nút thắt hậu cần bất ngờ cùng hùa vào làm trì hoãn tiến độ triển khai cơ sở hạ tầng.",
+        "level": "C2",
+        "collocation": "Conspire against / Circumstances conspire"
+      },
+      {
+        "word": "Converge",
+        "partOfSpeech": "v",
+        "meaning": "Đồng quy, hội tụ về một điểm",
+        "visualBreakdown": "Con- (cùng nhau) + verge (nghiêng, hướng về)",
+        "ieltsSentence": "Technological advancements and regulatory shifts are converging to reshape urban transit.",
+        "vietnameseTranslation": "Những bước tiến công nghệ và sự thay đổi quy định đang hội tụ để định hình lại giao thông đô thị.",
+        "level": "C1",
+        "collocation": "Converging trends / Points converge"
+      },
+      {
+        "word": "Concur",
+        "partOfSpeech": "v",
+        "meaning": "Đồng tình, có cùng quan điểm",
+        "visualBreakdown": "Con- (cùng nhau) + cur (chạy theo cùng hướng)",
+        "ieltsSentence": "Leading climatologists concur that anthropogenic emissions are the primary driver of warming.",
+        "vietnameseTranslation": "Các nhà khí hậu học hàng đầu đồng tình rằng khí thải do con người gây ra là nguyên nhân chính gây ấm lên toàn cầu.",
+        "level": "C1",
+        "collocation": "Concur with findings / Unanimously concur"
+      },
+      {
+        "word": "Corroborate",
+        "partOfSpeech": "v",
+        "meaning": "Chứng thực, củng cố bằng chứng thực tế",
+        "visualBreakdown": "Cor- (tăng cường) + robor (mạnh mẽ) + -ate",
+        "ieltsSentence": "Empirical data gathered from satellite telemetry corroborated the initial hypothesis.",
+        "vietnameseTranslation": "Dữ liệu thực nghiệm thu thập từ cảm biến vệ tinh đã chứng thực cho giả thuyết ban đầu.",
+        "level": "C2",
+        "collocation": "Corroborate evidence / Corroborate an allegation"
+      },
+      {
+        "word": "Collate",
+        "partOfSpeech": "v",
+        "meaning": "Đối chiếu, thu thập và sắp xếp dữ liệu",
+        "visualBreakdown": "Col- (cùng nhau) + late (mang lại, đặt cùng)",
+        "ieltsSentence": "The research team collated census data from over thirty municipalities.",
+        "vietnameseTranslation": "Nhóm nghiên cứu đã đối chiếu và thu thập dữ liệu điều tra dân số từ hơn 30 đô thị.",
+        "level": "C2",
+        "collocation": "Collate data / Collate findings systematically"
+      },
+      {
+        "word": "Commemorate",
+        "partOfSpeech": "v",
+        "meaning": "Tưởng niệm, ghi nhớ công lao chung",
+        "visualBreakdown": "Com- (cùng nhau) + memor (trí nhớ) + -ate",
+        "ieltsSentence": "A nationwide monument was erected to commemorate the pioneers of scientific exploration.",
+        "vietnameseTranslation": "Một tượng đài cấp quốc gia đã được xây dựng để tưởng niệm những người tiên phong khám phá khoa học.",
+        "level": "C1",
+        "collocation": "Commemorate an anniversary / In commemoration of"
+      },
+      {
+        "word": "Compatible",
+        "partOfSpeech": "adj",
+        "meaning": "Tương thích, hài hòa cùng nhau",
+        "visualBreakdown": "Com- (cùng) + pati (chịu đựng) + -ible (có thể)",
+        "ieltsSentence": "Economic expansion must be rendered compatible with long-term ecological conservation.",
+        "vietnameseTranslation": "Sự mở rộng kinh tế phải được làm cho tương thích với việc bảo tồn sinh thái lâu dài.",
+        "level": "C1",
+        "collocation": "Mutually compatible / Highly compatible with"
+      },
+      {
+        "word": "Comprehensive",
+        "partOfSpeech": "adj",
+        "meaning": "Toàn diện, bao hàm toàn bộ khía cạnh",
+        "visualBreakdown": "Com- (hoàn toàn) + prehens (nắm bắt) + -ive",
+        "ieltsSentence": "The municipal authority initiated a comprehensive review of urban zoning ordinances.",
+        "vietnameseTranslation": "Chính quyền đô thị đã khởi động một cuộc rà soát toàn diện các quy định phân vùng đô thị.",
+        "level": "C1",
+        "collocation": "Comprehensive review / Comprehensive assessment"
+      },
+      {
+        "word": "Conducive",
+        "partOfSpeech": "adj",
+        "meaning": "Có lợi, dẫn tới kết quả tích cực",
+        "visualBreakdown": "Con- (cùng) + duc (dẫn dắt) + -ive",
+        "ieltsSentence": "A tranquil environment is profoundly conducive to rigorous academic inquiry.",
+        "vietnameseTranslation": "Một không gian yên tĩnh rất có lợi cho việc nghiên cứu học thuật nghiêm cẩn.",
+        "level": "C1",
+        "collocation": "Conducive to learning / Conducive to productivity"
+      },
+      {
+        "word": "Condone",
+        "partOfSpeech": "v",
+        "meaning": "Tha thứ, làm ngơ dung túng sai trái",
+        "visualBreakdown": "Con- (hoàn toàn) + done (cho, buông)",
+        "ieltsSentence": "Academic institutions cannot condone any form of intellectual dishonesty.",
+        "vietnameseTranslation": "Các tổ chức học thuật không thể dung túng cho bất kỳ hình thức gian lận học thuật nào.",
+        "level": "C2",
+        "collocation": "Refuse to condone / Condone malpractice"
+      },
+      {
+        "word": "Constrain",
+        "partOfSpeech": "v",
+        "meaning": "Ràng buộc, kìm hãm, cưỡng bách",
+        "visualBreakdown": "Con- (hoàn toàn) + strain (kéo căng, siết)",
+        "ieltsSentence": "Budgetary austerity severely constrained the implementation of municipal welfare programs.",
+        "vietnameseTranslation": "Chính sách thắt lưng buộc bụng đã kìm hãm nặng nề việc triển khai các chương trình phúc lợi công cộng.",
+        "level": "C1",
+        "collocation": "Constrain growth / Financial constraints"
+      },
+      {
+        "word": "Contemplate",
+        "partOfSpeech": "v",
+        "meaning": "Trầm ngâm suy ngẫm, dự tính thấu đáo",
+        "visualBreakdown": "Con- (cùng) + templ (không gian suy tưởng) + -ate",
+        "ieltsSentence": "Policy planners must contemplate the catastrophic ramifications of rising sea levels.",
+        "vietnameseTranslation": "Các nhà hoạch định chính sách phải suy ngẫm thấu đáo về những hậu quả thảm khốc của mực nước biển dâng.",
+        "level": "C1",
+        "collocation": "Contemplate the consequences / Deeply contemplate"
+      },
+      {
+        "word": "Convivial",
+        "partOfSpeech": "adj",
+        "meaning": "Thân ái, chan hòa, ấm cúng vui vẻ",
+        "visualBreakdown": "Con- (cùng nhau) + viv (sự sống) + -ial",
+        "ieltsSentence": "The academic symposium fostered a remarkably convivial atmosphere among international delegates.",
+        "vietnameseTranslation": "Hội nghị chuyên đề học thuật đã nuôi dưỡng bầu không khí chan hòa ấn tượng giữa các đại biểu quốc tế.",
+        "level": "C2",
+        "collocation": "Convivial atmosphere / Convivial gathering"
+      },
+      {
+        "word": "Coalition",
+        "partOfSpeech": "n",
+        "meaning": "Liên minh, sự kết liên các tổ chức",
+        "visualBreakdown": "Co- (cùng nhau) + alit (nuôi dưỡng, lớn lên) + -ion",
+        "ieltsSentence": "A broad coalition of environmental advocates lobbied for stricter carbon taxation.",
+        "vietnameseTranslation": "Một liên minh rộng lớn các nhà bảo vệ môi trường đã vận động hành lang để áp thuế carbon nghiêm ngặt hơn.",
+        "level": "C1",
+        "collocation": "Form a coalition / Ruling coalition"
+      },
+      {
+        "word": "Concomitant",
+        "partOfSpeech": "adj",
+        "meaning": "Đi kèm đồng thời, đi liền theo",
+        "visualBreakdown": "Con- (cùng) + comit (đồng hành) + -ant",
+        "ieltsSentence": "Rapid urbanization is frequently accompanied by concomitant strain on municipal services.",
+        "vietnameseTranslation": "Đô thị hóa thần tốc thường đi liền với áp lực phát sinh đồng thời lên các dịch vụ công ích đô thị.",
+        "level": "C2",
+        "collocation": "Concomitant rise / Concomitant phenomenon"
+      },
+      {
+        "word": "Collusion",
+        "partOfSpeech": "n",
+        "meaning": "Sự câu kết ngầm bất chính, thông đồng",
+        "visualBreakdown": "Col- (cùng) + lude (chơi trò, lừa gạt) + -ion",
+        "ieltsSentence": "Antitrust watchdogs uncovered illicit collusion among major semiconductor suppliers.",
+        "vietnameseTranslation": "Các cơ quan giám sát chống độc quyền đã phanh phui sự câu kết phi pháp giữa các nhà cung cấp bán dẫn lớn.",
+        "level": "C2",
+        "collocation": "Act in collusion with / Illicit collusion"
+      },
+      {
+        "word": "Compendium",
+        "partOfSpeech": "n",
+        "meaning": "Bản tóm lược toàn diện, bách khoa tóm tắt",
+        "visualBreakdown": "Com- (cùng nhau) + pend (cân đong) + -ium",
+        "ieltsSentence": "The published atlas serves as an indispensable compendium of hydrological data.",
+        "vietnameseTranslation": "Tập bản đồ được xuất bản đóng vai trò là một tài liệu tóm lược toàn diện không thể thiếu về dữ liệu thủy văn.",
+        "level": "C2",
+        "collocation": "Compendium of knowledge / Publish a compendium"
+      },
+      {
+        "word": "Congenial",
+        "partOfSpeech": "adj",
+        "meaning": "Hợp tính, dễ chịu, tương đắc",
+        "visualBreakdown": "Con- (cùng) + geni (bản tính) + -al",
+        "ieltsSentence": "He found the tranquil university campus extraordinarily congenial to philosophical writing.",
+        "vietnameseTranslation": "Ông nhận thấy khuôn viên đại học yên tĩnh cực kỳ phù hợp và hòa hợp cho việc sáng tác triết học.",
+        "level": "C1",
+        "collocation": "Congenial working environment / Congenial company"
+      },
+      {
+        "word": "Conflate",
+        "partOfSpeech": "v",
+        "meaning": "Nhập nhằng đánh đồng, trộn lẫn hai khái niệm",
+        "visualBreakdown": "Con- (cùng nhau) + flate (thổi, gom lại)",
+        "ieltsSentence": "Commentators must be wary not to conflate temporary cyclical downturns with structural decay.",
+        "vietnameseTranslation": "Các nhà bình luận cần cảnh giác không đánh đồng sự suy thoái chu kỳ tạm thời với sự mục ruỗng mang tính cơ cấu.",
+        "level": "C2",
+        "collocation": "Conflate distinct concepts / Conflate issues"
+      },
+      {
+        "word": "Consensus",
+        "partOfSpeech": "n",
+        "meaning": "Sự đồng thuận, nhất trí tập thể",
+        "visualBreakdown": "Con- (cùng) + sens (cảm nhận) + -us",
+        "ieltsSentence": "Reaching an international consensus on carbon reduction remains diplomatic priority.",
+        "vietnameseTranslation": "Đạt được sự đồng thuận quốc tế về cắt giảm khí thải carbon vẫn là ưu tiên ngoại giao số một.",
+        "level": "C1",
+        "collocation": "Scientific consensus / Reach broad consensus"
       }
     ]
   },
   {
-    id: "r104",
-    root: "THERM",
-    meaning: "Nhiệt, Năng lượng nhiệt",
-    origin: "Greek (therme - heat)",
-    description: "Bộ rễ then chốt trong các chủ đề địa chất, vật lý học, biến đổi năng lượng tái tạo.",
-    tip: "Nhớ đến 'Thermometer' (Nhiệt kế đo nhiệt độ) hoặc cái phích nước giữ nhiệt 'Thermos'.",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-de",
+    "root": "DE-",
+    "meaning": "Hạ xuống, làm cạn kiệt, bóc tách, suy thoái",
+    "origin": "Tiền tố Latin (de-)",
+    "description": "Biểu thị sự đi xuống, đào thải, giảm thiểu giá trị hoặc tước đoạt hoàn toàn một thuộc tính sẵn có.",
+    "tip": "Nhớ đến Decrease (giảm) hoặc Decline (suy tàn) – chiều hướng luôn là kéo tụt xuống hoặc bóc bỏ.",
+    "category": "Trục 1: Tiền Tố Định Hướng & Biến Đổi",
+    "axis": "Trục 1",
+    "axisTitle": "TRỤC 1: TIỀN TỐ ĐỊNH HƯỚNG & BIẾN ĐỔI",
+    "axisSubtitle": "Action & Vector (Gắn kết & Tác động)",
+    "stemKey": "DE-",
+    "exampleWords": [
       {
-        word: "thermal",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về nhiệt, giữ ấm bằng nhiệt",
-        visualBreakdown: "THERM (nhiệt) + AL -> liên quan đến nhiệt lượng",
-        ieltsSentence: "Thermal energy from geothermal springs can be utilized to generate clean electricity.",
-        vietnameseTranslation: "Nhiệt năng từ các nguồn suối địa nhiệt có thể được tận dụng để sản xuất điện sạch."
+        "word": "Deplete",
+        "partOfSpeech": "v",
+        "meaning": "Làm cạn kiệt nguồn tài nguyên",
+        "visualBreakdown": "De- (bỏ, làm mất) + plete (làm đầy)",
+        "ieltsSentence": "Unsustainable irrigation practices will rapidly deplete subterranean groundwater reservoirs.",
+        "vietnameseTranslation": "Các phương pháp tưới tiêu thiếu bền vững sẽ nhanh chóng làm cạn kiệt các tầng ngậm nước ngầm dưới lòng đất.",
+        "level": "C1",
+        "collocation": "Deplete natural resources / Seriously deplete"
       },
       {
-        word: "thermodynamics",
-        partOfSpeech: "n",
-        meaning: "Nhiệt động lực học",
-        visualBreakdown: "THERM (nhiệt) + DYNAMICS (động lực) -> nghiên cứu về dòng chảy năng lượng cơ và nhiệt",
-        ieltsSentence: "The fundamental laws of thermodynamics govern overall energy efficiency in machines.",
-        vietnameseTranslation: "Các định luật cơ bản của nhiệt động lực học điều khiển hiệu suất năng lượng tổng thể trong máy móc."
+        "word": "Desalination",
+        "partOfSpeech": "n",
+        "meaning": "Sự khử muối, tách muối khỏi nước biển",
+        "visualBreakdown": "De- (tách bỏ) + saline (muối) + -ation",
+        "ieltsSentence": "Thermal desalination plants supply a pivotal proportion of potable water in arid jurisdictions.",
+        "vietnameseTranslation": "Các nhà máy khử mặn nhiệt cung cấp tỷ trọng cốt lõi nước ngọt sinh hoạt tại các vùng khô hạn.",
+        "level": "C2",
+        "collocation": "Desalination plant / Seawater desalination"
+      },
+      {
+        "word": "Detrimental",
+        "partOfSpeech": "adj",
+        "meaning": "Gây tổn hại, có hại cho sự phát triển",
+        "visualBreakdown": "De- (xuống) + tri (cọ xát, mài mòn) + -ment + -al",
+        "ieltsSentence": "Chronic sleep deprivation exerts a deeply detrimental effect on cognitive efficacy.",
+        "vietnameseTranslation": "Thiếu ngủ kinh niên gây ra tác động vô cùng tai hại đối với hiệu suất nhận thức.",
+        "level": "C1",
+        "collocation": "Detrimental impact / Detrimental effect on health"
+      },
+      {
+        "word": "Degradation",
+        "partOfSpeech": "n",
+        "meaning": "Sự suy thoái, xuống cấp chất lượng",
+        "visualBreakdown": "De- (xuống) + grad (bước, cấp bậc) + -ation",
+        "ieltsSentence": "Intensive monoculture fosters catastrophic soil degradation across arable plains.",
+        "vietnameseTranslation": "Nền độc canh thâm canh gây ra sự suy thoái đất canh tác thảm khốc trên khắp các đồng bằng màu mỡ.",
+        "level": "C1",
+        "collocation": "Environmental degradation / Land degradation"
+      },
+      {
+        "word": "Devastate",
+        "partOfSpeech": "v",
+        "meaning": "Tàn phá, hủy diệt tan hoang",
+        "visualBreakdown": "De- (hoàn toàn) + vast (trống hoang, vắng tanh) + -ate",
+        "ieltsSentence": "Flash floods devastated fragile infrastructure throughout the remote mountainous valleys.",
+        "vietnameseTranslation": "Lũ quét đã tàn phá tan hoang cơ sở hạ tầng mỏng manh khắp các thung lũng miền núi hẻo lánh.",
+        "level": "C1",
+        "collocation": "Devastate communities / Devastate the economy"
+      },
+      {
+        "word": "Deteriorate",
+        "partOfSpeech": "v",
+        "meaning": "Xấu đi, thoái hóa trầm trọng",
+        "visualBreakdown": "De- + terior (kém hơn, tồi hơn) + -ate",
+        "ieltsSentence": "Air quality indices deteriorate markedly during stagnant winter inversions.",
+        "vietnameseTranslation": "Các chỉ số chất lượng không khí suy giảm rõ rệt trong những đợt nghịch nhiệt mùa đông lặng gió.",
+        "level": "C1",
+        "collocation": "Deteriorate rapidly / Relations deteriorate"
+      },
+      {
+        "word": "Demolish",
+        "partOfSpeech": "v",
+        "meaning": "Phá hủy, giật sập công trình/luận điểm",
+        "visualBreakdown": "De- (xuống) + mol (khối lớn) + -ish",
+        "ieltsSentence": "The municipal council resolved to demolish dilapidated tenements to construct civic parks.",
+        "vietnameseTranslation": "Hội đồng thành phố đã quyết nghị phá dỡ các khu chung cư dột nát để xây dựng công viên công cộng.",
+        "level": "C1",
+        "collocation": "Demolish a building / Demolish an argument"
+      },
+      {
+        "word": "Depreciate",
+        "partOfSpeech": "v",
+        "meaning": "Khấu hao, giảm giá trị tài sản",
+        "visualBreakdown": "De- (hạ xuống) + prec (giá cả) + -i- + -ate",
+        "ieltsSentence": "Industrial machinery depreciates substantially within its first five operational years.",
+        "vietnameseTranslation": "Máy móc công nghiệp bị khấu hao giá trị đáng kể trong 5 năm vận hành đầu tiên.",
+        "level": "C1",
+        "collocation": "Depreciate in value / Rapidly depreciate"
+      },
+      {
+        "word": "Devalue",
+        "partOfSpeech": "v",
+        "meaning": "Phá giá tiền tệ, làm mất phẩm giá",
+        "visualBreakdown": "De- (hạ) + value (giá trị)",
+        "ieltsSentence": "The central monetary authority intervened to devalue the national currency and stimulate exports.",
+        "vietnameseTranslation": "Cơ quan quản lý tiền tệ trung ương đã can thiệp để phá giá đồng nội tệ nhằm kích thích xuất khẩu.",
+        "level": "C1",
+        "collocation": "Devalue the currency / Devalue contributions"
+      },
+      {
+        "word": "Delineate",
+        "partOfSpeech": "v",
+        "meaning": "Vạch rõ, phác họa ranh giới chi tiết",
+        "visualBreakdown": "De- (hoàn toàn) + line (đường nét) + -ate",
+        "ieltsSentence": "The bilateral treaty clearly delineates maritime boundaries between the littoral states.",
+        "vietnameseTranslation": "Hiệp ước song phương phân định rõ ràng các đường ranh giới biển giữa các quốc gia duyên hải.",
+        "level": "C2",
+        "collocation": "Clearly delineate / Delineate responsibilities"
+      },
+      {
+        "word": "Deficit",
+        "partOfSpeech": "n",
+        "meaning": "Sự thâm hụt cán cân/ngân sách",
+        "visualBreakdown": "De- (thiếu) + fic (làm ra) + -it",
+        "ieltsSentence": "The escalating trade deficit prompted legislators to impose tariffs on foreign imports.",
+        "vietnameseTranslation": "Sự thâm hụt thương mại ngày càng tăng đã thúc giục các nhà lập pháp áp thuế quan lên hàng nhập khẩu.",
+        "level": "C1",
+        "collocation": "Budget deficit / Trade deficit"
+      },
+      {
+        "word": "Denounce",
+        "partOfSpeech": "v",
+        "meaning": "Lên án công khai, kịch liệt tố cáo",
+        "visualBreakdown": "De- (xuống) + nounce (tuyên bố)",
+        "ieltsSentence": "Humanitarian delegations forcefully denounced the unlawful blockade of food convoys.",
+        "vietnameseTranslation": "Các phái đoàn nhân đạo đã lên án kịch liệt hành vi phong tỏa trái phép các đoàn xe chở lương thực.",
+        "level": "C1",
+        "collocation": "Denounce corruption / Strongly denounce"
+      },
+      {
+        "word": "Depict",
+        "partOfSpeech": "v",
+        "meaning": "Khắc họa, miêu tả chân thực",
+        "visualBreakdown": "De- (hoàn toàn) + pict (vẽ)",
+        "ieltsSentence": "Historical archives depict the harrowing tribulations endured during the agrarian famine.",
+        "vietnameseTranslation": "Các kho lưu trữ lịch sử khắc họa những gian nan đau thương phải gánh chịu trong nạn đói nông nghiệp.",
+        "level": "C1",
+        "collocation": "Accurately depict / Depict reality"
+      },
+      {
+        "word": "Deride",
+        "partOfSpeech": "v",
+        "meaning": "Chế giễu, nhạo báng cay độc",
+        "visualBreakdown": "De- (xuống) + ride (cười)",
+        "ieltsSentence": "Skeptics initially derided the pioneer's solar proposition as utopian daydreaming.",
+        "vietnameseTranslation": "Những người hoài nghi ban đầu đã chế giễu đề xuất năng lượng mặt trời của người tiên phong là mộng tưởng hão huyền.",
+        "level": "C2",
+        "collocation": "Deride efforts / Universally derided"
+      },
+      {
+        "word": "Deprive",
+        "partOfSpeech": "v",
+        "meaning": "Tước đoạt, bóc bỏ quyền lợi căn bản",
+        "visualBreakdown": "De- (tách bỏ) + prive (riêng tư, sở hữu)",
+        "ieltsSentence": "Severe socio-economic marginalization deprives rural adolescents of equitable schooling.",
+        "vietnameseTranslation": "Tình trạng ngoài rìa kinh tế xã hội gay gắt đã tước đi của thanh thiếu niên nông thôn cơ hội học hành bình đẳng.",
+        "level": "C1",
+        "collocation": "Deprive someone of rights / Sleep deprived"
+      },
+      {
+        "word": "Desolate",
+        "partOfSpeech": "adj",
+        "meaning": "Hoang tàn, cô quạnh, tiêu điều",
+        "visualBreakdown": "De- (hoàn toàn) + sol (cô độc) + -ate",
+        "ieltsSentence": "Prolonged droughts converted once productive grasslands into desolate salt pans.",
+        "vietnameseTranslation": "Hạn hán kéo dài đã biến những thảo nguyên từng trù phú thành những bãi muối hoang tàn xơ xác.",
+        "level": "C2",
+        "collocation": "Desolate landscape / Bleak and desolate"
+      },
+      {
+        "word": "Detract",
+        "partOfSpeech": "v",
+        "meaning": "Làm giảm bớt giá trị/uy tín",
+        "visualBreakdown": "De- (xuống) + tract (kéo)",
+        "ieltsSentence": "Minor stylistic shortcomings should not detract from the seminal importance of the dissertation.",
+        "vietnameseTranslation": "Những khiếm khuyết nhỏ về mặt hành văn không nên làm giảm đi tầm quan trọng mang tính bước ngoặt của luận văn.",
+        "level": "C2",
+        "collocation": "Detract from the merits / In no way detract"
+      },
+      {
+        "word": "Deter",
+        "partOfSpeech": "v",
+        "meaning": "Răn đe, làm chùn bước ý định xấu",
+        "visualBreakdown": "De- (ra khỏi) + ter (sợ hãi)",
+        "ieltsSentence": "Rigorous criminal sentencing frameworks aim primarily to deter prospective transgressions.",
+        "vietnameseTranslation": "Các khung hình phạt hình sự nghiêm khắc chủ yếu nhằm mục đích răn đe các hành vi vi phạm tiềm tàng.",
+        "level": "C1",
+        "collocation": "Deter crime / Act as a deterrent"
+      },
+      {
+        "word": "Deviate",
+        "partOfSpeech": "v",
+        "meaning": "Chệch hướng, sai lệch chuẩn mực",
+        "visualBreakdown": "De- (khỏi) + via (con đường) + -te",
+        "ieltsSentence": "The laboratory outcome deviated statistically from standard baseline distributions.",
+        "vietnameseTranslation": "Kết quả phòng thí nghiệm đã sai lệch mang tính thống kê so với phân phối chuẩn mực ban đầu.",
+        "level": "C1",
+        "collocation": "Deviate from norms / Standard deviation"
+      },
+      {
+        "word": "Devoid",
+        "partOfSpeech": "adj",
+        "meaning": "Trống rỗng, hoàn toàn không có",
+        "visualBreakdown": "De- (hoàn toàn) + void (trống không)",
+        "ieltsSentence": "The arid lunar terrain is entirely devoid of organic atmosphere or liquid moisture.",
+        "vietnameseTranslation": "Địa hình mặt trăng khô cằn hoàn toàn không có bầu khí quyển hữu cơ hay hơi ẩm dạng lỏng.",
+        "level": "C1",
+        "collocation": "Devoid of substance / Entirely devoid of"
+      },
+      {
+        "word": "Decelerate",
+        "partOfSpeech": "v",
+        "meaning": "Giảm tốc độ, hãm lại tiến trình",
+        "visualBreakdown": "De- (giảm) + celer (tốc độ) + -ate",
+        "ieltsSentence": "Fiscal tightening was deployed purposefully to decelerate runaway inflationary pressure.",
+        "vietnameseTranslation": "Việc thắt chặt tài khóa đã được áp dụng có chủ đích nhằm làm giảm tốc áp lực lạm phát phi mã.",
+        "level": "C1",
+        "collocation": "Decelerate growth / Cause to decelerate"
+      },
+      {
+        "word": "Decentralize",
+        "partOfSpeech": "v",
+        "meaning": "Phân quyền, phi tập trung hóa",
+        "visualBreakdown": "De- (bỏ) + central (trung tâm) + -ize",
+        "ieltsSentence": "Democratic reform sought to decentralize administrative autonomy to regional councils.",
+        "vietnameseTranslation": "Cải cách dân chủ tìm cách phân quyền tự chủ hành chính cho các hội đồng khu vực địa phương.",
+        "level": "C1",
+        "collocation": "Decentralize authority / Decentralized governance"
+      },
+      {
+        "word": "Deforestation",
+        "partOfSpeech": "n",
+        "meaning": "Nạn phá rừng, triệt phá mảng xanh",
+        "visualBreakdown": "De- (loại bỏ) + forest (rừng) + -ation",
+        "ieltsSentence": "Unchecked deforestation in the tropical biome accelerates carbon release and species extinction.",
+        "vietnameseTranslation": "Nạn phá rừng tràn lan ở quần xã sinh vật nhiệt đới đẩy nhanh sự giải phóng carbon và tuyệt chủng giống loài.",
+        "level": "C1",
+        "collocation": "Combat deforestation / Rampant deforestation"
+      },
+      {
+        "word": "Demarcate",
+        "partOfSpeech": "v",
+        "meaning": "Phân định, vạch rõ lằn ranh giới hạn",
+        "visualBreakdown": "De- + mark (dấu vết) + -ate",
+        "ieltsSentence": "Clear legislative statutes must demarcate the constitutional bounds of executive authority.",
+        "vietnameseTranslation": "Các đạo luật rõ ràng phải phân định ranh giới hiến định của quyền hành pháp.",
+        "level": "C2",
+        "collocation": "Demarcate boundaries / Strictly demarcate"
+      },
+      {
+        "word": "Deconstruct",
+        "partOfSpeech": "v",
+        "meaning": "Giải cấu trúc, bóc tách mổ xẻ",
+        "visualBreakdown": "De- (tháo dỡ) + construct (xây dựng)",
+        "ieltsSentence": "Literary theorists deconstruct classical texts to uncover concealed ideological biases.",
+        "vietnameseTranslation": "Các nhà lý luận văn học bóc tách giải cấu trúc các văn bản cổ điển để khám phá những định kiến ý thức hệ tiềm ẩn.",
+        "level": "C2",
+        "collocation": "Deconstruct a narrative / Deconstruct myths"
       }
     ]
   },
   {
-    id: "r105",
-    root: "GEO",
-    meaning: "Trái đất, Địa chất, Địa lý",
-    origin: "Greek (ge - earth)",
-    description: "Hay gặp trong các bài đọc IELTS khai thác về lục địa trôi dạt, biến đổi khí hậu học và khai khoáng.",
-    tip: "Liệt kê 'Geography' (Địa lý học) và 'Geology' (Địa chất học). Trực quan hóa hình ảnh quả địa cầu xanh.",
-    category: "Time & Space",
-    exampleWords: [
+    "id": "stem-ex-e",
+    "root": "EX/E/EF-",
+    "meaning": "Đưa ra ngoài, bộc lộ, phát tán triệt để",
+    "origin": "Tiền tố Latin (ex-, e-, ef-)",
+    "description": "Biểu thị sự di chuyển từ trong ra ngoài, tách khỏi tình trạng gò bó ban đầu, hoặc hoàn thành một việc triệt để đến mức tối đa.",
+    "tip": "Nhớ đến Exit (lối thoát ra ngoài) hoặc Export (xuất khẩu) – đều có hướng bộc lộ ra phía ngoài.",
+    "category": "Trục 1: Tiền Tố Định Hướng & Biến Đổi",
+    "axis": "Trục 1",
+    "axisTitle": "TRỤC 1: TIỀN TỐ ĐỊNH HƯỚNG & BIẾN ĐỔI",
+    "axisSubtitle": "Action & Vector (Gắn kết & Tác động)",
+    "stemKey": "EX/E-",
+    "exampleWords": [
       {
-        word: "geothermal",
-        partOfSpeech: "adj",
-        meaning: "Thuộc địa nhiệt (nhiệt năng trong lòng đất)",
-        visualBreakdown: "GEO (đất/Trái đất) + THERM (nhiệt) + AL -> nhiệt từ sâu trong lòng đất",
-        ieltsSentence: "Geothermal power plants release significantly lower greenhouse gas emissions compared to coal plants.",
-        vietnameseTranslation: "Các nhà máy điện địa nhiệt giải phóng lượng khí thải nhà kính thấp hơn nhiều so với nhà máy than."
+        "word": "Effluent",
+        "partOfSpeech": "n",
+        "meaning": "Dòng nước thải công nghiệp xả ra nguồn tiếp nhận",
+        "visualBreakdown": "Ef- (ra ngoài) + flu (chảy) + -ent",
+        "ieltsSentence": "Untreated industrial effluent severely pollutes vulnerable fluvial ecosystems.",
+        "vietnameseTranslation": "Nước thải công nghiệp chưa qua xử lý gây ô nhiễm nặng nề cho các hệ sinh thái sông ngòi nhạy cảm.",
+        "level": "C2",
+        "collocation": "Industrial effluent / Discharge effluent"
       },
       {
-        word: "geological",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về địa chất, kiến tạo đất đai",
-        visualBreakdown: "GEO (đất) + LOG (nghiên cứu) + ICAL -> liên quan đến nghiên cứu cấu trúc vật lý của Trái đất",
-        ieltsSentence: "The Grand Canyon reveals millions of years of geological history through its exposed strata.",
-        vietnameseTranslation: "Hẻm núi Grand Canyon để lộ hàng triệu năm lịch sử địa chất thông qua các lớp trầm tích lộ ra của nó."
+        "word": "Emission",
+        "partOfSpeech": "n",
+        "meaning": "Sự phát thải khí ô nhiễm ra môi trường",
+        "visualBreakdown": "E- (ra ngoài) + miss (gửi đi, phát) + -ion",
+        "ieltsSentence": "Stringent carbon caps seek to curb vehicle exhaust emissions substantially.",
+        "vietnameseTranslation": "Các hạn ngạch carbon nghiêm ngặt nhằm cắt giảm đáng kể lượng khí thải từ phương tiện giao thông.",
+        "level": "C1",
+        "collocation": "Carbon emissions / Curtail emissions"
+      },
+      {
+        "word": "Eradicate",
+        "partOfSpeech": "v",
+        "meaning": "Nhổ tận gốc rễ, bài trừ triệt để",
+        "visualBreakdown": "E- (ra ngoài) + radic (gốc rễ) + -ate",
+        "ieltsSentence": "Targeted vaccination drives succeeded in eradicating lethal endemic scourges.",
+        "vietnameseTranslation": "Các chiến dịch tiêm chủng có mục tiêu đã thành công trong việc trừ tiệt các mầm bệnh đặc hữu chết người.",
+        "level": "C1",
+        "collocation": "Eradicate poverty / Eradicate disease"
+      },
+      {
+        "word": "Exemplify",
+        "partOfSpeech": "v",
+        "meaning": "Làm ví dụ điển hình, minh họa rõ nét",
+        "visualBreakdown": "Ex- (ngoài) + empl (lấy ra) + -ify",
+        "ieltsSentence": "Urban botanical corridors exemplify innovative climate adaptation strategies.",
+        "vietnameseTranslation": "Các hành lang thực vật đô thị minh họa điển hình cho chiến lược thích ứng với biến đổi khí hậu đầy sáng tạo.",
+        "level": "C1",
+        "collocation": "Exemplify a trend / Perfectly exemplify"
+      },
+      {
+        "word": "Exacerbate",
+        "partOfSpeech": "v",
+        "meaning": "Làm trầm trọng thêm sự tình tiêu cực",
+        "visualBreakdown": "Ex- (triệt để) + acerb (chua chát, gay gắt) + -ate",
+        "ieltsSentence": "Prolonged heatwaves exacerbate existing water scarcity in arid jurisdictions.",
+        "vietnameseTranslation": "Các đợt nắng nóng kéo dài làm trầm trọng thêm tình trạng khan hiếm nước sẵn có tại các vùng khô cằn.",
+        "level": "C1",
+        "collocation": "Exacerbate problems / Exacerbate inequalities"
+      },
+      {
+        "word": "Excavate",
+        "partOfSpeech": "v",
+        "meaning": "Khai quật, đào bới lòng đất lên",
+        "visualBreakdown": "Ex- (ra ngoài) + cav (khoét rỗng) + -ate",
+        "ieltsSentence": "Archaeologists excavated ancient settlement remnants preserved beneath fluvial silt.",
+        "vietnameseTranslation": "Các nhà khảo cổ học đã khai quật tàn tích khu định cư cổ đại được lưu giữ dưới lớp phù sa sông.",
+        "level": "C1",
+        "collocation": "Excavate ruins / Archaeological excavation"
+      },
+      {
+        "word": "Exorbitant",
+        "partOfSpeech": "adj",
+        "meaning": "Đắt đỏ cắt cổ, vượt quá mức chuẩn",
+        "visualBreakdown": "Ex- (ra ngoài) + orbit (quỹ đạo) + -ant",
+        "ieltsSentence": "Tenants face exorbitant rental rates in densely populated metropolitan districts.",
+        "vietnameseTranslation": "Người thuê nhà phải đối mặt với mức giá thuê cắt cổ tại các quận đô thị đông đúc.",
+        "level": "C2",
+        "collocation": "Exorbitant prices / Exorbitant costs"
+      },
+      {
+        "word": "Expedite",
+        "partOfSpeech": "v",
+        "meaning": "Xúc tiến, đẩy nhanh tiến trình giải quyết",
+        "visualBreakdown": "Ex- (ra khỏi) + ped (chân - giải phóng chân) + -ite",
+        "ieltsSentence": "Streamlined administrative workflows expedite clinical trials for lifesaving pharmaceuticals.",
+        "vietnameseTranslation": "Quy trình làm việc hành chính tinh gọn giúp đẩy nhanh các thử nghiệm lâm sàng cho các loại dược phẩm cứu người.",
+        "level": "C1",
+        "collocation": "Expedite the process / Expedite approval"
+      },
+      {
+        "word": "Explicit",
+        "partOfSpeech": "adj",
+        "meaning": "Minh bạch, rõ ràng không úp mở",
+        "visualBreakdown": "Ex- (ra ngoài) + plic (gấp nếp - mở nếp gấp) + -it",
+        "ieltsSentence": "The contractual statute outlines explicit parameters for environmental compliance.",
+        "vietnameseTranslation": "Điều khoản hợp đồng vạch ra các thông số rõ ràng minh bạch về việc tuân thủ môi trường.",
+        "level": "C1",
+        "collocation": "Explicit instructions / Explicit guidelines"
+      },
+      {
+        "word": "Exploit",
+        "partOfSpeech": "v",
+        "meaning": "Khai thác tối đa tiềm năng, bóc lột",
+        "visualBreakdown": "Ex- (ra ngoài) + ploit (mở rộng)",
+        "ieltsSentence": "Emerging industries actively exploit regenerative energy resources to minimize overheads.",
+        "vietnameseTranslation": "Các ngành công nghiệp mới nổi tích cực khai thác tài nguyên năng lượng tái sinh để giảm thiểu chi phí vận hành.",
+        "level": "C1",
+        "collocation": "Exploit resources / Commercial exploitation"
+      },
+      {
+        "word": "Expound",
+        "partOfSpeech": "v",
+        "meaning": "Trình bày tường tận, diễn giải học thuyết",
+        "visualBreakdown": "Ex- (ra ngoài) + pound (đặt ra)",
+        "ieltsSentence": "The treatise expounds economic principles governing sustainable sovereign debt.",
+        "vietnameseTranslation": "Chuyên luận diễn giải tường tận các nguyên tắc kinh tế chi phối nợ công bền vững.",
+        "level": "C2",
+        "collocation": "Expound a doctrine / Expound ideas"
+      },
+      {
+        "word": "Extenuate",
+        "partOfSpeech": "v",
+        "meaning": "Làm giảm nhẹ mức độ nghiêm trọng",
+        "visualBreakdown": "Ex- (ra ngoài) + tenu (thanh mảnh) + -ate",
+        "ieltsSentence": "Judges considered extenuating economic duress prior to penal sentencing.",
+        "vietnameseTranslation": "Các thẩm phán đã xem xét áp lực kinh tế giảm nhẹ trước khi tuyên án hình sự.",
+        "level": "C2",
+        "collocation": "Extenuating circumstances / Mitigate and extenuate"
+      },
+      {
+        "word": "Extirpate",
+        "partOfSpeech": "v",
+        "meaning": "Trừ khử triệt để, diệt sạch mầm mống",
+        "visualBreakdown": "Ex- (ra ngoài) + stirp (gốc rễ cây) + -ate",
+        "ieltsSentence": "Biosecurity wardens mobilized swiftly to extirpate the virulent parasite outbreak.",
+        "vietnameseTranslation": "Các nhân viên an toàn sinh học đã khẩn trương huy động lực lượng để trừ khử triệt để đợt bùng phát ký sinh trùng nguy hại.",
+        "level": "C2",
+        "collocation": "Extirpate an epidemic / Extirpate weeds"
+      },
+      {
+        "word": "Extrapolate",
+        "partOfSpeech": "v",
+        "meaning": "Ngoại suy, dự đoán xu thế rộng lớn",
+        "visualBreakdown": "Extra- (bên ngoài) + pol (sắp đặt) + -ate",
+        "ieltsSentence": "Researchers extrapolate climate vulnerability models using decades of precipitation metrics.",
+        "vietnameseTranslation": "Các nhà nghiên cứu ngoại suy các mô hình dễ bị tổn thương khí hậu bằng cách sử dụng các chỉ số lượng mưa hàng thập kỷ.",
+        "level": "C2",
+        "collocation": "Extrapolate from data / Extrapolate trends"
+      },
+      {
+        "word": "Exuberant",
+        "partOfSpeech": "adj",
+        "meaning": "Tràn đầy sinh khí, xum xuê tươi tốt",
+        "visualBreakdown": "Ex- (triệt để) + uber (màu mỡ) + -ant",
+        "ieltsSentence": "The rainforest biome boasts exuberant vegetation alongside extraordinary fauna diversity.",
+        "vietnameseTranslation": "Quần xã rừng mưa sở hữu thảm thực vật xum xuê tươi tốt cùng sự đa dạng phi thường về hệ động vật.",
+        "level": "C2",
+        "collocation": "Exuberant foliage / Exuberant energy"
+      },
+      {
+        "word": "Elucidate",
+        "partOfSpeech": "v",
+        "meaning": "Làm sáng tỏ, giải thích rành mạch",
+        "visualBreakdown": "E- (ra ngoài) + lucid (sáng sủa) + -ate",
+        "ieltsSentence": "Recent biochemical breakthroughs elucidate the molecular pathways of immune resistance.",
+        "vietnameseTranslation": "Những đột phá sinh hóa gần đây làm sáng tỏ các con đường phân tử của khả năng đề kháng miễn dịch.",
+        "level": "C2",
+        "collocation": "Elucidate mechanisms / Elucidate the theory"
+      },
+      {
+        "word": "Emancipate",
+        "partOfSpeech": "v",
+        "meaning": "Giải phóng, giải thoát khỏi áp bức",
+        "visualBreakdown": "E- (ra ngoài) + man (tay) + cip (nắm) + -ate",
+        "ieltsSentence": "Universal suffrage and accessible tertiary schooling emancipated underprivileged demographics.",
+        "vietnameseTranslation": "Quyền phổ thông đầu phiếu và giáo dục đại học dễ tiếp cận đã giải phóng các nhóm nhân khẩu học chịu nhiều thiệt thòi.",
+        "level": "C2",
+        "collocation": "Emancipate from bondage / Political emancipation"
+      },
+      {
+        "word": "Emerge",
+        "partOfSpeech": "v",
+        "meaning": "Nổi lên, xuất hiện ra ngoài ánh sáng",
+        "visualBreakdown": "E- (ra ngoài) + merge (nhúng chìm)",
+        "ieltsSentence": "Novel epidemiological challenges continuously emerge amidst rapid cross-border mobility.",
+        "vietnameseTranslation": "Các thách thức dịch tễ học mới liên tục nổi lên trong bối cảnh di chuyển xuyên biên giới thần tốc.",
+        "level": "C1",
+        "collocation": "Emerge as a dominant force / Newly emerged"
+      },
+      {
+        "word": "Evacuate",
+        "partOfSpeech": "v",
+        "meaning": "Sơ tán người dân khỏi khu vực hiểm họa",
+        "visualBreakdown": "E- (ra ngoài) + vacu (trống rỗng) + -ate",
+        "ieltsSentence": "Authorities evacuated waterfront communities prior to the onset of the tempest.",
+        "vietnameseTranslation": "Chính quyền đã sơ tán các cộng đồng ven sông trước khi cơn bão dữ ập đến.",
+        "level": "C1",
+        "collocation": "Evacuate civilians / Emergency evacuation"
+      },
+      {
+        "word": "Evaporate",
+        "partOfSpeech": "v",
+        "meaning": "Bốc hơi, biến mất nhanh chóng",
+        "visualBreakdown": "E- (ra ngoài) + vapor (hơi nước) + -ate",
+        "ieltsSentence": "Investor enthusiasm evaporated abruptly following disclosure of the budgetary shortfall.",
+        "vietnameseTranslation": "Sự hào hứng của nhà đầu tư bốc hơi đột ngột sau khi thâm hụt ngân sách bị tiết lộ.",
+        "level": "C1",
+        "collocation": "Evaporate into thin air / Moisture evaporates"
+      },
+      {
+        "word": "Exonerate",
+        "partOfSpeech": "v",
+        "meaning": "Minh oan, tuyên bố vô tội hoàn toàn",
+        "visualBreakdown": "Ex- (ra khỏi) + oner (gánh nặng) + -ate",
+        "ieltsSentence": "Exculpatory forensic evidence exonerated the wrongly accused archivist.",
+        "vietnameseTranslation": "Bằng chứng pháp y gỡ tội đã minh oan hoàn toàn cho viên quản thủ văn thư bị buộc tội oan.",
+        "level": "C2",
+        "collocation": "Exonerate from blame / Completely exonerated"
+      },
+      {
+        "word": "Evoke",
+        "partOfSpeech": "v",
+        "meaning": "Khơi dậy, gọi ký ức/cảm xúc trở về",
+        "visualBreakdown": "E- (ra ngoài) + voke (tiếng gọi)",
+        "ieltsSentence": "Architectural heritage evocatively evokes municipal memories of bygone industrial prosperity.",
+        "vietnameseTranslation": "Di sản kiến trúc khơi dậy một cách gợi cảm những ký ức đô thị về sự thịnh vượng công nghiệp thời đã qua.",
+        "level": "C1",
+        "collocation": "Evoke memories / Evoke emotions"
+      },
+      {
+        "word": "Exclude",
+        "partOfSpeech": "v",
+        "meaning": "Loại trừ, không cho gia nhập/tiếp cận",
+        "visualBreakdown": "Ex- (ra ngoài) + clude (đóng chặt)",
+        "ieltsSentence": "Discriminatory lending practices historically excluded disadvantaged enclaves from homeownership.",
+        "vietnameseTranslation": "Các phương thức cho vay mang tính phân biệt đối xử trước đây đã loại trừ các khu dân cư thiệt thòi khỏi quyền sở hữu nhà.",
+        "level": "C1",
+        "collocation": "Exclude from benefits / Mutually exclusive"
+      },
+      {
+        "word": "Exhale",
+        "partOfSpeech": "v",
+        "meaning": "Thở ra, phả khí ra ngoài",
+        "visualBreakdown": "Ex- (ra ngoài) + hale (hơi thở)",
+        "ieltsSentence": "Deciduous canopies absorb carbon dioxide during photosynthesis and exhale vital oxygen.",
+        "vietnameseTranslation": "Tán cây rụng lá hấp thụ carbon dioxide trong quá trình quang hợp và phả ra oxy thiết yếu.",
+        "level": "C1",
+        "collocation": "Inhale and exhale / Exhale deeply"
+      },
+      {
+        "word": "Expatriate",
+        "partOfSpeech": "n",
+        "meaning": "Chuyên gia làm việc định cư ở nước ngoài",
+        "visualBreakdown": "Ex- (ngoài) + patri (quê hương) + -ate",
+        "ieltsSentence": "Multinational consortia deploy skilled expatriates to oversee offshore development nodes.",
+        "vietnameseTranslation": "Các tập đoàn đa quốc gia cử các chuyên gia làm việc ở nước ngoài dày dạn kỹ năng để giám sát các đầu mối phát triển ở hải ngoại.",
+        "level": "C1",
+        "collocation": "Expatriate community / Highly skilled expatriate"
       }
     ]
   },
   {
-    id: "r106",
-    root: "HYDRO",
-    meaning: "Nước, Thuỷ điện",
-    origin: "Greek (hydor - water)",
-    description: "Xuất hiện trong các báo cáo khoa học về vòng tuần hoàn nước, thủy lợi học và tài nguyên năng lượng hydro.",
-    tip: "Nghĩ ngay tới 'Hydrate' (Cấp nước cho da) hay 'Hydrogen' (Khí hydro - nguyên tố tạo ra nước).",
-    category: "Time & Space",
-    exampleWords: [
+    "id": "stem-in-im",
+    "root": "IN/IM/IL/IR-",
+    "meaning": "Thâm nhập vào bên trong HOẶC Phủ định (không/bất)",
+    "origin": "Tiền tố Latin (in-, im-, il-, ir-)",
+    "description": "Mang 2 chiều hướng nghĩa quan trọng bậc nhất: 1) Hướng vào chiều sâu nội tại (inward); 2) Tiền tố phủ định mang nghĩa phủ quyết, bất khả, không thể.",
+    "tip": "Nhớ đến Inside (bên trong) HOẶC Impossible (bất khả thi) – nhận diện nghĩa theo gốc từ ghép liền sau.",
+    "category": "Trục 1: Tiền Tố Định Hướng & Biến Đổi",
+    "axis": "Trục 1",
+    "axisTitle": "TRỤC 1: TIỀN TỐ ĐỊNH HƯỚNG & BIẾN ĐỔI",
+    "axisSubtitle": "Action & Vector (Gắn kết & Tác động)",
+    "stemKey": "IN/IM-",
+    "exampleWords": [
       {
-        word: "hydroelectric",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về thủy điện, điện năng từ sức nước",
-        visualBreakdown: "HYDRO (nước) + ELECTRIC (thuộc về điện) -> điện sinh ra nhờ động năng của nước",
-        ieltsSentence: "Hydroelectric power remains a cornerstone of the renewable energy sector in mountain nations.",
-        vietnameseTranslation: "Thủy điện vẫn là một viên đá tảng của ngành năng lượng tái tạo tại các quốc gia miền núi."
+        "word": "Inundate",
+        "partOfSpeech": "v",
+        "meaning": "Làm ngập lụt, tràn ngập thông tin",
+        "visualBreakdown": "In- (vào trong) + und (sóng nước) + -ate",
+        "ieltsSentence": "Torrential monsoon deluges inundated agrarian lowlands, devastating food staples.",
+        "vietnameseTranslation": "Mưa lũ gió mùa xối xả làm ngập lụt các vùng đồng bằng nông nghiệp, tàn phá các loại cây lương thực thiết yếu.",
+        "level": "C2",
+        "collocation": "Inundate with requests / Severely inundated"
       },
       {
-        word: "hydrology",
-        partOfSpeech: "n",
-        meaning: "Thủy văn học (nghiên cứu về sự phân phối nước)",
-        visualBreakdown: "HYDRO (nước) + LOGY (ngành khoa học) -> khoa học nghiên cứu nước trên Trái Đất",
-        ieltsSentence: "Understanding local hydrology is critical when designing effective flood control systems.",
-        vietnameseTranslation: "Hiểu rõ thủy văn của địa phương là cực kỳ quan trọng khi thiết kế các hệ thống kiểm soát lũ hiệu quả."
+        "word": "Inherent",
+        "partOfSpeech": "adj",
+        "meaning": "Vốn có, gắn liền bản chất sâu bên trong",
+        "visualBreakdown": "In- (bên trong) + her (dính liền) + -ent",
+        "ieltsSentence": "Volatility is an inherent characteristic of unregulated speculative capital markets.",
+        "vietnameseTranslation": "Sự biến động là một đặc tính vốn có bên trong của các thị trường vốn đầu cơ thiếu kiểm soát.",
+        "level": "C1",
+        "collocation": "Inherent risk / Inherent flaw"
+      },
+      {
+        "word": "Irreversible",
+        "partOfSpeech": "adj",
+        "meaning": "Không thể đảo ngược tình thế",
+        "visualBreakdown": "Ir- (phủ định) + re- + vers (quay lại) + -ible",
+        "ieltsSentence": "Crossing planetary tipping points risks precipitating irreversible ecological collapse.",
+        "vietnameseTranslation": "Vượt qua các điểm tới hạn của hành tinh có nguy cơ dẫn tới sự sụp đổ sinh thái không thể đảo ngược.",
+        "level": "C1",
+        "collocation": "Irreversible damage / Irreversible change"
+      },
+      {
+        "word": "Illiteracy",
+        "partOfSpeech": "n",
+        "meaning": "Nạn mù chữ, sự thiếu hiểu biết cơ bản",
+        "visualBreakdown": "Il- (không) + liter (chữ nghĩa) + -acy",
+        "ieltsSentence": "Eradicating adult illiteracy remains fundamental to achieving equitable economic mobility.",
+        "vietnameseTranslation": "Xóa nạn mù chữ ở người lớn vẫn là điều cơ bản để đạt được sự dịch chuyển kinh tế bình đẳng.",
+        "level": "C1",
+        "collocation": "Combat illiteracy / Functional illiteracy"
+      },
+      {
+        "word": "Implicit",
+        "partOfSpeech": "adj",
+        "meaning": "Ngấm ngầm, ẩn ý hàm chứa bên trong",
+        "visualBreakdown": "Im- (vào trong) + plic (gấp nếp) + -it",
+        "ieltsSentence": "The proposed statutory amendment contains implicit concessions to corporate lobby groups.",
+        "vietnameseTranslation": "Đề xuất sửa đổi luật chứa đựng những nhượng bộ ngầm ẩn ý đối với các nhóm vận động hành lang doanh nghiệp.",
+        "level": "C1",
+        "collocation": "Implicit assumption / Implicit bias"
+      },
+      {
+        "word": "Incur",
+        "partOfSpeech": "v",
+        "meaning": "Gánh chịu, chuốc lấy phí tổn/hậu quả",
+        "visualBreakdown": "In- (vào trong) + cur (chạy vào)",
+        "ieltsSentence": "Firms adopting reckless ecological shortcuts will inevitably incur hefty regulatory penalties.",
+        "vietnameseTranslation": "Các công ty áp dụng các đường tắt sinh thái thiếu trách nhiệm chắc chắn sẽ phải gánh chịu những hình phạt nặng nề.",
+        "level": "C1",
+        "collocation": "Incur debt / Incur expenses"
+      },
+      {
+        "word": "Indigenous",
+        "partOfSpeech": "adj",
+        "meaning": "Bản địa, sinh ra ngay từ lòng quê hương",
+        "visualBreakdown": "Indi- (trong nước) + gen (sinh ra) + -ous",
+        "ieltsSentence": "Safeguarding indigenous ecological knowledge reinforces localized forest conservation.",
+        "vietnameseTranslation": "Bảo vệ tri thức sinh thái bản địa giúp củng cố việc bảo tồn rừng mang tính địa phương.",
+        "level": "C1",
+        "collocation": "Indigenous people / Indigenous fauna"
+      },
+      {
+        "word": "Induce",
+        "partOfSpeech": "v",
+        "meaning": "Dẫn dụ, kích hoạt, gây ra trạng thái",
+        "visualBreakdown": "In- (vào trong) + duce (dẫn dắt)",
+        "ieltsSentence": "Chronic auditory pollution can induce systemic physiological stress in urban dwellers.",
+        "vietnameseTranslation": "Ô nhiễm tiếng ồn kinh niên có thể gây ra căng thẳng sinh lý mang tính hệ thống ở cư dân đô thị.",
+        "level": "C1",
+        "collocation": "Induce sleep / Chemically induced"
+      },
+      {
+        "word": "Infiltrate",
+        "partOfSpeech": "v",
+        "meaning": "Thâm nhập ngầm, rò rỉ ngấm vào trong",
+        "visualBreakdown": "In- (vào trong) + filtr (màng lọc) + -ate",
+        "ieltsSentence": "Subterranean leachates gradually infiltrate vulnerable freshwater aquifers.",
+        "vietnameseTranslation": "Nước rỉ rác dưới lòng đất dần dần ngấm ngầm thâm nhập vào các tầng ngậm nước ngọt nhạy cảm.",
+        "level": "C1",
+        "collocation": "Infiltrate the network / Infiltrate soil"
+      },
+      {
+        "word": "Infringe",
+        "partOfSpeech": "v",
+        "meaning": "Xâm phạm quyền lợi, vi phạm điều cấm",
+        "visualBreakdown": "In- (vào trong) + fringe (bẻ vỡ)",
+        "ieltsSentence": "Unauthorized biometric surveillance infringes fundamental constitutional privacy guarantees.",
+        "vietnameseTranslation": "Hoạt động giám sát sinh trắc học trái phép xâm phạm các bảo đảm hiến định căn bản về quyền riêng tư.",
+        "level": "C2",
+        "collocation": "Infringe on rights / Infringe a patent"
+      },
+      {
+        "word": "Ingest",
+        "partOfSpeech": "v",
+        "meaning": "Ăn vào bụng, nuốt vào cơ thể",
+        "visualBreakdown": "In- (vào trong) + gest (mang, vác)",
+        "ieltsSentence": "Marine pelagic organisms ingest hazardous microplastic fragments mistaken for plankton.",
+        "vietnameseTranslation": "Các sinh vật biển tầng nổi nuốt phải các mảnh vi nhựa nguy hại do nhầm lẫn với sinh vật phù du.",
+        "level": "C2",
+        "collocation": "Ingest nutrients / Accidentally ingest"
+      },
+      {
+        "word": "Inhabit",
+        "partOfSpeech": "v",
+        "meaning": "Cư trú, sinh sống bên trong khu vực",
+        "visualBreakdown": "In- (trong) + habit (ở, quen thuộc)",
+        "ieltsSentence": "Endangered cetaceans inhabit the pristine thermal upwelling corridors off the coast.",
+        "vietnameseTranslation": "Các loài cá voi nguy cấp sinh sống bên trong các hành lang nước trồi nhiệt nguyên sơ ngoài khơi.",
+        "level": "C1",
+        "collocation": "Inhabit a region / Densely inhabited"
+      },
+      {
+        "word": "Initiate",
+        "partOfSpeech": "v",
+        "meaning": "Khởi xướng, bước đầu đưa vào vận hành",
+        "visualBreakdown": "In- (bên trong) + iti (bước đi) + -ate",
+        "ieltsSentence": "Municipal leaders initiated a groundbreaking circular recycling scheme.",
+        "vietnameseTranslation": "Lãnh đạo đô thị đã khởi xướng một chương trình tái chế tuần hoàn mang tính đột phá.",
+        "level": "C1",
+        "collocation": "Initiate reform / Initiate dialogue"
+      },
+      {
+        "word": "Innate",
+        "partOfSpeech": "adj",
+        "meaning": "Bẩm sinh, có sẵn từ trong bản tính",
+        "visualBreakdown": "In- (bên trong) + nate (sinh ra)",
+        "ieltsSentence": "Human toddlers demonstrate an innate predisposition for linguistic syntax acquisition.",
+        "vietnameseTranslation": "Trẻ mới biết đi bộc lộ một thiên hướng bẩm sinh trong việc tiếp thu cú pháp ngôn ngữ.",
+        "level": "C1",
+        "collocation": "Innate ability / Innate talent"
+      },
+      {
+        "word": "Insolvent",
+        "partOfSpeech": "adj",
+        "meaning": "Vỡ nợ, mất khả năng thanh toán nợ",
+        "visualBreakdown": "In- (không) + solvent (có thể hòa tan, trả nợ)",
+        "ieltsSentence": "The retail enterprise was declared insolvent following consecutive quarters of deficit.",
+        "vietnameseTranslation": "Doanh nghiệp bán lẻ bị tuyên bố vỡ nợ sau nhiều quý liên tiếp thâm hụt tài chính.",
+        "level": "C2",
+        "collocation": "Become insolvent / Insolvent firm"
+      },
+      {
+        "word": "Insurmountable",
+        "partOfSpeech": "adj",
+        "meaning": "Không thể vượt qua nổi trở ngại",
+        "visualBreakdown": "In- (không) + surmount (vượt qua) + -able",
+        "ieltsSentence": "Logistical bottlenecks presented seemingly insurmountable hurdles to vaccine distribution.",
+        "vietnameseTranslation": "Các nút thắt hậu cần đã tạo ra những trở ngại dường như không thể vượt qua đối với việc phân phối vắc-xin.",
+        "level": "C2",
+        "collocation": "Insurmountable obstacles / Insurmountable challenge"
+      },
+      {
+        "word": "Intangible",
+        "partOfSpeech": "adj",
+        "meaning": "Phi vật thể, vô hình không sờ nắm được",
+        "visualBreakdown": "In- (không) + tang (chạm, sờ) + -ible",
+        "ieltsSentence": "Intellectual capital and brand goodwill constitute intangible corporate assets.",
+        "vietnameseTranslation": "Vốn trí tuệ và uy tín thương hiệu cấu thành các tài sản doanh nghiệp phi vật thể.",
+        "level": "C1",
+        "collocation": "Intangible cultural heritage / Intangible benefits"
+      },
+      {
+        "word": "Intervene",
+        "partOfSpeech": "v",
+        "meaning": "Can thiệp vào giữa để xử lý",
+        "visualBreakdown": "Inter- (ở giữa) + vene (đến)",
+        "ieltsSentence": "Monetary authorities intervened decisively to stabilize the depreciating currency.",
+        "vietnameseTranslation": "Các nhà chức trách tiền tệ đã can thiệp dứt khoát để ổn định đồng tiền đang mất giá.",
+        "level": "C1",
+        "collocation": "Intervene in a crisis / Militarily intervene"
+      },
+      {
+        "word": "Intimidate",
+        "partOfSpeech": "v",
+        "meaning": "Đe dọa, làm khiếp sợ",
+        "visualBreakdown": "In- (vào trong) + timid (nhút nhát) + -ate",
+        "ieltsSentence": "Authoritarian regimes frequently intimidate independent investigative reporters.",
+        "vietnameseTranslation": "Các chế độ chuyên chế thường xuyên đe dọa những phóng viên điều tra độc lập.",
+        "level": "C1",
+        "collocation": "Intimidate witnesses / Feel intimidated"
+      },
+      {
+        "word": "Intricate",
+        "partOfSpeech": "adj",
+        "meaning": "Tinh xảo, đan kết phức tạp",
+        "visualBreakdown": "In- (vào trong) + tric (rối rắm, bẫy) + -ate",
+        "ieltsSentence": "Tropical coral reefs harbor an intricate web of symbiotic ecological dependencies.",
+        "vietnameseTranslation": "Các rạn san hô nhiệt đới chứa đựng một mạng lưới cộng sinh phụ thuộc sinh thái vô cùng tinh xảo và phức tạp.",
+        "level": "C1",
+        "collocation": "Intricate design / Intricate network"
+      },
+      {
+        "word": "Invulnerable",
+        "partOfSpeech": "adj",
+        "meaning": "Bất khả xâm phạm, không thể tổn thương",
+        "visualBreakdown": "In- (không) + vulner (tổn thương) + -able",
+        "ieltsSentence": "No financial architecture is completely invulnerable to systemic geopolitical shockwaves.",
+        "vietnameseTranslation": "Không một cấu trúc tài chính nào là hoàn toàn bất khả xâm phạm trước những cú sốc địa chính trị mang tính hệ thống.",
+        "level": "C2",
+        "collocation": "Invulnerable to attack / Render invulnerable"
+      },
+      {
+        "word": "Immutable",
+        "partOfSpeech": "adj",
+        "meaning": "Bất biến, vĩnh viễn không thay đổi",
+        "visualBreakdown": "Im- (không) + mut (thay đổi) + -able",
+        "ieltsSentence": "Classical physicists regarded spatial and temporal dimensions as immutable absolutes.",
+        "vietnameseTranslation": "Các nhà vật lý cổ điển từng coi các chiều không gian và thời gian là những hằng số tuyệt đối bất biến.",
+        "level": "C2",
+        "collocation": "Immutable law of nature / Immutable truth"
+      },
+      {
+        "word": "Impoverish",
+        "partOfSpeech": "v",
+        "meaning": "Làm bần cùng hóa, làm kiệt quệ đất đai",
+        "visualBreakdown": "Im- (làm cho) + pover (nghèo) + -ish",
+        "ieltsSentence": "Extensive chemical pesticide leaching impoverishes microbial fertility in topsoil.",
+        "vietnameseTranslation": "Sự rửa trôi thuốc trừ sâu hóa học trên diện rộng làm kiệt quệ độ phì nhiêu của vi sinh vật trong đất mặt.",
+        "level": "C2",
+        "collocation": "Impoverish soil / Impoverish communities"
+      },
+      {
+        "word": "Incessant",
+        "partOfSpeech": "adj",
+        "meaning": "Không ngừng nghỉ, liên miên dai dẳng",
+        "visualBreakdown": "In- (không) + cess (dừng lại) + -ant",
+        "ieltsSentence": "Urban workers suffer cognitive burnout under the pressure of incessant digital notifications.",
+        "vietnameseTranslation": "Người lao động đô thị bị kiệt quệ nhận thức dưới áp lực của những thông báo số liên miên không ngừng nghỉ.",
+        "level": "C2",
+        "collocation": "Incessant noise / Incessant rain"
+      },
+      {
+        "word": "Imminent",
+        "partOfSpeech": "adj",
+        "meaning": "Sắp sửa ập đến, cận kề trước mắt",
+        "visualBreakdown": "Im- (trên) + min (nhô ra) + -ent",
+        "ieltsSentence": "Meteorologists broadcast warnings concerning the imminent arrival of a typhoon.",
+        "vietnameseTranslation": "Các nhà khí tượng học phát đi cảnh báo về việc siêu bão sắp sửa ập đến cận kề.",
+        "level": "C1",
+        "collocation": "Imminent danger / Imminent collapse"
       }
     ]
   },
   {
-    id: "r107",
-    root: "PED/PAED",
-    meaning: "Trẻ em, Giáo dục trẻ",
-    origin: "Greek (pais - child)",
-    description: "Thường dùng trong các văn bản IELTS về tâm lý học trẻ nhỏ, giáo dục mầm non và sự phát triển hành vi.",
-    tip: "Dễ nhớ nhất qua 'Pediatric' (Thuộc khoa nhi) hoặc 'Pedagogy' (Nghệ thuật sư phạm / giảng dạy trẻ nhỏ). Đừng nhầm với PED của chân (Latin pes).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-sub-hypo",
+    "root": "SUB/HYPO/UNDER-",
+    "meaning": "Nằm bên dưới nền tảng, tiềm ẩn, thứ cấp",
+    "origin": "Tiền tố Latin (sub-) & Hy Lạp (hypo-)",
+    "description": "Chỉ vị trí ở tầng sâu hơn, làm bệ phóng nền tảng cốt lõi, hoặc mức độ hạ thấp hơn so với thang đo quy chuẩn.",
+    "tip": "Nhớ đến Subway (xe điện ngầm dưới lòng đất) hoặc Hypothermia (hạ thân nhiệt) – vị trí hoặc cấp độ luôn ở bên dưới.",
+    "category": "Trục 1: Tiền Tố Định Hướng & Biến Đổi",
+    "axis": "Trục 1",
+    "axisTitle": "TRỤC 1: TIỀN TỐ ĐỊNH HƯỚNG & BIẾN ĐỔI",
+    "axisSubtitle": "Action & Vector (Gắn kết & Tác động)",
+    "stemKey": "SUB/HYPO-",
+    "exampleWords": [
       {
-        word: "pedagogy",
-        partOfSpeech: "n",
-        meaning: "Sư phạm học, phương pháp và nghệ thuật dạy học",
-        visualBreakdown: "PED (trẻ em) + AGOG (dẫn dắt) + Y -> việc dẫn dắt định hướng sự phát triển của học sinh nhỏ tuổi",
-        ieltsSentence: "Modern pedagogy prioritizes active student engagement over passive, lecture-based learning.",
-        vietnameseTranslation: "Phương pháp sư phạm hiện đại ưu tiên sự tham gia tích cực của học sinh hơn là việc học thụ động dựa trên nghe giảng."
+        "word": "Hypothesis",
+        "partOfSpeech": "n",
+        "meaning": "Giả thuyết khoa học làm nền tảng kiểm chứng",
+        "visualBreakdown": "Hypo- (bên dưới) + thesis (đặt ra)",
+        "ieltsSentence": "Rigorous experimental verification is necessary to substantiate the researcher's hypothesis.",
+        "vietnameseTranslation": "Việc kiểm chứng thực nghiệm nghiêm ngặt là điều bắt buộc để chứng minh giả thuyết của nhà nghiên cứu.",
+        "level": "C1",
+        "collocation": "Formulate a hypothesis / Test a hypothesis"
       },
       {
-        word: "pediatrician",
-        partOfSpeech: "n",
-        meaning: "Bác sĩ khoa nhi, bác sĩ trẻ em",
-        visualBreakdown: "PED (trẻ em) + IATR (chữa bệnh) + ICIAN (nhà chuyên môn) -> chuyên gia chữa bệnh cho trẻ em",
-        ieltsSentence: "The pediatrician recommended a balanced diet to address the toddler's minor vitamin deficiency.",
-        vietnameseTranslation: "Bác sĩ nhi khoa đã khuyên dùng một chế độ ăn cân bằng để khắc phục tình trạng thiếu hụt vitamin nhẹ của trẻ biết đi."
+        "word": "Subsidize",
+        "partOfSpeech": "v",
+        "meaning": "Trợ cấp giá, rót ngân sách hỗ trợ",
+        "visualBreakdown": "Sub- (bên dưới) + sid (ngồi, trợ giúp) + -ize",
+        "ieltsSentence": "Governmental agencies subsidize solar panel adoption to hasten renewable transition.",
+        "vietnameseTranslation": "Các cơ quan chính phủ trợ cấp việc sử dụng pin năng lượng mặt trời để thúc đẩy quá trình chuyển đổi năng lượng tái tạo.",
+        "level": "C1",
+        "collocation": "Heavily subsidize / Subsidize public transit"
+      },
+      {
+        "word": "Subsequent",
+        "partOfSpeech": "adj",
+        "meaning": "Xảy ra nối tiếp theo sau đó",
+        "visualBreakdown": "Sub- (theo sau dưới) + sequ (đi theo) + -ent",
+        "ieltsSentence": "The initial discovery spurred subsequent breakthroughs across pharmacological biology.",
+        "vietnameseTranslation": "Phát hiện ban đầu đã thúc đẩy những đột phá tiếp sau đó trên khắp lĩnh vực sinh học dược lý.",
+        "level": "C1",
+        "collocation": "Subsequent generations / Subsequent investigations"
+      },
+      {
+        "word": "Undergraduate",
+        "partOfSpeech": "n",
+        "meaning": "Sinh viên bậc đại học cử nhân",
+        "visualBreakdown": "Under- (dưới) + graduate (tốt nghiệp)",
+        "ieltsSentence": "Undergraduate curricula increasingly incorporate hands-on data science modules.",
+        "vietnameseTranslation": "Chương trình giảng dạy bậc đại học ngày càng tích hợp các học phần khoa học dữ liệu thực hành.",
+        "level": "C1",
+        "collocation": "Undergraduate degree / Undergraduate student"
+      },
+      {
+        "word": "Subconscious",
+        "partOfSpeech": "n",
+        "meaning": "Tiềm thức, vùng nhận thức nằm dưới ý thức",
+        "visualBreakdown": "Sub- (dưới) + conscious (ý thức)",
+        "ieltsSentence": "Subconscious perceptual cues heavily influence consumer purchasing trajectories.",
+        "vietnameseTranslation": "Những tín hiệu tri giác trong tiềm thức ảnh hưởng rất lớn đến quỹ đạo mua sắm của người tiêu dùng.",
+        "level": "C1",
+        "collocation": "Subconscious mind / Subconscious desire"
+      },
+      {
+        "word": "Subdue",
+        "partOfSpeech": "v",
+        "meaning": "Áp chế, dẹp yên, chế ngự dưới quyền",
+        "visualBreakdown": "Sub- (dưới) + due (dẫn dắt)",
+        "ieltsSentence": "Aggressive central banking interventions subdued runaway financial market panic.",
+        "vietnameseTranslation": "Sự can thiệp quyết liệt của ngân hàng trung ương đã dẹp yên nỗi hoảng loạn trên thị trường tài chính.",
+        "level": "C2",
+        "collocation": "Subdue inflation / Subdue the rebellion"
+      },
+      {
+        "word": "Subjugate",
+        "partOfSpeech": "v",
+        "meaning": "Khuất phục, biến thành nô dịch/thuộc địa",
+        "visualBreakdown": "Sub- (dưới) + jug (cái ách nô lệ) + -ate",
+        "ieltsSentence": "Imperial powers historically deployed military dominance to subjugate sovereign peoples.",
+        "vietnameseTranslation": "Các cường quốc đế quốc trước đây từng sử dụng ưu thế quân sự để khuất phục các dân tộc có chủ quyền.",
+        "level": "C2",
+        "collocation": "Subjugate nations / Total subjugation"
+      },
+      {
+        "word": "Subliminal",
+        "partOfSpeech": "adj",
+        "meaning": "Dưới ngưỡng ý thức, tác động ngầm tiềm ẩn",
+        "visualBreakdown": "Sub- (dưới) + limin (ngưỡng cảm giác) + -al",
+        "ieltsSentence": "Advertisers utilize subliminal audio-visual cues to evoke brand allegiance.",
+        "vietnameseTranslation": "Các nhà quảng cáo sử dụng các gợi ý nghe nhìn dưới ngưỡng ý thức để khơi gợi lòng trung thành thương hiệu.",
+        "level": "C2",
+        "collocation": "Subliminal message / Subliminal perception"
+      },
+      {
+        "word": "Submerge",
+        "partOfSpeech": "v",
+        "meaning": "Dìm xuống dưới mặt nước, nhấn chìm",
+        "visualBreakdown": "Sub- (dưới) + merge (nhúng lặn)",
+        "ieltsSentence": "Accelerating sea level rise threatens to permanently submerge low-lying archipelagos.",
+        "vietnameseTranslation": "Mực nước biển dâng nhanh đe dọa sẽ nhấn chìm vĩnh viễn các quần đảo trũng thấp.",
+        "level": "C1",
+        "collocation": "Submerged beneath water / Completely submerge"
+      },
+      {
+        "word": "Submissive",
+        "partOfSpeech": "adj",
+        "meaning": "Phục tùng, cam chịu ở thế chiếu dưới",
+        "visualBreakdown": "Sub- (dưới) + miss (gửi, nhượng bộ) + -ive",
+        "ieltsSentence": "Feudal social compacts demanded submissive compliance from tenant agriculturalists.",
+        "vietnameseTranslation": "Khế ước xã hội phong kiến đòi hỏi sự tuân phục cam chịu từ những nông dân làm thuê.",
+        "level": "C1",
+        "collocation": "Submissive posture / Remain submissive"
+      },
+      {
+        "word": "Subordinate",
+        "partOfSpeech": "adj",
+        "meaning": "Cấp dưới, phụ thuộc vào thẩm quyền lớn hơn",
+        "visualBreakdown": "Sub- (dưới) + ordin (trật tự, hàng ngũ) + -ate",
+        "ieltsSentence": "Regional bylaws remain subordinate to national constitutional provisions.",
+        "vietnameseTranslation": "Các quy chế địa phương vẫn phải phụ thuộc và xếp dưới các điều khoản hiến pháp quốc gia.",
+        "level": "C1",
+        "collocation": "Subordinate role / Subordinate clause"
+      },
+      {
+        "word": "Subservient",
+        "partOfSpeech": "adj",
+        "meaning": "Khúm núm quỵ lụy, phục tùng mù quáng",
+        "visualBreakdown": "Sub- (dưới) + servi (phục vụ) + -ent",
+        "ieltsSentence": "Judicial independence is fatally compromised when courts become subservient to executive fiat.",
+        "vietnameseTranslation": "Sự độc lập tư pháp sẽ bị tổn hại nghiêm trọng khi các tòa án trở nên khúm núm phục tùng mệnh lệnh hành pháp.",
+        "level": "C2",
+        "collocation": "Subservient to authority / Refuse to be subservient"
+      },
+      {
+        "word": "Subside",
+        "partOfSpeech": "v",
+        "meaning": "Lắng xuống đáy, giảm bớt cường độ",
+        "visualBreakdown": "Sub- (dưới) + side (ngồi, chìm)",
+        "ieltsSentence": "Coastal floodwaters gradually subsided following the departure of the low-pressure system.",
+        "vietnameseTranslation": "Nước lũ ven biển dần lắng xuống sau khi hệ thống áp thấp tan đi.",
+        "level": "C1",
+        "collocation": "Violence subsided / Waters subside"
+      },
+      {
+        "word": "Subsidiary",
+        "partOfSpeech": "n",
+        "meaning": "Công ty con phụ thuộc vào tập đoàn mẹ",
+        "visualBreakdown": "Sub- (dưới) + sidi (ngồi phụ tá) + -ary",
+        "ieltsSentence": "The transnational corporation registered a regional subsidiary to manage Asian supply logistics.",
+        "vietnameseTranslation": "Tập đoàn xuyên quốc gia đã đăng ký một công ty con khu vực để quản lý hậu cần chuỗi cung ứng châu Á.",
+        "level": "C1",
+        "collocation": "Wholly owned subsidiary / Subsidiary company"
+      },
+      {
+        "word": "Substantive",
+        "partOfSpeech": "adj",
+        "meaning": "Có thực chất, quan trọng cốt lõi",
+        "visualBreakdown": "Sub- (dưới) + stant (đứng vững) + -ive",
+        "ieltsSentence": "Diplomats failed to achieve substantive progress regarding nuclear non-proliferation treaties.",
+        "vietnameseTranslation": "Các nhà ngoại giao đã không đạt được tiến triển thực chất nào liên quan đến các hiệp ước không phổ biến vũ khí hạt nhân.",
+        "level": "C2",
+        "collocation": "Substantive discussion / Substantive evidence"
+      },
+      {
+        "word": "Subsume",
+        "partOfSpeech": "v",
+        "meaning": "Gộp vào, xếp vào nhóm bao trùm lớn hơn",
+        "visualBreakdown": "Sub- (dưới) + sume (lấy, gom)",
+        "ieltsSentence": "Local craft guilds were progressively subsumed under industrial conglomerate syndicates.",
+        "vietnameseTranslation": "Các phường hội thủ công địa phương dần dần bị gộp vào dưới trướng các tập đoàn công nghiệp lớn.",
+        "level": "C2",
+        "collocation": "Subsumed under a broader category / Subsume individual interests"
+      },
+      {
+        "word": "Subterfuge",
+        "partOfSpeech": "n",
+        "meaning": "Kế ngụy trang che giấu ý đồ, quỷ kế",
+        "visualBreakdown": "Sub- (dưới) + ter + fuge (chạy trốn)",
+        "ieltsSentence": "Corporate cartels employed financial subterfuge to conceal offshore tax avoidance.",
+        "vietnameseTranslation": "Các tập đoàn cấu kết đã sử dụng quỷ kế tài chính để che giấu hành vi trốn thuế ở nước ngoài.",
+        "level": "C2",
+        "collocation": "Resort to subterfuge / Elaborate subterfuge"
+      },
+      {
+        "word": "Subversive",
+        "partOfSpeech": "adj",
+        "meaning": "Có tính lật đổ thể chế từ chân móng",
+        "visualBreakdown": "Sub- (dưới) + vers (lật úp) + -ive",
+        "ieltsSentence": "Clandestine publications were deemed subversive by the ruling autocratic junta.",
+        "vietnameseTranslation": "Các ấn phẩm bí mật bị chính quyền quân sự chuyên chế coi là có tính chất lật đổ.",
+        "level": "C2",
+        "collocation": "Subversive elements / Subversive activities"
+      },
+      {
+        "word": "Hypocrisy",
+        "partOfSpeech": "n",
+        "meaning": "Đạo đức giả, che giấu tâm địa xấu xa",
+        "visualBreakdown": "Hypo- (bên dưới) + crisy (phán xét đóng kịch)",
+        "ieltsSentence": "Critics denounced political hypocrisy regarding fossil fuel subsidies during climate summits.",
+        "vietnameseTranslation": "Các nhà phê bình đã lên án thói đạo đức giả chính trị liên quan đến trợ cấp nhiên liệu hóa thạch tại các hội nghị khí hậu.",
+        "level": "C1",
+        "collocation": "Sheer hypocrisy / Condemn hypocrisy"
+      },
+      {
+        "word": "Hypothetical",
+        "partOfSpeech": "adj",
+        "meaning": "Mang tính giả định, trên lý thuyết",
+        "visualBreakdown": "Hypo- + thet (đặt để) + -ical",
+        "ieltsSentence": "Economic analysts construct hypothetical stress-test scenarios to evaluate liquidity resilience.",
+        "vietnameseTranslation": "Các nhà phân tích kinh tế xây dựng các kịch bản kiểm tra sức chịu đựng giả định để đánh giá khả năng thanh khoản.",
+        "level": "C1",
+        "collocation": "Hypothetical question / Hypothetical scenario"
+      },
+      {
+        "word": "Underestimate",
+        "partOfSpeech": "v",
+        "meaning": "Đánh giá thấp hơn mức thực tế",
+        "visualBreakdown": "Under- (dưới) + estimate (ước lượng)",
+        "ieltsSentence": "Policy planners chronically underestimate the fiscal costs of climate-induced infrastructural repair.",
+        "vietnameseTranslation": "Các nhà hoạch định chính sách thường xuyên đánh giá thấp chi phí tài chính cho việc sửa chữa cơ sở hạ tầng do khí hậu gây ra.",
+        "level": "C1",
+        "collocation": "Grossly underestimate / Never underestimate"
+      },
+      {
+        "word": "Undermine",
+        "partOfSpeech": "v",
+        "meaning": "Đào mòn chân móng, làm suy yếu dần dần",
+        "visualBreakdown": "Under- (dưới) + mine (đào mỏ hầm)",
+        "ieltsSentence": "Rampant disinformation campaigns deliberately undermine public faith in empirical science.",
+        "vietnameseTranslation": "Các chiến dịch thông tin sai lệch tràn lan cố tình đào mòn niềm tin của công chúng vào khoa học thực nghiệm.",
+        "level": "C1",
+        "collocation": "Undermine confidence / Undermine authority"
+      },
+      {
+        "word": "Underpin",
+        "partOfSpeech": "v",
+        "meaning": "Chống đỡ, làm điểm tựa nền móng cốt yếu",
+        "visualBreakdown": "Under- (dưới) + pin (cột trụ đỡ)",
+        "ieltsSentence": "Robust statistical sampling underpins the validity of epidemiological findings.",
+        "vietnameseTranslation": "Phương pháp lấy mẫu thống kê vững chắc làm điểm tựa củng cố tính xác thực của các phát hiện dịch tễ học.",
+        "level": "C1",
+        "collocation": "Underpin economic growth / Theories that underpin"
+      },
+      {
+        "word": "Undertake",
+        "partOfSpeech": "v",
+        "meaning": "Đảm nhận, dấn thân gánh vác trọng trách",
+        "visualBreakdown": "Under- (dưới) + take (nhận lấy)",
+        "ieltsSentence": "The municipal authority undertook a massive modernization of wastewater treatment works.",
+        "vietnameseTranslation": "Chính quyền đô thị đã đảm nhận việc hiện đại hóa quy mô lớn các công trình xử lý nước thải.",
+        "level": "C1",
+        "collocation": "Undertake a task / Undertake research"
+      },
+      {
+        "word": "Understate",
+        "partOfSpeech": "v",
+        "meaning": "Nói giảm nhẹ, giảm bớt tầm nghiêm trọng",
+        "visualBreakdown": "Under- (dưới) + state (tuyên bố)",
+        "ieltsSentence": "Official mortality statistics noticeably understate the full human toll of the pandemic.",
+        "vietnameseTranslation": "Các số liệu thống kê tỷ lệ tử vong chính thức rõ ràng đã nói giảm nhẹ tổng thiệt hại nhân mạng của đại dịch.",
+        "level": "C1",
+        "collocation": "Cannot be understated / Understate the gravity"
       }
     ]
   },
   {
-    id: "r108",
-    root: "COGN",
-    meaning: "Nhập tâm, Nhận thức, Hiểu biết",
-    origin: "Latin (cognoscere - to know)",
-    description: "Bộ rễ của thần kinh học, tâm lý nhận thức và các nghiên cứu khoa học hành vi con người.",
-    tip: "Xem từ 'Cognitive' (Thuộc về nhận thức) hoặc 'Recognize' (Công nhận hoặc nhận ra người quen cũ).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-cogn-sci",
+    "root": "COGN/SCI-",
+    "meaning": "Biết, tư duy, nhận thức não bộ, khoa học",
+    "origin": "Gốc Latin (cognoscere: biết, scire: hiểu biết)",
+    "description": "Trung tâm của hoạt động trí tuệ, khả năng tiếp nhận, xử lý thông tin và tích lũy tri thức của con người.",
+    "tip": "Nhớ đến Recognize (nhận ra) và Science (khoa học) – đều xuất phát từ việc tìm hiểu và nhận biết chân lý.",
+    "category": "Trục 2: Tri Thức, Nhận Thức & Diễn Ngôn",
+    "axis": "Trục 2",
+    "axisTitle": "TRỤC 2: TRI THỨC, NHẬN THỨC & DIỄN NGÔN",
+    "axisSubtitle": "Mind & Discourse (Tư duy & Ngôn ngữ)",
+    "stemKey": "COGN/SCI-",
+    "exampleWords": [
       {
-        word: "cognitive",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về nhận thức, ghi nhớ và tư duy",
-        visualBreakdown: "COGN (biết) + ITIVE -> liên quan đến quá trình thu nạp và xử lý tri thức của bộ não",
-        ieltsSentence: "Regular physical exercise is proven to maintain optimal cognitive function in older adults.",
-        vietnameseTranslation: "Tập thể dục thường xuyên được chứng minh giúp duy trì chức năng nhận thức tối ưu ở người lớn tuổi."
+        "word": "Cognitive",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về nhận thức, tư duy trí tuệ",
+        "visualBreakdown": "Cogn- (biết) + -itive",
+        "ieltsSentence": "Early bilingual exposure fosters superior cognitive flexibility and abstract problem-solving.",
+        "vietnameseTranslation": "Tiếp xúc song ngữ sớm nuôi dưỡng sự linh hoạt trong nhận thức và giải quyết vấn đề trừu tượng vượt trội.",
+        "level": "C1",
+        "collocation": "Cognitive development / Cognitive impairment"
       },
       {
-        word: "recognize",
-        partOfSpeech: "v",
-        meaning: "Công nhận, nhận ra ai đó hoặc thừa nhận điều gì",
-        visualBreakdown: "RE (lại) + COGN (biết) + IZE -> biết lại một sự vật/sự việc đã từng tiếp xúc trước đây",
-        ieltsSentence: "The board was quick to recognize the academic breakthroughs achieved by the research university.",
-        vietnameseTranslation: "Hội đồng quản trị đã nhanh chóng ghi nhận và công nhận những bước đột phá học thuật mà trường đại học nghiên cứu đạt được."
+        "word": "Conscientious",
+        "partOfSpeech": "adj",
+        "meaning": "Tận tâm, chu đáo, có lương tâm nghề nghiệp",
+        "visualBreakdown": "Con- + sci- (biết rõ lương tâm) + -entious",
+        "ieltsSentence": "Conscientious laboratory practices ensure rigorous replication of experimental protocols.",
+        "vietnameseTranslation": "Các thực hành phòng thí nghiệm chu đáo tận tâm đảm bảo việc tái tạo chuẩn xác các quy trình thực nghiệm.",
+        "level": "C1",
+        "collocation": "Conscientious student / Conscientious objection"
+      },
+      {
+        "word": "Omniscient",
+        "partOfSpeech": "adj",
+        "meaning": "Toàn tri, thông suốt mọi điều trên đời",
+        "visualBreakdown": "Omni- (tất cả) + sci- (biết) + -ent",
+        "ieltsSentence": "Nineteenth-century novels frequently employ an omniscient third-person narrator.",
+        "vietnameseTranslation": "Tiểu thuyết thế kỷ 19 thường xuyên sử dụng người kể chuyện ngôi thứ ba toàn tri.",
+        "level": "C2",
+        "collocation": "Omniscient narrator / Omniscient deity"
+      },
+      {
+        "word": "Prescient",
+        "partOfSpeech": "adj",
+        "meaning": "Biết trước tương lai, tiên tri sáng suốt",
+        "visualBreakdown": "Pre- (trước) + sci- (biết) + -ent",
+        "ieltsSentence": "The economist delivered a prescient forecast regarding sovereign debt defaults.",
+        "vietnameseTranslation": "Nhà kinh tế học đã đưa ra một dự báo có tầm nhìn thấu suốt biết trước về các vụ vỡ nợ công.",
+        "level": "C2",
+        "collocation": "Prescient warning / Remarkably prescient"
+      },
+      {
+        "word": "Cognizant",
+        "partOfSpeech": "adj",
+        "meaning": "Có ý thức nhận biết rõ ràng về điều gì",
+        "visualBreakdown": "Cogn- (biết) + -izant",
+        "ieltsSentence": "Administrators must remain fully cognizant of subtle algorithmic biases in recruitment software.",
+        "vietnameseTranslation": "Các nhà quản trị phải luôn nhận thức đầy đủ về những thiên kiến thuật toán tinh vi trong phần mềm tuyển dụng.",
+        "level": "C2",
+        "collocation": "Cognizant of the fact / Fully cognizant"
+      },
+      {
+        "word": "Consciousness",
+        "partOfSpeech": "n",
+        "meaning": "Ý thức, trạng thái tỉnh táo nhận thức",
+        "visualBreakdown": "Con- + sci- (biết) + -ous + -ness",
+        "ieltsSentence": "Neuroscientists study neural correlates underpinning subjective human consciousness.",
+        "vietnameseTranslation": "Các nhà thần kinh học nghiên cứu các mối tương quan thần kinh củng cố ý thức chủ quan của con người.",
+        "level": "C1",
+        "collocation": "Raise consciousness / Lose consciousness"
+      },
+      {
+        "word": "Unconscionable",
+        "partOfSpeech": "adj",
+        "meaning": "Vô lương tâm, phi đạo đức không thể chấp nhận",
+        "visualBreakdown": "Un- (không) + consci (lương tâm) + -onable",
+        "ieltsSentence": "Profiteering during severe pharmaceutical shortages was condemned as unconscionable.",
+        "vietnameseTranslation": "Hành vi trục lợi trong thời kỳ thiếu hụt dược phẩm nghiêm trọng bị lên án là vô lương tâm.",
+        "level": "C2",
+        "collocation": "Unconscionable behavior / Unconscionable delay"
+      },
+      {
+        "word": "Incognito",
+        "partOfSpeech": "adv",
+        "meaning": "Ẩn danh, giấu tung tích không cho ai biết",
+        "visualBreakdown": "In- (không) + cognit (biết) + -o",
+        "ieltsSentence": "The visiting inspector traveled incognito to evaluate municipal welfare centers impartially.",
+        "vietnameseTranslation": "Thanh tra viếng thăm đã đi ẩn danh để đánh giá các trung tâm phúc lợi công cộng một cách vô tư.",
+        "level": "C2",
+        "collocation": "Travel incognito / Live incognito"
+      },
+      {
+        "word": "Recognize",
+        "partOfSpeech": "v",
+        "meaning": "Nhận ra, công nhận chính thức giá trị",
+        "visualBreakdown": "Re- (lại) + cogn (biết) + -ize",
+        "ieltsSentence": "Global institutions must formally recognize indigenous stewardship over ancestral lands.",
+        "vietnameseTranslation": "Các tổ chức toàn cầu phải chính thức công nhận quyền quản lý của người bản địa đối với đất đai tổ tiên.",
+        "level": "C1",
+        "collocation": "Formally recognize / Internationally recognized"
+      },
+      {
+        "word": "Precognition",
+        "partOfSpeech": "n",
+        "meaning": "Khả năng linh cảm biết trước tương lai",
+        "visualBreakdown": "Pre- (trước) + cognit (biết) + -ion",
+        "ieltsSentence": "Parapsychological claims of precognition fail to withstand empirical reproducibility tests.",
+        "vietnameseTranslation": "Những tuyên bố ngoại cảm về khả năng biết trước tương lai đã không đứng vững trước các thử nghiệm tái tạo thực nghiệm.",
+        "level": "C2",
+        "collocation": "Claims of precognition / Eerie precognition"
+      },
+      {
+        "word": "Scientific",
+        "partOfSpeech": "adj",
+        "meaning": "Mang tính khoa học chuẩn xác",
+        "visualBreakdown": "Sci- (biết) + fic (làm ra) + -ic",
+        "ieltsSentence": "Peer-reviewed publication forms the bedrock of credible scientific consensus.",
+        "vietnameseTranslation": "Xuất bản có phản biện kín cấu thành nền tảng của sự đồng thuận khoa học đáng tin cậy.",
+        "level": "C1",
+        "collocation": "Scientific inquiry / Scientific method"
+      },
+      {
+        "word": "Sciolism",
+        "partOfSpeech": "n",
+        "meaning": "Thói tỏ ra thông thái nửa mùa, nông cạn",
+        "visualBreakdown": "Sci- (biết) + -ol + -ism",
+        "ieltsSentence": "Pseudoscience blogs propagate superficial sciolism disguised as authoritative health advice.",
+        "vietnameseTranslation": "Các trang blog ngụy khoa học lan truyền tri thức nửa mùa nông cạn đội lốt lời khuyên sức khỏe có thẩm quyền.",
+        "level": "C2",
+        "collocation": "Superficial sciolism / Condemn sciolism"
+      },
+      {
+        "word": "Nescience",
+        "partOfSpeech": "n",
+        "meaning": "Sự vô tri, hoàn toàn không có hiểu biết",
+        "visualBreakdown": "Ne- (không) + sci- (biết) + -ence",
+        "ieltsSentence": "Historical nescience regarding climate feedback loops precipitated reckless deforestation.",
+        "vietnameseTranslation": "Sự vô tri trong quá khứ liên quan đến các vòng phản hồi khí hậu đã thúc đẩy nạn phá rừng liều lĩnh.",
+        "level": "C2",
+        "collocation": "Total nescience / Confess nescience"
+      },
+      {
+        "word": "Plebiscite",
+        "partOfSpeech": "n",
+        "meaning": "Trưng cầu dân ý để toàn dân quyết định",
+        "visualBreakdown": "Plebi (dân chúng) + scite (biết, quyết định)",
+        "ieltsSentence": "The constitutional referendum was ratified following a peaceful nationwide plebiscite.",
+        "vietnameseTranslation": "Cuộc trưng cầu ý dân về hiến pháp đã được phê chuẩn sau một cuộc bỏ phiếu toàn quốc hòa bình.",
+        "level": "C2",
+        "collocation": "Hold a plebiscite / Nationwide plebiscite"
+      },
+      {
+        "word": "Cognition",
+        "partOfSpeech": "n",
+        "meaning": "Quá trình nhận thức và suy nghĩ",
+        "visualBreakdown": "Cogn- (biết) + -ition",
+        "ieltsSentence": "Nutritional deficiencies during infancy impede optimal neurological cognition.",
+        "vietnameseTranslation": "Thiếu hụt dinh dưỡng trong thời kỳ sơ sinh cản trở quá trình nhận thức thần kinh tối ưu.",
+        "level": "C1",
+        "collocation": "Human cognition / Social cognition"
+      },
+      {
+        "word": "Metacognition",
+        "partOfSpeech": "n",
+        "meaning": "Siêu nhận thức, khả năng tự ý thức về suy nghĩ",
+        "visualBreakdown": "Meta- (vượt lên) + cognit (biết) + -ion",
+        "ieltsSentence": "Developing metacognition enables self-directed scholars to diagnose their conceptual lacunae.",
+        "vietnameseTranslation": "Phát triển siêu nhận thức cho phép người học tự định hướng chẩn đoán các lỗ hổng khái niệm của mình.",
+        "level": "C2",
+        "collocation": "Metacognitive strategies / Fosters metacognition"
+      },
+      {
+        "word": "Cognoscente",
+        "partOfSpeech": "n",
+        "meaning": "Chuyên gia sành sỏi, bậc thầy thưởng thức",
+        "visualBreakdown": "Cogn- (biết) + -oscente",
+        "ieltsSentence": "The classical violinist captivated both casual listeners and exacting cognoscenti.",
+        "vietnameseTranslation": "Nghệ sĩ vĩ cầm cổ điển đã mê hoặc cả người nghe thông thường lẫn các chuyên gia thẩm âm sành sỏi khó tính.",
+        "level": "C2",
+        "collocation": "Art cognoscenti / Musical cognoscenti"
+      },
+      {
+        "word": "Agnostic",
+        "partOfSpeech": "n",
+        "meaning": "Người theo thuyết bất khả tri",
+        "visualBreakdown": "A- (không) + gnost (biết) + -ic",
+        "ieltsSentence": "He adopted an agnostic perspective concerning speculative metaphysical assertions.",
+        "vietnameseTranslation": "Ông đã áp dụng một góc nhìn bất khả tri liên quan đến các khẳng định siêu hình học mang tính suy đoán.",
+        "level": "C2",
+        "collocation": "Agnostic view / Remain agnostic"
+      },
+      {
+        "word": "Prognosis",
+        "partOfSpeech": "n",
+        "meaning": "Tiên lượng diễn biến bệnh/tình hình",
+        "visualBreakdown": "Pro- (trước) + gnosis (biết)",
+        "ieltsSentence": "Early oncological detection dramatically improves long-term clinical prognosis.",
+        "vietnameseTranslation": "Phát hiện ung bướu sớm giúp cải thiện đáng kể tiên lượng lâm sàng dài hạn.",
+        "level": "C1",
+        "collocation": "Favorable prognosis / Economic prognosis"
+      },
+      {
+        "word": "Diagnosis",
+        "partOfSpeech": "n",
+        "meaning": "Chẩn đoán bệnh lý hoặc nguyên nhân gốc rễ",
+        "visualBreakdown": "Dia- (xuyên qua) + gnosis (biết)",
+        "ieltsSentence": "Accurate differential diagnosis prevents hazardous therapeutic misadventures.",
+        "vietnameseTranslation": "Chẩn đoán phân biệt chính xác giúp ngăn ngừa những rủi ro trị liệu nguy hại.",
+        "level": "C1",
+        "collocation": "Early diagnosis / Confirm a diagnosis"
+      },
+      {
+        "word": "Gnosticism",
+        "partOfSpeech": "n",
+        "meaning": "Thuyết ngộ tri, coi tri thức thần bí cứu rỗi",
+        "visualBreakdown": "Gnost (biết) + -ic + -ism",
+        "ieltsSentence": "Scholars of antiquity re-examined ancient Gnosticism to decode esoteric religious rites.",
+        "vietnameseTranslation": "Các học giả cổ đại đã xem xét lại thuyết ngộ tri cổ xưa để giải mã các nghi lễ tôn giáo huyền bí.",
+        "level": "C2",
+        "collocation": "Ancient Gnosticism / Gnostic philosophy"
+      },
+      {
+        "word": "Subconscious",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về tiềm thức dưới tầng nhận biết",
+        "visualBreakdown": "Sub- (dưới) + conscious (nhận biết)",
+        "ieltsSentence": "Visual branding triggers subconscious neural associations with comfort and safety.",
+        "vietnameseTranslation": "Xây dựng thương hiệu thị giác kích hoạt các liên tưởng thần kinh trong tiềm thức về sự thoải mái và an toàn.",
+        "level": "C1",
+        "collocation": "Subconscious mind / Subconscious reaction"
+      },
+      {
+        "word": "Conscience",
+        "partOfSpeech": "n",
+        "meaning": "Lương tâm, tiếng nói phán xét nội tâm",
+        "visualBreakdown": "Con- + science (sự biết bên trong)",
+        "ieltsSentence": "Whistleblowers are often impelled by individual conscience to unmask institutional fraud.",
+        "vietnameseTranslation": "Những người tố giác thường bị thúc đẩy bởi lương tâm cá nhân để vạch trần gian lận thể chế.",
+        "level": "C1",
+        "collocation": "Guilty conscience / Clear conscience"
+      },
+      {
+        "word": "Scire facias",
+        "partOfSpeech": "n",
+        "meaning": "Lệnh tư pháp triệu tập kiểm tra hồ sơ",
+        "visualBreakdown": "Scire (biết) + facias (hãy làm)",
+        "ieltsSentence": "The appellate magistrate issued a writ of scire facias to examine patent enforceability.",
+        "vietnameseTranslation": "Thẩm phán phúc thẩm đã ban hành lệnh tư pháp để kiểm tra khả năng thực thi bằng sáng chế.",
+        "level": "C2",
+        "collocation": "Writ of scire facias / Judicial proceeding"
+      },
+      {
+        "word": "Intercognition",
+        "partOfSpeech": "n",
+        "meaning": "Sự giao thoa nhận thức chung đa ngành",
+        "visualBreakdown": "Inter- (giữa) + cognit (biết) + -ion",
+        "ieltsSentence": "Intercognition among neurobiologists and roboticists accelerates human-machine interface design.",
+        "vietnameseTranslation": "Sự giao thoa nhận thức giữa các nhà sinh học thần kinh và chế tạo robot đẩy nhanh thiết kế giao diện người-máy.",
+        "level": "C2",
+        "collocation": "Foster intercognition / Academic intercognition"
       }
     ]
   },
   {
-    id: "r109",
-    root: "DOC/DOCT",
-    meaning: "Dạy dỗ, Học thuyết, Tài liệu",
-    origin: "Latin (docere - to teach)",
-    description: "Từ dùng cho các văn bản lịch sử xã hội, triết học trường phái và các văn bản chỉ đạo của chính phủ.",
-    tip: "Nghĩ ngay tới 'Document' (Tài liệu - dùng để răn dạy, chỉ bảo) hoặc 'Doctor' (Tiến sĩ - người có học vị cao nhất đi dạy người khác).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-dict-voc-loq",
+    "root": "DICT/VOC/LOQ-",
+    "meaning": "Phát ngôn, tiếng nói, tuyên bố, diễn ngôn",
+    "origin": "Gốc Latin (dicere: nói, vocare: gọi tiếng, loqui: trò chuyện)",
+    "description": "Các gốc từ chủ đạo biểu đạt khả năng truyền tải thông điệp, tranh luận, hiệu triệu hoặc thiết lập luật định bằng lời nói.",
+    "tip": "Nhớ đến Predict (nói trước), Vocal (giọng hát), Eloquent (hùng biện lưu loát) – đều liên quan đến ngôn từ.",
+    "category": "Trục 2: Tri Thức, Nhận Thức & Diễn Ngôn",
+    "axis": "Trục 2",
+    "axisTitle": "TRỤC 2: TRI THỨC, NHẬN THỨC & DIỄN NGÔN",
+    "axisSubtitle": "Mind & Discourse (Tư duy & Ngôn ngữ)",
+    "stemKey": "DICT/VOC/LOQ-",
+    "exampleWords": [
       {
-        word: "doctrine",
-        partOfSpeech: "n",
-        meaning: "Học thuyết, giáo lý, tôn chỉ chính trị",
-        visualBreakdown: "DOCT (dạy học) + RINE -> tập hợp các quy tắc chuẩn mực được giảng dạy và truyền bá rộng rãi",
-        ieltsSentence: "The Monroe Doctrine shaped early American foreign policy regarding continental spheres of influence.",
-        vietnameseTranslation: "Học thuyết Monroe đã định hình chính sách đối ngoại thời kỳ đầu của Mỹ đối với các phạm vi ảnh hưởng của châu lục."
+        "word": "Contradict",
+        "partOfSpeech": "v",
+        "meaning": "Mâu thuẫn, nói ngược lại với sự thật/khẳng định",
+        "visualBreakdown": "Contra- (chống lại) + dict (nói)",
+        "ieltsSentence": "Empirical field observations directly contradict the preliminary mathematical simulations.",
+        "vietnameseTranslation": "Các quan sát thực địa trực tiếp mâu thuẫn trái ngược với các mô phỏng toán học sơ bộ.",
+        "level": "C1",
+        "collocation": "Directly contradict / Contradict each other"
       },
       {
-        word: "documentary",
-        partOfSpeech: "n, adj",
-        meaning: "Phim tài liệu, mang tính cung cấp tư liệu lịch sử thực tế",
-        visualBreakdown: "DOC (dạy học/dẫn chứng) + UMENTARY -> dữ liệu trực quan thực tế có tính chất đúc rút, khai sáng cho người xem",
-        ieltsSentence: "The television network broadcasted a detailed documentary about sustainable farming practices.",
-        vietnameseTranslation: "Mạng lưới truyền hình đã phát sóng một bộ phim tài liệu chi tiết về các thực hành canh tác bền vững."
+        "word": "Dictate",
+        "partOfSpeech": "v",
+        "meaning": "Chi phối, quyết định quy luật, áp đặt",
+        "visualBreakdown": "Dict- (nói ra) + -ate",
+        "ieltsSentence": "Ecological carrying capacity must dictate the intensity of coastal land development.",
+        "vietnameseTranslation": "Sức chứa sinh thái phải chi phối và quyết định mức độ phát triển đất đai ven biển.",
+        "level": "C1",
+        "collocation": "Dictate policy / Dictate terms"
+      },
+      {
+        "word": "Verdict",
+        "partOfSpeech": "n",
+        "meaning": "Phán quyết chính thức của tòa án/dư luận",
+        "visualBreakdown": "Ver (chân lý) + dict (nói)",
+        "ieltsSentence": "The unanimous judicial verdict mandated compensation for aggrieved landowners.",
+        "vietnameseTranslation": "Phán quyết nhất trí của tòa án đã bắt buộc bồi thường cho những chủ đất bị thiệt hại.",
+        "level": "C1",
+        "collocation": "Reach a verdict / Deliver a verdict"
+      },
+      {
+        "word": "Vindicate",
+        "partOfSpeech": "v",
+        "meaning": "Minh chứng tính đúng đắn, xóa tan nghi ngờ",
+        "visualBreakdown": "Vin- (lực bảo vệ) + dic (nói) + -ate",
+        "ieltsSentence": "Longitudinal epidemiological data vindicated the health ministry's early inoculation campaign.",
+        "vietnameseTranslation": "Dữ liệu dịch tễ học theo chiều dọc đã minh chứng tính đúng đắn cho chiến dịch tiêm chủng sớm của bộ y tế.",
+        "level": "C2",
+        "collocation": "Vindicate claims / Fully vindicated"
+      },
+      {
+        "word": "Advocate",
+        "partOfSpeech": "v",
+        "meaning": "Chủ trương ủng hộ công khai, vận động cho",
+        "visualBreakdown": "Ad- (hướng tới) + voc (lên tiếng) + -ate",
+        "ieltsSentence": "Leading sociologists advocate universal basic income to mitigate automation unemployment.",
+        "vietnameseTranslation": "Các nhà xã hội học hàng đầu chủ trương ủng hộ thu nhập cơ bản phổ quát để giảm bớt thất nghiệp do tự động hóa.",
+        "level": "C1",
+        "collocation": "Fiercely advocate / Advocate reform"
+      },
+      {
+        "word": "Evocative",
+        "partOfSpeech": "adj",
+        "meaning": "Gợi cảm, khơi dậy nhiều liên tưởng sâu sắc",
+        "visualBreakdown": "E- (ra ngoài) + voc (gọi tiếng) + -ative",
+        "ieltsSentence": "The documentary incorporates evocative archival footage of post-war reconstruction.",
+        "vietnameseTranslation": "Bộ phim tài liệu lồng ghép các cảnh quay lưu trữ gợi cảm đầy ấn tượng về thời kỳ tái thiết sau chiến tranh.",
+        "level": "C1",
+        "collocation": "Evocative imagery / Deeply evocative"
+      },
+      {
+        "word": "Equivocal",
+        "partOfSpeech": "adj",
+        "meaning": "Mập mờ hai nghĩa, không rõ ràng dứt khoát",
+        "visualBreakdown": "Equi- (ngang bằng) + voc (tiếng nói) + -al",
+        "ieltsSentence": "The spokesperson's equivocal replies regarding nuclear deterrence prompted diplomatic anxiety.",
+        "vietnameseTranslation": "Những câu trả lời mập mờ nước đôi của người phát ngôn về răn đe hạt nhân đã làm dấy lên sự lo ngại ngoại giao.",
+        "level": "C2",
+        "collocation": "Equivocal response / Remain equivocal"
+      },
+      {
+        "word": "Provocative",
+        "partOfSpeech": "adj",
+        "meaning": "Kích động tranh luận, khêu gợi tư duy phản biện",
+        "visualBreakdown": "Pro- (phía trước) + voc (gọi thách thức) + -ative",
+        "ieltsSentence": "The philosopher's provocative thesis unsettled conventional assumptions regarding consciousness.",
+        "vietnameseTranslation": "Luận điểm mang tính kích động tranh luận của triết gia đã làm lung lay các giả định truyền thống về ý thức.",
+        "level": "C1",
+        "collocation": "Provocative question / Provocative thesis"
+      },
+      {
+        "word": "Vociferous",
+        "partOfSpeech": "adj",
+        "meaning": "La hét lớn tiếng, phản đối ầm ĩ kịch liệt",
+        "visualBreakdown": "Voc- (tiếng nói) + fer (mang vác) + -ous",
+        "ieltsSentence": "Civil advocacy enclaves staged vociferous protests against open-cast mineral extraction.",
+        "vietnameseTranslation": "Các nhóm vận động dân sự đã tổ chức các cuộc biểu tình phản đối kịch liệt ầm ĩ chống lại việc khai thác khoáng sản lộ thiên.",
+        "level": "C2",
+        "collocation": "Vociferous opposition / Vociferous critic"
+      },
+      {
+        "word": "Eloquent",
+        "partOfSpeech": "adj",
+        "meaning": "Hùng biện lưu loát, giàu sức thuyết phục",
+        "visualBreakdown": "E- (ra ngoài) + loqu (nói chuyện) + -ent",
+        "ieltsSentence": "The keynote diplomat delivered an eloquent plea for multilateral environmental cooperation.",
+        "vietnameseTranslation": "Nhà ngoại giao phát biểu chính đã đưa ra một lời kêu gọi hùng biện đầy thuyết phục cho sự hợp tác môi trường đa phương.",
+        "level": "C1",
+        "collocation": "Eloquent speaker / Eloquent defense"
+      },
+      {
+        "word": "Loquacious",
+        "partOfSpeech": "adj",
+        "meaning": "Bẻm mép, nói nhiều huyên thuyên",
+        "visualBreakdown": "Loqu- (nói) + -acious (nhiều)",
+        "ieltsSentence": "The loquacious nature of the interview candidate obscured a paucity of practical technical acumen.",
+        "vietnameseTranslation": "Bản tính nói nhiều huyên thuyên của ứng viên phỏng vấn đã che đậy sự thiếu thốn nhạy bén kỹ thuật thực tế.",
+        "level": "C2",
+        "collocation": "Loquacious demeanor / Unusually loquacious"
+      },
+      {
+        "word": "Colloquial",
+        "partOfSpeech": "adj",
+        "meaning": "Mang tính khẩu ngữ đời thường, không trang trọng",
+        "visualBreakdown": "Col- (cùng nhau) + loqu (nói) + -ial",
+        "ieltsSentence": "Academic manuscripts must avoid colloquial idioms in favor of rigorous lexical formality.",
+        "vietnameseTranslation": "Bản thảo học thuật phải tránh các từ ngữ mang tính khẩu ngữ đời thường mà ưu tiên tính trang trọng nghiêm cẩn về mặt từ vựng.",
+        "level": "C1",
+        "collocation": "Colloquial language / Colloquial expression"
+      },
+      {
+        "word": "Grandiloquent",
+        "partOfSpeech": "adj",
+        "meaning": "Nói khoác, đao to búa lớn, hoa mỹ sáo rỗng",
+        "visualBreakdown": "Grandi- (to lớn) + loqu (nói) + -ent",
+        "ieltsSentence": "The manifesto was dismissed as grandiloquent rhetoric devoid of pragmatic legislative backing.",
+        "vietnameseTranslation": "Bản tuyên ngôn đã bị bác bỏ như một thứ tu từ đao to búa lớn sáo rỗng không có sự hậu thuẫn lập pháp thực tế.",
+        "level": "C2",
+        "collocation": "Grandiloquent language / Grandiloquent claims"
+      },
+      {
+        "word": "Soliloquy",
+        "partOfSpeech": "n",
+        "meaning": "Độc thoại nội tâm một mình trên sân khấu",
+        "visualBreakdown": "Soli- (cô độc) + loqu (nói) + -y",
+        "ieltsSentence": "Hamlet's seminal soliloquy dramatizes the profound agony of moral indecision.",
+        "vietnameseTranslation": "Đoạn độc thoại kinh điển của Hamlet đã kịch hóa nỗi đau đớn sâu sắc trước sự do dự về mặt đạo đức.",
+        "level": "C2",
+        "collocation": "Deliver a soliloquy / Dramatic soliloquy"
+      },
+      {
+        "word": "Obloquy",
+        "partOfSpeech": "n",
+        "meaning": "Lời chửi rủa nhục mạ của dư luận, bia miệng",
+        "visualBreakdown": "Ob- (chống lại) + loqu (nói) + -y",
+        "ieltsSentence": "The corrupt magnate suffered relentless public obloquy following financial insolvency.",
+        "vietnameseTranslation": "Tên tài phiệt tham nhũng đã phải hứng chịu những lời chửi rủa nhục mạ không ngớt của công chúng sau vụ vỡ nợ tài chính.",
+        "level": "C2",
+        "collocation": "Endure obloquy / Universal obloquy"
+      },
+      {
+        "word": "Interlocutor",
+        "partOfSpeech": "n",
+        "meaning": "Người đàm thoại, đối tác cùng đối thoại",
+        "visualBreakdown": "Inter- (ở giữa) + locut (nói) + -or",
+        "ieltsSentence": "Diplomatic emissaries sought reliable interlocutors within the insurgent faction.",
+        "vietnameseTranslation": "Các đặc phái viên ngoại giao tìm kiếm những đối tác đàm thoại đáng tin cậy bên trong phe nổi dậy.",
+        "level": "C2",
+        "collocation": "Key interlocutor / Diplomatic interlocutors"
+      },
+      {
+        "word": "Circumlocution",
+        "partOfSpeech": "n",
+        "meaning": "Lối nói vòng vo tam quốc, quanh co",
+        "visualBreakdown": "Circum- (vòng quanh) + locut (nói) + -ion",
+        "ieltsSentence": "Political press officers employ evasive circumlocution to deflect inquiries regarding deficits.",
+        "vietnameseTranslation": "Các viên chức báo chí chính trị sử dụng lối nói vòng vo né tránh để đánh lạc hướng các câu hỏi về thâm hụt ngân sách.",
+        "level": "C2",
+        "collocation": "Evasive circumlocution / Resort to circumlocution"
+      },
+      {
+        "word": "Jurisdiction",
+        "partOfSpeech": "n",
+        "meaning": "Quyền tài phán, thẩm quyền pháp lý",
+        "visualBreakdown": "Juris (luật) + dict (nói) + -ion",
+        "ieltsSentence": "Maritime pollution incidents fall under the jurisdiction of the International Maritime Organization.",
+        "vietnameseTranslation": "Các sự cố ô nhiễm biển thuộc thẩm quyền tài phán của Tổ chức Hàng hải Quốc tế.",
+        "level": "C1",
+        "collocation": "Fall under jurisdiction / Maritime jurisdiction"
+      },
+      {
+        "word": "Malediction",
+        "partOfSpeech": "n",
+        "meaning": "Lời nguyền rủa độc địa, rủa sả",
+        "visualBreakdown": "Male- (xấu ác) + dict (nói) + -ion",
+        "ieltsSentence": "Ancient papyri contain funerary maledictions intended to deter prospective grave desecrators.",
+        "vietnameseTranslation": "Giấy cói cổ chứa đựng những lời nguyền tang lễ nhằm răn đe những kẻ có ý định mạo phạm mồ mả.",
+        "level": "C2",
+        "collocation": "Utter a malediction / Bitter maledictions"
+      },
+      {
+        "word": "Benediction",
+        "partOfSpeech": "n",
+        "meaning": "Lời cầu phúc, chúc phúc thiêng liêng",
+        "visualBreakdown": "Bene- (tốt lành) + dict (nói) + -ion",
+        "ieltsSentence": "The ecumenical assembly concluded with a ceremonial benediction for global peace.",
+        "vietnameseTranslation": "Đại hội đại kết kết thúc bằng một lời cầu phúc long trọng vì hòa bình thế giới.",
+        "level": "C2",
+        "collocation": "Pronounce a benediction / Concluding benediction"
+      },
+      {
+        "word": "Edict",
+        "partOfSpeech": "n",
+        "meaning": "Sắc lệnh ban bố của chính quyền tối cao",
+        "visualBreakdown": "E- (ra ngoài) + dict (nói tuyên bố)",
+        "ieltsSentence": "The imperial edict mandated the conservation of municipal water supplies.",
+        "vietnameseTranslation": "Sắc lệnh hoàng gia bắt buộc việc bảo tồn các nguồn cung cấp nước đô thị.",
+        "level": "C2",
+        "collocation": "Imperial edict / Issue an edict"
+      },
+      {
+        "word": "Indictment",
+        "partOfSpeech": "n",
+        "meaning": "Cáo trạng kết tội, minh chứng cho sự thất bại",
+        "visualBreakdown": "In- + dict (nói buộc tội) + -ment",
+        "ieltsSentence": "The escalating homelessness crisis constitutes a scathing indictment of social housing policies.",
+        "vietnameseTranslation": "Cuộc khủng hoảng người vô gia cư leo thang cấu thành một cáo trạng đanh thép về các chính sách nhà ở xã hội.",
+        "level": "C1",
+        "collocation": "Scathing indictment / Formal indictment"
+      },
+      {
+        "word": "Revoke",
+        "partOfSpeech": "v",
+        "meaning": "Thu hồi, hủy bỏ hiệu lực giấy phép/đặc quyền",
+        "visualBreakdown": "Re- (lại) + voke (gọi về)",
+        "ieltsSentence": "Regulators resolved to revoke the manufacturing license of the offending refinery.",
+        "vietnameseTranslation": "Các cơ quan quản lý đã quyết định thu hồi giấy phép sản xuất của nhà máy lọc dầu vi phạm.",
+        "level": "C1",
+        "collocation": "Revoke a license / Revoke privileges"
+      },
+      {
+        "word": "Invoke",
+        "partOfSpeech": "v",
+        "meaning": "Viện dẫn luật lệ, khẩn cầu sự giúp đỡ",
+        "visualBreakdown": "In- (vào) + voke (gọi tiếng)",
+        "ieltsSentence": "Constitutional lawyers invoked emergency clauses to safeguard civil liberties during the crisis.",
+        "vietnameseTranslation": "Các luật sư hiến pháp đã viện dẫn các điều khoản khẩn cấp để bảo vệ quyền tự do dân sự trong cuộc khủng hoảng.",
+        "level": "C1",
+        "collocation": "Invoke article / Invoke sanctions"
+      },
+      {
+        "word": "Vocation",
+        "partOfSpeech": "n",
+        "meaning": "Thiên chức, sứ mệnh nghề nghiệp đam mê",
+        "visualBreakdown": "Voc- (tiếng gọi từ tâm) + -ation",
+        "ieltsSentence": "Pedagogy is not merely a profession but a transformative social vocation.",
+        "vietnameseTranslation": "Sư phạm không chỉ đơn thuần là một nghề nghiệp mà là một thiên chức xã hội có tính biến đổi sâu sắc.",
+        "level": "C1",
+        "collocation": "Sense of vocation / Chosen vocation"
       }
     ]
   },
   {
-    id: "r110",
-    root: "TECH",
-    meaning: "Kỹ nghệ, Kỹ thuật, Công nghệ",
-    origin: "Greek (techne - art, skill, craft)",
-    description: "Gặp liên tục trong các văn bản IELTS Reading bàn thảo về tự động hóa, chuyển đổi số và công nghệ tương lai.",
-    tip: "Cực kỳ cơ bản với 'Technology' (Công nghệ học) hay 'Technical' (Thuộc về kỹ thuật, ngõ ngách chi tiết).",
-    category: "Actions & Motion",
-    exampleWords: [
+    "id": "stem-spec-spic-vid",
+    "root": "SPEC/SPIC/VID-",
+    "meaning": "Quan sát, xem xét, trực quan, nhãn quan",
+    "origin": "Gốc Latin (specere: nhìn ngắm, videre: trông thấy)",
+    "description": "Các gốc từ chủ đạo về tầm nhìn thị giác, khảo sát thực nghiệm, tiên lượng tương lai và mổ xẻ phân tích sự vật hiện tượng.",
+    "tip": "Nhớ đến Inspect (soi xét) và Evidence (bằng chứng rõ ràng) – liên quan đến đôi mắt và sự trực quan.",
+    "category": "Trục 2: Tri Thức, Nhận Thức & Diễn Ngôn",
+    "axis": "Trục 2",
+    "axisTitle": "TRỤC 2: TRI THỨC, NHẬN THỨC & DIỄN NGÔN",
+    "axisSubtitle": "Mind & Discourse (Tư duy & Ngôn ngữ)",
+    "stemKey": "SPEC/SPIC/VID-",
+    "exampleWords": [
       {
-        word: "technological",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về công nghệ, mang tính kỹ nghệ hóa",
-        visualBreakdown: "TECH (kỹ thuật, kỹ nghệ) + LOG (khoa học) + ICAL -> liên quan đến khoa học công nghệ",
-        ieltsSentence: "The rapid pace of technological change often outstrips the development of regulatory frameworks.",
-        vietnameseTranslation: "Tốc độ thay đổi công nghệ mãnh liệt thường vượt xa tốc độ xây dựng các khung pháp lý quản lý."
+        "word": "Conspicuous",
+        "partOfSpeech": "adj",
+        "meaning": "Rõ ràng, dễ thấy, nổi bật đập vào mắt",
+        "visualBreakdown": "Con- (hoàn toàn) + spic (nhìn) + -uous",
+        "ieltsSentence": "There is a conspicuous absence of qualified medical personnel in rural outposts.",
+        "vietnameseTranslation": "Có một sự thiếu vắng rõ ràng dễ thấy các nhân viên y tế có trình độ tại các tiền đồn nông thôn.",
+        "level": "C1",
+        "collocation": "Conspicuous consumption / Conspicuously absent"
       },
       {
-        word: "technicality",
-        partOfSpeech: "n",
-        meaning: "Chi tiết kỹ thuật chuyên môn, tính chất chuyên biệt",
-        visualBreakdown: "TECH (kỹ thuật) + IC + ALITY -> khía cạnh đặc thù đòi hỏi nghiệp vụ sâu mới hiểu rõ",
-        ieltsSentence: "They were acquitted on a legal technicality despite clear evidence of procedural errors.",
-        vietnameseTranslation: "Họ đã được tuyên trắng án vì một chi tiết kỹ thuật pháp lý chuyên môn dù có bằng chứng rõ ràng về các lỗi thủ tục."
+        "word": "Spectacle",
+        "partOfSpeech": "n",
+        "meaning": "Cảnh tượng ngoạn mục, quang cảnh hoành tráng",
+        "visualBreakdown": "Spect- (nhìn ngắm) + -acle",
+        "ieltsSentence": "The annual oceanic migration of baleen whales is a breathtaking ecological spectacle.",
+        "vietnameseTranslation": "Cuộc di cư hàng năm trên đại dương của cá voi tấm sừng là một cảnh tượng sinh thái ngoạn mục ngạt thở.",
+        "level": "C1",
+        "collocation": "Visual spectacle / Impressive spectacle"
+      },
+      {
+        "word": "Speculate",
+        "partOfSpeech": "v",
+        "meaning": "Suy đoán giả thuyết, đầu cơ tài chính",
+        "visualBreakdown": "Specul- (nhìn xa trông rộng) + -ate",
+        "ieltsSentence": "Economists speculate that algorithmic automation will displace manual clerical positions.",
+        "vietnameseTranslation": "Các nhà kinh tế suy đoán rằng tự động hóa thuật toán sẽ thay thế các vị trí văn phòng thủ công.",
+        "level": "C1",
+        "collocation": "Speculate on the outcome / Speculate about reasons"
+      },
+      {
+        "word": "Retrospective",
+        "partOfSpeech": "adj",
+        "meaning": "Hồi tưởng quá khứ, nhìn lại thời gian đã qua",
+        "visualBreakdown": "Retro- (về sau) + spect (nhìn) + -ive",
+        "ieltsSentence": "The academy published a retrospective analysis evaluating half a century of environmental treaties.",
+        "vietnameseTranslation": "Viện hàn lâm đã công bố một phân tích nhìn lại quá khứ đánh giá nửa thế kỷ các hiệp ước môi trường.",
+        "level": "C1",
+        "collocation": "Retrospective study / Retrospective exhibition"
+      },
+      {
+        "word": "Introspection",
+        "partOfSpeech": "n",
+        "meaning": "Sự tự soi xét nội tâm, suy tư bản ngã",
+        "visualBreakdown": "Intro- (vào trong) + spect (nhìn) + -ion",
+        "ieltsSentence": "Rigorous ethical scholarship demands constant self-critical introspection.",
+        "vietnameseTranslation": "Nghiên cứu đạo đức học nghiêm cẩn đòi hỏi sự tự soi xét nội tâm mang tính phản biện liên tục.",
+        "level": "C2",
+        "collocation": "Deep introspection / Self-introspection"
+      },
+      {
+        "word": "Circumspect",
+        "partOfSpeech": "adj",
+        "meaning": "Thận trọng, nhìn trước ngó sau cẩn trọng",
+        "visualBreakdown": "Circum- (quanh) + spect (nhìn)",
+        "ieltsSentence": "Central banking governors remain circumspect regarding further interest rate curtailments.",
+        "vietnameseTranslation": "Các thống đốc ngân hàng trung ương vẫn hết sức thận trọng nhìn trước ngó sau về việc cắt giảm lãi suất tiếp theo.",
+        "level": "C2",
+        "collocation": "Extremely circumspect / Circumspect behavior"
+      },
+      {
+        "word": "Despicable",
+        "partOfSpeech": "adj",
+        "meaning": "Đáng khinh bỉ, hèn hạ nhìn xuống khinh miệt",
+        "visualBreakdown": "De- (xuống) + spic (nhìn) + -able",
+        "ieltsSentence": "Exploiting child labor in mineral refineries represents a despicable ethical breach.",
+        "vietnameseTranslation": "Bóc lột lao động trẻ em trong các lò luyện khoáng sản thể hiện một sự vi phạm đạo đức đáng khinh bỉ.",
+        "level": "C2",
+        "collocation": "Despicable crime / Utterly despicable"
+      },
+      {
+        "word": "Perspicacious",
+        "partOfSpeech": "adj",
+        "meaning": "Sáng suốt nhạy bén, nhìn thấu suốt vấn đề",
+        "visualBreakdown": "Per- (xuyên thấu) + spic (nhìn) + -acious",
+        "ieltsSentence": "The perspicacious geopolitical analyst discerned simmering border tensions decades in advance.",
+        "vietnameseTranslation": "Nhà phân tích địa chính trị sáng suốt nhạy bén đã nhìn thấu suốt những căng thẳng biên giới âm ỉ trước nhiều thập kỷ.",
+        "level": "C2",
+        "collocation": "Perspicacious observer / Perspicacious insight"
+      },
+      {
+        "word": "Prospect",
+        "partOfSpeech": "n",
+        "meaning": "Triển vọng tương lai, cơ hội phía trước",
+        "visualBreakdown": "Pro- (phía trước) + spect (nhìn)",
+        "ieltsSentence": "The prospect of universal green energy deployment encourages global market investors.",
+        "vietnameseTranslation": "Triển vọng triển khai năng lượng xanh toàn cầu khuyến khích các nhà đầu tư thị trường toàn cầu.",
+        "level": "C1",
+        "collocation": "Economic prospect / Bleak prospects"
+      },
+      {
+        "word": "Evident",
+        "partOfSpeech": "adj",
+        "meaning": "Rõ ràng minh bạch, thấy rõ trước mắt",
+        "visualBreakdown": "E- (ra ngoài) + vid (trông thấy) + -ent",
+        "ieltsSentence": "The catastrophic consequences of marine overfishing are painfully evident worldwide.",
+        "vietnameseTranslation": "Những hậu quả thảm khốc của việc đánh bắt cá quá mức trên biển hiển hiện rõ ràng đau đớn trên toàn thế giới.",
+        "level": "C1",
+        "collocation": "Self-evident / Abundantly evident"
+      },
+      {
+        "word": "Provident",
+        "partOfSpeech": "adj",
+        "meaning": "Lo xa, biết nhìn xa chu tất cho tương lai",
+        "visualBreakdown": "Pro- (trước) + vid (nhìn) + -ent",
+        "ieltsSentence": "Provident fiscal management shields municipalities against sudden commodity market volatility.",
+        "vietnameseTranslation": "Quản lý tài khóa biết lo xa bảo vệ các đô thị chống lại sự biến động đột ngột của thị trường hàng hóa.",
+        "level": "C2",
+        "collocation": "Provident planning / Provident fund"
+      },
+      {
+        "word": "Improvise",
+        "partOfSpeech": "v",
+        "meaning": "Ứng biến tại chỗ, không chuẩn bị nhìn trước",
+        "visualBreakdown": "Im- (không) + pro- (trước) + vis (nhìn)",
+        "ieltsSentence": "Field medics had to improvise sterilization equipment using rudimentary field tools.",
+        "vietnameseTranslation": "Các quân y thực địa đã phải ứng biến thiết bị khử trùng bằng các công cụ thô sơ trên chiến trường.",
+        "level": "C1",
+        "collocation": "Improvise a solution / Improvised performance"
+      },
+      {
+        "word": "Visionary",
+        "partOfSpeech": "adj",
+        "meaning": "Có tầm nhìn xa trông rộng xuất chúng",
+        "visualBreakdown": "Vis- (tầm nhìn) + -ion + -ary",
+        "ieltsSentence": "Visionary urbanists champion pedestrian-centric mobility to rejuvenate city centers.",
+        "vietnameseTranslation": "Các nhà quy hoạch đô thị có tầm nhìn xuất chúng cổ vũ giao thông lấy người đi bộ làm trung tâm để hồi sinh các trung tâm thành phố.",
+        "level": "C1",
+        "collocation": "Visionary leader / Visionary architecture"
+      },
+      {
+        "word": "Suspect",
+        "partOfSpeech": "adj",
+        "meaning": "Đáng ngờ, nhìn từ dưới lên đầy nghi hoặc",
+        "visualBreakdown": "Sub- (dưới) + spect (nhìn)",
+        "ieltsSentence": "The methodological integrity of the pharmaceutical trial was rendered deeply suspect.",
+        "vietnameseTranslation": "Tính liêm chính về phương pháp luận của cuộc thử nghiệm dược phẩm đã bị coi là vô cùng đáng ngờ.",
+        "level": "C1",
+        "collocation": "Highly suspect / Suspect methodology"
+      },
+      {
+        "word": "Visage",
+        "partOfSpeech": "n",
+        "meaning": "Gương mặt, diện mạo thần thái",
+        "visualBreakdown": "Vis- (trông thấy) + -age",
+        "ieltsSentence": "Centuries of maritime weathering altered the stern visage of the granite lighthouse.",
+        "vietnameseTranslation": "Nhiều thế kỷ chịu ảnh hưởng thời tiết biển đã làm biến đổi diện mạo nghiêm nghị của ngọn hải đăng bằng đá hoa cương.",
+        "level": "C2",
+        "collocation": "Stern visage / Familiar visage"
+      },
+      {
+        "word": "Specter",
+        "partOfSpeech": "n",
+        "meaning": "Bóng ma ám ảnh, nỗi sợ hãi chập chờn",
+        "visualBreakdown": "Spect- (bóng hình nhìn thấy) + -er",
+        "ieltsSentence": "The haunting specter of stagflation looms over industrialized trade partners.",
+        "vietnameseTranslation": "Bóng ma ám ảnh của tình trạng đình lạm đang lờ mờ bao trùm lên các đối tác thương mại công nghiệp hóa.",
+        "level": "C2",
+        "collocation": "Specter of famine / Raise the specter"
+      },
+      {
+        "word": "Perspective",
+        "partOfSpeech": "n",
+        "meaning": "Góc nhìn, lăng kính nhận thức quan điểm",
+        "visualBreakdown": "Per- (xuyên qua) + spect (nhìn) + -ive",
+        "ieltsSentence": "Cross-cultural ethnography offers an invaluable perspective on human kinship systems.",
+        "vietnameseTranslation": "Dân tộc học liên văn hóa mang lại một góc nhìn vô giá về hệ thống thân tộc của con người.",
+        "level": "C1",
+        "collocation": "Historical perspective / Gain perspective"
+      },
+      {
+        "word": "Spectator",
+        "partOfSpeech": "n",
+        "meaning": "Khán giả đến tận mắt theo dõi sự kiện",
+        "visualBreakdown": "Spect- (nhìn) + -ator",
+        "ieltsSentence": "Spectators marveled at the synchronicity displayed by the Olympic gymnastic troupe.",
+        "vietnameseTranslation": "Khán giả kinh ngạc trước sự đồng điệu xuất thần được thể hiện bởi đoàn thể dục dụng cụ Olympic.",
+        "level": "C1",
+        "collocation": "Spectator sport / Innocent spectator"
+      },
+      {
+        "word": "Spurious",
+        "partOfSpeech": "adj",
+        "meaning": "Giả mạo, nhìn ngoài tưởng thật nhưng sai lệch",
+        "visualBreakdown": "Spur- (nhìn lừa dối) + -ious",
+        "ieltsSentence": "Epidemiologists dismantled spurious correlations between vaccination rates and unrelated syndromes.",
+        "vietnameseTranslation": "Các nhà dịch tễ học đã bóc trần các mối tương quan giả mạo giữa tỷ lệ tiêm chủng và các hội chứng không liên quan.",
+        "level": "C2",
+        "collocation": "Spurious argument / Spurious correlation"
+      },
+      {
+        "word": "Visible",
+        "partOfSpeech": "adj",
+        "meaning": "Hữu hình, có thể nhìn thấy rõ ràng",
+        "visualBreakdown": "Vis- (nhìn) + -ible",
+        "ieltsSentence": "Atmospheric pollutants left a visible layer of grey particulate haze over the metropolis.",
+        "vietnameseTranslation": "Các chất ô nhiễm khí quyển đã để lại một lớp sương mù bụi mịn màu xám có thể nhìn thấy rõ ràng bao phủ đô thị.",
+        "level": "C1",
+        "collocation": "Visible progress / Barely visible"
+      },
+      {
+        "word": "Visual",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc thị giác, hình ảnh trực quan",
+        "visualBreakdown": "Vis- (nhìn) + -ual",
+        "ieltsSentence": "Visual aids amplify didactic comprehension in complex astronomical lectures.",
+        "vietnameseTranslation": "Các phương tiện hỗ trợ trực quan tăng cường khả năng tiếp thu bài giảng trong các bài thuyết trình thiên văn học phức tạp.",
+        "level": "C1",
+        "collocation": "Visual arts / Visual representation"
+      },
+      {
+        "word": "Specimen",
+        "partOfSpeech": "n",
+        "meaning": "Mẫu vật thực nghiệm để quan sát phân tích",
+        "visualBreakdown": "Spec- (nhìn ngắm) + -imen",
+        "ieltsSentence": "Botanists collected pristine herbal specimens from the alpine altitude canopy.",
+        "vietnameseTranslation": "Các nhà thực vật học đã thu thập các mẫu thảo mộc nguyên sơ từ tán rừng ở độ cao núi cao.",
+        "level": "C1",
+        "collocation": "Laboratory specimen / Collect specimens"
+      },
+      {
+        "word": "Aspect",
+        "partOfSpeech": "n",
+        "meaning": "Khía cạnh, góc độ khảo sát của vấn đề",
+        "visualBreakdown": "Ad- (hướng về) + spect (nhìn)",
+        "ieltsSentence": "Sociologists investigated every qualitative aspect of urban displacement.",
+        "vietnameseTranslation": "Các nhà xã hội học đã điều tra mọi khía cạnh định tính của sự dịch chuyển dân cư đô thị.",
+        "level": "C1",
+        "collocation": "Crucial aspect / Financial aspect"
+      },
+      {
+        "word": "Spectacular",
+        "partOfSpeech": "adj",
+        "meaning": "Hùng vĩ, ngoạn mục lóa mắt",
+        "visualBreakdown": "Spect- (nhìn) + -acular",
+        "ieltsSentence": "The geothermal volcanic explosion produced a spectacular plume of steam and ash.",
+        "vietnameseTranslation": "Vụ nổ núi lửa địa nhiệt tạo ra một cột hơi nước và tro bụi hùng vĩ ngoạn mục.",
+        "level": "C1",
+        "collocation": "Spectacular failure / Spectacular view"
+      },
+      {
+        "word": "Vista",
+        "partOfSpeech": "n",
+        "meaning": "Khung cảnh nhìn xa rộng mở, viễn cảnh",
+        "visualBreakdown": "Vist- (trông thấy) + -a",
+        "ieltsSentence": "The mountain pass opened into a panoramic vista of sweeping emerald valleys.",
+        "vietnameseTranslation": "Đèo núi mở ra một khung cảnh nhìn xa toàn cảnh về những thung lũng ngọc bích trải dài ngút ngàn.",
+        "level": "C2",
+        "collocation": "Sweeping vista / Open up new vistas"
       }
     ]
   },
   {
-    id: "r111",
-    root: "NOV",
-    meaning: "Mới, Cải tiến, Đổi mới",
-    origin: "Latin (novus - new)",
-    description: "Duy trì vị trí cốt lõi trong các chủ đề khởi nghiệp, tư duy sáng tạo phát minh và thích ứng xã hội.",
-    tip: "Nhớ từ 'Novel' (Tiểu thuyết / mới mẻ chưa từng có) hoặc 'Renovate' (Sửa sang lại nhà cửa cho đổi mới).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-sens-sent-path",
+    "root": "SENS/SENT/PATH-",
+    "meaning": "Cảm giác, cảm thụ, thấu cảm, đau đớn",
+    "origin": "Gốc Latin (sentire: cảm nhận) & Hy Lạp (pathos: cảm xúc, nỗi đau)",
+    "description": "Biểu thị những rung động giác quan, khả năng đồng cảm xã hội, sự thấu cảm tinh thần hoặc các trạng thái đau đớn bệnh lý.",
+    "tip": "Nhớ đến Sensitive (nhạy cảm), Sympathy (thấu cảm) hoặc Pathology (bệnh học) – đều gắn với cảm xúc và cảm nhận.",
+    "category": "Trục 2: Tri Thức, Nhận Thức & Diễn Ngôn",
+    "axis": "Trục 2",
+    "axisTitle": "TRỤC 2: TRI THỨC, NHẬN THỨC & DIỄN NGÔN",
+    "axisSubtitle": "Mind & Discourse (Tư duy & Ngôn ngữ)",
+    "stemKey": "SENS/SENT/PATH-",
+    "exampleWords": [
       {
-        word: "innovative",
-        partOfSpeech: "adj",
-        meaning: "Sáng tạo, có tính đổi mới, cải tiến đột phá",
-        visualBreakdown: "IN (làm cho) + NOV (mới) + ATIVE -> tìm cách thay đổi phương pháp, đổi mới diện mạo",
-        ieltsSentence: "The lab is famous for developing innovative solutions to persistent environmental challenges.",
-        vietnameseTranslation: "Phòng thí nghiệm nổi tiếng vì phát triển các giải pháp mang tính đổi mới cho những thách thức môi trường dai dẳng."
+        "word": "Empathy",
+        "partOfSpeech": "n",
+        "meaning": "Sự thấu cảm, khả năng đặt mình vào nỗi đau người khác",
+        "visualBreakdown": "Em- (bên trong) + pathy (cảm xúc)",
+        "ieltsSentence": "Fostering emotional empathy in early childhood deters bullying and discriminatory conduct.",
+        "vietnameseTranslation": "Nuôi dưỡng sự thấu cảm cảm xúc ở thời thơ ấu giúp ngăn chặn hành vi bắt nạt và phân biệt đối xử.",
+        "level": "C1",
+        "collocation": "Feel empathy / Cultivate empathy"
       },
       {
-        word: "novelty",
-        partOfSpeech: "n",
-        meaning: "Sự mới lạ, tính chất độc đáo chưa từng thấy",
-        visualBreakdown: "NOV (mới) + ELTY -> trạng thái mới mẻ thu hút tò mò",
-        ieltsSentence: "Online shopping has lost its novelty and became a mundane daily utility for millions of users.",
-        vietnameseTranslation: "Mua sắm trực tuyến đã mất đi sự mới lạ ban đầu của nó và trở thành một tiện ích hàng ngày bình thường cho hàng triệu người dùng."
+        "word": "Apathy",
+        "partOfSpeech": "n",
+        "meaning": "Sự thờ ơ lãnh đạm, nguội lạnh cảm xúc",
+        "visualBreakdown": "A- (không) + pathy (cảm xúc)",
+        "ieltsSentence": "Voter apathy poses a grave existential danger to participatory democratic institutions.",
+        "vietnameseTranslation": "Sự thờ ơ lãnh đạm của cử tri đặt ra mối nguy hiểm sinh tồn nghiêm trọng đối với các thể chế dân chủ tham gia.",
+        "level": "C1",
+        "collocation": "Widespread apathy / Political apathy"
+      },
+      {
+        "word": "Antipathy",
+        "partOfSpeech": "n",
+        "meaning": "Ác cảm sâu sắc, sự thù ghét đối kháng",
+        "visualBreakdown": "Anti- (chống lại) + pathy (cảm xúc)",
+        "ieltsSentence": "Deep-seated historical antipathy undermined bilateral peace negotiations.",
+        "vietnameseTranslation": "Ác cảm lịch sử thâm căn cố đế đã phá hoại các cuộc đàm phán hòa bình song phương.",
+        "level": "C2",
+        "collocation": "Mutual antipathy / Deep antipathy"
+      },
+      {
+        "word": "Pathology",
+        "partOfSpeech": "n",
+        "meaning": "Bệnh lý học, nguồn gốc và diễn biến bệnh tật",
+        "visualBreakdown": "Patho- (đau ốm, bệnh) + logy (nghiên cứu)",
+        "ieltsSentence": "Cellular pathology illuminates the degenerative mechanics of neurological disorders.",
+        "vietnameseTranslation": "Bệnh lý học tế bào làm sáng tỏ cơ chế thoái hóa của các rối loạn thần kinh.",
+        "level": "C1",
+        "collocation": "Clinical pathology / Underlying pathology"
+      },
+      {
+        "word": "Pathos",
+        "partOfSpeech": "n",
+        "meaning": "Sức gợi cảm xúc bi thương, lòng trắc ẩn",
+        "visualBreakdown": "Path- (nỗi đau) + -os",
+        "ieltsSentence": "The tragedy resonates because of the genuine pathos woven into the protagonist's downfall.",
+        "vietnameseTranslation": "Vở bi kịch gây được tiếng vang nhờ sức gợi cảm xúc bi thương chân thực được đan cài vào sự sụp đổ của nhân vật chính.",
+        "level": "C2",
+        "collocation": "Poignant pathos / Deep pathos"
+      },
+      {
+        "word": "Sentient",
+        "partOfSpeech": "adj",
+        "meaning": "Có tri giác, có cảm thụ đau đớn và hân hoan",
+        "visualBreakdown": "Sent- (cảm giác) + -ient",
+        "ieltsSentence": "Bioethicists argue passionately for the moral status of sentient non-human species.",
+        "vietnameseTranslation": "Các nhà đạo đức sinh học tranh luận sôi nổi về vị thế đạo đức của các loài phi nhân loại có tri giác.",
+        "level": "C2",
+        "collocation": "Sentient beings / Sentient life"
+      },
+      {
+        "word": "Sensory",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về giác quan thể xác",
+        "visualBreakdown": "Sens- (giác quan) + -ory",
+        "ieltsSentence": "Sensory deprivation experiments reveal how the human brain generates intrinsic imagery.",
+        "vietnameseTranslation": "Các thí nghiệm cách ly giác quan tiết lộ cách bộ não con người tự tạo ra các hình ảnh nội tại.",
+        "level": "C1",
+        "collocation": "Sensory overload / Sensory perception"
+      },
+      {
+        "word": "Resentment",
+        "partOfSpeech": "n",
+        "meaning": "Nỗi uất hận cay đắng, ấm ức chất chứa",
+        "visualBreakdown": "Re- (lại) + sent (cảm thấy) + -ment",
+        "ieltsSentence": "Widening income inequality breeds festering socio-economic resentment across generations.",
+        "vietnameseTranslation": "Bất bình đẳng thu nhập ngày càng gia tăng sinh ra nỗi uất hận cay đắng âm ỉ về kinh tế xã hội qua nhiều thế hệ.",
+        "level": "C1",
+        "collocation": "Harbor resentment / Deep resentment"
+      },
+      {
+        "word": "Sentiment",
+        "partOfSpeech": "n",
+        "meaning": "Tâm tư tình cảm, cảm nghĩ chung của tập thể",
+        "visualBreakdown": "Sent- (cảm nhận) + -i- + -ment",
+        "ieltsSentence": "Consumer market sentiment soured abruptly amid geopolitical conflict escalations.",
+        "vietnameseTranslation": "Tâm tư tình cảm của thị trường tiêu dùng trở nên xấu đi đột ngột trong bối cảnh xung đột địa chính trị leo thang.",
+        "level": "C1",
+        "collocation": "Public sentiment / Market sentiment"
+      },
+      {
+        "word": "Sensational",
+        "partOfSpeech": "adj",
+        "meaning": "Gây giật gân, khơi động tò mò thái quá",
+        "visualBreakdown": "Sens- (cảm giác) + -ation + -al",
+        "ieltsSentence": "Tabloid press coverage favored sensational headlines over nuanced epidemiological facts.",
+        "vietnameseTranslation": "Tin tức báo chí lá cải ưa chuộng các tiêu đề giật gân hơn là các sự thật dịch tễ học có sắc thái tinh tế.",
+        "level": "C1",
+        "collocation": "Sensational news / Sensational claims"
+      },
+      {
+        "word": "Sensitive",
+        "partOfSpeech": "adj",
+        "meaning": "Nhạy cảm, dễ bị tác động hoặc tổn thương",
+        "visualBreakdown": "Sens- (cảm giác) + -itive",
+        "ieltsSentence": "Coral polyps are exceptionally sensitive to minute fluctuations in seawater salinity.",
+        "vietnameseTranslation": "Các polyp san hô đặc biệt nhạy cảm với những biến động nhỏ về độ mặn của nước biển.",
+        "level": "C1",
+        "collocation": "Highly sensitive / Politically sensitive"
+      },
+      {
+        "word": "Consensus",
+        "partOfSpeech": "n",
+        "meaning": "Sự đồng thuận chung, sự cùng chung cảm nghĩ",
+        "visualBreakdown": "Con- (cùng) + sens (cảm nhận) + -us",
+        "ieltsSentence": "The climate summit culminated in a historic consensus to phase out coal subsidies.",
+        "vietnameseTranslation": "Hội nghị thượng đỉnh về khí hậu đã lên đến đỉnh điểm bằng một sự đồng thuận lịch sử nhằm loại bỏ trợ cấp than đá.",
+        "level": "C1",
+        "collocation": "Broad consensus / General consensus"
+      },
+      {
+        "word": "Dissent",
+        "partOfSpeech": "n",
+        "meaning": "Ý kiến bất đồng, sự phản kháng đối nghịch",
+        "visualBreakdown": "Dis- (khác biệt) + sent (cảm nghĩ)",
+        "ieltsSentence": "Suppressing academic dissent stifles progressive scientific discourse and innovation.",
+        "vietnameseTranslation": "Việc đàn áp các ý kiến bất đồng học thuật làm bóp nghẹt các diễn ngôn khoa học tiến bộ và sự đổi mới.",
+        "level": "C2",
+        "collocation": "Voice dissent / Political dissent"
+      },
+      {
+        "word": "Assent",
+        "partOfSpeech": "n",
+        "meaning": "Sự ưng thuận, phê chuẩn bằng lòng",
+        "visualBreakdown": "Ad- (hướng về) + sent (cảm nghĩ)",
+        "ieltsSentence": "The constitutional treaty required the unanimous assent of all twenty sovereign members.",
+        "vietnameseTranslation": "Hiệp ước hiến pháp đòi hỏi sự ưng thuận nhất trí của tất cả 20 thành viên có chủ quyền.",
+        "level": "C2",
+        "collocation": "Royal assent / Give assent"
+      },
+      {
+        "word": "Sympathetic",
+        "partOfSpeech": "adj",
+        "meaning": "Đồng cảm sẻ chia, tán thành ủng hộ",
+        "visualBreakdown": "Sym- (cùng) + path (cảm nhận) + -etic",
+        "ieltsSentence": "Municipal leaders were overtly sympathetic to the plight of displaced tenants.",
+        "vietnameseTranslation": "Các nhà lãnh đạo đô thị đã công khai đồng cảm sẻ chia với hoàn cảnh khó khăn của những người thuê nhà bị mất chỗ ở.",
+        "level": "C1",
+        "collocation": "Sympathetic hearing / Deeply sympathetic"
+      },
+      {
+        "word": "Telepathy",
+        "partOfSpeech": "n",
+        "meaning": "Thần giao cách cảm, truyền cảm giác từ xa",
+        "visualBreakdown": "Tele- (xa) + pathy (cảm nhận)",
+        "ieltsSentence": "Scientific skepticism remains pervasive regarding alleged demonstrations of telepathy.",
+        "vietnameseTranslation": "Sự hoài nghi khoa học vẫn lan rộng liên quan đến cái gọi là các cuộc trình diễn thần giao cách cảm.",
+        "level": "C1",
+        "collocation": "Mental telepathy / Claims of telepathy"
+      },
+      {
+        "word": "Psychopathy",
+        "partOfSpeech": "n",
+        "meaning": "Chứng thái nhân cách, rối loạn tâm thần vô cảm",
+        "visualBreakdown": "Psycho- (tâm trí) + pathy (bệnh lý đau đớn)",
+        "ieltsSentence": "Clinical forensic psychology identifies severe psychopathy by an utter absence of remorse.",
+        "vietnameseTranslation": "Tâm lý học pháp y lâm sàng nhận diện chứng thái nhân cách nặng thông qua việc hoàn toàn không có cảm giác hối hận.",
+        "level": "C2",
+        "collocation": "Diagnose psychopathy / Traits of psychopathy"
+      },
+      {
+        "word": "Sociopath",
+        "partOfSpeech": "n",
+        "meaning": "Kẻ chống đối xã hội, vô cảm với chuẩn mực",
+        "visualBreakdown": "Socio- (xã hội) + path (bệnh lý)",
+        "ieltsSentence": "Corporate sociopaths disregard environmental destruction in relentless pursuit of dividend yield.",
+        "vietnameseTranslation": "Những kẻ chống đối xã hội trong giới doanh nghiệp coi thường sự hủy hoại môi trường để theo đuổi lợi suất cổ tức không ngừng nghỉ.",
+        "level": "C2",
+        "collocation": "Corporate sociopath / Diagnosed sociopath"
+      },
+      {
+        "word": "Idiopathy",
+        "partOfSpeech": "n",
+        "meaning": "Bệnh vô căn, chứng bệnh tự phát không rõ căn nguyên",
+        "visualBreakdown": "Idio- (tự thân) + pathy (bệnh)",
+        "ieltsSentence": "Cases of pulmonary idiopathy require exhaustive genetic screening to deduce etiologies.",
+        "vietnameseTranslation": "Các trường hợp bệnh phổi tự phát vô căn đòi hỏi phải sàng lọc di truyền toàn diện để suy ra nguyên nhân bệnh học.",
+        "level": "C2",
+        "collocation": "Clinical idiopathy / Medical diagnosis"
+      },
+      {
+        "word": "Sensibility",
+        "partOfSpeech": "n",
+        "meaning": "Khả năng cảm thụ tinh tế, tính nhạy cảm nghệ thuật",
+        "visualBreakdown": "Sens- (cảm giác) + -ibility",
+        "ieltsSentence": "Modernist literature revolutionized aesthetic sensibilities across post-war Europe.",
+        "vietnameseTranslation": "Văn học hiện đại đã cách mạng hóa khả năng cảm thụ thẩm mỹ trên khắp châu Âu thời hậu chiến.",
+        "level": "C1",
+        "collocation": "Artistic sensibility / Offend sensibilities"
+      },
+      {
+        "word": "Sensuous",
+        "partOfSpeech": "adj",
+        "meaning": "Gây thích thú giác quan, đầy khoái cảm nhục cảm",
+        "visualBreakdown": "Sens- (giác quan) + -uous",
+        "ieltsSentence": "The botanical conservatory enveloped visitors in sensuous perfumes and humid warmth.",
+        "vietnameseTranslation": "Nhà kính thực vật bao bọc du khách trong những hương thơm ngây ngất và sự ấm áp ẩm ướt dễ chịu.",
+        "level": "C2",
+        "collocation": "Sensuous experience / Sensuous curves"
+      },
+      {
+        "word": "Sententious",
+        "partOfSpeech": "adj",
+        "meaning": "Lên giọng dạy đời, đạo mạo sáo rỗng",
+        "visualBreakdown": "Sentent- (châm ngôn) + -ious",
+        "ieltsSentence": "The commencement address deteriorated into sententious platitudes lacking pragmatic substance.",
+        "vietnameseTranslation": "Bài phát biểu tại lễ tốt nghiệp đã thoái hóa thành những lời giáo điều dạy đời sáo rỗng thiếu thực chất.",
+        "level": "C2",
+        "collocation": "Sententious moralizing / Sententious tone"
+      },
+      {
+        "word": "Presentiment",
+        "partOfSpeech": "n",
+        "meaning": "Linh cảm điềm gở, cảm giác trước điều chẳng lành",
+        "visualBreakdown": "Pre- (trước) + sent (cảm thấy) + -i- + -ment",
+        "ieltsSentence": "The captain harbored an uneasy presentiment before navigating into the tempest.",
+        "vietnameseTranslation": "Người thuyền trưởng chất chứa một linh cảm chẳng lành bất an trước khi lái tàu vào cơn bão dữ.",
+        "level": "C2",
+        "collocation": "Gloomy presentiment / Have a presentiment"
+      },
+      {
+        "word": "Desensitize",
+        "partOfSpeech": "v",
+        "meaning": "Làm chai sạn cảm xúc, làm mất tính nhạy cảm",
+        "visualBreakdown": "De- (giảm) + sensitize (làm nhạy cảm)",
+        "ieltsSentence": "Continuous exposure to graphical violence can insidiously desensitize impressionable adolescents.",
+        "vietnameseTranslation": "Tiếp xúc liên tục với bạo lực đồ họa có thể làm chai sạn cảm xúc của những thanh thiếu niên dễ bị ảnh hưởng.",
+        "level": "C1",
+        "collocation": "Desensitize the public / Desensitize to violence"
+      },
+      {
+        "word": "Nonsensical",
+        "partOfSpeech": "adj",
+        "meaning": "Vô nghĩa, ngớ ngẩn phi lý",
+        "visualBreakdown": "Non- (không) + sens (ý nghĩa) + -ical",
+        "ieltsSentence": "The conspiracy theory offered nonsensical assertions easily disproven by astronomical telemetry.",
+        "vietnameseTranslation": "Thuyết âm mưu đưa ra những khẳng định vô nghĩa ngớ ngẩn dễ dàng bị bác bỏ bởi các phép đo từ xa thiên văn.",
+        "level": "C1",
+        "collocation": "Nonsensical argument / Utterly nonsensical"
       }
     ]
   },
   {
-    id: "r112",
-    root: "SCI",
-    meaning: "Biết, Tỉnh táo, Khoa học học thuật",
-    origin: "Latin (scire - to know)",
-    description: "Bộ rễ của từ vựng nghiên cứu học thuật, phương pháp luận và tâm lý tự thức tự tin.",
-    tip: "Quá quen thuộc với 'Science' (Khoa học - thu nạp kiến thức sâu sắc) và 'Conscious' (Có ý thức, tỉnh táo nhận biết xung quanh).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-anthrop-dem",
+    "root": "ANTHROP/DEM-",
+    "meaning": "Con người, nhân loại, quần chúng dân cư",
+    "origin": "Gốc Hy Lạp (anthropos: con người, demos: nhân dân)",
+    "description": "Các gốc từ mô tả giống loài con người, sự tiến hóa xã hội, quyền công dân và biến động cơ cấu dân số học.",
+    "tip": "Nhớ đến Anthropology (nhân học) và Democracy (dân chủ) – trung tâm luôn là con người và tập thể nhân dân.",
+    "category": "Trục 3: Con Người, Quản Trị & Thể Chế",
+    "axis": "Trục 3",
+    "axisTitle": "TRỤC 3: CON NGƯỜI, QUẢN TRỊ & THỂ CHẾ",
+    "axisSubtitle": "Society & Governance (Con người & Thể chế)",
+    "stemKey": "ANTHROP/DEM-",
+    "exampleWords": [
       {
-        word: "conscious",
-        partOfSpeech: "adj",
-        meaning: "Có ý thức, tỉnh táo, tự nhận thức được việc làm",
-        visualBreakdown: "CON (cùng với) + SCI (hiểu biết) + OUS -> trạng thái nhận biết đầy đủ mọi kích thích",
-        ieltsSentence: "The marketing agency made a conscious effort to target eco-friendly demographic groups.",
-        vietnameseTranslation: "Đại lý tiếp thị đã nỗ lực tự nhận thức rõ ràng đầy chủ ý để nhắm mục tiêu vào các nhóm nhân khẩu học thân thiện với môi trường."
+        "word": "Anthropogenic",
+        "partOfSpeech": "adj",
+        "meaning": "Do hoạt động con người gây ra, có nguồn gốc nhân tạo",
+        "visualBreakdown": "Anthrop- (con người) + gen (sinh ra) + -ic",
+        "ieltsSentence": "The report establishes irrefutable evidence of anthropogenic global climate disruption.",
+        "vietnameseTranslation": "Báo cáo thiết lập bằng chứng không thể chối cãi về sự gián đoạn khí hậu toàn cầu do con người gây ra.",
+        "level": "C1",
+        "collocation": "Anthropogenic emissions / Anthropogenic causes"
       },
       {
-        word: "omniscient",
-        partOfSpeech: "adj",
-        meaning: "Thông suốt mọi sự, toàn trí toàn năng",
-        visualBreakdown: "OMNI (tất cả) + SCI (hiểu biết) + ENT -> người thấu tỏ toàn bộ vạn vật",
-        ieltsSentence: "The omniscient narrator in the classic novel provides deep insight into characters' silent motives.",
-        vietnameseTranslation: "Người kể chuyện thông suốt mọi việc trong cuốn tiểu thuyết cổ điển mang lại góc nhìn sâu sắc về những động cơ thầm kín của nhân vật."
+        "word": "Misanthrope",
+        "partOfSpeech": "n",
+        "meaning": "Kẻ căm ghét loài người, lánh đời chán ghét xã hội",
+        "visualBreakdown": "Mis- (ghét) + anthrope (con người)",
+        "ieltsSentence": "Disillusioned by perpetual geopolitical warfare, the retired diplomat became an isolated misanthrope.",
+        "vietnameseTranslation": "Vỡ mộng trước những cuộc chiến địa chính trị liên miên, vị cựu ngoại giao đã trở thành một kẻ lánh đời căm ghét xã hội cô độc.",
+        "level": "C2",
+        "collocation": "Reclusive misanthrope / Confirmed misanthrope"
+      },
+      {
+        "word": "Philanthropy",
+        "partOfSpeech": "n",
+        "meaning": "Lòng bác ái nhân đạo, hoạt động từ thiện vị tha",
+        "visualBreakdown": "Phil- (yêu thương) + anthrop (con người) + -y",
+        "ieltsSentence": "Strategic corporate philanthropy directs capital towards underprivileged educational infrastructure.",
+        "vietnameseTranslation": "Hoạt động từ thiện doanh nghiệp có chiến lược hướng dòng vốn vào cơ sở hạ tầng giáo dục vùng khó khăn.",
+        "level": "C1",
+        "collocation": "Corporate philanthropy / Dedicate to philanthropy"
+      },
+      {
+        "word": "Demographic",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về nhân khẩu học, cơ cấu dân số",
+        "visualBreakdown": "Demo- (dân số) + graph (ghi chép) + -ic",
+        "ieltsSentence": "Rapid demographic aging exerts unprecedented pressure on state pension reserves.",
+        "vietnameseTranslation": "Sự già hóa nhân khẩu học thần tốc gây ra áp lực chưa từng có lên các quỹ dự trữ hưu trí quốc gia.",
+        "level": "C1",
+        "collocation": "Demographic shift / Demographic transition"
+      },
+      {
+        "word": "Demagogue",
+        "partOfSpeech": "n",
+        "meaning": "Kẻ mị dân xảo trá, kích động đám đông vì mưu đồ cá nhân",
+        "visualBreakdown": "Demo- (dân chúng) + agogue (dẫn dắt, xúi giục)",
+        "ieltsSentence": "The charismatic demagogue exploited working-class grievances through xenophobic rhetoric.",
+        "vietnameseTranslation": "Kẻ mị dân lôi cuốn đã khai thác những bất mãn của tầng lớp lao động thông qua những lời lẽ bài ngoại.",
+        "level": "C2",
+        "collocation": "Dangerous demagogue / Populist demagogue"
+      },
+      {
+        "word": "Epidemic",
+        "partOfSpeech": "n",
+        "meaning": "Dịch bệnh bùng phát lan rộng trong dân chúng",
+        "visualBreakdown": "Epi- (trên) + dem (dân) + -ic",
+        "ieltsSentence": "Coordinated quarantine measures contained the airborne epidemic before catastrophic community transmission.",
+        "vietnameseTranslation": "Các biện pháp cách ly phối hợp đã ngăn chặn được dịch bệnh lây truyền qua đường không khí trước khi lây lan thảm khốc trong cộng đồng.",
+        "level": "C1",
+        "collocation": "Epidemic outbreak / Obesity epidemic"
+      },
+      {
+        "word": "Endemic",
+        "partOfSpeech": "adj",
+        "meaning": "Đặc hữu cục bộ trong một cộng đồng địa phương",
+        "visualBreakdown": "En- (bên trong) + dem (dân) + -ic",
+        "ieltsSentence": "Corruption became endemic throughout the unreformed municipal bureaucracy.",
+        "vietnameseTranslation": "Tham nhũng đã trở thành căn bệnh thâm căn cố đế đặc hữu khắp bộ máy quan liêu đô thị chưa được cải cách.",
+        "level": "C2",
+        "collocation": "Endemic poverty / Endemic species"
+      },
+      {
+        "word": "Democracy",
+        "partOfSpeech": "n",
+        "meaning": "Nền dân chủ, chế độ quyền lực thuộc về nhân dân",
+        "visualBreakdown": "Demo- (dân) + cracy (cai trị)",
+        "ieltsSentence": "A free and unfettered investigative press is the indispensable bulwark of healthy democracy.",
+        "vietnameseTranslation": "Một nền báo chí điều tra tự do và không bị trói buộc là bức tường thành không thể thiếu của một nền dân chủ lành mạnh.",
+        "level": "C1",
+        "collocation": "Participatory democracy / Fragile democracy"
+      },
+      {
+        "word": "Anthropology",
+        "partOfSpeech": "n",
+        "meaning": "Nhân chủng học, khoa học nghiên cứu loài người",
+        "visualBreakdown": "Anthrop- (con người) + logy (khoa học nghiên cứu)",
+        "ieltsSentence": "Cultural anthropology investigates cross-generational ceremonial rituals across nomadic clans.",
+        "vietnameseTranslation": "Nhân chủng học văn hóa nghiên cứu các nghi lễ tế tự qua nhiều thế hệ giữa các thị tộc du mục.",
+        "level": "C1",
+        "collocation": "Cultural anthropology / Physical anthropology"
+      },
+      {
+        "word": "Anthropocentric",
+        "partOfSpeech": "adj",
+        "meaning": "Lấy con người làm trung tâm vũ trụ, ngạo mạn",
+        "visualBreakdown": "Anthrop- (người) + centric (trung tâm)",
+        "ieltsSentence": "Ecologists criticize the anthropocentric worldview for disregarding biodiversity value.",
+        "vietnameseTranslation": "Các nhà sinh thái học chỉ trích thế giới quan lấy con người làm trung tâm vì đã xem nhẹ giá trị đa dạng sinh học.",
+        "level": "C2",
+        "collocation": "Anthropocentric perspective / Anthropocentric bias"
+      },
+      {
+        "word": "Democratize",
+        "partOfSpeech": "v",
+        "meaning": "Dân chủ hóa, đưa quyền lực/tiện ích đến với toàn dân",
+        "visualBreakdown": "Demo- (dân) + crat (quyền lực) + -ize",
+        "ieltsSentence": "Open-access digital repositories democratize scholarly knowledge for underprivileged learners.",
+        "vietnameseTranslation": "Các kho lưu trữ kỹ thuật số truy cập mở giúp dân chủ hóa tri thức học thuật cho những người học có hoàn cảnh khó khăn.",
+        "level": "C1",
+        "collocation": "Democratize access / Democratize technology"
+      },
+      {
+        "word": "Demotic",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về bình dân đại chúng, thông dụng",
+        "visualBreakdown": "Dem- (dân chúng) + -otic",
+        "ieltsSentence": "The poet abandoned archaic courtly diction in favor of vivid demotic vernacular.",
+        "vietnameseTranslation": "Nhà thơ đã từ bỏ lối dùng từ cung đình cổ xưa để chuyển sang ngôn ngữ bình dân đại chúng sống động.",
+        "level": "C2",
+        "collocation": "Demotic speech / Demotic style"
+      },
+      {
+        "word": "Anthropomorphism",
+        "partOfSpeech": "n",
+        "meaning": "Thuyết gán tính cách hình dáng người cho muông thú/vật",
+        "visualBreakdown": "Anthrop- (người) + morph (hình dạng) + -ism",
+        "ieltsSentence": "Fables frequently employ anthropomorphism to communicate moral precepts to children.",
+        "vietnameseTranslation": "Truyện ngụ ngôn thường xuyên sử dụng thủ pháp nhân hóa gán tính cách người để truyền đạt các bài học đạo đức cho trẻ nhỏ.",
+        "level": "C2",
+        "collocation": "Literary anthropomorphism / Avoid anthropomorphism"
+      },
+      {
+        "word": "Pandemic",
+        "partOfSpeech": "n",
+        "meaning": "Đại dịch toàn cầu bùng phát khắp mọi châu lục",
+        "visualBreakdown": "Pan- (tất cả) + dem (dân chúng) + -ic",
+        "ieltsSentence": "The global pandemic triggered sweeping disruptions across international supply networks.",
+        "vietnameseTranslation": "Đại dịch toàn cầu đã gây ra sự gián đoạn diện rộng khắp các mạng lưới cung ứng quốc tế.",
+        "level": "C1",
+        "collocation": "Global pandemic / Pandemic preparedness"
+      },
+      {
+        "word": "Demophobia",
+        "partOfSpeech": "n",
+        "meaning": "Chứng sợ đám đông hỗn loạn",
+        "visualBreakdown": "Demo- (đám đông) + phobia (nỗi sợ)",
+        "ieltsSentence": "Extreme agoraphobia often manifests alongside severe demophobia in crowded urban transit hubs.",
+        "vietnameseTranslation": "Hội chứng sợ không gian mở nghiêm trọng thường biểu hiện cùng với chứng sợ đám đông tại các đầu mối giao thông đông đúc.",
+        "level": "C2",
+        "collocation": "Suffer from demophobia / Acute demophobia"
+      },
+      {
+        "word": "Anthropoid",
+        "partOfSpeech": "adj",
+        "meaning": "Có hình dạng tựa như con người, dạng vượn người",
+        "visualBreakdown": "Anthrop- (người) + -oid (có hình dáng dạng)",
+        "ieltsSentence": "Paleontologists unearthed fossilized skulls of ancient anthropoid primates.",
+        "vietnameseTranslation": "Các nhà cổ sinh vật học đã khai quật những hộp sọ hóa thạch của các loài linh trưởng dạng người cổ đại.",
+        "level": "C2",
+        "collocation": "Anthropoid ape / Anthropoid remains"
+      },
+      {
+        "word": "Anthropomorphic",
+        "partOfSpeech": "adj",
+        "meaning": "Mang tính nhân hóa, gán thuộc tính người",
+        "visualBreakdown": "Anthrop- + morph- + -ic",
+        "ieltsSentence": "Ancient deities were portrayed with flawed anthropomorphic temperaments.",
+        "vietnameseTranslation": "Các vị thần cổ đại được khắc họa với tính khí nhân hóa đầy khiếm khuyết của con người.",
+        "level": "C2",
+        "collocation": "Anthropomorphic deity / Anthropomorphic representation"
+      },
+      {
+        "word": "Demographical",
+        "partOfSpeech": "adj",
+        "meaning": "Có tính chất liên quan biến động nhân khẩu học",
+        "visualBreakdown": "Demo- + graph- + -ical",
+        "ieltsSentence": "Demographical disparities dictate differentiated healthcare expenditure allocation.",
+        "vietnameseTranslation": "Sự chênh lệch về mặt nhân khẩu học quyết định việc phân bổ chi tiêu y tế có sự phân hóa.",
+        "level": "C1",
+        "collocation": "Demographical data / Demographical research"
+      },
+      {
+        "word": "Anthroposphere",
+        "partOfSpeech": "n",
+        "meaning": "Quyển nhân loại, phần trái đất chịu tác động con người",
+        "visualBreakdown": "Anthrop- (người) + sphere (quyển địa cầu)",
+        "ieltsSentence": "The burgeoning anthroposphere has decisively modified natural biosphere cycles.",
+        "vietnameseTranslation": "Quyển nhân loại đang mở rộng nhanh chóng đã làm biến đổi dứt khoát các chu trình sinh quyển tự nhiên.",
+        "level": "C2",
+        "collocation": "Impact the anthroposphere / Dynamics of anthroposphere"
+      },
+      {
+        "word": "Palaeoanthropology",
+        "partOfSpeech": "n",
+        "meaning": "Cổ nhân chủng học, nghiên cứu nguồn gốc hóa thạch người",
+        "visualBreakdown": "Palaeo- (cổ xưa) + anthrop- + logy",
+        "ieltsSentence": "Palaeoanthropology utilizes genetic sequencing to reconstruct hominid lineage branchings.",
+        "vietnameseTranslation": "Cổ nhân chủng học sử dụng giải trình tự gen để tái dựng các phân nhánh dòng dõi vượn người cổ.",
+        "level": "C2",
+        "collocation": "Palaeoanthropological discovery / Study palaeoanthropology"
+      },
+      {
+        "word": "Demography",
+        "partOfSpeech": "n",
+        "meaning": "Ngành nhân khẩu học",
+        "visualBreakdown": "Demo- (dân số) + graphy (ghi chép)",
+        "ieltsSentence": "Changing demography requires adaptive urban schooling and housing realignments.",
+        "vietnameseTranslation": "Nhân khẩu học biến đổi đòi hỏi sự điều chỉnh thích ứng về trường học và nhà ở đô thị.",
+        "level": "C1",
+        "collocation": "Shift in demography / Understand demography"
+      },
+      {
+        "word": "Philanthropist",
+        "partOfSpeech": "n",
+        "meaning": "Nhà hảo tâm, người làm từ thiện lớn",
+        "visualBreakdown": "Phil- + anthrop- + -ist",
+        "ieltsSentence": "The benevolent philanthropist bequeathed millions to fund global vaccine discovery.",
+        "vietnameseTranslation": "Nhà hảo tâm nhân từ đã để lại hàng triệu đô la để tài trợ cho việc tìm kiếm vắc-xin toàn cầu.",
+        "level": "C1",
+        "collocation": "Generous philanthropist / Billionaire philanthropist"
+      },
+      {
+        "word": "Demagoguery",
+        "partOfSpeech": "n",
+        "meaning": "Thuật mị dân, trò kích động chính trị rẻ tiền",
+        "visualBreakdown": "Demo- + agogue + -ry",
+        "ieltsSentence": "Statesmanship stands in stark juxtaposition to cynical populist demagoguery.",
+        "vietnameseTranslation": "Tài kinh bang tế thế đứng ở vị thế tương phản rõ rệt với thuật mị dân dân túy cay độc.",
+        "level": "C2",
+        "collocation": "Political demagoguery / Resort to demagoguery"
+      },
+      {
+        "word": "Anthropometry",
+        "partOfSpeech": "n",
+        "meaning": "Nhân trắc học, đo lường kích thước cơ thể người",
+        "visualBreakdown": "Anthrop- + metry (đo đạc)",
+        "ieltsSentence": "Modern ergonomic workstation design relies on sophisticated anthropometry data sets.",
+        "vietnameseTranslation": "Thiết kế máy trạm công thái học hiện đại dựa vào các tập dữ liệu nhân trắc học tinh vi.",
+        "level": "C2",
+        "collocation": "Forensic anthropometry / Ergonomic anthropometry"
+      },
+      {
+        "word": "Ecosystem-anthropocentrism",
+        "partOfSpeech": "n",
+        "meaning": "Tư tưởng định vị con người độc tôn trong hệ sinh thái",
+        "visualBreakdown": "Eco- + anthropo- + centrism",
+        "ieltsSentence": "Philosophers challenge ecosystem-anthropocentrism to safeguard non-human intrinsic rights.",
+        "vietnameseTranslation": "Các triết gia thách thức tư tưởng con người độc tôn trong hệ sinh thái để bảo vệ quyền nội tại của các loài phi con người.",
+        "level": "C2",
+        "collocation": "Rethink anthropocentrism / Beyond anthropocentrism"
       }
     ]
   },
   {
-    id: "r113",
-    root: "VOC/VOK",
-    meaning: "Tiếng nói, Kêu gọi, Ngôn luận",
-    origin: "Latin (vocare - to call, voice)",
-    description: "Rất hay gặp trong chủ đề về marketing, vận động hành lang chính sách, truyền thông đại chúng và tuyển dụng học thuật.",
-    tip: "Gắn kết với 'Vocal' (Thuộc về giọng hát, tiếng nói) hoặc 'Vocabulary' (Hệ từ vựng dùng để gọi tên vạn vật).",
-    category: "Actions & Motion",
-    exampleWords: [
+    "id": "stem-arch-crat-reg",
+    "root": "ARCH/CRAT/REG-",
+    "meaning": "Quyền lực, trật tự, người đứng đầu cai trị",
+    "origin": "Gốc Hy Lạp (archein: cai trị/khởi đầu, kratos: sức mạnh) & Latin (regere: cai trị, cai quản)",
+    "description": "Trung tâm của quyền uy chính trị, cấu trúc nhà nước, thứ bậc quyền lực và các quy chế điều chỉnh xã hội.",
+    "tip": "Nhớ đến Monarchy (quân chủ), Democracy (dân chủ) và Regulation (quy định) – quyền lực thiết lập trật tự.",
+    "category": "Trục 3: Con Người, Quản Trị & Thể Chế",
+    "axis": "Trục 3",
+    "axisTitle": "TRỤC 3: CON NGƯỜI, QUẢN TRỊ & THỂ CHẾ",
+    "axisSubtitle": "Society & Governance (Con người & Thể chế)",
+    "stemKey": "ARCH/CRAT/REG-",
+    "exampleWords": [
       {
-        word: "advocate",
-        partOfSpeech: "v, n",
-        meaning: "Ủng hộ nhiệt thành, người biện hộ",
-        visualBreakdown: "AD (hướng tới) + VOC (gợi tiếng nói/kêu gọi) + ATIVE -> cùng lên tiếng nói để bảo vệ quyền lợi cho người khác",
-        ieltsSentence: "Humanitarian organizations strongly advocate for the immediate protection of refugees.",
-        vietnameseTranslation: "Các tổ chức nhân đạo mạnh mẽ ủng hộ cho sự bảo vệ ngay lập tức dành cho những người tị nạn."
+        "word": "Hierarchy",
+        "partOfSpeech": "n",
+        "meaning": "Hệ thống thứ bậc quyền lực, tôn ti trật tự",
+        "visualBreakdown": "Hier- (thánh thiêng) + archy (cai trị)",
+        "ieltsSentence": "Rigid institutional hierarchies impede horizontal knowledge exchange and agile innovation.",
+        "vietnameseTranslation": "Các tôn ti trật tự thể chế cứng nhắc cản trở sự trao đổi tri thức ngang hàng và sự đổi mới linh hoạt.",
+        "level": "C1",
+        "collocation": "Social hierarchy / Corporate hierarchy"
       },
       {
-        word: "provocative",
-        partOfSpeech: "adj",
-        meaning: "Mang tính khiêu khích, kích thích sự bàn tán thảo luận",
-        visualBreakdown: "PRO (hướng về phía trước) + VOC (gợi tiếng nói/kêu gọi) + ATIVE -> khơi dậy làn sóng tranh luận, kích thích thảo luận nảy lửa",
-        ieltsSentence: "The lead researcher presented a provocative theory that challenged decades of astronomical consensus.",
-        vietnameseTranslation: "Nhà nghiên cứu dẫn đầu đã trình bày một lý thuyết kích thích sự tò mò tranh luận, thách thức hàng thập kỷ đồng thuận của giới thiên văn học."
+        "word": "Anarchy",
+        "partOfSpeech": "n",
+        "meaning": "Tình trạng vô chính phủ, hỗn loạn không pháp luật",
+        "visualBreakdown": "An- (không) + archy (người cai trị)",
+        "ieltsSentence": "The abrupt breakdown of civic infrastructure plunged the province into near anarchy.",
+        "vietnameseTranslation": "Sự sụp đổ đột ngột của cơ sở hạ tầng dân sự đã đẩy tỉnh này vào tình trạng gần như vô chính phủ.",
+        "level": "C1",
+        "collocation": "Descend into anarchy / State of anarchy"
+      },
+      {
+        "word": "Monarch",
+        "partOfSpeech": "n",
+        "meaning": "Quốc vương, quân vương nắm quyền",
+        "visualBreakdown": "Mon- (duy nhất một) + arch (cai trị)",
+        "ieltsSentence": "Constitutional monarchs exercise ceremonial functions under statutory parliamentary oversight.",
+        "vietnameseTranslation": "Các quân vương lập hiến thực hiện các chức năng nghi lễ dưới sự giám sát lập pháp của nghị viện.",
+        "level": "C1",
+        "collocation": "Constitutional monarch / Absolute monarch"
+      },
+      {
+        "word": "Oligarchy",
+        "partOfSpeech": "n",
+        "meaning": "Chế độ tài phiệt độc quyền đầu sỏ",
+        "visualBreakdown": "Olig- (một số ít) + archy (cai trị)",
+        "ieltsSentence": "Campaign financing loopholes facilitate the silent consolidation of a corporate oligarchy.",
+        "vietnameseTranslation": "Những lỗ hổng trong việc tài trợ chiến dịch tranh cử tạo điều kiện cho sự củng cố ngấm ngầm của một chế độ tài phiệt độc quyền đầu sỏ.",
+        "level": "C2",
+        "collocation": "Ruling oligarchy / Financial oligarchy"
+      },
+      {
+        "word": "Patriarchy",
+        "partOfSpeech": "n",
+        "meaning": "Chế độ gia trưởng, phụ hệ thống trị",
+        "visualBreakdown": "Patri- (người cha) + archy (cai trị)",
+        "ieltsSentence": "Feminist jurisprudence deconstructs the systemic inequities perpetuated by historical patriarchy.",
+        "vietnameseTranslation": "Khoa học pháp lý nữ quyền bóc tách những bất bình đẳng mang tính hệ thống bị duy trì bởi chế độ phụ quyền trong lịch sử.",
+        "level": "C1",
+        "collocation": "Dismantle patriarchy / Entrenched patriarchy"
+      },
+      {
+        "word": "Matriarch",
+        "partOfSpeech": "n",
+        "meaning": "Mẫu trưởng, người phụ nữ đứng đầu gia tộc",
+        "visualBreakdown": "Matri- (người mẹ) + arch (cai trị)",
+        "ieltsSentence": "Elephants maintain tightly coordinated clan networks guided by a seasoned elder matriarch.",
+        "vietnameseTranslation": "Voi duy trì các mạng lưới đàn phối hợp chặt chẽ dưới sự dẫn dắt của một con voi mẫu trưởng dạn dày kinh nghiệm.",
+        "level": "C2",
+        "collocation": "Venerable matriarch / Family matriarch"
+      },
+      {
+        "word": "Autocrat",
+        "partOfSpeech": "n",
+        "meaning": "Kẻ độc tài toàn quyền, chuyên quyền chuyên chế",
+        "visualBreakdown": "Auto- (tự thân) + crat (quyền lực)",
+        "ieltsSentence": "The ruthless autocrat stifled independent dissent through draconian digital censorship.",
+        "vietnameseTranslation": "Kẻ độc tài tàn nhẫn đã bóp nghẹt những ý kiến bất đồng độc lập thông qua việc kiểm duyệt kỹ thuật số hà khắc.",
+        "level": "C2",
+        "collocation": "Ruthless autocrat / Rule like an autocrat"
+      },
+      {
+        "word": "Plutocracy",
+        "partOfSpeech": "n",
+        "meaning": "Chế độ tài phiệt, chính thể do giới giàu có thao túng",
+        "visualBreakdown": "Pluto- (sự giàu có) + cracy (cai trị)",
+        "ieltsSentence": "Critics warn that untamed lobbying transforms democratic republics into functional plutocracies.",
+        "vietnameseTranslation": "Các nhà phê bình cảnh báo rằng việc vận động hành lang không bị kiềm chế sẽ biến các nền cộng hòa dân chủ thành các chính thể tài phiệt trên thực tế.",
+        "level": "C2",
+        "collocation": "Slide into plutocracy / Corporate plutocracy"
+      },
+      {
+        "word": "Technocrat",
+        "partOfSpeech": "n",
+        "meaning": "Nhà kỹ trị, chuyên gia kỹ thuật nắm quyền quản lý",
+        "visualBreakdown": "Techno- (kỹ thuật) + crat (quyền lực)",
+        "ieltsSentence": "A cabinet of economic technocrats was appointed to restructure sovereign fiscal debt.",
+        "vietnameseTranslation": "Một nội các gồm các nhà kỹ trị kinh tế đã được bổ nhiệm để tái cấu trúc nợ tài khóa quốc gia.",
+        "level": "C1",
+        "collocation": "Economic technocrat / Appoint technocrats"
+      },
+      {
+        "word": "Bureaucracy",
+        "partOfSpeech": "n",
+        "meaning": "Bộ máy quan liêu hành chính cồng kềnh",
+        "visualBreakdown": "Bureau- (bàn làm việc, văn phòng) + cracy (cai trị)",
+        "ieltsSentence": "Labyrinthine municipal bureaucracy dampens entrepreneurial innovation and civic agility.",
+        "vietnameseTranslation": "Bộ máy quan liêu đô thị như mê cung làm thui chột sự đổi mới kinh doanh và tính linh hoạt của công dân.",
+        "level": "C1",
+        "collocation": "Cumbersome bureaucracy / Entrenched bureaucracy"
+      },
+      {
+        "word": "Aristocracy",
+        "partOfSpeech": "n",
+        "meaning": "Tầng lớp quý tộc dòng dõi thống trị",
+        "visualBreakdown": "Aristo- (tốt nhất, cao quý) + cracy (cai trị)",
+        "ieltsSentence": "The egalitarian revolution permanently dismantled the feudal prerogatives of landed aristocracy.",
+        "vietnameseTranslation": "Cuộc cách mạng bình đẳng đã xóa bỏ vĩnh viễn những đặc quyền phong kiến của tầng lớp quý tộc sở hữu đất đai.",
+        "level": "C1",
+        "collocation": "Landed aristocracy / Feudal aristocracy"
+      },
+      {
+        "word": "Theocracy",
+        "partOfSpeech": "n",
+        "meaning": "Chính thể thần quyền, cai trị bằng luật tôn giáo",
+        "visualBreakdown": "Theo- (thần thánh) + cracy (cai trị)",
+        "ieltsSentence": "In an absolute theocracy, civil legislation must strictly conform to canonical religious scriptures.",
+        "vietnameseTranslation": "Trong một chính thể thần quyền tuyệt đối, luật dân sự phải tuân thủ nghiêm ngặt các giáo luật tôn giáo kinh điển.",
+        "level": "C2",
+        "collocation": "Establish a theocracy / Strict theocracy"
+      },
+      {
+        "word": "Meritocracy",
+        "partOfSpeech": "n",
+        "meaning": "Chế độ trọng dụng nhân tài dựa trên năng lực",
+        "visualBreakdown": "Merit- (xứng đáng, tài năng) + cracy (cai trị)",
+        "ieltsSentence": "Proponents assert that standardized testing underpins a genuinely fair educational meritocracy.",
+        "vietnameseTranslation": "Những người ủng hộ khẳng định rằng các kỳ thi chuẩn hóa làm nền tảng cho một nền giáo dục trọng dụng nhân tài thực sự công bằng.",
+        "level": "C1",
+        "collocation": "Genuine meritocracy / Educational meritocracy"
+      },
+      {
+        "word": "Regulate",
+        "partOfSpeech": "v",
+        "meaning": "Điều tiết, kiểm soát bằng luật định quy chuẩn",
+        "visualBreakdown": "Reg- (quy tắc cai quản) + -ulate",
+        "ieltsSentence": "Statutory commissions strictly regulate emissions limits for heavy manufacturing facilities.",
+        "vietnameseTranslation": "Các ủy ban theo luật định kiểm soát nghiêm ngặt các giới hạn phát thải đối với các cơ sở sản xuất nặng.",
+        "level": "C1",
+        "collocation": "Strictly regulate / Regulate the market"
+      },
+      {
+        "word": "Regime",
+        "partOfSpeech": "n",
+        "meaning": "Chế độ chính trị, thể chế quản lý nhà nước",
+        "visualBreakdown": "Reg- (cai trị) + -ime",
+        "ieltsSentence": "The oppressive military regime faced sweeping multilateral economic sanctions.",
+        "vietnameseTranslation": "Chế độ quân sự hà khắc phải đối mặt với các lệnh trừng phạt kinh tế đa phương diện rộng.",
+        "level": "C1",
+        "collocation": "Authoritarian regime / Overthrow a regime"
+      },
+      {
+        "word": "Regal",
+        "partOfSpeech": "adj",
+        "meaning": "Mang phong thái vương giả quý phái, uy nghiêm",
+        "visualBreakdown": "Reg- (vua chúa cai trị) + -al",
+        "ieltsSentence": "The historic cathedral retained an austere and regal architectural majesty.",
+        "vietnameseTranslation": "Nhà thờ lịch sử vẫn giữ được vẻ uy nghiêm tráng lệ kiến trúc mang phong thái vương giả và thanh tịnh.",
+        "level": "C2",
+        "collocation": "Regal splendor / Regal presence"
+      },
+      {
+        "word": "Regent",
+        "partOfSpeech": "n",
+        "meaning": "Nhiếp chính vương, người thay mặt vua điều hành",
+        "visualBreakdown": "Reg- (cai quản) + -ent",
+        "ieltsSentence": "The council appointed a seasoned diplomat as regent pending the young sovereign's majority.",
+        "vietnameseTranslation": "Hội đồng đã bổ nhiệm một nhà ngoại giao kỳ cựu làm nhiếp chính vương trong khi chờ vị vua trẻ đến tuổi trưởng thành.",
+        "level": "C2",
+        "collocation": "Appointed as regent / Prince regent"
+      },
+      {
+        "word": "Regicide",
+        "partOfSpeech": "n",
+        "meaning": "Tội ám sát giết vua chúa",
+        "visualBreakdown": "Regi- (vua) + cide (giết)",
+        "ieltsSentence": "The execution of King Charles I in 1649 was decried across monarchies as abominable regicide.",
+        "vietnameseTranslation": "Việc hành quyết Vua Charles I năm 1649 bị các nền quân chủ lên án là tội giết vua ghê tởm.",
+        "level": "C2",
+        "collocation": "Act of regicide / Commit regicide"
+      },
+      {
+        "word": "Incorrigible",
+        "partOfSpeech": "adj",
+        "meaning": "Bất trị, không thể uốn nắn vào khuôn phép",
+        "visualBreakdown": "In- (không) + cor- + rig (thẳng, quy chuẩn) + -ible",
+        "ieltsSentence": "Despite multiple rehabilitation efforts, the offender displayed an incorrigible disregard for civic statutes.",
+        "vietnameseTranslation": "Bất chấp nhiều nỗ lực cải tạo, kẻ phạm tội vẫn thể hiện sự bất trị coi thường các quy chế dân sự.",
+        "level": "C2",
+        "collocation": "Incorrigible behavior / Incorrigible rogue"
+      },
+      {
+        "word": "Surrogate",
+        "partOfSpeech": "adj",
+        "meaning": "Thay thế quyền hành, mang thai/đại diện hộ",
+        "visualBreakdown": "Sub- (dưới quyền) + rog (hỏi, yêu cầu) + -ate",
+        "ieltsSentence": "The ambassador acted as a surrogate decision-maker during the premier's medical incapacitation.",
+        "vietnameseTranslation": "Đại sứ đã hành động như một người ra quyết định đại diện thay thế trong thời gian thủ tướng mất khả năng lao động vì y tế.",
+        "level": "C1",
+        "collocation": "Surrogate mother / Surrogate marker"
+      },
+      {
+        "word": "Derogate",
+        "partOfSpeech": "v",
+        "meaning": "Hạ thấp uy tín, làm suy giảm giá trị quyền lực",
+        "visualBreakdown": "De- (xuống) + rog (yêu cầu) + -ate",
+        "ieltsSentence": "Emergency state decrees must never derogate from non-negotiable fundamental human rights.",
+        "vietnameseTranslation": "Các sắc lệnh khẩn cấp của nhà nước không bao giờ được làm suy giảm những quyền cơ bản bất khả thương lượng của con người.",
+        "level": "C2",
+        "collocation": "Derogate from human rights / Derogatory remarks"
+      },
+      {
+        "word": "Interregnum",
+        "partOfSpeech": "n",
+        "meaning": "Giai đoạn chuyển giao quyền lực khuyết ngôi vương",
+        "visualBreakdown": "Inter- (giữa) + regn (vương triều cai trị) + -um",
+        "ieltsSentence": "The precarious interregnum sparked bitter skirmishes between rival noble claimants.",
+        "vietnameseTranslation": "Giai đoạn gián đoạn vương triều đầy bấp bênh đã làm bùng nổ các cuộc xung đột gay gắt giữa các phe phái quý tộc tranh chấp ngôi báu.",
+        "level": "C2",
+        "collocation": "Chaotic interregnum / During the interregnum"
+      },
+      {
+        "word": "Sovereign",
+        "partOfSpeech": "adj",
+        "meaning": "Có chủ quyền tối cao độc lập tự chủ",
+        "visualBreakdown": "Super- (tối cao) + regn (cai trị)",
+        "ieltsSentence": "Every recognized nation exercises exclusive sovereign jurisdiction within territorial waters.",
+        "vietnameseTranslation": "Mọi quốc gia được công nhận đều thực thi quyền tài phán có chủ quyền độc quyền bên trong lãnh hải.",
+        "level": "C1",
+        "collocation": "Sovereign state / Sovereign debt"
+      },
+      {
+        "word": "Kleptocracy",
+        "partOfSpeech": "n",
+        "meaning": "Chính thể đạo tặc, chế độ cướp đoạt công quỹ",
+        "visualBreakdown": "Klepto- (ăn trộm) + cracy (cai trị)",
+        "ieltsSentence": "Whistleblowers unveiled how the kleptocracy siphoned billions into offshore shell corporations.",
+        "vietnameseTranslation": "Những người tố giác đã vạch trần cách thức chính thể đạo tặc bòn rút hàng tỷ đô la vào các công ty bình phong ở hải ngoại.",
+        "level": "C2",
+        "collocation": "Entrenched kleptocracy / Expose a kleptocracy"
+      },
+      {
+        "word": "Anarchist",
+        "partOfSpeech": "n",
+        "meaning": "Người theo chủ nghĩa vô chính phủ",
+        "visualBreakdown": "An- + arch- + -ist",
+        "ieltsSentence": "Early twentieth-century anarchists advocated decentralized collective labor federations.",
+        "vietnameseTranslation": "Những người theo chủ nghĩa vô chính phủ đầu thế kỷ 20 chủ trương các liên đoàn lao động tập thể phi tập trung.",
+        "level": "C1",
+        "collocation": "Anarchist movement / Philosophical anarchist"
       }
     ]
   },
   {
-    id: "r114",
-    root: "PATH",
-    meaning: "Cảm xúc, Đồng cảm, Thống khổ",
-    origin: "Greek (pathos - feeling, suffering)",
-    description: "Xuất hiện trong các bài đọc IELTS khai thác về trí tuệ cảm xúc (EQ), tâm lý học hành vi quảng cáo truyền thông.",
-    tip: "Nghĩ ngay tới 'Sympathy' (Sự thương cảm tương đồng) hoặc 'Empathy' (Khả năng đặt mình vào vị trí người khác để đồng cảm).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-equ-egal",
+    "root": "EQU/EGAL-",
+    "meaning": "Công bằng, ngang bằng, cân bằng, bình đẳng",
+    "origin": "Gốc Latin (aequus: ngang bằng, phẳng lặng) & Pháp cổ (égal: bình đẳng)",
+    "description": "Nền tảng của công lý xã hội, cân bằng sinh thái, ổn định thị trường và phân bổ tài nguyên bình đẳng giữa các thực thể.",
+    "tip": "Nhớ đến Equal (công bằng), Equilibrium (trạng thái cân bằng) – mọi bên đều ngang nhau.",
+    "category": "Trục 3: Con Người, Quản Trị & Thể Chế",
+    "axis": "Trục 3",
+    "axisTitle": "TRỤC 3: CON NGƯỜI, QUẢN TRỊ & THỂ CHẾ",
+    "axisSubtitle": "Society & Governance (Con người & Thể chế)",
+    "stemKey": "EQU/EGAL-",
+    "exampleWords": [
       {
-        word: "empathy",
-        partOfSpeech: "n",
-        meaning: "Sự thấu cảm, đồng cảm sâu sắc",
-        visualBreakdown: "EM (bên trong) + PATH (cảm xúc) -> thấu hiểu cảm xúc từ tận sâu bên trong tâm can người khác",
-        ieltsSentence: "Developing empathy is considered a core skill in patient-centered clinical training.",
-        vietnameseTranslation: "Phát triển sự thấu cảm được coi là một kỹ năng cốt lõi trong đào tạo lâm sàng lấy bệnh nhân làm trung tâm."
+        "word": "Equitable",
+        "partOfSpeech": "adj",
+        "meaning": "Công bằng, hợp tình hợp lý, phân bổ thỏa đáng",
+        "visualBreakdown": "Equ- (công bằng) + -it- + -able",
+        "ieltsSentence": "Achieving equitable vaccine distribution remains a cornerstone of global public health security.",
+        "vietnameseTranslation": "Đạt được sự phân phối vắc-xin công bằng và hợp lý vẫn là nền tảng của an ninh y tế công cộng toàn cầu.",
+        "level": "C1",
+        "collocation": "Equitable distribution / Equitable access"
       },
       {
-        word: "apathetic",
-        partOfSpeech: "adj",
-        meaning: "Thờ ơ, vô cảm, thiếu quan tâm",
-        visualBreakdown: "A (không, thiếu) + PATH (cảm xúc) + IC -> hoàn toàn trống rỗng cảm xúc, không thèm quan tâm",
-        ieltsSentence: "A growing number of citizens are becoming apathetic about national political reforms.",
-        vietnameseTranslation: "Một số lượng ngày càng tăng công dân đang trở nên thờ ơ vô cảm với các cuộc cải cách chính trị quốc gia."
+        "word": "Equilibrium",
+        "partOfSpeech": "n",
+        "meaning": "Trạng thái cân bằng động, thế cân bằng sinh thái",
+        "visualBreakdown": "Equi- (bằng) + libr (cái cân) + -ium",
+        "ieltsSentence": "Anthropogenic deforestation destabilizes the delicate thermal equilibrium of local microclimates.",
+        "vietnameseTranslation": "Nạn phá rừng do con người gây ra làm mất ổn định trạng thái cân bằng nhiệt mong manh của vi khí hậu địa phương.",
+        "level": "C1",
+        "collocation": "Maintain equilibrium / Delicate equilibrium"
+      },
+      {
+        "word": "Equivocate",
+        "partOfSpeech": "v",
+        "meaning": "Nói mập mờ nước đôi, lảng tránh cam kết",
+        "visualBreakdown": "Equi- (ngang nhau) + voc (nói) + -ate",
+        "ieltsSentence": "Ministers continued to equivocate regarding explicit timeline commitments for emissions reduction.",
+        "vietnameseTranslation": "Các bộ trưởng tiếp tục nói mập mờ nước đôi về các cam kết lộ trình rõ ràng cho việc cắt giảm phát thải.",
+        "level": "C2",
+        "collocation": "Refuse to equivocate / Equivocate on issues"
+      },
+      {
+        "word": "Egalitarian",
+        "partOfSpeech": "adj",
+        "meaning": "Bình đẳng xã hội, tin vào quyền bình đẳng cho tất cả",
+        "visualBreakdown": "Egal- (bình đẳng) + -itarian",
+        "ieltsSentence": "Nordic societies are frequently praised for their egalitarian welfare and educational architecture.",
+        "vietnameseTranslation": "Các xã hội Bắc Âu thường xuyên được khen ngợi vì cấu trúc giáo dục và phúc lợi bình đẳng xã hội.",
+        "level": "C1",
+        "collocation": "Egalitarian society / Egalitarian principles"
+      },
+      {
+        "word": "Iniquity",
+        "partOfSpeech": "n",
+        "meaning": "Sự bất công tàn nhẫn, hành vi tội lỗi ngang trái",
+        "visualBreakdown": "In- (không) + iqu (công bằng) + -ity",
+        "ieltsSentence": "Social reformers campaigned courageously against the grave iniquities of bonded servitude.",
+        "vietnameseTranslation": "Các nhà cải cách xã hội đã dũng cảm vận động chống lại những sự bất công tàn nhẫn của chế độ nô dịch cưỡng bức.",
+        "level": "C2",
+        "collocation": "Denounce iniquity / Glaring iniquities"
+      },
+      {
+        "word": "Equanimity",
+        "partOfSpeech": "n",
+        "meaning": "Sự bình thản điềm tĩnh trước sóng gió",
+        "visualBreakdown": "Equ- (bằng phẳng) + anim (tâm trí) + -ity",
+        "ieltsSentence": "The seasoned negotiator handled hostile provocations with extraordinary equanimity.",
+        "vietnameseTranslation": "Nhà đàm phán kỳ cựu đã xử lý những khiêu khích thù địch với sự bình thản điềm tĩnh phi thường.",
+        "level": "C2",
+        "collocation": "Accept with equanimity / Preserve equanimity"
+      },
+      {
+        "word": "Equinox",
+        "partOfSpeech": "n",
+        "meaning": "Hiện tượng điểm phân (ngày đêm dài bằng nhau)",
+        "visualBreakdown": "Equi- (bằng) + nox (đêm)",
+        "ieltsSentence": "The autumnal equinox heralds the transition to shortened diurnal daylight in temperate latitudes.",
+        "vietnameseTranslation": "Hiện tượng thu phân báo hiệu sự chuyển tiếp sang khoảng thời gian ban ngày ngắn lại ở các vĩ độ ôn đới.",
+        "level": "C2",
+        "collocation": "Vernal equinox / Autumnal equinox"
+      },
+      {
+        "word": "Equivalent",
+        "partOfSpeech": "adj",
+        "meaning": "Tương đương về giá trị, công năng hoặc cấp độ",
+        "visualBreakdown": "Equi- (bằng) + val (giá trị) + -ent",
+        "ieltsSentence": "Completing the vocational apprenticeship confers credentials equivalent to a polytechnic diploma.",
+        "vietnameseTranslation": "Hoàn thành chương trình học nghề mang lại chứng chỉ tương đương với bằng cao đẳng bách khoa.",
+        "level": "C1",
+        "collocation": "Roughly equivalent / Equivalent to"
+      },
+      {
+        "word": "Equidistant",
+        "partOfSpeech": "adj",
+        "meaning": "Cách đều nhau, khoảng cách tương đương",
+        "visualBreakdown": "Equi- (bằng) + distant (khoảng cách)",
+        "ieltsSentence": "The municipal transit hub was situated equidistant between the residential enclave and industrial zone.",
+        "vietnameseTranslation": "Đầu mối giao thông đô thị được đặt cách đều nhau giữa khu dân cư và khu công nghiệp.",
+        "level": "C1",
+        "collocation": "Equidistant from / Position equidistant"
+      },
+      {
+        "word": "Equate",
+        "partOfSpeech": "v",
+        "meaning": "Đánh đồng coi cái này ngang bằng với cái kia",
+        "visualBreakdown": "Equ- (bằng) + -ate",
+        "ieltsSentence": "Commentators should not naively equate material wealth accumulation with human flourishing.",
+        "vietnameseTranslation": "Các nhà bình luận không nên ngây thơ đánh đồng việc tích lũy của cải vật chất với sự thăng hoa hạnh phúc của con người.",
+        "level": "C1",
+        "collocation": "Equate with / Cannot be equated"
+      },
+      {
+        "word": "Inequality",
+        "partOfSpeech": "n",
+        "meaning": "Sự bất bình đẳng sâu sắc trong xã hội",
+        "visualBreakdown": "In- (không) + equal + -ity",
+        "ieltsSentence": "Structural inequality throttles intergenerational social mobility for marginalized youth.",
+        "vietnameseTranslation": "Bất bình đẳng mang tính cơ cấu bóp nghẹt sự dịch chuyển xã hội giữa các thế hệ đối với thanh thiếu niên yếu thế.",
+        "level": "C1",
+        "collocation": "Income inequality / Combat inequality"
+      },
+      {
+        "word": "Adequate",
+        "partOfSpeech": "adj",
+        "meaning": "Đầy đủ, thỏa đáng, vừa vặn theo nhu cầu",
+        "visualBreakdown": "Ad- (hướng tới) + equ (ngang bằng) + -ate",
+        "ieltsSentence": "Vulnerable households must have adequate access to clean potable water.",
+        "vietnameseTranslation": "Các hộ gia đình dễ bị tổn thương phải được tiếp cận đầy đủ thỏa đáng với nước uống sạch sinh hoạt.",
+        "level": "C1",
+        "collocation": "Adequate resources / Adequate protection"
+      },
+      {
+        "word": "Inadequate",
+        "partOfSpeech": "adj",
+        "meaning": "Thiếu hụt, không thỏa đáng, không đáp ứng chuẩn",
+        "visualBreakdown": "In- (không) + adequate (đầy đủ)",
+        "ieltsSentence": "Inadequate drainage infrastructure exacerbated the flash flood devastation in suburban wards.",
+        "vietnameseTranslation": "Cơ sở hạ tầng thoát nước không thỏa đáng đã làm trầm trọng thêm sự tàn phá của lũ quét tại các phường ngoại ô.",
+        "level": "C1",
+        "collocation": "Grossly inadequate / Inadequate preparation"
+      },
+      {
+        "word": "Equilateral",
+        "partOfSpeech": "adj",
+        "meaning": "Đều cạnh nhau (tam giác đều)",
+        "visualBreakdown": "Equi- (bằng) + later (cạnh bên) + -al",
+        "ieltsSentence": "The geodesic dome design utilizes rigid equilateral triangle struts for load distribution.",
+        "vietnameseTranslation": "Thiết kế mái vòm trắc địa sử dụng các thanh giằng hình tam giác đều cứng vững để phân bổ tải trọng.",
+        "level": "C1",
+        "collocation": "Equilateral triangle / Geometric symmetry"
+      },
+      {
+        "word": "Equalize",
+        "partOfSpeech": "v",
+        "meaning": "San bằng, làm cho trở nên đồng đều cân bằng",
+        "visualBreakdown": "Equal + -ize",
+        "ieltsSentence": "Progressive taxation schemes strive to equalize post-fiscal household purchasing power.",
+        "vietnameseTranslation": "Các chương trình thuế lũy tiến phấn đấu san bằng sức mua của các hộ gia đình sau thuế.",
+        "level": "C1",
+        "collocation": "Equalize opportunities / Equalize the score"
+      },
+      {
+        "word": "Equivalence",
+        "partOfSpeech": "n",
+        "meaning": "Tính chất tương đương, sự ngang bằng tương đồng",
+        "visualBreakdown": "Equi- + val- + -ence",
+        "ieltsSentence": "Translators must preserve conceptual equivalence when rendering legal covenants into other tongues.",
+        "vietnameseTranslation": "Người dịch phải duy trì tính tương đương về khái niệm khi chuyển ngữ các khế ước pháp lý sang các ngôn ngữ khác.",
+        "level": "C1",
+        "collocation": "Functional equivalence / Moral equivalence"
+      },
+      {
+        "word": "Unequivocal",
+        "partOfSpeech": "adj",
+        "meaning": "Rõ ràng dứt khoát, không thể tranh cãi hay bàn cãi",
+        "visualBreakdown": "Un- (không) + equivocal (mập mờ)",
+        "ieltsSentence": "The climatology consortium issued an unequivocal warning regarding irreversible ocean warming.",
+        "vietnameseTranslation": "Hiệp hội khí hậu học đã đưa ra một cảnh báo rõ ràng dứt khoát về tình trạng ấm lên của đại dương không thể đảo ngược.",
+        "level": "C2",
+        "collocation": "Unequivocal support / Unequivocal evidence"
+      },
+      {
+        "word": "Equipotential",
+        "partOfSpeech": "adj",
+        "meaning": "Đẳng thế, có thế năng ngang bằng tại mọi điểm",
+        "visualBreakdown": "Equi- (bằng) + potential (thế năng)",
+        "ieltsSentence": "Charged conductors exhibit equipotential surfaces throughout electrodynamic equilibria.",
+        "vietnameseTranslation": "Các vật dẫn tích điện biểu hiện các mặt đẳng thế xuyên suốt các trạng thái cân bằng điện động lực học.",
+        "level": "C2",
+        "collocation": "Equipotential surface / Equipotential line"
+      },
+      {
+        "word": "Equator",
+        "partOfSpeech": "n",
+        "meaning": "Đường xích đạo chia đôi địa cầu",
+        "visualBreakdown": "Equat- (làm cho bằng nhau) + -or",
+        "ieltsSentence": "Tropical rainforest biomes straddle the equator, harboring immense biological richness.",
+        "vietnameseTranslation": "Các quần xã sinh vật rừng mưa nhiệt đới nằm vắt ngang đường xích đạo, chứa đựng sự phong phú sinh học khổng lồ.",
+        "level": "C1",
+        "collocation": "Cross the equator / Geographic equator"
+      },
+      {
+        "word": "Equitation",
+        "partOfSpeech": "n",
+        "meaning": "Nghệ thuật cưỡi ngựa cân bằng chuẩn mực",
+        "visualBreakdown": "Equi- (ngựa, thăng bằng) + -ation",
+        "ieltsSentence": "Classical equitation requires sublime physical coordination between rider and steed.",
+        "vietnameseTranslation": "Nghệ thuật cưỡi ngựa cổ điển đòi hỏi sự phối hợp thể chất thăng bằng tuyệt đỉnh giữa người cưỡi và chiến mã.",
+        "level": "C2",
+        "collocation": "Classical equitation / Master equitation"
+      },
+      {
+        "word": "Equiponderant",
+        "partOfSpeech": "adj",
+        "meaning": "Có trọng lượng ngang bằng nhau, cân sức",
+        "visualBreakdown": "Equi- (bằng) + ponder (sức nặng) + -ant",
+        "ieltsSentence": "The delicate chemical balance demands precisely equiponderant reagent measurements.",
+        "vietnameseTranslation": "Sự cân bằng hóa học tinh vi đòi hỏi các phép đo chất phản ứng có trọng lượng ngang bằng nhau một cách chính xác.",
+        "level": "C2",
+        "collocation": "Equiponderant masses / Equiponderant balance"
+      },
+      {
+        "word": "Equivocator",
+        "partOfSpeech": "n",
+        "meaning": "Kẻ nói quanh co, người dùng xảo ngôn lảng tránh",
+        "visualBreakdown": "Equivocat- + -or",
+        "ieltsSentence": "Voters grew exasperated with the political equivocator who avoided concrete pledges.",
+        "vietnameseTranslation": "Cử tri ngày càng bực bội với kẻ chính trị quanh co luôn lảng tránh những cam kết cụ thể.",
+        "level": "C2",
+        "collocation": "Political equivocator / Habitual equivocator"
+      },
+      {
+        "word": "Egalitarianism",
+        "partOfSpeech": "n",
+        "meaning": "Chủ nghĩa quân bình, học thuyết bình đẳng triệt để",
+        "visualBreakdown": "Egal- + -itarian + -ism",
+        "ieltsSentence": "Philosophical egalitarianism posits that all humans possess intrinsic moral dignity.",
+        "vietnameseTranslation": "Chủ nghĩa bình đẳng triết học thừa nhận rằng mọi con người đều sở hữu phẩm giá đạo đức nội tại.",
+        "level": "C2",
+        "collocation": "Radical egalitarianism / Embrace egalitarianism"
+      },
+      {
+        "word": "Equitably",
+        "partOfSpeech": "adv",
+        "meaning": "Một cách công bằng hợp đạo lý",
+        "visualBreakdown": "Equitable + -ly",
+        "ieltsSentence": "Municipal funding must be equitably apportioned across all suburban school districts.",
+        "vietnameseTranslation": "Kinh phí của thành phố phải được phân bổ một cách công bằng hợp đạo lý trên khắp các khu học chánh ngoại ô.",
+        "level": "C1",
+        "collocation": "Equitably distributed / Equitably shared"
+      },
+      {
+        "word": "Equitable-sharing",
+        "partOfSpeech": "n",
+        "meaning": "Cơ chế chia sẻ công bằng lợi ích tài nguyên",
+        "visualBreakdown": "Equitable + sharing",
+        "ieltsSentence": "The international convention establishes guidelines for the equitable-sharing of genetic resources.",
+        "vietnameseTranslation": "Công ước quốc tế thiết lập các hướng dẫn cho cơ chế chia sẻ công bằng các nguồn tài nguyên di truyền.",
+        "level": "C2",
+        "collocation": "Principle of equitable sharing / Benefit sharing"
       }
     ]
   },
   {
-    id: "r115",
-    root: "POLIS/POLIT",
-    meaning: "Thành bang, Chính trị, Đô thị chính quyền",
-    origin: "Greek (polis - city-state)",
-    description: "Trụ cột từ vựng của chủ đề Đô thị hóa (Urbanisation), Toàn cầu hóa và Khoa học chính trị trong IELTS.",
-    tip: "Nghĩ tới 'Police' (Cảnh sát giữ trật tự đô thị) hoặc 'Politics' (Chính trị quốc gia).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-jur-jud-leg",
+    "root": "JUR/JUD/LEG-",
+    "meaning": "Luật pháp, xét xử, quy chuẩn công lý",
+    "origin": "Gốc Latin (jus/juris: luật pháp, judicare: phán xét, lex/legis: điều luật ban hành)",
+    "description": "Trung tâm của hệ thống tư pháp, tính hợp pháp, trình tự tố tụng và các phán quyết định hình khuôn khổ pháp quyền.",
+    "tip": "Nhớ đến Jury (bồi thẩm đoàn), Judge (thẩm phán) và Legal (hợp pháp) – liên quan mật thiết đến công lý và luật pháp.",
+    "category": "Trục 3: Con Người, Quản Trị & Thể Chế",
+    "axis": "Trục 3",
+    "axisTitle": "TRỤC 3: CON NGƯỜI, QUẢN TRỊ & THỂ CHẾ",
+    "axisSubtitle": "Society & Governance (Con người & Thể chế)",
+    "stemKey": "JUR/JUD/LEG-",
+    "exampleWords": [
       {
-        word: "metropolitan",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về khu vực đại đô thị, thành phố lớn",
-        visualBreakdown: "METRO (mẹ) + POLIS (thành phố) -> thành phố mẹ, đô thị trung tâm gánh vác cả vùng",
-        ieltsSentence: "Efficient traffic management is a paramount issue facing millions of metropolitan residents.",
-        vietnameseTranslation: "Quản lý giao thông hiệu quả là một vấn đề tối quan trọng đối với hàng triệu cư dân vùng đại đô thị."
+        "word": "Jurisprudence",
+        "partOfSpeech": "n",
+        "meaning": "Khoa học pháp lý, triết lý nền tảng của luật học",
+        "visualBreakdown": "Juris (luật pháp) + prudence (sự cẩn trọng, thông thái)",
+        "ieltsSentence": "Comparative jurisprudence analyzes how diverse sovereign legal traditions define negligence.",
+        "vietnameseTranslation": "Khoa học pháp lý so sánh phân tích cách các truyền thống pháp lý có chủ quyền khác nhau định nghĩa sự cẩu thả.",
+        "level": "C2",
+        "collocation": "Medical jurisprudence / Modern jurisprudence"
       },
       {
-        word: "politicize",
-        partOfSpeech: "v",
-        meaning: "Chính trị hóa (biến sự việc thông dụng thành công cụ chính trị)",
-        visualBreakdown: "POLIT (chính trị) + IZE (biến đổi) -> nhuốm màu tranh danh đoạt lợi thể chế vào học thuật/khoa học",
-        ieltsSentence: "Discussions surrounding climate changes are highly politicized, hindering objective, science-first policy development.",
-        vietnameseTranslation: "Các cuộc thảo luận xung quanh biến đổi khí hậu bị chính trị hóa cao độ, cản trở việc xây dựng chính sách khách quan lấy khoa học làm đầu."
+        "word": "Judicious",
+        "partOfSpeech": "adj",
+        "meaning": "Sáng suốt, khôn ngoan, cân nhắc thấu đáo",
+        "visualBreakdown": "Judic- (xét xử) + -ious",
+        "ieltsSentence": "The judicious deployment of municipal fiscal reserves cushioned the economic downturn.",
+        "vietnameseTranslation": "Việc sử dụng sáng suốt các quỹ dự trữ tài khóa thành phố đã giảm bớt tác động của suy thoái kinh tế.",
+        "level": "C2",
+        "collocation": "Judicious use of resources / Judicious decision"
+      },
+      {
+        "word": "Legitimate",
+        "partOfSpeech": "adj",
+        "meaning": "Hợp pháp, chính đáng, tuân theo luật chuẩn mực",
+        "visualBreakdown": "Legitim- (luật pháp công nhận) + -ate",
+        "ieltsSentence": "Citizens harbor legitimate concerns regarding the environmental footprint of heavy manufacturing.",
+        "vietnameseTranslation": "Người dân có những mối lo ngại chính đáng về dấu chân môi trường của hoạt động sản xuất nặng.",
+        "level": "C1",
+        "collocation": "Legitimate concern / Fully legitimate"
+      },
+      {
+        "word": "Legislate",
+        "partOfSpeech": "v",
+        "meaning": "Lập pháp, ban hành luật chính thức",
+        "visualBreakdown": "Legis (luật) + late (đặt ra, mang tới)",
+        "ieltsSentence": "Parliament convened in emergency session to legislate nationwide renewable fuel benchmarks.",
+        "vietnameseTranslation": "Nghị viện đã triệu tập phiên họp khẩn cấp để ban hành luật chuẩn mực nhiên liệu tái tạo trên toàn quốc.",
+        "level": "C1",
+        "collocation": "Legislate against / Power to legislate"
+      },
+      {
+        "word": "Perjury",
+        "partOfSpeech": "n",
+        "meaning": "Tội khai man trước tòa dù đã tuyên thệ",
+        "visualBreakdown": "Per- (xuyên tạc, xấu xa) + jur (lời thề luật pháp) + -y",
+        "ieltsSentence": "The key prosecution witness was convicted of perjury following the emergence of forensic audio files.",
+        "vietnameseTranslation": "Nhân chứng truy tố chủ chốt đã bị kết tội khai man trước tòa sau khi các tệp âm thanh pháp y xuất hiện.",
+        "level": "C2",
+        "collocation": "Commit perjury / Guilty of perjury"
+      },
+      {
+        "word": "Adjucate",
+        "partOfSpeech": "v",
+        "meaning": "Phân xử, làm trọng tài phán quyết tranh chấp",
+        "visualBreakdown": "Ad- (hướng tới) + judic (xét xử) + -ate",
+        "ieltsSentence": "The international maritime tribunal was mandated to adjudicate competing littoral territorial claims.",
+        "vietnameseTranslation": "Tòa án hàng hải quốc tế đã được ủy thác để phân xử các yêu sách lãnh thổ ven biển cạnh tranh nhau.",
+        "level": "C2",
+        "collocation": "Adjudicate disputes / Power to adjudicate"
+      },
+      {
+        "word": "Abjure",
+        "partOfSpeech": "v",
+        "meaning": "Tuyên thệ từ bỏ, dứt khoát cự tuyệt tín niệm cũ",
+        "visualBreakdown": "Ab- (rời xa) + jure (thề)",
+        "ieltsSentence": "As a condition of the peace accord, the insurgent faction agreed to abjure armed combat.",
+        "vietnameseTranslation": "Như một điều kiện của hiệp định hòa bình, phe nổi dậy đã đồng ý tuyên thệ từ bỏ đấu tranh vũ trang.",
+        "level": "C2",
+        "collocation": "Abjure violence / Formally abjure"
+      },
+      {
+        "word": "Conjure",
+        "partOfSpeech": "v",
+        "meaning": "Gợi lên trong tâm trí như làm phép lạ",
+        "visualBreakdown": "Con- (cùng) + jure (thề, triệu gọi)",
+        "ieltsSentence": "The author's evocative prose conjures vivid imagery of bygone pastoral landscapes.",
+        "vietnameseTranslation": "Văn phong gợi cảm của tác giả gợi lên trong tâm trí những hình ảnh sống động về cảnh quan mục đồng thời xa xưa.",
+        "level": "C1",
+        "collocation": "Conjure up memories / Conjure an image"
+      },
+      {
+        "word": "Jurist",
+        "partOfSpeech": "n",
+        "meaning": "Chuyên gia luật học, học giả pháp luật lỗi lạc",
+        "visualBreakdown": "Jur- (luật pháp) + -ist",
+        "ieltsSentence": "Eminent jurists convened to formulate guidelines safeguarding digital consumer rights.",
+        "vietnameseTranslation": "Các chuyên gia luật học lỗi lạc đã triệu tập để xây dựng các hướng dẫn bảo vệ quyền lợi người tiêu dùng kỹ thuật số.",
+        "level": "C2",
+        "collocation": "Distinguished jurist / Constitutional jurist"
+      },
+      {
+        "word": "Judiciary",
+        "partOfSpeech": "n",
+        "meaning": "Hệ thống tư pháp tòa án trong tam quyền phân lập",
+        "visualBreakdown": "Judici- + -ary",
+        "ieltsSentence": "An independent judiciary provides an indispensable institutional check against executive excesses.",
+        "vietnameseTranslation": "Một hệ thống tư pháp độc lập mang lại sự kiềm chế thể chế không thể thiếu chống lại sự lạm quyền hành pháp.",
+        "level": "C1",
+        "collocation": "Independent judiciary / Member of the judiciary"
+      },
+      {
+        "word": "Judicial",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về tòa án xét xử và phán quyết tư pháp",
+        "visualBreakdown": "Judic- + -ial",
+        "ieltsSentence": "The magistrate ordered a comprehensive judicial inquiry into corporate procurement irregularities.",
+        "vietnameseTranslation": "Thẩm phán đã ra lệnh mở một cuộc điều tra tư pháp toàn diện về những điều bất thường trong mua sắm doanh nghiệp.",
+        "level": "C1",
+        "collocation": "Judicial review / Judicial system"
+      },
+      {
+        "word": "Legacy",
+        "partOfSpeech": "n",
+        "meaning": "Di sản để lại, dấu ấn pháp lý truyền đời",
+        "visualBreakdown": "Leg- (giao phó theo di chúc) + -acy",
+        "ieltsSentence": "Industrial pollution left an enduring legacy of environmental degradation in mining river basins.",
+        "vietnameseTranslation": "Ô nhiễm công nghiệp đã để lại một di sản lâu dài về sự suy thoái môi trường ở các lưu vực sông khai thác mỏ.",
+        "level": "C1",
+        "collocation": "Enduring legacy / Historical legacy"
+      },
+      {
+        "word": "Legislation",
+        "partOfSpeech": "n",
+        "meaning": "Hệ thống luật pháp được ban hành chính thức",
+        "visualBreakdown": "Legis- (luật) + lat- (ban bố) + -ion",
+        "ieltsSentence": "Robust antitrust legislation deters predatory monopolies from strangling fair commercial competition.",
+        "vietnameseTranslation": "Luật chống độc quyền mạnh mẽ ngăn chặn các tập đoàn độc quyền chèn ép bóp nghẹt sự cạnh tranh thương mại công bằng.",
+        "level": "C1",
+        "collocation": "Enact legislation / Environmental legislation"
+      },
+      {
+        "word": "Legislature",
+        "partOfSpeech": "n",
+        "meaning": "Cơ quan lập pháp, quốc hội nghị viện",
+        "visualBreakdown": "Legis- + lat- + -ure",
+        "ieltsSentence": "The unicameral legislature ratified statutory reforms mandating carbon accountability.",
+        "vietnameseTranslation": "Cơ quan lập pháp đơn viện đã phê chuẩn các cải cách theo luật định bắt buộc trách nhiệm giải trình carbon.",
+        "level": "C1",
+        "collocation": "State legislature / Elected legislature"
+      },
+      {
+        "word": "Delegate",
+        "partOfSpeech": "v",
+        "meaning": "Ủy thác quyền hạn pháp lý cho người khác",
+        "visualBreakdown": "De- (từ) + leg (chọn, giao theo luật) + -ate",
+        "ieltsSentence": "Department heads must learn to delegate operational decisions to regional project managers.",
+        "vietnameseTranslation": "Các trưởng bộ phận phải học cách ủy thác các quyết định vận hành cho các giám đốc dự án khu vực.",
+        "level": "C1",
+        "collocation": "Delegate authority / Delegate responsibility"
+      },
+      {
+        "word": "Privilege",
+        "partOfSpeech": "n",
+        "meaning": "Đặc quyền, luật riêng áp dụng cho số ít",
+        "visualBreakdown": "Privi- (riêng tư) + leg (luật)",
+        "ieltsSentence": "Diplomatic immunity is an international privilege intended to facilitate cross-border dialogue.",
+        "vietnameseTranslation": "Quyền miễn trừ ngoại giao là một đặc quyền quốc tế nhằm tạo điều kiện thuận lợi cho đối thoại xuyên biên giới.",
+        "level": "C1",
+        "collocation": "Special privilege / Abuse of privilege"
+      },
+      {
+        "word": "Colleague",
+        "partOfSpeech": "n",
+        "meaning": "Đồng nghiệp cùng chung hội đoàn pháp lý",
+        "visualBreakdown": "Col- (cùng) + league (kết nối luật)",
+        "ieltsSentence": "Scholars collaborated closely with international colleagues to evaluate epidemiological datasets.",
+        "vietnameseTranslation": "Các học giả đã cộng tác chặt chẽ với các đồng nghiệp quốc tế để đánh giá các tập dữ liệu dịch tễ học.",
+        "level": "C1",
+        "collocation": "Esteemed colleague / Close colleague"
+      },
+      {
+        "word": "Illegal",
+        "partOfSpeech": "adj",
+        "meaning": "Trái pháp luật, phi pháp bị cấm",
+        "visualBreakdown": "Il- (không) + legal (hợp pháp)",
+        "ieltsSentence": "Cross-border surveillance agencies clamped down on illegal wildlife trafficking networks.",
+        "vietnameseTranslation": "Các cơ quan giám sát xuyên biên giới đã trấn áp các mạng lưới buôn bán động vật hoang dã trái phép.",
+        "level": "C1",
+        "collocation": "Illegal conduct / Strictly illegal"
+      },
+      {
+        "word": "Legitimate-rights",
+        "partOfSpeech": "n",
+        "meaning": "Quyền lợi chính đáng được luật pháp bảo hộ",
+        "visualBreakdown": "Legitimate + rights",
+        "ieltsSentence": "Labor unions advocate relentlessly for the legitimate-rights of gig-economy freelancers.",
+        "vietnameseTranslation": "Các công đoàn lao động không ngừng vận động cho các quyền lợi chính đáng của những người làm việc tự do trong nền kinh tế gig.",
+        "level": "C1",
+        "collocation": "Safeguard legitimate rights / Exercise rights"
+      },
+      {
+        "word": "Non-judicial",
+        "partOfSpeech": "adj",
+        "meaning": "Phi tư pháp, hòa giải ngoài tòa án",
+        "visualBreakdown": "Non- + judicial",
+        "ieltsSentence": "Commercial partners often opt for non-judicial mediation to expedite commercial dispute resolution.",
+        "vietnameseTranslation": "Các đối tác thương mại thường chọn biện pháp hòa giải phi tư pháp ngoài tòa án để đẩy nhanh việc giải quyết tranh chấp.",
+        "level": "C2",
+        "collocation": "Non-judicial dispute resolution / Non-judicial settlement"
+      },
+      {
+        "word": "Juridical",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc quyền tư pháp và tố tụng pháp luật",
+        "visualBreakdown": "Jur- + dic- + -al",
+        "ieltsSentence": "Corporations are recognized as distinct juridical entities possessing statutory obligations.",
+        "vietnameseTranslation": "Các tập đoàn được công nhận là các thực thể pháp lý tư pháp riêng biệt sở hữu các nghĩa vụ theo luật định.",
+        "level": "C2",
+        "collocation": "Juridical entity / Juridical personality"
+      },
+      {
+        "word": "Extrajudicial",
+        "partOfSpeech": "adj",
+        "meaning": "Ngoài thẩm quyền tư pháp, hành vi phi pháp chế",
+        "visualBreakdown": "Extra- (bên ngoài) + judicial",
+        "ieltsSentence": "Humanitarian observers documented egregious extrajudicial killings perpetrated during civil strife.",
+        "vietnameseTranslation": "Các quan sát viên nhân đạo đã ghi lại những vụ giết người ngoài thẩm quyền tư pháp ghê tởm xảy ra trong các cuộc xung đột dân sự.",
+        "level": "C2",
+        "collocation": "Extrajudicial execution / Extrajudicial measures"
+      },
+      {
+        "word": "Juror",
+        "partOfSpeech": "n",
+        "meaning": "Bồi thẩm viên tuyên thệ trước tòa",
+        "visualBreakdown": "Jur- (tuyên thệ) + -or",
+        "ieltsSentence": "Prospective jurors undergo rigorous vetting to eliminate prospective ideological bias.",
+        "vietnameseTranslation": "Các bồi thẩm viên tương lai phải trải qua quá trình kiểm tra nghiêm ngặt để loại trừ những thiên kiến ý thức hệ tiềm tàng.",
+        "level": "C1",
+        "collocation": "Prospective juror / Embody juror impartiality"
+      },
+      {
+        "word": "Legitimacy",
+        "partOfSpeech": "n",
+        "meaning": "Tính chính danh, sự hợp pháp được xã hội thừa nhận",
+        "visualBreakdown": "Legitim- + -acy",
+        "ieltsSentence": "Electoral transparency reinforces the democratic legitimacy of newly elected regimes.",
+        "vietnameseTranslation": "Sự minh bạch trong bầu cử củng cố tính chính danh dân chủ của các chính quyền mới được bầu.",
+        "level": "C1",
+        "collocation": "Democratic legitimacy / Question the legitimacy"
+      },
+      {
+        "word": "Allegation",
+        "partOfSpeech": "n",
+        "meaning": "Lời cáo buộc pháp lý đưa ra trước tòa",
+        "visualBreakdown": "Ad- + leg- (nói điều kiện luật) + -ation",
+        "ieltsSentence": "Regulatory watchdogs probed serious allegations of insider trading within commercial banking firms.",
+        "vietnameseTranslation": "Các cơ quan giám sát quản lý đã điều tra những lời cáo buộc nghiêm trọng về giao dịch nội gián trong các ngân hàng thương mại.",
+        "level": "C1",
+        "collocation": "Serious allegation / Deny allegations"
       }
     ]
   },
   {
-    id: "r116",
-    root: "JUR/JUST",
-    meaning: "Pháp luật, Toà pháp lý, Công lý",
-    origin: "Latin (juris - law, justus - right)",
-    description: "Bộ cốt lõi trong các chủ đề IELTS về luật pháp, hiến pháp, hành vi phạm tội và hệ thống tư pháp hình sự.",
-    tip: "Liên hệ trực tiếp với 'Jury' (Bồi thẩm đoàn xét xử) hoặc 'Justice' (Công lý tuyệt đối).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-bio-gen-viv",
+    "root": "BIO/GEN/VIV-",
+    "meaning": "Sự sống, sinh sôi, phát sinh, biến đổi sinh học",
+    "origin": "Gốc Hy Lạp (bios: đời sống, genesis/genos: nguồn gốc, nòi giống) & Latin (vivere: sống)",
+    "description": "Các gốc từ cốt lõi mô tả nguồn gốc sự sống, quá trình tiến hóa sinh học, sức sống bền bỉ và sự biến đổi của các loài trong sinh quyển.",
+    "tip": "Nhớ đến Biology (sinh học), Generate (tạo ra), Survive/Revive (sống sót/hồi sinh) – tất cả xoay quanh năng lượng sống.",
+    "category": "Trục 4: Vận Động, Biến Đổi & Thời Không",
+    "axis": "Trục 4",
+    "axisTitle": "TRỤC 4: VẬN ĐỘNG, BIẾN ĐỔI & THỜI KHÔNG",
+    "axisSubtitle": "Dynamics & Change (Vận động & Biến đổi)",
+    "stemKey": "BIO/GEN/VIV-",
+    "exampleWords": [
       {
-        word: "jurisdiction",
-        partOfSpeech: "n",
-        meaning: "Quyền tài phán, thẩm quyền xét xử pháp lý",
-        visualBreakdown: "JUR (luật pháp) + DICT (tuyên bố) -> ranh giới được quyền công bố phán quyết pháp lý hợp pháp",
-        ieltsSentence: "The international court declared that the war crimes did not fall within its official jurisdiction.",
-        vietnameseTranslation: "Tòa án quốc tế tuyên bố rằng các tội ác chiến tranh không thuộc thẩm quyền xét xử chính thức của họ."
+        "word": "Biodiversity",
+        "partOfSpeech": "n",
+        "meaning": "Đa dạng sinh học, tính phong phú loài trong hệ sinh thái",
+        "visualBreakdown": "Bio- (sự sống) + diversity (tính đa dạng)",
+        "ieltsSentence": "Industrial runoff inflicts catastrophic impairment upon fragile riverine biodiversity.",
+        "vietnameseTranslation": "Nước thải công nghiệp gây ra tổn hại thảm khốc đối với sự đa dạng sinh học mong manh ở lưu vực sông.",
+        "level": "C1",
+        "collocation": "Biodiversity conservation / Loss of biodiversity"
       },
       {
-        word: "justify",
-        partOfSpeech: "v",
-        meaning: "Biện minh, chứng minh tính đúng đắn, hợp lẽ phải",
-        visualBreakdown: "JUST (luật/đúng đắn) + FY (làm cho) -> biến một hành động gây tranh cãi trở nên đúng pháp luật và đạo đức",
-        ieltsSentence: "The government could not justify the extreme measures implemented in the tax reform program.",
-        vietnameseTranslation: "Chính phủ đã không thể biện hộ cho các biện phái cực đoan được thực hiện trong chương trình cải cách thuế."
+        "word": "Genesis",
+        "partOfSpeech": "n",
+        "meaning": "Khởi nguyên, cội nguồn phát sinh của một hiện tượng",
+        "visualBreakdown": "Gen- (sinh ra) + -esis",
+        "ieltsSentence": "The genesis of the sovereign debt crisis can be traced to reckless subprime deregulation.",
+        "vietnameseTranslation": "Khởi nguyên của cuộc khủng hoảng nợ quốc gia có thể bắt nguồn từ việc bãi bỏ quy định cho vay dưới chuẩn một cách thiếu thận trọng.",
+        "level": "C2",
+        "collocation": "Genesis of an idea / Mark the genesis"
+      },
+      {
+        "word": "Heterogeneous",
+        "partOfSpeech": "adj",
+        "meaning": "Không đồng nhất, gồm nhiều phần tử đa tạp khác loại",
+        "visualBreakdown": "Hetero- (khác biệt) + gen (loại giống) + -ous",
+        "ieltsSentence": "Metropolitan enclaves accommodate heterogeneous populations exhibiting divergent linguistic heritages.",
+        "vietnameseTranslation": "Các khu vực đô thị đón nhận những quần thể dân cư không đồng nhất với những di sản ngôn ngữ khác biệt nhau.",
+        "level": "C1",
+        "collocation": "Heterogeneous population / Heterogeneous group"
+      },
+      {
+        "word": "Homogeneous",
+        "partOfSpeech": "adj",
+        "meaning": "Đồng nhất, thuần nhất về bản chất hoặc thành phần",
+        "visualBreakdown": "Homo- (tương tự) + gen (loại) + -ous",
+        "ieltsSentence": "Sociologists argue that globalization gradually erodes distinct regional cultures into homogeneous consumerism.",
+        "vietnameseTranslation": "Các nhà xã hội học lập luận rằng toàn cầu hóa dần dần làm xói mòn các nền văn hóa khu vực riêng biệt thành chủ nghĩa tiêu dùng thuần nhất.",
+        "level": "C1",
+        "collocation": "Homogeneous society / Culturally homogeneous"
+      },
+      {
+        "word": "Progeny",
+        "partOfSpeech": "n",
+        "meaning": "Hậu duệ, dòng dõi con cháu kế tục",
+        "visualBreakdown": "Pro- (phía trước) + gen (sinh ra) + -y",
+        "ieltsSentence": "Selective breeding programs bequeath genetic resistance to subsequent floral progeny.",
+        "vietnameseTranslation": "Các chương trình nhân giống có chọn lọc truyền lại tính kháng di truyền cho thế hệ con cháu thực vật tiếp theo.",
+        "level": "C2",
+        "collocation": "Direct progeny / Bear progeny"
+      },
+      {
+        "word": "Vivacious",
+        "partOfSpeech": "adj",
+        "meaning": "Hoạt bát, tràn trề sức sống và nhiệt huyết",
+        "visualBreakdown": "Viv- (sống động) + -acious",
+        "ieltsSentence": "The lecturer's vivacious discourse galvanized an auditorium of fatigued doctoral researchers.",
+        "vietnameseTranslation": "Bài thuyết giảng hoạt bát đầy sức sống của vị giảng viên đã khuấy động cả một khán phòng đầy những nghiên cứu sinh tiến sĩ đang mỏi mệt.",
+        "level": "C2",
+        "collocation": "Vivacious personality / Vivacious energy"
+      },
+      {
+        "word": "Symbiosis",
+        "partOfSpeech": "n",
+        "meaning": "Mối quan hệ cộng sinh tương hỗ cùng tồn tại",
+        "visualBreakdown": "Sym- (cùng nhau) + bio (sự sống) + -sis",
+        "ieltsSentence": "Leguminous crops exhibit metabolic symbiosis with nitrogen-fixing soil bacteria.",
+        "vietnameseTranslation": "Các cây họ đậu thể hiện mối quan hệ cộng sinh trao đổi chất với vi khuẩn cố định đạm trong đất.",
+        "level": "C1",
+        "collocation": "Mutual symbiosis / Delicate symbiosis"
+      },
+      {
+        "word": "Endogenous",
+        "partOfSpeech": "adj",
+        "meaning": "Nội sinh, phát sinh từ các yếu tố bên trong",
+        "visualBreakdown": "Endo- (bên trong) + gen (sinh ra) + -ous",
+        "ieltsSentence": "Sustainable macroeconomic stabilization requires endogenous industrial capability rather than foreign donor reliance.",
+        "vietnameseTranslation": "Sự ổn định kinh tế vĩ mô bền vững đòi hỏi năng lực công nghiệp nội sinh hơn là sự phụ thuộc vào các nhà tài trợ nước ngoài.",
+        "level": "C2",
+        "collocation": "Endogenous growth / Endogenous factors"
+      },
+      {
+        "word": "Exogenous",
+        "partOfSpeech": "adj",
+        "meaning": "Ngoại sinh, bắt nguồn từ các tác nhân bên ngoài",
+        "visualBreakdown": "Exo- (bên ngoài) + gen (sinh ra) + -ous",
+        "ieltsSentence": "Emerging economies suffered severe volatility due to unexpected exogenous monetary shocks.",
+        "vietnameseTranslation": "Các nền kinh tế mới nổi chịu sự biến động nghiêm trọng do những cú sốc tiền tệ ngoại sinh bất ngờ từ bên ngoài.",
+        "level": "C2",
+        "collocation": "Exogenous shock / Exogenous variable"
+      },
+      {
+        "word": "Convivial",
+        "partOfSpeech": "adj",
+        "meaning": "Thân thiện, chan hòa, ấm cúng và vui vẻ",
+        "visualBreakdown": "Con- (cùng) + viv (sống) + -ial",
+        "ieltsSentence": "The intergovernmental summit fostered a convivial atmosphere conducive to bilateral treaty ratification.",
+        "vietnameseTranslation": "Hội nghị thượng đỉnh liên chính phủ đã tạo ra một bầu không khí thân thiện chan hòa, thuận lợi cho việc phê chuẩn hiệp ước song phương.",
+        "level": "C2",
+        "collocation": "Convivial atmosphere / Convivial gathering"
+      },
+      {
+        "word": "Progenitor",
+        "partOfSpeech": "n",
+        "meaning": "Tổ tiên khai sinh, người khởi xướng tiền bối",
+        "visualBreakdown": "Pro- + gen- + -itor",
+        "ieltsSentence": "Alan Turing is universally celebrated as the intellectual progenitor of modern computing theory.",
+        "vietnameseTranslation": "Alan Turing được ca tụng rộng rãi như người tiền bối khai sinh ra lý thuyết điện toán hiện đại.",
+        "level": "C2",
+        "collocation": "Intellectual progenitor / Direct progenitor"
+      },
+      {
+        "word": "Revitalize",
+        "partOfSpeech": "v",
+        "meaning": "Tái sinh, tiếp thêm sinh khí và phục hồi năng lực",
+        "visualBreakdown": "Re- (lại) + vita (sự sống) + -ize",
+        "ieltsSentence": "Capital investment in heritage districts successfully revitalized the regional tourism ecosystem.",
+        "vietnameseTranslation": "Đầu tư vốn vào các khu di sản đã tái sinh thành công hệ sinh thái du lịch của khu vực.",
+        "level": "C1",
+        "collocation": "Revitalize the economy / Revitalize neighborhoods"
+      },
+      {
+        "word": "Biofuel",
+        "partOfSpeech": "n",
+        "meaning": "Nhiên liệu sinh học tái tạo",
+        "visualBreakdown": "Bio- (sinh học) + fuel (nhiên liệu)",
+        "ieltsSentence": "Aviation consortia investigate advanced biofuels to curtail long-haul carbon emissions footprints.",
+        "vietnameseTranslation": "Các tập đoàn hàng không điều tra các loại nhiên liệu sinh học tiên tiến để cắt giảm dấu chân phát thải carbon trên các chuyến bay đường dài.",
+        "level": "C1",
+        "collocation": "Commercial biofuel / Biofuel production"
+      },
+      {
+        "word": "Viable",
+        "partOfSpeech": "adj",
+        "meaning": "Khả thi, có khả năng tồn tại và phát triển độc lập",
+        "visualBreakdown": "Vi- (sống) + -able",
+        "ieltsSentence": "Subsidized solar micro-grids offer a commercially viable solution for remote off-grid hamlets.",
+        "vietnameseTranslation": "Các lưới điện mặt trời siêu nhỏ được trợ cấp mang lại một giải pháp khả thi về mặt thương mại cho các thôn bản vùng sâu ngoài lưới điện.",
+        "level": "C1",
+        "collocation": "Commercially viable / Economically viable"
+      },
+      {
+        "word": "Congenital",
+        "partOfSpeech": "adj",
+        "meaning": "Bẩm sinh, có sẵn từ thuở lọt lòng",
+        "visualBreakdown": "Con- (cùng) + genit (sinh) + -al",
+        "ieltsSentence": "Routine neonatal screenings identify congenital metabolic anomalies before onset of chronic distress.",
+        "vietnameseTranslation": "Sàng lọc sơ sinh định kỳ giúp xác định các dị tật chuyển hóa bẩm sinh trước khi phát sinh biến chứng mãn tính.",
+        "level": "C2",
+        "collocation": "Congenital defect / Congenital disorder"
+      },
+      {
+        "word": "Generate",
+        "partOfSpeech": "v",
+        "meaning": "Tạo ra, phát sinh, sản sinh năng lượng hay giá trị",
+        "visualBreakdown": "Gen- (sinh) + -erate",
+        "ieltsSentence": "Offshore wind turbines generate renewable power sufficient to illuminate metropolitan grids.",
+        "vietnameseTranslation": "Các tuabin gió ngoài khơi tạo ra nguồn điện tái tạo đủ để thắp sáng các lưới điện đô thị lớn.",
+        "level": "C1",
+        "collocation": "Generate revenue / Generate electricity"
+      },
+      {
+        "word": "Engender",
+        "partOfSpeech": "v",
+        "meaning": "Gây ra, làm nảy sinh tình cảm hay tình trạng",
+        "visualBreakdown": "En- (làm cho) + gender (sinh ra)",
+        "ieltsSentence": "Systemic algorithmic bias can engender widespread public skepticism toward automated welfare screening.",
+        "vietnameseTranslation": "Định kiến thuật toán mang tính hệ thống có thể làm nảy sinh sự hoài nghi lan rộng của công chúng đối với việc sàng lọc phúc lợi tự động.",
+        "level": "C2",
+        "collocation": "Engender trust / Engender controversy"
+      },
+      {
+        "word": "Degenerate",
+        "partOfSpeech": "v",
+        "meaning": "Thoái hóa, suy đồi biến chất sa sút",
+        "visualBreakdown": "De- (xuống) + gener (loại, sinh) + -ate",
+        "ieltsSentence": "Peaceful grassroots protests must not be permitted to degenerate into lawless civil riot.",
+        "vietnameseTranslation": "Các cuộc biểu tình ôn hòa của dân chúng không được phép thoái hóa biến chất thành bạo loạn dân sự vô pháp luật.",
+        "level": "C1",
+        "collocation": "Degenerate into / Degenerate condition"
+      },
+      {
+        "word": "Vivid",
+        "partOfSpeech": "adj",
+        "meaning": "Sống động, sắc nét, rõ ràng như thấy tận mắt",
+        "visualBreakdown": "Viv- (sống) + -id",
+        "ieltsSentence": "The memoirs provide a vivid firsthand chronicle of wartime social dislocation.",
+        "vietnameseTranslation": "Tập hồi ký cung cấp một biên niên sử sống động tận mắt về sự xáo trộn xã hội thời chiến.",
+        "level": "C1",
+        "collocation": "Vivid description / Vivid memory"
+      },
+      {
+        "word": "Survivor",
+        "partOfSpeech": "n",
+        "meaning": "Người sống sót qua thảm họa tai ương",
+        "visualBreakdown": "Sur- (trên) + viv (sống) + -or",
+        "ieltsSentence": "Trauma counselors mobilized to administer psychosocial triage to catastrophe survivors.",
+        "vietnameseTranslation": "Các chuyên gia tư vấn sang chấn tâm lý đã được huy động để tiến hành phân loại tâm lý xã hội cho những người sống sót sau thảm họa.",
+        "level": "C1",
+        "collocation": "Sole survivor / Earthquake survivors"
+      },
+      {
+        "word": "Biotechnology",
+        "partOfSpeech": "n",
+        "meaning": "Công nghệ sinh học ứng dụng",
+        "visualBreakdown": "Bio- + techno- + -logy",
+        "ieltsSentence": "Agricultural biotechnology pioneers drought-resistant crop genomes for arid developing territories.",
+        "vietnameseTranslation": "Công nghệ sinh học nông nghiệp tiên phong phát triển các bộ gen cây trồng chịu hạn cho các vùng lãnh thổ khô hạn đang phát triển.",
+        "level": "C1",
+        "collocation": "Advance in biotechnology / Modern biotechnology"
+      },
+      {
+        "word": "Pathogen",
+        "partOfSpeech": "n",
+        "meaning": "Mầm bệnh, tác nhân vi sinh sinh ra bệnh tật",
+        "visualBreakdown": "Patho- (bệnh) + gen (sinh ra)",
+        "ieltsSentence": "Airborne pathogens proliferate rapidly in poorly ventilated high-density enclosed facilities.",
+        "vietnameseTranslation": "Các mầm bệnh lây qua không khí sinh sôi nhanh chóng trong các cơ sở kín có mật độ cao và thông gió kém.",
+        "level": "C1",
+        "collocation": "Deadly pathogen / Airborne pathogen"
+      },
+      {
+        "word": "Biochemical",
+        "partOfSpeech": "adj",
+        "meaning": "Hóa sinh, thuộc về phản ứng hóa học sự sống",
+        "visualBreakdown": "Bio- + chemical",
+        "ieltsSentence": "Cellular respiration constitutes an intricate cascade of enzymatic biochemical reactions.",
+        "vietnameseTranslation": "Hô hấp tế bào tạo thành một chuỗi phức tạp các phản ứng hóa sinh xúc tác bằng enzyme.",
+        "level": "C1",
+        "collocation": "Biochemical process / Biochemical pathways"
+      },
+      {
+        "word": "Regeneration",
+        "partOfSpeech": "n",
+        "meaning": "Sự tái sinh, phục hồi sức sống cho vùng đất/mô",
+        "visualBreakdown": "Re- (lại) + gener (sinh) + -ation",
+        "ieltsSentence": "Urban regeneration schemes reclaimed derelict docklands for affordable civic housing.",
+        "vietnameseTranslation": "Các chương trình tái sinh đô thị đã cải tạo các khu bến tàu bỏ hoang để làm nhà ở xã hội giá cả phải chăng.",
+        "level": "C1",
+        "collocation": "Urban regeneration / Cellular regeneration"
+      },
+      {
+        "word": "Carcinogen",
+        "partOfSpeech": "n",
+        "meaning": "Chất sinh ung thư, tác nhân gây bệnh nan y",
+        "visualBreakdown": "Carcino- (ung thư) + gen (gây ra)",
+        "ieltsSentence": "Occupational health inspectors detected hazardous airborne carcinogens inside the smelting foundry.",
+        "vietnameseTranslation": "Các thanh tra viên sức khỏe nghề nghiệp đã phát hiện các chất gây ung thư nguy hiểm trong không khí bên trong xưởng đúc luyện kim.",
+        "level": "C1",
+        "collocation": "Known carcinogen / Environmental carcinogen"
       }
     ]
   },
   {
-    id: "r117",
-    root: "CRIM",
-    meaning: "Tội lỗi, Tội phạm, Khép tội",
-    origin: "Latin (crimen - fault, crime)",
-    description: "Duy nhất chuyên trị các chủ đề IELTS liên quan đến Tội phạm học (Criminology), biện pháp chế tài phòng chống tội phạm.",
-    tip: "Rất dễ nhờ qua từ 'Crime' (Tội ác) hoặc 'Criminal' (Tội phạm).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-struct-fac-fic",
+    "root": "STRUCT/FAC/FIC-",
+    "meaning": "Xây dựng, chế tạo, kiến tạo hình thể và thực thi",
+    "origin": "Gốc Latin (struere/structus: xây đắp, facere/factus/ficus: làm, chế tạo)",
+    "description": "Các gốc từ chủ đạo chỉ hoạt động thi công cơ sở vật chất, sản xuất công nghiệp, thiết kế kiến trúc và kiến tạo thực tiễn.",
+    "tip": "Nhớ đến Structure (cấu trúc), Factory (nhà máy chế tạo), Efficient (hiệu quả) – tất cả là hành động xây đắp và làm nên tác phẩm.",
+    "category": "Trục 4: Vận Động, Biến Đổi & Thời Không",
+    "axis": "Trục 4",
+    "axisTitle": "TRỤC 4: VẬN ĐỘNG, BIẾN ĐỔI & THỜI KHÔNG",
+    "axisSubtitle": "Dynamics & Change (Vận động & Biến đổi)",
+    "stemKey": "STRUCT/FAC/FIC-",
+    "exampleWords": [
       {
-        word: "criminology",
-        partOfSpeech: "n",
-        meaning: "Tội phạm học (ngành nghiên cứu hành vi phạm pháp)",
-        visualBreakdown: "CRIM (tội phạm) + OLOGY (ngành học khoa học) -> khoa học giải mã tâm lý và động cơ phạm pháp",
-        ieltsSentence: "He decided to pursue a master's degree in criminology to understand the socioeconomic roots of illegal acts.",
-        vietnameseTranslation: "Anh ấy quyết định theo đuổi bằng thạc sĩ về tội phạm học để hiểu nguồn gốc kinh tế - xã hội của các hành vi bất hợp pháp."
+        "word": "Infrastructure",
+        "partOfSpeech": "n",
+        "meaning": "Cơ sở hạ tầng kỹ thuật nền tảng của quốc gia",
+        "visualBreakdown": "Infra- (phía dưới) + struct (xây dựng) + -ure",
+        "ieltsSentence": "Strategic sovereign capital must fund resilient civil transit infrastructure.",
+        "vietnameseTranslation": "Vốn chiến lược của quốc gia phải tài trợ cho cơ sở hạ tầng giao thông dân sự có khả năng chống chịu cao.",
+        "level": "C1",
+        "collocation": "Critical infrastructure / Upgrade infrastructure"
       },
       {
-        word: "incriminate",
-        partOfSpeech: "v",
-        meaning: "Buộc tội, đổ tội, liên đới trách nhiệm hình sự",
-        visualBreakdown: "IN (làm cho) + CRIM (tội) + ATE -> đưa người ta vào tình thế vướng phải vòng rào tù tội",
-        ieltsSentence: "The prosecution presented leaked electronic receipts to incriminate the corrupt politician.",
-        vietnameseTranslation: "Bên công tố đã xuất trình các biên lai điện tử bị rò rỉ để buộc tội chính trị gia tham nhũng."
+        "word": "Facilitate",
+        "partOfSpeech": "v",
+        "meaning": "Tạo điều kiện thuận lợi, làm cho công việc dễ dàng",
+        "visualBreakdown": "Facil- (dễ dàng) + -itate",
+        "ieltsSentence": "Standardized digital border checks facilitate frictionless cross-continental supply flows.",
+        "vietnameseTranslation": "Kiểm tra biên giới kỹ thuật số chuẩn hóa tạo điều kiện thuận lợi cho các luồng cung ứng xuyên lục địa diễn ra trơn tru.",
+        "level": "C1",
+        "collocation": "Facilitate cooperation / Facilitate learning"
+      },
+      {
+        "word": "Constructive",
+        "partOfSpeech": "adj",
+        "meaning": "Mang tính xây dựng, hữu ích và tích cực",
+        "visualBreakdown": "Con- (cùng) + struct (xây) + -ive",
+        "ieltsSentence": "Bipartisan committees must engage in constructive dialogue to overcome statutory legislative deadlocks.",
+        "vietnameseTranslation": "Các ủy ban lưỡng đảng phải tham gia vào đối thoại mang tính xây dựng để vượt qua những bế tắc lập pháp theo luật định.",
+        "level": "C1",
+        "collocation": "Constructive feedback / Constructive dialogue"
+      },
+      {
+        "word": "Manufacture",
+        "partOfSpeech": "v",
+        "meaning": "Sản xuất quy mô lớn bằng máy móc thiết bị",
+        "visualBreakdown": "Manu- (tay) + fact (làm, chế tạo) + -ure",
+        "ieltsSentence": "Advanced semiconductor consortia manufacture microchips under extreme cleanroom protocols.",
+        "vietnameseTranslation": "Các tập đoàn bán dẫn tiên tiến sản xuất vi mạch theo các quy trình phòng sạch cực kỳ nghiêm ngặt.",
+        "level": "C1",
+        "collocation": "Manufacture goods / Precision manufacturing"
+      },
+      {
+        "word": "Destruction",
+        "partOfSpeech": "n",
+        "meaning": "Sự phá hủy, tàn phá làm sụp đổ cấu trúc",
+        "visualBreakdown": "De- (xuống) + struct (xây) + -ion",
+        "ieltsSentence": "Unregulated strip mining results in irreparable habitat destruction across tropical watersheds.",
+        "vietnameseTranslation": "Khai thác mỏ lộ thiên không được kiểm soát dẫn đến sự phá hủy môi trường sống không thể phục hồi khắp các lưu vực sông nhiệt đới.",
+        "level": "C1",
+        "collocation": "Environmental destruction / Weapons of mass destruction"
+      },
+      {
+        "word": "Benefactor",
+        "partOfSpeech": "n",
+        "meaning": "Nhà ân nhân, người làm điều thiện hảo tâm",
+        "visualBreakdown": "Bene- (tốt lành) + fact (làm) + -or",
+        "ieltsSentence": "An anonymous civic benefactor donated endowment funds for the university genomics library.",
+        "vietnameseTranslation": "Một nhà ân nhân dân sự ẩn danh đã quyên góp quỹ hiến tặng cho thư viện bộ gen của trường đại học.",
+        "level": "C2",
+        "collocation": "Generous benefactor / Secret benefactor"
+      },
+      {
+        "word": "Malefactor",
+        "partOfSpeech": "n",
+        "meaning": "Kẻ làm điều ác, tội phạm gây hại xã hội",
+        "visualBreakdown": "Male- (xấu xa) + fact (làm) + -or",
+        "ieltsSentence": "Judicial authorities pledged that corporate malefactors would face severe penal incarceration.",
+        "vietnameseTranslation": "Các cơ quan tư pháp cam kết rằng những kẻ phạm tội doanh nghiệp sẽ phải đối mặt với án tù hình sự nghiêm khắc.",
+        "level": "C2",
+        "collocation": "Punish malefactors / Corporate malefactor"
+      },
+      {
+        "word": "Artifice",
+        "partOfSpeech": "n",
+        "meaning": "Sự khéo léo xảo quyệt, mưu mẹo nhân tạo tinh vi",
+        "visualBreakdown": "Arti- (nghệ thuật) + fic (chế tạo)",
+        "ieltsSentence": "The diplomat pierced through political artifice to address pressing bilateral disputes directly.",
+        "vietnameseTranslation": "Nhà ngoại giao đã nhìn xuyên qua những mưu mẹo chính trị tinh vi để giải quyết trực tiếp các tranh chấp song phương cấp bách.",
+        "level": "C2",
+        "collocation": "Deceptive artifice / Pure artifice"
+      },
+      {
+        "word": "Efficacy",
+        "partOfSpeech": "n",
+        "meaning": "Hiệu lực, tính hiệu quả thực tế của phương pháp",
+        "visualBreakdown": "Ef- (ngoài) + fic (làm ra) + -acy",
+        "ieltsSentence": "Double-blind clinical trials confirmed the therapeutic efficacy of the antiviral regimen.",
+        "vietnameseTranslation": "Các thử nghiệm lâm sàng mù đôi đã khẳng định hiệu lực điều trị của phác đồ kháng virus.",
+        "level": "C1",
+        "collocation": "Therapeutic efficacy / Clinical efficacy"
+      },
+      {
+        "word": "Substructure",
+        "partOfSpeech": "n",
+        "meaning": "Cấu trúc nền móng bên dưới mặt đất",
+        "visualBreakdown": "Sub- (dưới) + struct (xây dựng) + -ure",
+        "ieltsSentence": "Geotechnical engineers fortified the suspension bridge's concrete substructure against tidal scour.",
+        "vietnameseTranslation": "Các kỹ sư địa kỹ thuật đã gia cố cấu trúc nền móng bê tông của cây cầu treo chống lại sự xói mòn của thủy triều.",
+        "level": "C2",
+        "collocation": "Underground substructure / Concrete substructure"
+      },
+      {
+        "word": "Superstructure",
+        "partOfSpeech": "n",
+        "meaning": "Kiến trúc thượng tầng bên trên mặt đất/xã hội",
+        "visualBreakdown": "Super- (trên) + struct (xây) + -ure",
+        "ieltsSentence": "Sociological theorists analyze how the ideological superstructure legitimizes economic relations.",
+        "vietnameseTranslation": "Các nhà lý thuyết xã hội học phân tích cách thức kiến trúc thượng tầng ý thức hệ hợp thức hóa các quan hệ kinh tế.",
+        "level": "C2",
+        "collocation": "Ideological superstructure / Steel superstructure"
+      },
+      {
+        "word": "Artifact",
+        "partOfSpeech": "n",
+        "meaning": "Hiện vật khảo cổ, đồ tạo tác do bàn tay con người làm",
+        "visualBreakdown": "Arti- (kỹ nghệ) + fact (làm ra)",
+        "ieltsSentence": "Museum conservators meticulously restored ceramic artifacts unearthed from Bronze Age burial sites.",
+        "vietnameseTranslation": "Các chuyên gia bảo tồn bảo tàng đã tỉ mỉ phục chế các đồ tạo tác gốm được khai quật từ các khu mộ táng Thời đại Đồ đồng.",
+        "level": "C1",
+        "collocation": "Ancient artifact / Cultural artifact"
+      },
+      {
+        "word": "Facsimile",
+        "partOfSpeech": "n",
+        "meaning": "Bản sao chụp chính xác hoàn hảo nguyên mẫu",
+        "visualBreakdown": "Fac- (làm) + simile (giống hệt)",
+        "ieltsSentence": "Archivists handled a delicate facsimile of the Magna Carta to protect the fragile original parchment.",
+        "vietnameseTranslation": "Các nhà lưu trữ đã xử lý một bản sao chụp chính xác của Đại Hiến chương để bảo vệ tấm da dê gốc mỏng manh.",
+        "level": "C2",
+        "collocation": "Exact facsimile / Digital facsimile"
+      },
+      {
+        "word": "Deconstruct",
+        "partOfSpeech": "v",
+        "meaning": "Giải cấu trúc, phân tích bóc tách các lớp ý nghĩa",
+        "visualBreakdown": "De- (tách) + con- + struct (xây)",
+        "ieltsSentence": "Literary theorists deconstruct historical narratives to unveil covert ideological hegemony.",
+        "vietnameseTranslation": "Các nhà lý thuyết văn học giải cấu trúc các câu chuyện lịch sử để vạch trần quyền bá chủ ý thức hệ ngấm ngầm.",
+        "level": "C1",
+        "collocation": "Deconstruct arguments / Deconstruct assumptions"
+      },
+      {
+        "word": "Instrumental",
+        "partOfSpeech": "adj",
+        "meaning": "Đóng vai trò phương tiện quyết định để đạt kết quả",
+        "visualBreakdown": "In- + stru- (xây đắp, sắp đặt) + -ment- + -al",
+        "ieltsSentence": "Multilateral diplomatic treaties were instrumental in averting catastrophic escalation.",
+        "vietnameseTranslation": "Các hiệp ước ngoại giao đa phương đã đóng vai trò quyết định trong việc ngăn chặn sự leo thang thảm khốc.",
+        "level": "C1",
+        "collocation": "Instrumental in / Play an instrumental role"
+      },
+      {
+        "word": "Obstruct",
+        "partOfSpeech": "v",
+        "meaning": "Gây cản trở, làm tắc nghẽn giao thông/tiến trình",
+        "visualBreakdown": "Ob- (chống lại) + struct (xây chắn)",
+        "ieltsSentence": "Partisan gridlock threatened to obstruct necessary statutory expenditure approvals.",
+        "vietnameseTranslation": "Bế tắc phe phái đe dọa làm cản trở các phê duyệt chi tiêu cần thiết theo luật định.",
+        "level": "C1",
+        "collocation": "Obstruct justice / Obstruct traffic"
+      },
+      {
+        "word": "Prolific",
+        "partOfSpeech": "adj",
+        "meaning": "Sáng tác sung mãn, sinh sôi nảy nở dồi dào",
+        "visualBreakdown": "Proles (hậu duệ) + fic (làm ra)",
+        "ieltsSentence": "The prolific researcher published dozens of seminal treatises on sustainable energy transitions.",
+        "vietnameseTranslation": "Nhà nghiên cứu sáng tác sung mãn đã xuất bản hàng chục luận thuyết có ảnh hưởng sâu rộng về chuyển dịch năng lượng bền vững.",
+        "level": "C1",
+        "collocation": "Prolific writer / Highly prolific"
+      },
+      {
+        "word": "Affection",
+        "partOfSpeech": "n",
+        "meaning": "Tình cảm gắn bó, sự yêu mến chân thành",
+        "visualBreakdown": "Ad- + fect (làm cảm động) + -ion",
+        "ieltsSentence": "Civic leaders earned profound public affection through their compassionate disaster stewardship.",
+        "vietnameseTranslation": "Các nhà lãnh đạo dân sự đã giành được tình cảm gắn bó sâu sắc của công chúng nhờ sự chỉ đạo khắc phục thảm họa đầy trắc ẩn.",
+        "level": "C1",
+        "collocation": "Deep affection / Show affection"
+      },
+      {
+        "word": "Defective",
+        "partOfSpeech": "adj",
+        "meaning": "Bị lỗi, khiếm khuyết trong chế tạo kỹ thuật",
+        "visualBreakdown": "De- (thiếu sót) + fect (làm) + -ive",
+        "ieltsSentence": "Automotive manufacturers issued voluntary recalls to replace defective brake assembly modules.",
+        "vietnameseTranslation": "Các nhà sản xuất ô tô đã ban hành lệnh triệu hồi tự nguyện để thay thế các mô-đun cụm phanh bị lỗi khiếm khuyết.",
+        "level": "C1",
+        "collocation": "Defective product / Defective equipment"
+      },
+      {
+        "word": "Factor",
+        "partOfSpeech": "n",
+        "meaning": "Nhân tố cấu thành, yếu tố tác động tạo ra kết quả",
+        "visualBreakdown": "Fact (làm nên) + -or",
+        "ieltsSentence": "Socioeconomic disparity remains a pivotal risk factor in preventive epidemiology.",
+        "vietnameseTranslation": "Sự chênh lệch kinh tế xã hội vẫn là một nhân tố rủi ro then chốt trong dịch tễ học dự phòng.",
+        "level": "C1",
+        "collocation": "Key factor / Decisive factor"
+      },
+      {
+        "word": "Fictitious",
+        "partOfSpeech": "adj",
+        "meaning": "Hư cấu, tưởng tượng ra, không có thực tế",
+        "visualBreakdown": "Fict- (chế tạo, bịa ra) + -ious",
+        "ieltsSentence": "Auditors discovered numerous fictitious invoices manufactured to siphon public infrastructure grants.",
+        "vietnameseTranslation": "Các kiểm toán viên đã phát hiện nhiều hóa đơn hư cấu được tạo ra để bòn rút các khoản trợ cấp cơ sở hạ tầng công.",
+        "level": "C2",
+        "collocation": "Fictitious name / Purely fictitious"
+      },
+      {
+        "word": "Structural",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về cấu trúc cốt lõi, mang tính cơ cấu",
+        "visualBreakdown": "Struct- + -ural",
+        "ieltsSentence": "Economists recommend sweeping structural adjustments to enhance domestic labor productivity.",
+        "vietnameseTranslation": "Các nhà kinh tế khuyến nghị các điều chỉnh mang tính cơ cấu sâu rộng để nâng cao năng suất lao động trong nước.",
+        "level": "C1",
+        "collocation": "Structural reform / Structural integrity"
+      },
+      {
+        "word": "Restructure",
+        "partOfSpeech": "v",
+        "meaning": "Tái cơ cấu, cải tổ lại cấu trúc tổ chức",
+        "visualBreakdown": "Re- + struct- + -ure",
+        "ieltsSentence": "The conglomerate must restructure its regional subsidiaries to curtail soaring operational overhead.",
+        "vietnameseTranslation": "Tập đoàn phải tái cơ cấu các công ty con trong khu vực để cắt giảm chi phí vận hành đang tăng vọt.",
+        "level": "C1",
+        "collocation": "Restructure debt / Restructure an organization"
+      },
+      {
+        "word": "Malfunction",
+        "partOfSpeech": "n",
+        "meaning": "Sự cố trục trặc kỹ thuật làm ngừng hoạt động",
+        "visualBreakdown": "Mal- (xấu) + func- (thực hiện) + -tion",
+        "ieltsSentence": "A minor software malfunction precipitated cascading outages across the electrical substation grid.",
+        "vietnameseTranslation": "Một sự cố trục trặc phần mềm nhỏ đã gây ra tình trạng mất điện liên hoàn khắp lưới trạm biến áp điện.",
+        "level": "C1",
+        "collocation": "Technical malfunction / Suffer a malfunction"
+      },
+      {
+        "word": "Deficit",
+        "partOfSpeech": "n",
+        "meaning": "Thâm hụt cán cân ngân sách hoặc thiếu hụt cán cân",
+        "visualBreakdown": "De- (thiếu) + fic- (làm ra) + -it",
+        "ieltsSentence": "Chronic current account deficits render the sovereign exchange rate susceptible to speculative raids.",
+        "vietnameseTranslation": "Tình trạng thâm hụt tài khoản vãng lai mãn tính khiến tỷ giá hối đoái của quốc gia dễ bị ảnh hưởng bởi các cuộc tấn công đầu cơ.",
+        "level": "C1",
+        "collocation": "Budget deficit / Trade deficit"
       }
     ]
   },
   {
-    id: "r118",
-    root: "REG/REIG",
-    meaning: "Cai trị, Chính thể, Quy tắc điều hành",
-    origin: "Latin (regere - to rule, king)",
-    description: "Nói về cấu trúc quyền lực nhà nước, chế độ cai trị hoặc các biện pháp kiểm soát nghiêm ngặt của chính phủ.",
-    tip: "Liên tưởng 'Reign' (Triều đại cai trị của nhà vua) hoặc 'Regular' (Theo quy tắc, đều đặn).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-flu-flux",
+    "root": "FLU/FLUX-",
+    "meaning": "Dòng chảy, lưu chuyển, biến thiên không ngừng",
+    "origin": "Gốc Latin (fluere/fluxus: chảy, tuôn trào)",
+    "description": "Các gốc từ diễn tả sự lưu chuyển của tiền tệ, sóng di cư, biến thiên tài chính, lưu lượng chất lỏng và biến động khôn lường.",
+    "tip": "Nhớ đến Fluid (chất lỏng), Influx (dòng người đổ về), Fluctuate (biến động lên xuống) – mọi thứ luôn luôn chuyển dịch.",
+    "category": "Trục 4: Vận Động, Biến Đổi & Thời Không",
+    "axis": "Trục 4",
+    "axisTitle": "TRỤC 4: VẬN ĐỘNG, BIẾN ĐỔI & THỜI KHÔNG",
+    "axisSubtitle": "Dynamics & Change (Vận động & Biến đổi)",
+    "stemKey": "FLU/FLUX-",
+    "exampleWords": [
       {
-        word: "regime",
-        partOfSpeech: "n",
-        meaning: "Chế độ cai trị, chính thể chính trị",
-        visualBreakdown: "REG (cai trị) + IME -> hệ thống tổ chức bộ máy cai trị quốc gia",
-        ieltsSentence: "The country transition from a military regime to an electoral democracy in late 1990s.",
-        vietnameseTranslation: "Đất nước đã chuyển đổi từ chế độ quân sự sang một nền dân chủ bầu cử vào cuối những năm 1990."
+        "word": "Fluctuate",
+        "partOfSpeech": "v",
+        "meaning": "Dao động, biến động lên xuống liên tục thất thường",
+        "visualBreakdown": "Fluctu- (sóng biển chảy) + -ate",
+        "ieltsSentence": "Commodity market valuations fluctuate wildly during periods of escalating geopolitical hostility.",
+        "vietnameseTranslation": "Định giá thị trường hàng hóa dao động dữ dội trong các giai đoạn leo thang thù địch địa chính trị.",
+        "level": "C1",
+        "collocation": "Fluctuate wildly / Prices fluctuate"
       },
       {
-        word: "sovereign",
-        partOfSpeech: "n, adj",
-        meaning: "Chủ quyền tối cao, quốc gia độc lập có quyền tự quyết",
-        visualBreakdown: "SOV (trên cùng) + REIGN (cai trị) -> quyền thống trị tối cao không phụ thuộc bên ngoài",
-        ieltsSentence: "Every sovereign state has the absolute right to manage its internal legislative reforms.",
-        vietnameseTranslation: "Mỗi quốc gia có chủ quyền đều có quyền tuyệt đối trong việc quản lý các cải cải lập pháp nội bộ của mình."
+        "word": "Affluent",
+        "partOfSpeech": "adj",
+        "meaning": "Giàu có dồi dào, tiền bạc dư dả sung túc",
+        "visualBreakdown": "Ad- (chảy về) + flu (chảy) + -ent",
+        "ieltsSentence": "Affluent residential suburbs exhibit substantially higher per-capita energy consumption rates.",
+        "vietnameseTranslation": "Các khu ngoại ô dân cư giàu có dồi dào thể hiện mức tiêu thụ năng lượng bình quân đầu người cao hơn đáng kể.",
+        "level": "C1",
+        "collocation": "Affluent society / Affluent neighborhood"
+      },
+      {
+        "word": "Influx",
+        "partOfSpeech": "n",
+        "meaning": "Dòng người/dòng tiền ồ ạt tràn vào đột ngột",
+        "visualBreakdown": "In- (vào trong) + flux (dòng chảy)",
+        "ieltsSentence": "The coastal tourism hub accommodated an overwhelming seasonal influx of international holidaymakers.",
+        "vietnameseTranslation": "Trung tâm du lịch ven biển đã tiếp nhận một dòng khách du lịch quốc tế ồ ạt đổ về theo mùa quá lớn.",
+        "level": "C1",
+        "collocation": "Massive influx / Influx of capital"
+      },
+      {
+        "word": "Superfluous",
+        "partOfSpeech": "adj",
+        "meaning": "Thừa thãi, dư thừa vượt mức cần thiết",
+        "visualBreakdown": "Super- (vượt trên) + flu (chảy tràn) + -ous",
+        "ieltsSentence": "Streamlined administrative protocols eliminate superfluous paperwork and redundant clearance queues.",
+        "vietnameseTranslation": "Các quy trình hành chính tinh gọn loại bỏ giấy tờ thừa thãi và các hàng đợi phê duyệt trùng lặp.",
+        "level": "C2",
+        "collocation": "Superfluous details / Render superfluous"
+      },
+      {
+        "word": "Effluent",
+        "partOfSpeech": "n",
+        "meaning": "Nước thải công nghiệp xả thẳng ra nguồn nước",
+        "visualBreakdown": "Ex- (ra ngoài) + flu (chảy) + -ent",
+        "ieltsSentence": "Stricter municipal ordinances prohibit the unauthorized discharge of toxic chemical effluent into inland waterways.",
+        "vietnameseTranslation": "Các pháp lệnh đô thị nghiêm ngặt hơn cấm việc xả thải nước thải hóa chất độc hại trái phép vào các tuyến đường thủy nội địa.",
+        "level": "C2",
+        "collocation": "Toxic effluent / Industrial effluent"
+      },
+      {
+        "word": "Mellifluous",
+        "partOfSpeech": "adj",
+        "meaning": "Ngọt ngào êm dịu, như dòng mật chảy trôi",
+        "visualBreakdown": "Melli- (mật ngọt) + flu (chảy) + -ous",
+        "ieltsSentence": "The orator's mellifluous baritone voice captivated the academic assembly.",
+        "vietnameseTranslation": "Giọng nam trung ngọt ngào êm dịu của vị diễn giả đã cuốn hút cả hội đồng học thuật.",
+        "level": "C2",
+        "collocation": "Mellifluous voice / Mellifluous tone"
+      },
+      {
+        "word": "Confluence",
+        "partOfSpeech": "n",
+        "meaning": "Nơi hợp lưu của hai con sông; sự hội tụ thời cơ",
+        "visualBreakdown": "Con- (cùng nhau) + flu (chảy) + -ence",
+        "ieltsSentence": "A rare confluence of macro-financial factors triggered an unexpected rally in clean-tech equities.",
+        "vietnameseTranslation": "Một sự hội tụ hiếm hoi của các nhân tố tài chính vĩ mô đã kích hoạt đợt tăng giá bất ngờ của các cổ phiếu công nghệ sạch.",
+        "level": "C2",
+        "collocation": "Confluence of events / At the confluence"
+      },
+      {
+        "word": "Fluidity",
+        "partOfSpeech": "n",
+        "meaning": "Tính linh hoạt mềm dẻo, dễ thích ứng biến chuyển",
+        "visualBreakdown": "Fluid- (chất lỏng) + -ity",
+        "ieltsSentence": "Modern remote work arrangements provide geographic fluidity for international knowledge consultants.",
+        "vietnameseTranslation": "Các sắp xếp làm việc từ xa hiện đại mang lại tính linh hoạt mềm dẻo về mặt địa lý cho các chuyên gia tư vấn tri thức quốc tế.",
+        "level": "C1",
+        "collocation": "Social fluidity / Career fluidity"
+      },
+      {
+        "word": "Effluvium",
+        "partOfSpeech": "n",
+        "meaning": "Mùi hôi thối bốc lên, khí độc tỏa ra từ rác rưởi",
+        "visualBreakdown": "Ex- + flu- + -ium",
+        "ieltsSentence": "Sanitation crews wore respiratory masks to endure the noxious effluvium emanating from the landfill basin.",
+        "vietnameseTranslation": "Các đội vệ sinh phải đeo mặt nạ phòng độc để chịu đựng luồng khí độc hôi thối bốc ra từ lòng bãi rác.",
+        "level": "C2",
+        "collocation": "Noxious effluvium / Pungent effluvium"
+      },
+      {
+        "word": "Reflux",
+        "partOfSpeech": "n",
+        "meaning": "Dòng trào ngược trở lại (dạ dày/thủy triều)",
+        "visualBreakdown": "Re- (ngược lại) + flux (chảy)",
+        "ieltsSentence": "Chronic gastroesophageal reflux damages mucosal tissues along the lower esophageal tract.",
+        "vietnameseTranslation": "Tình trạng trào ngược dạ dày thực quản mãn tính làm tổn thương các mô niêm mạc dọc theo đường thực quản dưới.",
+        "level": "C1",
+        "collocation": "Acid reflux / Tidal reflux"
+      },
+      {
+        "word": "Flux",
+        "partOfSpeech": "n",
+        "meaning": "Tình trạng biến chuyển không ngừng, bất định",
+        "visualBreakdown": "Flux- (dòng chảy)",
+        "ieltsSentence": "Global supply chains remain in a state of persistent flux following geopolitical trade reconfigurations.",
+        "vietnameseTranslation": "Các chuỗi cung ứng toàn cầu vẫn ở trong tình trạng biến chuyển không ngừng sau những tái cấu trúc thương mại địa chính trị.",
+        "level": "C2",
+        "collocation": "In a state of flux / Constant flux"
+      },
+      {
+        "word": "Fluent",
+        "partOfSpeech": "adj",
+        "meaning": "Lưu loát trôi chảy trong diễn đạt và ngôn ngữ",
+        "visualBreakdown": "Flu- (chảy) + -ent",
+        "ieltsSentence": "Diplomatic emissaries must demonstrate fluent command of host country diplomatic idioms.",
+        "vietnameseTranslation": "Các đặc sứ ngoại giao phải thể hiện sự thông thạo lưu loát các thành ngữ ngoại giao của nước sở tại.",
+        "level": "C1",
+        "collocation": "Fluent in English / Speak fluently"
+      },
+      {
+        "word": "Influence",
+        "partOfSpeech": "n",
+        "meaning": "Sức ảnh hưởng tác động lan tỏa từ từ",
+        "visualBreakdown": "In- (vào trong) + flu (chảy) + -ence",
+        "ieltsSentence": "Multinational tech conglomerates exert disproportionate influence over public media discourse.",
+        "vietnameseTranslation": "Các tập đoàn công nghệ đa quốc gia thực thi sức ảnh hưởng không cân xứng lên diễn ngôn truyền thông đại chúng.",
+        "level": "C1",
+        "collocation": "Exert influence / Undue influence"
+      },
+      {
+        "word": "Affluence",
+        "partOfSpeech": "n",
+        "meaning": "Sự giàu sang phú quý, cảnh phồn vinh của cải",
+        "visualBreakdown": "Ad- + flu- + -ence",
+        "ieltsSentence": "The rapid expansion of middle-class affluence fuels unprecedented consumer demand for sustainable apparel.",
+        "vietnameseTranslation": "Sự mở rộng nhanh chóng của sự giàu sang phú quý tầng lớp trung lưu thúc đẩy nhu cầu tiêu dùng chưa từng có đối với trang phục bền vững.",
+        "level": "C1",
+        "collocation": "Growing affluence / Symbol of affluence"
+      },
+      {
+        "word": "Defluxion",
+        "partOfSpeech": "n",
+        "meaning": "Sự chảy xuống của chất lỏng, dịch tiết cơ thể",
+        "visualBreakdown": "De- (xuống) + flux (chảy) + -ion",
+        "ieltsSentence": "Physicians monitored the continuous defluxion of lymphatic secretions post-surgery.",
+        "vietnameseTranslation": "Các bác sĩ đã theo dõi sự chảy xuống liên tục của các chất tiết bạch huyết sau phẫu thuật.",
+        "level": "C2",
+        "collocation": "Excessive defluxion / Rate of defluxion"
+      },
+      {
+        "word": "Fluorescent",
+        "partOfSpeech": "adj",
+        "meaning": "Phát huỳnh quang sáng rực khi kích thích bức xạ",
+        "visualBreakdown": "Fluor- (chất phát sáng) + -escent",
+        "ieltsSentence": "Marine biologists discovered fluorescent bioluminescent deep-sea cnidarians.",
+        "vietnameseTranslation": "Các nhà sinh vật biển đã phát hiện ra các loài thích ty bào phát huỳnh quang phát quang sinh học dưới biển sâu.",
+        "level": "C1",
+        "collocation": "Fluorescent lamp / Fluorescent proteins"
+      },
+      {
+        "word": "Fluoride",
+        "partOfSpeech": "n",
+        "meaning": "Hợp chất florua bảo vệ men răng",
+        "visualBreakdown": "Fluor- + -ide",
+        "ieltsSentence": "Controlled water fluoridation reinforces pediatric dental enamel against virulent decay.",
+        "vietnameseTranslation": "Việc bổ sung florua có kiểm soát vào nguồn nước giúp củng cố men răng của trẻ em chống lại sâu răng nguy hiểm.",
+        "level": "C1",
+        "collocation": "Water fluoridation / High fluoride"
+      },
+      {
+        "word": "Fluctuation",
+        "partOfSpeech": "n",
+        "meaning": "Sự dao động trồi sụt của số liệu/chỉ số",
+        "visualBreakdown": "Fluctu- + -ation",
+        "ieltsSentence": "Seasonal price fluctuations impose significant budgeting hardships upon agrarian micro-enterprises.",
+        "vietnameseTranslation": "Sự dao động giá cả theo mùa gây ra những khó khăn ngân sách đáng kể cho các doanh nghiệp vi mô nông nghiệp.",
+        "level": "C1",
+        "collocation": "Wild fluctuation / Currency fluctuations"
+      },
+      {
+        "word": "Circumfluent",
+        "partOfSpeech": "adj",
+        "meaning": "Chảy vòng quanh bao bọc tứ phía như hào nước",
+        "visualBreakdown": "Circum- (quanh) + flu (chảy) + -ent",
+        "ieltsSentence": "The ancient fortress was insulated by circumfluent moat tributaries.",
+        "vietnameseTranslation": "Pháo đài cổ xưa được cô lập an toàn bởi các nhánh hào nước chảy vòng quanh bao bọc tứ phía.",
+        "level": "C2",
+        "collocation": "Circumfluent waters / Circumfluent tide"
+      },
+      {
+        "word": "Interfluent",
+        "partOfSpeech": "adj",
+        "meaning": "Chảy hòa vào nhau, đan xen hòa quyện luồng lách",
+        "visualBreakdown": "Inter- (giữa) + flu (chảy) + -ent",
+        "ieltsSentence": "The wetland ecosystem is maintained by interfluent brackish marsh estuaries.",
+        "vietnameseTranslation": "Hệ sinh thái đất ngập nước được duy trì bởi các cửa sông đầm lầy nước lợ chảy hòa vào nhau đan xen.",
+        "level": "C2",
+        "collocation": "Interfluent currents / Interfluent streams"
+      },
+      {
+        "word": "Fluid",
+        "partOfSpeech": "n",
+        "meaning": "Chất lưu chất lỏng có tính linh động",
+        "visualBreakdown": "Flu- + -id",
+        "ieltsSentence": "Hydraulic machinery transmits kinetic power through pressurized industrial fluids.",
+        "vietnameseTranslation": "Máy móc thủy lực truyền động năng thông qua các chất lưu công nghiệp được tăng áp.",
+        "level": "C1",
+        "collocation": "Body fluid / Pressurized fluid"
+      },
+      {
+        "word": "Fluently",
+        "partOfSpeech": "adv",
+        "meaning": "Một cách trôi chảy lưu loát nhuần nhuyễn",
+        "visualBreakdown": "Fluent + -ly",
+        "ieltsSentence": "Multilingual diplomats negotiate complex treaties fluently without interpreters.",
+        "vietnameseTranslation": "Các nhà ngoại giao đa ngôn ngữ đàm phán các hiệp ước phức tạp một cách trôi chảy lưu loát mà không cần phiên dịch.",
+        "level": "C1",
+        "collocation": "Speak fluently / Communicate fluently"
+      },
+      {
+        "word": "Influent",
+        "partOfSpeech": "n",
+        "meaning": "Dòng nước/dòng chất lỏng chảy vào bể xử lý",
+        "visualBreakdown": "In- + flu- + -ent",
+        "ieltsSentence": "Automated filtration filters remove coarse particulates from untreated municipal influent.",
+        "vietnameseTranslation": "Bộ lọc tự động loại bỏ các hạt thô khỏi dòng nước thải đô thị chảy vào chưa được xử lý.",
+        "level": "C2",
+        "collocation": "Wastewater influent / Rate of influent"
+      },
+      {
+        "word": "Superfluity",
+        "partOfSpeech": "n",
+        "meaning": "Trạng thái dư dật quá thừa thãi xa xỉ",
+        "visualBreakdown": "Super- + flu- + -ity",
+        "ieltsSentence": "Minimalist aesthetics reject the ostentatious superfluity of Victorian ornamental parlors.",
+        "vietnameseTranslation": "Mỹ học tối giản cự tuyệt sự thừa thãi xa xỉ phô trương của các phòng khách trang trí thời Victoria.",
+        "level": "C2",
+        "collocation": "Ostentatious superfluity / Superfluity of goods"
+      },
+      {
+        "word": "Re-fluxing",
+        "partOfSpeech": "n",
+        "meaning": "Kỹ thuật đun hồi lưu tuần hoàn trong hóa học",
+        "visualBreakdown": "Re- + flux + -ing",
+        "ieltsSentence": "Organic synthesis relies on prolonged re-fluxing to optimize reaction ester yields.",
+        "vietnameseTranslation": "Tổng hợp hữu cơ dựa vào quá trình đun hồi lưu kéo dài để tối ưu hóa hiệu suất este phản ứng.",
+        "level": "C2",
+        "collocation": "Refluxing apparatus / Constant refluxing"
       }
     ]
   },
   {
-    id: "r119",
-    root: "DEM",
-    meaning: "Nhân dân, Cộng đồng dân cư",
-    origin: "Greek (demos - people)",
-    description: "Chữ vàng trong các bài đọc IELTS Reading liên quan đến nhân khẩu học, sức sống đô thị và chính sách quốc tế.",
-    tip: "Học từ 'Democracy' (Chế độ dân chủ - người dân làm chủ) hoặc 'Epidemic' (Dịch bệnh lan tràn cả nước).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-chron-temp",
+    "root": "CHRON/TEMP-",
+    "meaning": "Thời gian, thời khắc, nhịp điệu thời đại",
+    "origin": "Gốc Hy Lạp (chronos: thời gian) & Latin (tempus/temporis: thời gian, thời điểm thích hợp)",
+    "description": "Các gốc từ mô tả dòng thời gian lịch sử, thứ tự thời gian, tính tạm thời ngắn ngủi, nhịp sinh học và sự đồng bộ thời đại.",
+    "tip": "Nhớ đến Chronology (niên biểu), Temporary (tạm thời) và Contemporary (đương đại) – thước đo thời gian và lịch sử.",
+    "category": "Trục 4: Vận Động, Biến Đổi & Thời Không",
+    "axis": "Trục 4",
+    "axisTitle": "TRỤC 4: VẬN ĐỘNG, BIẾN ĐỔI & THỜI KHÔNG",
+    "axisSubtitle": "Dynamics & Change (Vận động & Biến đổi)",
+    "stemKey": "CHRON/TEMP-",
+    "exampleWords": [
       {
-        word: "demographics",
-        partOfSpeech: "n",
-        meaning: "Nhân khẩu học, các chỉ số phân tích cấu trúc dân cư",
-        visualBreakdown: "DEM (nhân dân) + GRAPH (ghi chú/bản đồ) + ICS -> khoa học đo đạc ghi chép đặc tính dân số",
-        ieltsSentence: "Sociologists analyzed changing metropolitan demographics to predict future housing demands.",
-        vietnameseTranslation: "Các nhà xã hội học đã phân tích biến động nhân khẩu học của vùng đô thị để dự báo nhu cầu nhà ở tương lai."
+        "word": "Chronological",
+        "partOfSpeech": "adj",
+        "meaning": "Theo thứ tự thời gian tuyến tính tuần tự",
+        "visualBreakdown": "Chrono- (thời gian) + log (trật tự, từ) + -ical",
+        "ieltsSentence": "The museum arranged maritime artifacts in strict chronological progression.",
+        "vietnameseTranslation": "Bảo tàng đã sắp xếp các hiện vật hàng hải theo trình tự thời gian nghiêm ngặt.",
+        "level": "C1",
+        "collocation": "Chronological order / Chronological sequence"
       },
       {
-        word: "democracy",
-        partOfSpeech: "n",
-        meaning: "Nền dân chủ, chế độ dân chủ xã hội",
-        visualBreakdown: "DEM (dân) + CRACY (thống trị/quyền điều hành) -> quyền cai trị đất nước thực chất nằm trong tay nhân dân bầu chọn",
-        ieltsSentence: "A free and independent press is historically deemed vital to the health of any democracy.",
-        vietnameseTranslation: "Báo chí tự do và độc lập trong lịch sử luôn được coi là cực kỳ quan trọng đối với sức sống của bất kỳ nền dân chủ nào."
+        "word": "Contemporary",
+        "partOfSpeech": "adj",
+        "meaning": "Đương đại, cùng thời kỳ hiện đại",
+        "visualBreakdown": "Con- (cùng) + tempor (thời gian) + -ary",
+        "ieltsSentence": "Contemporary architectural blueprints prioritize passive thermal insulation over decorative embellishments.",
+        "vietnameseTranslation": "Các bản vẽ thiết kế kiến trúc đương đại ưu tiên cách nhiệt thụ động hơn là những chi tiết trang trí diêm dúa.",
+        "level": "C1",
+        "collocation": "Contemporary society / Contemporary art"
+      },
+      {
+        "word": "Anachronism",
+        "partOfSpeech": "n",
+        "meaning": "Sự lỗi thời sai lệch niên đại, lạc lõng với thời đại",
+        "visualBreakdown": "Ana- (ngược lại) + chron (thời gian) + -ism",
+        "ieltsSentence": "Fossil-fuel subsidies are increasingly decried as a perilous economic anachronism.",
+        "vietnameseTranslation": "Các khoản trợ cấp nhiên liệu hóa thạch ngày càng bị lên án là một sự lỗi thời sai lệch niên đại kinh tế đầy nguy hiểm.",
+        "level": "C2",
+        "collocation": "Historical anachronism / Glaring anachronism"
+      },
+      {
+        "word": "Synchronize",
+        "partOfSpeech": "v",
+        "meaning": "Đồng bộ hóa thời gian, làm cho diễn ra đồng thời",
+        "visualBreakdown": "Syn- (cùng) + chron (thời gian) + -ize",
+        "ieltsSentence": "Urban traffic engineers synchronize intersection signals to optimize arterial traffic throughput.",
+        "vietnameseTranslation": "Các kỹ sư giao thông đô thị đồng bộ hóa tín hiệu tại các giao lộ để tối ưu hóa lưu lượng giao thông trục chính.",
+        "level": "C1",
+        "collocation": "Synchronize data / Synchronize clocks"
+      },
+      {
+        "word": "Temporal",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về thời gian trần tục thế tục, tạm bợ",
+        "visualBreakdown": "Tempor- (thời gian) + -al",
+        "ieltsSentence": "Ecologists study the temporal variations in seasonal monsoon precipitation patterns.",
+        "vietnameseTranslation": "Các nhà sinh thái học nghiên cứu các biến đổi về mặt thời gian trong các mô hình lượng mưa gió mùa theo mùa.",
+        "level": "C2",
+        "collocation": "Temporal dimension / Temporal spatial"
+      },
+      {
+        "word": "Extemporaneous",
+        "partOfSpeech": "adj",
+        "meaning": "Tùy cơ ứng biến ngay tại chỗ không chuẩn bị trước",
+        "visualBreakdown": "Ex- (ra ngoài) + tempor (thời gian sẵn) + -aneous",
+        "ieltsSentence": "The ambassador delivered an extemporaneous address that deftly diffused escalating border friction.",
+        "vietnameseTranslation": "Đại sứ đã có một bài phát biểu tùy cơ ứng biến ngay tại chỗ khéo léo làm dịu đi sự căng thẳng biên giới đang leo thang.",
+        "level": "C2",
+        "collocation": "Extemporaneous speech / Extemporaneous remarks"
+      },
+      {
+        "word": "Chronic",
+        "partOfSpeech": "adj",
+        "meaning": "Mãn tính kéo dài kinh niên, thâm căn cố đế",
+        "visualBreakdown": "Chron- (thời gian) + -ic",
+        "ieltsSentence": "Chronic underfunding severely impairs the operational efficacy of rural clinical dispensaries.",
+        "vietnameseTranslation": "Tình trạng thiếu kinh phí mãn tính kéo dài làm suy giảm nghiêm trọng hiệu lực vận hành của các trạm y tế nông thôn.",
+        "level": "C1",
+        "collocation": "Chronic illness / Chronic shortage"
+      },
+      {
+        "word": "Temporize",
+        "partOfSpeech": "v",
+        "meaning": "Trì hoãn câu giờ để chờ cơ hội thuận lợi",
+        "visualBreakdown": "Tempor- (thời gian) + -ize",
+        "ieltsSentence": "Negotiators chose to temporize rather than precipitate an irreconcilable walkout.",
+        "vietnameseTranslation": "Các nhà đàm phán đã chọn cách trì hoãn câu giờ thay vì vội vàng đẩy sự việc đến một cuộc bỏ hội đàm không thể hòa giải.",
+        "level": "C2",
+        "collocation": "Temporize for time / Refuse to temporize"
+      },
+      {
+        "word": "Chronometer",
+        "partOfSpeech": "n",
+        "meaning": "Đồng hồ bấm giờ chính xác cao trong hàng hải",
+        "visualBreakdown": "Chrono- (thời gian) + meter (đo đạc)",
+        "ieltsSentence": "The invention of the marine chronometer revolutionized transoceanic navigational accuracy.",
+        "vietnameseTranslation": "Việc phát minh ra đồng hồ bấm giờ hàng hải đã cách mạng hóa độ chính xác của ngành hàng hải xuyên đại dương.",
+        "level": "C2",
+        "collocation": "Marine chronometer / Precision chronometer"
+      },
+      {
+        "word": "Chronicle",
+        "partOfSpeech": "n",
+        "meaning": "Biên niên sử ghi chép sự kiện theo năm tháng",
+        "visualBreakdown": "Chronic- + -le",
+        "ieltsSentence": "The scholar compiled a meticulous chronicle documenting rural peasant uprisings.",
+        "vietnameseTranslation": "Học giả đã biên soạn một biên niên sử tỉ mỉ ghi chép lại các cuộc nổi dậy của nông dân nông thôn.",
+        "level": "C1",
+        "collocation": "Historical chronicle / Chronicle of events"
+      },
+      {
+        "word": "Temporary",
+        "partOfSpeech": "adj",
+        "meaning": "Tạm thời ngắn hạn, chỉ tồn tại trong chốc lát",
+        "visualBreakdown": "Tempor- + -ary",
+        "ieltsSentence": "Prefabricated shelters provided temporary relief for displaced tsunami survivors.",
+        "vietnameseTranslation": "Các nơi trú ẩn tiền chế đã cung cấp sự cứu trợ tạm thời cho những người sống sót sau sóng thần bị mất nhà cửa.",
+        "level": "C1",
+        "collocation": "Temporary measure / Temporary relief"
+      },
+      {
+        "word": "Synchronous",
+        "partOfSpeech": "adj",
+        "meaning": "Đồng bộ, diễn ra tại cùng một thời điểm song song",
+        "visualBreakdown": "Syn- + chron- + -ous",
+        "ieltsSentence": "Distance learning curricula incorporate both synchronous webinars and self-paced offline modules.",
+        "vietnameseTranslation": "Chương trình học từ xa kết hợp cả các hội thảo trực tuyến đồng bộ và các mô-đun học ngoại tuyến tự điều chỉnh tốc độ.",
+        "level": "C1",
+        "collocation": "Synchronous communication / Synchronous learning"
+      },
+      {
+        "word": "Asynchronous",
+        "partOfSpeech": "adj",
+        "meaning": "Bất đồng bộ, diễn ra không trùng thời điểm",
+        "visualBreakdown": "A- (không) + syn- + chron- + -ous",
+        "ieltsSentence": "Asynchronous digital collaboration platforms allow distributed global teams to operate across disparate time zones.",
+        "vietnameseTranslation": "Các nền tảng cộng tác kỹ thuật số bất đồng bộ cho phép các đội ngũ toàn cầu phân tán làm việc hiệu quả qua các múi giờ khác nhau.",
+        "level": "C1",
+        "collocation": "Asynchronous communication / Asynchronous transfer"
+      },
+      {
+        "word": "Chronology",
+        "partOfSpeech": "n",
+        "meaning": "Niên biểu, trật tự diễn tiến sự kiện theo thời gian",
+        "visualBreakdown": "Chrono- + -logy",
+        "ieltsSentence": "Forensic investigators established a coherent chronology of digital transactions leading to the fraudulent breach.",
+        "vietnameseTranslation": "Các nhà điều tra pháp y đã thiết lập một niên biểu mạch lạc về các giao dịch kỹ thuật số dẫn đến vụ xâm nhập gian lận.",
+        "level": "C1",
+        "collocation": "Establish a chronology / Accurate chronology"
+      },
+      {
+        "word": "Temporarily",
+        "partOfSpeech": "adv",
+        "meaning": "Một cách tạm thời trong một khoảng thời gian ngắn",
+        "visualBreakdown": "Temporary + -ly",
+        "ieltsSentence": "The border terminal was temporarily shuttered to accommodate emergency quarantine inspections.",
+        "vietnameseTranslation": "Cửa khẩu biên giới đã tạm thời bị đóng cửa để phục vụ công tác kiểm tra cách ly khẩn cấp.",
+        "level": "C1",
+        "collocation": "Temporarily suspended / Temporarily unavailable"
+      },
+      {
+        "word": "Geochronology",
+        "partOfSpeech": "n",
+        "meaning": "Địa thời học, khoa học xác định niên đại địa chất trái đất",
+        "visualBreakdown": "Geo- (đất) + chrono- + -logy",
+        "ieltsSentence": "Isotope geochronology calibrates the radiometric age of Precambrian igneous formations.",
+        "vietnameseTranslation": "Địa thời học đồng vị hiệu chuẩn tuổi phóng xạ của các khối đá mácma thời Tiền Cambri.",
+        "level": "C2",
+        "collocation": "Isotope geochronology / Geochronological dating"
+      },
+      {
+        "word": "Chronobiology",
+        "partOfSpeech": "n",
+        "meaning": "Nhịp sinh học, khoa học nghiên cứu chu kỳ thời gian sinh học",
+        "visualBreakdown": "Chrono- + bio- + -logy",
+        "ieltsSentence": "Chronobiology investigates how circadian retinal daylight exposure modulates melatonin hormone secretion.",
+        "vietnameseTranslation": "Nhịp sinh học nghiên cứu cách thức việc võng mạc tiếp xúc với ánh sáng ban ngày điều tiết sự tiết hormone melatonin.",
+        "level": "C2",
+        "collocation": "Field of chronobiology / Chronobiological rhythm"
+      },
+      {
+        "word": "Temporality",
+        "partOfSpeech": "n",
+        "meaning": "Tính chất thời gian, bản chất tồn tại trong thời gian",
+        "visualBreakdown": "Tempor- + -ality",
+        "ieltsSentence": "Existential philosophy interrogates human consciousness through the lens of inescapable temporality.",
+        "vietnameseTranslation": "Triết học hiện sinh thẩm vấn ý thức con người qua lăng kính của tính chất thời gian không thể trốn tránh.",
+        "level": "C2",
+        "collocation": "Human temporality / Linear temporality"
+      },
+      {
+        "word": "Chronicity",
+        "partOfSpeech": "n",
+        "meaning": "Tính chất mãn tính kéo dài của một căn bệnh/tệ nạn",
+        "visualBreakdown": "Chronic + -ity",
+        "ieltsSentence": "The chronicity of inner-city joblessness requires comprehensive vocational retraining initiatives.",
+        "vietnameseTranslation": "Tính chất kéo dài kinh niên của tình trạng thất nghiệp khu vực nội đô đòi hỏi các sáng kiến đào tạo lại nghề toàn diện.",
+        "level": "C2",
+        "collocation": "Condition of chronicity / Disease chronicity"
+      },
+      {
+        "word": "Pro-tempore",
+        "partOfSpeech": "adj",
+        "meaning": "Tạm quyền, giữ chức vụ tạm thời trong một thời hạn",
+        "visualBreakdown": "Pro (cho) + tempore (thời gian này)",
+        "ieltsSentence": "The senior senator was elected president pro-tempore to preside over procedural deliberations.",
+        "vietnameseTranslation": "Vị thượng nghị sĩ cao cấp đã được bầu làm chủ tịch tạm quyền để chủ trì các phiên thảo luận thủ tục.",
+        "level": "C2",
+        "collocation": "President pro-tempore / Appointed pro-tempore"
+      },
+      {
+        "word": "Synchronic",
+        "partOfSpeech": "adj",
+        "meaning": "Đồng đại, nghiên cứu hiện tượng tại một lát cắt thời gian",
+        "visualBreakdown": "Syn- + chron- + -ic",
+        "ieltsSentence": "Linguists employ synchronic analysis to evaluate contemporary metropolitan dialect variants.",
+        "vietnameseTranslation": "Các nhà ngôn ngữ học sử dụng phân tích đồng đại để đánh giá các biến thể phương ngữ đô thị đương thời.",
+        "level": "C2",
+        "collocation": "Synchronic linguistics / Synchronic perspective"
+      },
+      {
+        "word": "Diachronic",
+        "partOfSpeech": "adj",
+        "meaning": "Lịch đại, nghiên cứu sự biến đổi xuyên suốt dòng thời gian",
+        "visualBreakdown": "Dia- (xuyên qua) + chron- + -ic",
+        "ieltsSentence": "A diachronic study of maritime lexicon reveals centuries of polyglot naval cross-pollination.",
+        "vietnameseTranslation": "Một nghiên cứu lịch đại về từ vựng hàng hải cho thấy nhiều thế kỷ giao thoa ngôn ngữ hải quân đa ngữ.",
+        "level": "C2",
+        "collocation": "Diachronic analysis / Diachronic change"
+      },
+      {
+        "word": "Chronograph",
+        "partOfSpeech": "n",
+        "meaning": "Thiết bị ghi nhận thời gian bấm giờ cực nhỏ",
+        "visualBreakdown": "Chrono- + graph (ghi chép)",
+        "ieltsSentence": "The laboratory installed a digital chronograph to document microsecond laser pulse intervals.",
+        "vietnameseTranslation": "Phòng thí nghiệm đã lắp đặt một máy ghi thời gian kỹ thuật số để ghi lại các khoảng xung laser tính bằng micro giây.",
+        "level": "C2",
+        "collocation": "High-precision chronograph / Digital chronograph"
+      },
+      {
+        "word": "Chronicle",
+        "partOfSpeech": "v",
+        "meaning": "Ghi chép tường thuật lại các biến cố lịch sử",
+        "visualBreakdown": "Chronic- + -le",
+        "ieltsSentence": "Documentary photojournalists chronicle the harrowing human toll of environmental displacement.",
+        "vietnameseTranslation": "Các phóng viên ảnh tài liệu tường thuật ghi chép lại những tổn thất đau thương về con người do mất nơi ở vì môi trường.",
+        "level": "C1",
+        "collocation": "Chronicle the event / Faithfully chronicle"
+      },
+      {
+        "word": "Synchronicity",
+        "partOfSpeech": "n",
+        "meaning": "Sự đồng phương tương ứng kỳ diệu, trùng hợp ngẫu nhiên ý nghĩa",
+        "visualBreakdown": "Syn- + chron- + -icity",
+        "ieltsSentence": "Psychologist Carl Jung posited synchronicity to explain meaningful coincidences lacking direct linear causality.",
+        "vietnameseTranslation": "Nhà tâm lý học Carl Jung đã đặt ra khái niệm đồng phương tương ứng để giải thích những sự trùng hợp có ý nghĩa mà không có quan hệ nhân quả tuyến tính trực tiếp.",
+        "level": "C2",
+        "collocation": "Meaningful synchronicity / Phenomenon of synchronicity"
+      }
+    ]
+  },
+{
+    "id": "stem-pel-puls",
+    "root": "PEL / PULS-",
+    "meaning": "Thúc đẩy, lôi kéo, cưỡng ép, tạo lực",
+    "origin": "Latin (pellere, pulsus - đẩy, đập)",
+    "description": "Biểu thị tác động lực từ bên ngoài hoặc bên trong, buộc đối tượng phải chuyển dịch, hành động hoặc bị xua đuổi.",
+    "tip": "Nhớ đến Pulse (nhịp đập) hoặc Compel (bắt buộc) – lực đẩy mạnh mẽ dồn tới.",
+    "category": "Trục 5: Xung Động, Tác Động & Buộc Ép",
+    "axis": "Trục 5",
+    "axisTitle": "TRỤC 5: XUNG ĐỘNG, TÁC ĐỘNG & BUỘC ÉP",
+    "axisSubtitle": "Force, Urge & Motion (Áp lực & Chuyển động)",
+    "stemKey": "PEL / PULS-",
+    "exampleWords": [
+      {
+        "word": "Compulsory",
+        "partOfSpeech": "adj",
+        "meaning": "Bắt buộc theo luật/quy định",
+        "visualBreakdown": "Com- (cùng) + Puls (đẩy) + -ory (tính từ)",
+        "ieltsSentence": "Primary and secondary education should be entirely compulsory and funded by the state.",
+        "vietnameseTranslation": "Giáo dục tiểu học và trung học cần phải hoàn toàn bắt buộc và được nhà nước tài trợ.",
+        "level": "C1",
+        "collocation": "Compulsory education / Compulsory attendance"
+      },
+      {
+        "word": "Impulsive",
+        "partOfSpeech": "adj",
+        "meaning": "Bột phát theo cảm tính, bốc đồng",
+        "visualBreakdown": "Im- (vào trong) + Puls (thúc đẩy) + -ive",
+        "ieltsSentence": "Impulsive consumer spending on non-essential luxuries accelerates personal indebtedness.",
+        "vietnameseTranslation": "Thói quen chi tiêu bốc đồng vào những món hàng xa xỉ không thiết yếu làm gia tăng nợ nần cá nhân.",
+        "level": "C1",
+        "collocation": "Impulsive decision / Impulsive spending"
+      },
+      {
+        "word": "Repel",
+        "partOfSpeech": "v",
+        "meaning": "Đẩy lùi, xua đuổi, cự tuyệt",
+        "visualBreakdown": "Re- (ngược lại) + Pel (đẩy)",
+        "ieltsSentence": "The innovative textile is engineered to repel water and airborne contaminants.",
+        "vietnameseTranslation": "Loại vải dệt cải tiến được thiết kế để đẩy lùi nước và các chất gây ô nhiễm trong không khí.",
+        "level": "C1",
+        "collocation": "Repel invaders / Repel moisture"
+      },
+      {
+        "word": "Propel",
+        "partOfSpeech": "v",
+        "meaning": "Đẩy tiến về phía trước, tạo động lực",
+        "visualBreakdown": "Pro- (về phía trước) + Pel (đẩy)",
+        "ieltsSentence": "Economic incentives and tax breaks propel the industrial transition toward green energy.",
+        "vietnameseTranslation": "Các khuyến khích kinh tế và ưu đãi thuế đẩy mạnh quá trình chuyển đổi công nghiệp hướng tới năng lượng xanh.",
+        "level": "C1",
+        "collocation": "Propel economic growth / Propel innovation"
+      },
+      {
+        "word": "Compel",
+        "partOfSpeech": "v",
+        "meaning": "Bắt buộc, thuyết phục không thể chối từ",
+        "visualBreakdown": "Com- (hoàn toàn) + Pel (đẩy)",
+        "ieltsSentence": "Compelling empirical evidence has forced policymakers to revise carbon emission targets.",
+        "vietnameseTranslation": "Bằng chứng thực nghiệm thuyết phục đã buộc các nhà hoạch định chính sách phải điều chỉnh lại mục tiêu phát thải carbon.",
+        "level": "C2",
+        "collocation": "Compel compliance / Compelling evidence"
+      },
+      {
+        "word": "Dispel",
+        "partOfSpeech": "v",
+        "meaning": "Xua tan, dập tắt (hoài nghi, ảo tưởng)",
+        "visualBreakdown": "Dis- (tản ra) + Pel (đẩy)",
+        "ieltsSentence": "Rigorous scientific research is necessary to dispel prevailing public misconceptions about vaccine safety.",
+        "vietnameseTranslation": "Nghiên cứu khoa học nghiêm ngặt là cần thiết để xua tan những hiểu lầm phổ biến của công chúng về an toàn vắc xin.",
+        "level": "C2",
+        "collocation": "Dispel misconceptions / Dispel doubts"
+      },
+      {
+        "word": "Expel",
+        "partOfSpeech": "v",
+        "meaning": "Trục xuất, thải ra, tống khứ",
+        "visualBreakdown": "Ex- (ra ngoài) + Pel (đẩy)",
+        "ieltsSentence": "Combustion engines expel substantial quantities of particulate matter into urban atmospheres.",
+        "vietnameseTranslation": "Động cơ đốt trong thải ra một lượng đáng kể các hạt bụi mịn vào bầu khí quyển đô thị.",
+        "level": "C1",
+        "collocation": "Expel pollutants / Expel from institution"
+      },
+      {
+        "word": "Repulsion",
+        "partOfSpeech": "n",
+        "meaning": "Lực đẩy kháng cự; sự ghê tởm",
+        "visualBreakdown": "Re- (lại) + Puls (đẩy) + -ion",
+        "ieltsSentence": "Maglev trains harness magnetic repulsion to eliminate friction and achieve unprecedented speeds.",
+        "vietnameseTranslation": "Tàu đệm từ khai thác lực đẩy từ trường để loại bỏ ma sát và đạt vận tốc chưa từng có.",
+        "level": "C2",
+        "collocation": "Magnetic repulsion / Intense repulsion"
       }
     ]
   },
   {
-    id: "r120",
-    root: "SAN",
-    meaning: "Sức khoẻ, Vệ sinh, Lành mạnh",
-    origin: "Latin (sanus - healthy)",
-    description: "Bộ gốc từ vựng thường xuất hiện trong bài đọc Y tế cộng đồng, Thủy lợi vệ sinh môi trường nông thôn trong IELTS.",
-    tip: "Nhớ đến 'Sanitary' (Vệ sinh phòng dịch bệnh) hay 'Sanity' (Tinh thần tỉnh táo, lành mạnh không hư hỏng đầu óc).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-tend-tens",
+    "root": "TEND / TENS / TENT-",
+    "meaning": "Kéo căng, vươn dài, hướng đến, tranh đấu",
+    "origin": "Latin (tendere, tentus - kéo căng, vươn ra)",
+    "description": "Diễn tả sự vươn dài thể chất hoặc nỗ lực tinh thần căng thẳng hướng tới một mục tiêu, tranh chấp hoặc xu hướng vận động.",
+    "tip": "Nhớ đến Tension (sự căng thẳng) hoặc Tendency (xu hướng) – sợi dây đang được kéo dãn hết mức.",
+    "category": "Trục 5: Xung Động, Tác Động & Buộc Ép",
+    "axis": "Trục 5",
+    "axisTitle": "TRỤC 5: XUNG ĐỘNG, TÁC ĐỘNG & BUỘC ÉP",
+    "axisSubtitle": "Force, Urge & Motion (Căng thẳng & Xu hướng)",
+    "stemKey": "TEND / TENS-",
+    "exampleWords": [
       {
-        word: "sanitary",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về vệ sinh, sạch sẽ phòng bệnh",
-        visualBreakdown: "SAN (khỏe mạnh) + ITARY -> đảm bảo sạch sẽ không cho mầm bệnh phát sinh hại sức khỏe",
-        ieltsSentence: "Governments must provide safe drinking water and basic sanitary services to modern slums.",
-        vietnameseTranslation: "Chính phủ phải cung cấp nước uống an toàn và các dịch vụ vệ sinh cơ bản cho các khu ổ chuột hiện đại."
+        "word": "Extend",
+        "partOfSpeech": "v",
+        "meaning": "Kéo dài ra ngoài, gia hạn, mở rộng",
+        "visualBreakdown": "Ex- (ra ngoài) + Tend (kéo dãn)",
+        "ieltsSentence": "The academic committee agreed to extend the thesis deadline in light of unforeseen technical issues.",
+        "vietnameseTranslation": "Hội đồng học thuật đã đồng ý gia hạn thời hạn nộp luận văn do các sự cố kỹ thuật ngoài dự kiến.",
+        "level": "C1",
+        "collocation": "Extend deadline / Extend coverage"
       },
       {
-        word: "sanity",
-        partOfSpeech: "n",
-        meaning: "Sự tỉnh táo, sự lành mạnh về tâm thần",
-        visualBreakdown: "SAN (khỏe mạnh) + ITY -> trạng thái có đầu óc lành mạnh, khỏe khoắn không bị điên rồ áp lực dồn nén",
-        ieltsSentence: "A relaxing stroll through nature can play an essential role in keeping your mental sanity.",
-        vietnameseTranslation: "Một chuyến đi dạo thư thái qua thiên nhiên có thể đóng vai trò thiết yếu trong việc giữ gìn sự tỉnh táo về tinh thần của bạn."
+        "word": "Contend",
+        "partOfSpeech": "v",
+        "meaning": "Quả quyết, tranh biện luận điểm; đương đầu",
+        "visualBreakdown": "Con- (cùng) + Tend (giằng co, căng ra)",
+        "ieltsSentence": "Prominent sociologists contend that income inequality directly correlates with rising crime rates.",
+        "vietnameseTranslation": "Các nhà xã hội học lỗi lạc quả quyết rằng bất bình đẳng thu nhập có mối tương quan trực tiếp với tỷ lệ tội phạm gia tăng.",
+        "level": "C1",
+        "collocation": "Contend that / Contend with adversity"
+      },
+      {
+        "word": "Intensify",
+        "partOfSpeech": "v",
+        "meaning": "Gia tăng mãnh liệt, trở nên gay gắt",
+        "visualBreakdown": "In- (trong) + Tens (căng) + -ify (làm cho)",
+        "ieltsSentence": "Rapid urbanization is projected to intensify competitive pressure on finite water resources.",
+        "vietnameseTranslation": "Đô thị hóa nhanh chóng được dự báo sẽ làm gia tăng áp lực cạnh tranh gay gắt lên nguồn nước hữu hạn.",
+        "level": "C1",
+        "collocation": "Intensify pressure / Intensify efforts"
+      },
+      {
+        "word": "Contentious",
+        "partOfSpeech": "adj",
+        "meaning": "Gây nhiều tranh cãi nảy lửa",
+        "visualBreakdown": "Con- (cùng) + Tent (giằng co) + -ious",
+        "ieltsSentence": "The implementation of genetic editing in human embryos remains a profoundly contentious issue.",
+        "vietnameseTranslation": "Việc áp dụng chỉnh sửa gen trên phôi người vẫn là một vấn đề gây tranh cãi sâu sắc.",
+        "level": "C2",
+        "collocation": "Contentious debate / Highly contentious topic"
+      },
+      {
+        "word": "Ostensible",
+        "partOfSpeech": "adj",
+        "meaning": "Bề ngoài có vẻ như vậy nhưng thực chất khác",
+        "visualBreakdown": "Ob- (trước mặt) + Tens (căng ra khoe) + -ible",
+        "ieltsSentence": "The ostensible purpose of the subsidy was ecological, yet critics claim it purely benefited corporate lobbies.",
+        "vietnameseTranslation": "Mục đích bề ngoài của khoản trợ cấp là vì sinh thái, nhưng các nhà phê bình khẳng định nó phục vụ cho các nhóm lợi ích tập đoàn.",
+        "level": "C2",
+        "collocation": "Ostensible motive / Ostensible reason"
+      },
+      {
+        "word": "Portend",
+        "partOfSpeech": "v",
+        "meaning": "Báo hiệu, cảnh báo điềm xấu phía trước",
+        "visualBreakdown": "Por- (về phía trước) + Tend (vươn ra)",
+        "ieltsSentence": "Prolonged meteorological droughts portend severe disruptions to agrarian supply chains.",
+        "vietnameseTranslation": "Hạn hán khí tượng kéo dài báo hiệu những xáo trộn nghiêm trọng đối với chuỗi cung ứng nông nghiệp.",
+        "level": "C2",
+        "collocation": "Portend disaster / Portend ominous changes"
+      },
+      {
+        "word": "Distend",
+        "partOfSpeech": "v",
+        "meaning": "Trương phình ra, giãn nở quá mức",
+        "visualBreakdown": "Dis- (tách ra) + Tend (kéo căng)",
+        "ieltsSentence": "Excessive public borrowing threatens to distend the national budget deficit beyond manageable thresholds.",
+        "vietnameseTranslation": "Vay nợ công quá mức đe dọa sẽ làm phình to mức thâm hụt ngân sách quốc gia vượt quá ngưỡng kiểm soát.",
+        "level": "C2",
+        "collocation": "Distend budgets / Distend boundaries"
+      },
+      {
+        "word": "Tenuous",
+        "partOfSpeech": "adj",
+        "meaning": "Mong manh, yếu ớt, thiếu cơ sở vững chắc",
+        "visualBreakdown": "Tenuis (mỏng dính, bị kéo dãn mỏng) + -ous",
+        "ieltsSentence": "The speculative link between electromagnetic frequencies and cognitive impairment remains tenuous at best.",
+        "vietnameseTranslation": "Mối liên hệ phỏng đoán giữa sóng điện từ và suy giảm nhận thức cùng lắm cũng chỉ là rất mong manh.",
+        "level": "C2",
+        "collocation": "Tenuous connection / Tenuous grasp"
       }
     ]
   },
   {
-    id: "r121",
-    root: "VIV/VIT",
-    meaning: "Sống, Mãnh liệt, Sinh tồn",
-    origin: "Latin (vivere - to live)",
-    description: "Chữ gốc then chốt trong IELTS Reading thuộc mảng sinh học tiến hóa, dinh dưỡng học sức khỏe và hồi phục sinh thái.",
-    tip: "Từ quen thuộc 'Vitamin' (Chất tối thiết yếu cho sự sống) hay 'Survive' (Sống sót vượt bão giông cuộc đời).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-mit-miss",
+    "root": "MIT / MISS-",
+    "meaning": "Gửi đi, phóng thích, chuyển giao, cho phép rời đi",
+    "origin": "Latin (mittere, missus - gửi đi, bắn ra)",
+    "description": "Thể hiện hành động gửi đi tín hiệu, phát thải khí, chuyển giao trách nhiệm hoặc bãi miễn.",
+    "tip": "Nhớ đến Mission (sứ mệnh được giao phó) hoặc Transmit (truyền dẫn) – phát đi thông điệp.",
+    "category": "Trục 5: Xung Động, Tác Động & Buộc Ép",
+    "axis": "Trục 5",
+    "axisTitle": "TRỤC 5: XUNG ĐỘNG, TÁC ĐỘNG & BUỘC ÉP",
+    "axisSubtitle": "Force, Urge & Motion (Truyền dẫn & Phóng thích)",
+    "stemKey": "MIT / MISS-",
+    "exampleWords": [
       {
-        word: "vitality",
-        partOfSpeech: "n",
-        meaning: "Sức sống mãnh liệt, năng lượng can trường dồi dào",
-        visualBreakdown: "VIT (sự sống) + ALITY -> phẩm chất đầy ắp sinh lực, khí thế bừng bừng bền bỉ",
-        ieltsSentence: "The influx of ambitious young professionals restored the commercial vitality of the dying town.",
-        vietnameseTranslation: "Sự tràn vào của các chuyên gia trẻ tuổi đầy hoài bão đã khôi phục lại sức sống thương mại của thị trấn đang héo úa."
+        "word": "Transmit",
+        "partOfSpeech": "v",
+        "meaning": "Truyền dẫn (sóng, thông tin, mầm bệnh)",
+        "visualBreakdown": "Trans- (xuyên qua) + Mit (gửi đi)",
+        "ieltsSentence": "Inadequate sanitary infrastructure enables pathogens to transmit rapidly through contaminated drinking water.",
+        "vietnameseTranslation": "Cơ sở hạ tầng vệ sinh yếu kém khiến các mầm bệnh lây truyền nhanh chóng qua nguồn nước uống bị ô nhiễm.",
+        "level": "C1",
+        "collocation": "Transmit pathogens / Transmit signals"
       },
       {
-        word: "survival",
-        partOfSpeech: "n",
-        meaning: "Sự sống sót, sự sinh tồn sinh học",
-        visualBreakdown: "SUR (vượt lên) + VIV (sống) + AL -> vượt qua lằn ranh tử sinh để tiếp tục sống sót dai dẳng",
-        ieltsSentence: "Charles Darwin analyzed morphological adaptations critical for the survival of remote island birds.",
-        vietnameseTranslation: "Charles Darwin đã phân tích những thích nghi hình thái học mang tính sống còn đối với sự sinh tồn của các loài chim trên đảo xa xôi."
+        "word": "Dismissal",
+        "partOfSpeech": "n",
+        "meaning": "Sự sa thải; sự gạt bỏ một giả thuyết",
+        "visualBreakdown": "Dis- (rời khỏi) + Miss (gửi) + -al",
+        "ieltsSentence": "The abrupt dismissal of alternative pedagogical models stifles educational innovation in public schools.",
+        "vietnameseTranslation": "Sự bác bỏ đột ngột các mô hình sư phạm thay thế kìm hãm sự đổi mới giáo dục tại các trường công lập.",
+        "level": "C1",
+        "collocation": "Summary dismissal / Dismissal of hypothesis"
+      },
+      {
+        "word": "Intermittent",
+        "partOfSpeech": "adj",
+        "meaning": "Gián đoạn, lúc có lúc không, chập chờn",
+        "visualBreakdown": "Inter- (ở giữa) + Mit (gửi) + -ent",
+        "ieltsSentence": "The intermittent nature of solar and wind generation necessitates advanced battery storage solutions.",
+        "vietnameseTranslation": "Bản chất gián đoạn của năng lượng mặt trời và gió đòi hỏi các giải pháp lưu trữ pin tiên tiến.",
+        "level": "C1",
+        "collocation": "Intermittent power supply / Intermittent rainfall"
+      },
+      {
+        "word": "Emit",
+        "partOfSpeech": "v",
+        "meaning": "Phát ra, thải ra (khí, nhiệt, bức xạ)",
+        "visualBreakdown": "E- (ra ngoài) + Mit (gửi)",
+        "ieltsSentence": "Thermal power facilities emit copious volumes of greenhouse gases into the troposphere.",
+        "vietnameseTranslation": "Các nhà máy nhiệt điện thải ra một khối lượng khổng lồ khí nhà kính vào tầng đối lưu.",
+        "level": "C1",
+        "collocation": "Emit greenhouse gases / Emit radiation"
+      },
+      {
+        "word": "Remission",
+        "partOfSpeech": "n",
+        "meaning": "Sự thuyên giảm (bệnh tật); sự miễn giảm",
+        "visualBreakdown": "Re- (lại) + Miss (gửi trả) + -ion",
+        "ieltsSentence": "Modern oncology treatments have enabled higher proportions of cancer patients to achieve lasting remission.",
+        "vietnameseTranslation": "Các liệu pháp ung bướu hiện đại đã giúp tỷ lệ bệnh nhân ung thư đạt được sự thuyên giảm bệnh lâu dài cao hơn.",
+        "level": "C2",
+        "collocation": "In full remission / Debt remission"
+      },
+      {
+        "word": "Permissible",
+        "partOfSpeech": "adj",
+        "meaning": "Được phép chấp nhận theo quy chuẩn",
+        "visualBreakdown": "Per- (hoàn toàn) + Miss (cho đi) + -ible",
+        "ieltsSentence": "Ambient concentrations of airborne particulate matter must not exceed permissible statutory limits.",
+        "vietnameseTranslation": "Nồng độ bụi mịn trong không khí xung quanh không được vượt quá giới hạn luật định cho phép.",
+        "level": "C1",
+        "collocation": "Permissible limit / Permissible exposure"
+      },
+      {
+        "word": "Submissive",
+        "partOfSpeech": "adj",
+        "meaning": "Quy phục, dễ phục tùng, nhẫn nhục",
+        "visualBreakdown": "Sub- (ở dưới) + Miss (gửi mình) + -ive",
+        "ieltsSentence": "Authoritarian regimes historically demanded submissive compliance from the civil population.",
+        "vietnameseTranslation": "Các chế độ độc tài trong lịch sử từng đòi hỏi sự phục tùng nhẫn nhục từ dân chúng.",
+        "level": "C2",
+        "collocation": "Submissive attitude / Submissive obedience"
+      },
+      {
+        "word": "Commission",
+        "partOfSpeech": "v",
+        "meaning": "Ủy thác, đặt hàng công trình nghiên cứu",
+        "visualBreakdown": "Com- (cùng) + Miss (gửi giao) + -ion",
+        "ieltsSentence": "The ministry commissioned an independent panel to audit the ecological ramifications of dam construction.",
+        "vietnameseTranslation": "Bộ đã ủy thác cho một hội đồng độc lập kiểm định những tác động sinh thái của việc xây dựng đập.",
+        "level": "C1",
+        "collocation": "Commission a report / Commission a study"
       }
     ]
   },
   {
-    id: "r122",
-    root: "ADMIN/MINIS",
-    meaning: "Phục phục, Điều hướng hành chính, Quản trị",
-    origin: "Latin (ministrare - to serve, direct)",
-    description: "Hay dùng trong các bài đọc về quản lý hành chính công, chính phủ lèo lái quốc gia, quản trị đại học.",
-    tip: "Kết nối sâu sắc với 'Admin/Administrator' (Người quản trị điều hành) hoặc 'Ministry' (Bộ - cơ quan hành chính cao thứ nhì phục vụ chính phủ).",
-    category: "Actions & Motion",
-    exampleWords: [
+    "id": "stem-tract",
+    "root": "TRACT-",
+    "meaning": "Kéo, hút, co rút, dẫn dắt",
+    "origin": "Latin (trahere, tractus - kéo lê, hút)",
+    "description": "Gốc chỉ động tác kéo vật thể, hút tâm trí chú ý, hoặc rút gọn/thu hẹp quy mô.",
+    "tip": "Nhớ đến Tractor (máy kéo) hoặc Attract (thu hút) – lực kéo hội tụ hoặc phân tách.",
+    "category": "Trục 5: Xung Động, Tác Động & Buộc Ép",
+    "axis": "Trục 5",
+    "axisTitle": "TRỤC 5: XUNG ĐỘNG, TÁC ĐỘNG & BUỘC ÉP",
+    "axisSubtitle": "Force, Urge & Motion (Kéo hút & Co rút)",
+    "stemKey": "TRACT-",
+    "exampleWords": [
       {
-        word: "administrative",
-        partOfSpeech: "adj",
-        meaning: "Thuộc về hành chính, thủ tục quản trị chỉ đạo",
-        visualBreakdown: "AD (hướng tới) + MINIS (phục vụ/quản lý) + TRATIVE -> thuộc về công việc tổ chức, phụng sự hệ thống",
-        ieltsSentence: "The education audit aimed to reduce heavy administrative red tape on science teachers.",
-        vietnameseTranslation: "Cuộc kiểm toán giáo dục nhằm giảm bớt nạn quan liêu hành chính nặng nề lên các giáo viên khoa học."
+        "word": "Abstract",
+        "partOfSpeech": "adj",
+        "meaning": "Trừu tượng, tách khỏi cụ thể; bản tóm tắt",
+        "visualBreakdown": "Abs- (rời khỏi) + Tract (kéo) $\\rightarrow$ Kéo ra khỏi thực thể cụ thể",
+        "ieltsSentence": "Secondary students often struggle to comprehend abstract theoretical models without empirical demonstrations.",
+        "vietnameseTranslation": "Học sinh trung học thường gặp khó khăn khi tiếp thu các mô hình lý thuyết trừu tượng nếu thiếu các minh họa thực nghiệm.",
+        "level": "C1",
+        "collocation": "Abstract concepts / Abstract reasoning"
       },
       {
-        word: "administration",
-        partOfSpeech: "n",
-        meaning: "Ban quản trị, sự quản lý điều phối học thuật/doanh nghiệp",
-        visualBreakdown: "AD (hướng tới) + MINIS (quản lý điều phối) + TRATION -> bộ máy cầm cân nảy mực lèo lái hệ thống hành pháp",
-        ieltsSentence: "The university administration voted unanimously to build a cutting-edge nanotechnology library.",
-        vietnameseTranslation: "Ban giám hiệu trường đại học đã nhất trí biểu quyết xây dựng thư viện công nghệ nano tiên tiến."
+        "word": "Detract",
+        "partOfSpeech": "v",
+        "meaning": "Làm giảm giá trị, bớt đi uy tín",
+        "visualBreakdown": "De- (xuống) + Tract (kéo)",
+        "ieltsSentence": "Occasional grammatical minor slips do not significantly detract from the cogency of candidate essays.",
+        "vietnameseTranslation": "Những sai sót ngữ pháp nhỏ không làm giảm đi đáng kể tính thuyết phục của bài luận thí sinh.",
+        "level": "C1",
+        "collocation": "Detract from merit / Detract from value"
+      },
+      {
+        "word": "Contract",
+        "partOfSpeech": "v",
+        "meaning": "Co rút lại, thu hẹp quy mô kinh tế",
+        "visualBreakdown": "Con- (cùng) + Tract (kéo lại gần)",
+        "ieltsSentence": "National manufacturing output contracted by four percent following the geopolitical embargo.",
+        "vietnameseTranslation": "Sản lượng sản xuất quốc gia đã co rút lại 4% sau lệnh cấm vận địa chính trị.",
+        "level": "C1",
+        "collocation": "Contract sharply / Contract an economy"
+      },
+      {
+        "word": "Protracted",
+        "partOfSpeech": "adj",
+        "meaning": "Kéo dài lê thê một cách mệt mỏi",
+        "visualBreakdown": "Pro- (về phía trước) + Tract (kéo dài) + -ed",
+        "ieltsSentence": "Protracted litigation between pharmaceutical corporations can impede affordable vaccine distribution.",
+        "vietnameseTranslation": "Các vụ kiện tụng kéo dài lê thê giữa các tập đoàn dược phẩm có thể cản trở việc phân phối vắc xin giá rẻ.",
+        "level": "C2",
+        "collocation": "Protracted conflict / Protracted negotiations"
+      },
+      {
+        "word": "Intractable",
+        "partOfSpeech": "adj",
+        "meaning": "Nan giải, khó bảo, bất trị",
+        "visualBreakdown": "In- (không) + Tract (kéo đi) + -able $\\rightarrow$ Không thể kéo/uốn nắn",
+        "ieltsSentence": "Chronic poverty in post-industrial metropolitan pockets represents an intractable governance challenge.",
+        "vietnameseTranslation": "Nạn nghèo đói kinh niên ở các khu vực đô thị hậu công nghiệp đại diện cho một thách thức quản trị nan giải.",
+        "level": "C2",
+        "collocation": "Intractable problem / Intractable dispute"
+      },
+      {
+        "word": "Retract",
+        "partOfSpeech": "v",
+        "meaning": "Rút lại (lời tuyên bố, bài báo sai sự thật)",
+        "visualBreakdown": "Re- (ngược lại) + Tract (kéo về)",
+        "ieltsSentence": "The academic journal was forced to retract the study due to fraudulent data manipulation.",
+        "vietnameseTranslation": "Tạp chí học thuật buộc phải rút lại bài nghiên cứu do việc thao túng dữ liệu gian lận.",
+        "level": "C1",
+        "collocation": "Retract a statement / Retract a publication"
+      },
+      {
+        "word": "Extract",
+        "partOfSpeech": "v",
+        "meaning": "Chiết xuất, khai thác triệt để (tài nguyên)",
+        "visualBreakdown": "Ex- (ra ngoài) + Tract (kéo ra)",
+        "ieltsSentence": "Advanced mining apparatus enables corporations to extract rare earth minerals with reduced surface disruption.",
+        "vietnameseTranslation": "Thiết bị khai khoáng tiên tiến cho phép các tập đoàn chiết xuất khoáng sản đất hiếm với mức độ phá vỡ bề mặt giảm thiểu.",
+        "level": "C1",
+        "collocation": "Extract resources / Extract vital data"
+      },
+      {
+        "word": "Tractable",
+        "partOfSpeech": "adj",
+        "meaning": "Dễ điều khiển, dễ xử lý",
+        "visualBreakdown": "Tract (kéo dắt) + -able",
+        "ieltsSentence": "With targeted artificial intelligence algorithms, massive dataset management becomes substantially more tractable.",
+        "vietnameseTranslation": "Với các thuật toán trí tuệ nhân tạo chuyên biệt, việc quản lý tập dữ liệu khổng lồ trở nên dễ xử lý hơn đáng kể.",
+        "level": "C2",
+        "collocation": "Tractable problem / Tractable solution"
       }
     ]
   },
   {
-    id: "r123",
-    root: "MERC",
-    meaning: "Thương mại, Mua bán hàng hoá, Buôn bán",
-    origin: "Latin (merx - merchandise)",
-    description: "Cốt tủy của từ vựng IELTS Reading Kinh tế cổ điển, chủ đề Giao dịch toàn cầu và Cách mạng công nghiệp.",
-    tip: "Nghĩ ngay tới 'Merchant' (Thương nhân ngồi chợ buôn bán) hay 'Merchandise' (Hàng hóa lưu niệm bán chạy).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-ver-cert",
+    "root": "VER / CERT-",
+    "meaning": "Chân lý, chính xác, xác thực, đảm bảo",
+    "origin": "Latin (verus - sự thật; certus - chắc chắn)",
+    "description": "Gốc chỉ sự chân thực không thể chối cãi, việc kiểm định tính chính xác và độ chắc chắn trong học thuật và pháp lý.",
+    "tip": "Nhớ đến Verify (xác minh) hoặc Certain (chắc chắn) – sự thật được soi tỏ dưới ánh sáng.",
+    "category": "Trục 6: Chân Lý, Đo Lường & Chuẩn Mực",
+    "axis": "Trục 6",
+    "axisTitle": "TRỤC 6: CHÂN LÝ, ĐO LƯỜNG & CHUẨN MỰC",
+    "axisSubtitle": "Truth, Measure & Trust (Sự thật & Xác tín)",
+    "stemKey": "VER / CERT-",
+    "exampleWords": [
       {
-        word: "commercial",
-        partOfSpeech: "adj, n",
-        meaning: "Thuộc về thương mại, tìm kiếm lợi nhuận thương trường",
-        visualBreakdown: "COM (cùng nhau) + MERC (buôn bán) + IAL -> thuộc về thị trường trao đổi hàng hóa sinh lời",
-        ieltsSentence: "The initial research project was designed for purely academic interests, devoid of any commercial goals.",
-        vietnameseTranslation: "Dự án nghiên cứu ban đầu được thiết kế chỉ thuần túy vì mục đích học thuật, không có bất kỳ mục tiêu thương mại nào."
+        "word": "Verdict",
+        "partOfSpeech": "n",
+        "meaning": "Lời phán quyết của tòa án; phán đoán chung cuộc",
+        "visualBreakdown": "Ver (sự thật) + Dict (nói) $\\rightarrow$ Lời phán quyết sự thật",
+        "ieltsSentence": "The jury delivered an unanimous guilty verdict after deliberating for three consecutive days.",
+        "vietnameseTranslation": "Bồi thẩm đoàn đã đưa ra phán quyết có tội đồng thuận sau khi thảo luận trong ba ngày liên tiếp.",
+        "level": "C1",
+        "collocation": "Deliver a verdict / Final verdict"
       },
       {
-        word: "merchandise",
-        partOfSpeech: "n",
-        meaning: "Hàng hóa trao đổi, sản phẩm giao lưu buôn bán",
-        visualBreakdown: "MERC (hàng hóa) + AND + ISE -> những sản phẩm vật lý lưu kho sẵn sàng đem bán kiếm tiền",
-        ieltsSentence: "The port was stacked with tons of exotic merchandise ready for transcontinental redistribution.",
-        vietnameseTranslation: "Cảng xếp đầy hàng tấn hàng hóa ngoại lai độc đáo sẵn sàng để phân phối lại khắp châu lục."
+        "word": "Verify",
+        "partOfSpeech": "v",
+        "meaning": "Xác minh, kiểm chứng dữ liệu",
+        "visualBreakdown": "Ver (sự thật) + -ify (làm cho)",
+        "ieltsSentence": "Investigators must cross-reference digital logs to verify the integrity of financial transactions.",
+        "vietnameseTranslation": "Các điều tra viên phải đối chiếu các nhật ký điện tử để xác minh tính toàn vẹn của các giao dịch tài chính.",
+        "level": "C1",
+        "collocation": "Verify authenticity / Verifiable evidence"
+      },
+      {
+        "word": "Certainty",
+        "partOfSpeech": "n",
+        "meaning": "Mức độ chắc chắn; sự xác quyết",
+        "visualBreakdown": "Cert (chắc chắn) + -ty (danh từ)",
+        "ieltsSentence": "Macroeconomic forecasters operate under severe uncertainty regarding fossil fuel price volatility.",
+        "vietnameseTranslation": "Các nhà dự báo kinh tế vĩ mô hoạt động dưới sự bất định nghiêm trọng về biến động giá nhiên liệu hóa thạch.",
+        "level": "C1",
+        "collocation": "Absolute certainty / Degree of certainty"
+      },
+      {
+        "word": "Veracity",
+        "partOfSpeech": "n",
+        "meaning": "Tính trung thực, tính xác thực của thông tin",
+        "visualBreakdown": "Ver (sự thật) + -acity",
+        "ieltsSentence": "Independent fact-checkers are indispensable to evaluate the veracity of viral social media assertions.",
+        "vietnameseTranslation": "Các chuyên gia kiểm chứng độc lập là không thể thiếu để đánh giá tính xác thực của các khẳng định lan truyền trên mạng xã hội.",
+        "level": "C2",
+        "collocation": "Question the veracity / Attest to veracity"
+      },
+      {
+        "word": "Ascertain",
+        "partOfSpeech": "v",
+        "meaning": "Tìm hiểu cho chắc chắn, làm sáng tỏ",
+        "visualBreakdown": "Ad- (tới) + Certain (chắc chắn)",
+        "ieltsSentence": "Sociological surveys were orchestrated to ascertain the root causes of metropolitan youth unemployment.",
+        "vietnameseTranslation": "Các cuộc điều tra xã hội học đã được tổ chức để làm sáng tỏ nguyên nhân gốc rễ của nạn thất nghiệp ở thanh niên đô thị.",
+        "level": "C2",
+        "collocation": "Ascertain facts / Ascertain feasibility"
+      },
+      {
+        "word": "Veritable",
+        "partOfSpeech": "adj",
+        "meaning": "Đích thực, thực sự (dùng để nhấn mạnh)",
+        "visualBreakdown": "Ver (sự thật) + -itable",
+        "ieltsSentence": "The proliferation of digital libraries has triggered a veritable revolution in autonomous learning.",
+        "vietnameseTranslation": "Sự phổ biến của các thư viện số đã kích hoạt một cuộc cách mạng đích thực trong việc tự học.",
+        "level": "C2",
+        "collocation": "Veritable treasure / Veritable paradise"
+      },
+      {
+        "word": "Certify",
+        "partOfSpeech": "v",
+        "meaning": "Chứng thực, cấp bằng công nhận tiêu chuẩn",
+        "visualBreakdown": "Cert (chắc chắn) + -ify",
+        "ieltsSentence": "Agronomists inspect soil samples to certify that organic farms comply with pesticide-free guidelines.",
+        "vietnameseTranslation": "Các nhà nông học kiểm tra mẫu đất để chứng thực các trang trại hữu cơ tuân thủ các quy chuẩn không dùng thuốc trừ sâu.",
+        "level": "C1",
+        "collocation": "Certify compliance / Formally certify"
+      },
+      {
+        "word": "Invariable",
+        "partOfSpeech": "adj",
+        "meaning": "Bất biến, không bao giờ thay đổi",
+        "visualBreakdown": "In- (không) + Variable (thay đổi)",
+        "ieltsSentence": "Physical constants represent invariable parameters governing astronomical celestial mechanics.",
+        "vietnameseTranslation": "Các hằng số vật lý đại diện cho các thông số bất biến chi phối cơ học thiên thể vũ trụ.",
+        "level": "C2",
+        "collocation": "Invariable law / Invariable constant"
       }
     ]
   },
   {
-    id: "r124",
-    root: "FIS/FISC",
-    meaning: "Tài chính quốc gia, Ngân khố, Tiền tệ ngân sách",
-    origin: "Latin (fiscus - state treasury, purse)",
-    description: "Xuất hiện trong các báo cáo kinh tế học tầm vĩ mô của IELTS nói về thuế, chi tiêu tiền công của chính phủ.",
-    tip: "Bắt buộc nhớ tính từ 'Fiscal' (Thuộc tài khóa chính phủ, ví dụ: Fiscal policy - Chính sách tài khóa).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-fid-cred",
+    "root": "FID / CRED-",
+    "meaning": "Niềm tin, độ tin cậy, uy tín, danh dự",
+    "origin": "Latin (fides - niềm tin; credere - tin tưởng)",
+    "description": "Gốc từ nền tảng liên quan đến lòng tin học thuật, bằng chứng khả tín, bí mật tín cẩn và tín dụng.",
+    "tip": "Nhớ đến Confident (tự tin) hoặc Credible (đáng tin) – xây dựng niềm tin không lay chuyển.",
+    "category": "Trục 6: Chân Lý, Đo Lường & Chuẩn Mực",
+    "axis": "Trục 6",
+    "axisTitle": "TRỤC 6: CHÂN LÝ, ĐO LƯỜNG & CHUẨN MỰC",
+    "axisSubtitle": "Truth, Measure & Trust (Niềm tin & Khả tín)",
+    "stemKey": "FID / CRED-",
+    "exampleWords": [
       {
-        word: "fiscal",
-        partOfSpeech: "adj",
-        meaning: "Thuộc tài khóa, tài chính nhà nước, ngân sách công",
-        visualBreakdown: "FISC (ngân khố) + AL -> liên quan trực tiếp đến việc thu chi ngân lượng của chính quyền",
-        ieltsSentence: "Economists argue that structural fiscal reforms are required to combat the mounting national debt.",
-        vietnameseTranslation: "Các nhà kinh tế lập luận rằng các cải cách tài khóa theo cơ cấu là cần thiết để chống lại khoản nợ quốc gia đang gia tăng."
+        "word": "Credible",
+        "partOfSpeech": "adj",
+        "meaning": "Đáng tin cậy, có thể tin được",
+        "visualBreakdown": "Cred (tin) + -ible (có thể)",
+        "ieltsSentence": "Scholarly publications must cite credible peer-reviewed literature rather than anonymous web commentary.",
+        "vietnameseTranslation": "Các ấn phẩm học thuật phải trích dẫn các tài liệu được bình duyệt đáng tin cậy thay vì các bình luận ẩn danh trên mạng.",
+        "level": "C1",
+        "collocation": "Credible source / Credible alternative"
       },
       {
-        word: "confiscate",
-        partOfSpeech: "v",
-        meaning: "Tịch thu sung công quỹ, thu giữ tài sản phi pháp",
-        visualBreakdown: "CON (cùng nhau) + FISC (vào ngân khố) + ATE -> chuyển tài sản phi pháp của phạm nhân vào hòm tiền chung quốc gia",
-        ieltsSentence: "Customs authorities decided to confiscate illegal ivory shipments worth millions of dollars.",
-        vietnameseTranslation: "Cơ quan hải quan đã quyết định tịch thu các lô hàng ngà voi bất hợp pháp trị giá hàng triệu đô la."
+        "word": "Confidential",
+        "partOfSpeech": "adj",
+        "meaning": "Tuyệt mật, bí mật riêng tư",
+        "visualBreakdown": "Con- (hoàn toàn) + Fid (niềm tin) + -ential",
+        "ieltsSentence": "Patient medical records are strictly confidential and protected by rigorous privacy legislation.",
+        "vietnameseTranslation": "Hồ sơ y tế của bệnh nhân là tuyệt mật và được bảo vệ bởi luật bảo mật nghiêm ngặt.",
+        "level": "C1",
+        "collocation": "Strictly confidential / Confidential records"
+      },
+      {
+        "word": "Incredulous",
+        "partOfSpeech": "adj",
+        "meaning": "Không thể tin nổi, đầy hoài nghi",
+        "visualBreakdown": "In- (không) + Cred (tin) + -ulous (nghi ngờ)",
+        "ieltsSentence": "Economists remained incredulous at corporate claims of thirty percent quarterly profit expansion during a recession.",
+        "vietnameseTranslation": "Các nhà kinh tế học vẫn đầy hoài nghi trước những tuyên bố của tập đoàn về mức tăng trưởng lợi nhuận 30% trong thời kỳ suy thoái.",
+        "level": "C2",
+        "collocation": "Incredulous look / Highly incredulous"
+      },
+      {
+        "word": "Fidelity",
+        "partOfSpeech": "n",
+        "meaning": "Lòng trung thành; độ trung thực, chuẩn xác",
+        "visualBreakdown": "Fid (tin) + -ity",
+        "ieltsSentence": "High fidelity audio synthesis replicates acoustic subtleties with immaculate precision.",
+        "vietnameseTranslation": "Sự tổng hợp âm thanh độ trung thực cao tái tạo những sắc thái âm học tinh tế với độ chính xác hoàn hảo.",
+        "level": "C2",
+        "collocation": "High fidelity / Unswerving fidelity"
+      },
+      {
+        "word": "Diffident",
+        "partOfSpeech": "adj",
+        "meaning": "Thiếu tự tin, rụt rè, e dè",
+        "visualBreakdown": "Dis- (thiếu) + Fid (tin) + -ent",
+        "ieltsSentence": "Diffident graduate students often refrain from voicing provocative critiques during academic seminars.",
+        "vietnameseTranslation": "Những sinh viên sau đại học thiếu tự tin thường ngần ngại bày tỏ những phê bình mang tính gợi mở trong các buổi hội thảo học thuật.",
+        "level": "C2",
+        "collocation": "Diffident demeanor / Diffident speaker"
+      },
+      {
+        "word": "Credence",
+        "partOfSpeech": "n",
+        "meaning": "Sự tín nhiệm, lòng tin dành cho một luận điểm",
+        "visualBreakdown": "Cred (tin) + -ence",
+        "ieltsSentence": "Recent empirical archaeological excavations give credence to ancient oral migratory legends.",
+        "vietnameseTranslation": "Các cuộc khai quật khảo cổ học thực nghiệm gần đây tạo sự tín nhiệm cho các truyền thuyết di cư truyền khẩu cổ xưa.",
+        "level": "C2",
+        "collocation": "Give credence to / Gain credence"
+      },
+      {
+        "word": "Accreditation",
+        "partOfSpeech": "n",
+        "meaning": "Sự kiểm định chất lượng, cấp chứng nhận uy tín",
+        "visualBreakdown": "Ad- (tới) + Cred (tin) + -ation",
+        "ieltsSentence": "Tertiary institutions must undergo periodic accreditation to uphold pedagogical excellence.",
+        "vietnameseTranslation": "Các cơ sở giáo dục đại học phải trải qua đợt kiểm định định kỳ để duy trì chất lượng giảng dạy xuất sắc.",
+        "level": "C1",
+        "collocation": "Institutional accreditation / Academic accreditation"
+      },
+      {
+        "word": "Perfidy",
+        "partOfSpeech": "n",
+        "meaning": "Sự bội tín, phản bội lòng tin",
+        "visualBreakdown": "Per- (xuyên qua, phá vỡ) + Fid (tin)",
+        "ieltsSentence": "Unilaterally violating the international non-proliferation treaty was condemned as an act of diplomatic perfidy.",
+        "vietnameseTranslation": "Việc đơn phương vi phạm hiệp ước không phổ biến vũ khí quốc tế đã bị lên án như một hành vi bội tín ngoại giao.",
+        "level": "C2",
+        "collocation": "Act of perfidy / Treacherous perfidy"
       }
     ]
   },
   {
-    id: "r125",
-    root: "MIG/MIGR",
-    meaning: "Di chuyển, Di cư, Chuyển dịch sinh sống",
-    origin: "Latin (migrare - to move, travel)",
-    description: "Rất quan trọng trong các chủ đề Nhập cư (Immigration), sinh học động vật di cư xa thẳm, rào cản địa lý xã hội.",
-    tip: "Thường trực trong từ 'Migrate' (Di cư tránh rét của chim chóc) hay 'Immigrate' (Nhập cư định cư luôn tại xứ người).",
-    category: "Actions & Motion",
-    exampleWords: [
+    "id": "stem-val-vail",
+    "root": "VAL / VAIL-",
+    "meaning": "Giá trị, sức mạnh, hiệu lực, chiếm ưu thế",
+    "origin": "Latin (valere - mạnh khỏe, có giá trị, có hiệu lực)",
+    "description": "Gốc diễn đạt sức mạnh nội tại, tính hiệu lực pháp lý, giá trị định lượng hoặc sự áp đảo vượt trội.",
+    "tip": "Nhớ đến Value (giá trị) hoặc Prevail (thắng thế) – sức mạnh khẳng định chỗ đứng.",
+    "category": "Trục 6: Chân Lý, Đo Lường & Chuẩn Mực",
+    "axis": "Trục 6",
+    "axisTitle": "TRỤC 6: CHÂN LÝ, ĐO LƯỜNG & CHUẨN MỰC",
+    "axisSubtitle": "Truth, Measure & Trust (Giá trị & Hiệu lực)",
+    "stemKey": "VAL / VAIL-",
+    "exampleWords": [
       {
-        word: "migratory",
-        partOfSpeech: "adj",
-        meaning: "Di động, thuộc di cư theo mùa của động vật",
-        visualBreakdown: "MIGR (di chuyển bờ cõi) + ATORY -> mang tập tính di dời chỗ ở định kỳ để sinh tồn",
-        ieltsSentence: "The preservation of wetlands is essential to protect migratory birds during their long journeys.",
-        vietnameseTranslation: "Việc bảo tồn các vùng đất ngập nước là thiết yếu để bảo vệ chim di cư trong suốt những hành trình dài của chúng."
+        "word": "Evaluate",
+        "partOfSpeech": "v",
+        "meaning": "Đánh giá chất lượng, định giá hiệu năng",
+        "visualBreakdown": "E- (lấy ra) + Val (giá trị) + -ate",
+        "ieltsSentence": "Educational authorities must critically evaluate the long-term cognitive impact of standardized tests.",
+        "vietnameseTranslation": "Các cơ quan giáo dục phải đánh giá thấu đáo tác động nhận thức lâu dài của các bài thi chuẩn hóa.",
+        "level": "C1",
+        "collocation": "Evaluate performance / Critically evaluate"
       },
       {
-        word: "immigrate",
-        partOfSpeech: "v",
-        meaning: "Nhập cư định cư hợp pháp",
-        visualBreakdown: "IM (vào trong) + MIGR (di chuyển) + ATE -> di chuyển qua biên giới để định cư lâu dài trong một nước khác",
-        ieltsSentence: "His grandfather chose to immigrate to Canada to build a stable farming business.",
-        vietnameseTranslation: "Ông nội của anh đã chọn nhập cư sang Canada để xây dựng công việc kinh doanh nông trại ổn định."
+        "word": "Prevail",
+        "partOfSpeech": "v",
+        "meaning": "Chiếm ưu thế, thịnh hành, thắng thế",
+        "visualBreakdown": "Pre- (trước) + Vail (mạnh) $\\rightarrow$ Sức mạnh vượt lên trên",
+        "ieltsSentence": "Optimists maintain that democratic discourse will ultimately prevail over demagogic populism.",
+        "vietnameseTranslation": "Những người lạc quan tin rằng diễn ngôn dân chủ cuối cùng sẽ thắng thế trước chủ nghĩa dân túy mị dân.",
+        "level": "C1",
+        "collocation": "Prevail over / Prevailing sentiment"
+      },
+      {
+        "word": "Prevalent",
+        "partOfSpeech": "adj",
+        "meaning": "Phổ biến rộng khắp, thịnh hành",
+        "visualBreakdown": "Pre- (trước) + Val (mạnh) + -ent",
+        "ieltsSentence": "Sedentary leisure habits are increasingly prevalent among urban adolescents, precipitating health crises.",
+        "vietnameseTranslation": "Thói quen giải trí thụ động, ít vận động đang ngày càng phổ biến trong giới thanh thiếu niên đô thị, làm dấy lên các cuộc khủng hoảng sức khỏe.",
+        "level": "C1",
+        "collocation": "Prevalent condition / Widely prevalent"
+      },
+      {
+        "word": "Invalidate",
+        "partOfSpeech": "v",
+        "meaning": "Làm mất đi hiệu lực/giá trị pháp lý",
+        "visualBreakdown": "In- (không) + Valid (hiệu lực) + -ate",
+        "ieltsSentence": "Methodological procedural flaws in data collection can completely invalidate experimental outcomes.",
+        "vietnameseTranslation": "Những sai sót về quy trình phương pháp luận trong việc thu thập dữ liệu có thể làm mất hoàn toàn giá trị của các kết quả thực nghiệm.",
+        "level": "C1",
+        "collocation": "Invalidate findings / Invalidate contract"
+      },
+      {
+        "word": "Valiant",
+        "partOfSpeech": "adj",
+        "meaning": "Dũng cảm, kiên cường, quả cảm",
+        "visualBreakdown": "Val (mạnh mẽ) + -iant",
+        "ieltsSentence": "Despite valiant municipal reforestation initiatives, regional desertification continues to expand.",
+        "vietnameseTranslation": "Bất chấp những sáng kiến trồng rừng quả cảm của chính quyền địa phương, tình trạng sa mạc hóa trong khu vực vẫn tiếp tục mở rộng.",
+        "level": "C2",
+        "collocation": "Valiant attempt / Valiant effort"
+      },
+      {
+        "word": "Equivalent",
+        "partOfSpeech": "adj",
+        "meaning": "Tương đương về giá trị hoặc khối lượng",
+        "visualBreakdown": "Equi- (bằng) + Val (giá trị) + -ent",
+        "ieltsSentence": "Burning one ton of this refined biofuel releases energy equivalent to two barrels of conventional crude.",
+        "vietnameseTranslation": "Đốt cháy một tấn nhiên liệu sinh học tinh chế này giải phóng năng lượng tương đương với hai thùng dầu thô thông thường.",
+        "level": "C1",
+        "collocation": "Roughly equivalent / Functional equivalent"
+      },
+      {
+        "word": "Valence",
+        "partOfSpeech": "n",
+        "meaning": "Hóa trị; sức hút tâm lý, giá trị định hướng",
+        "visualBreakdown": "Val (sức mạnh) + -ence",
+        "ieltsSentence": "Political slogans carry immense emotional valence capable of polarizing electorates.",
+        "vietnameseTranslation": "Các khẩu hiệu chính trị mang sức hút cảm xúc to lớn có khả năng phân cực cử tri.",
+        "level": "C2",
+        "collocation": "Emotional valence / High valence"
+      },
+      {
+        "word": "Avail",
+        "partOfSpeech": "v",
+        "meaning": "Tận dụng lợi thế; có ích, mang lại giá trị",
+        "visualBreakdown": "Ad- (tới) + Vail (sức mạnh)",
+        "ieltsSentence": "Enterprises must avail themselves of cutting-edge automation to sustain international competitiveness.",
+        "vietnameseTranslation": "Các doanh nghiệp phải tận dụng tối đa công nghệ tự động hóa tiên tiến để duy trì năng lực cạnh tranh quốc tế.",
+        "level": "C2",
+        "collocation": "Avail oneself of / To no avail"
       }
     ]
   },
   {
-    id: "r126",
-    root: "VIA/VI",
-    meaning: "Đường đi, Lộ trình, Đi lại giao thông",
-    origin: "Latin (via - way, road)",
-    description: "Bộ gốc từ vựng mô tả lối thoát, lộ trình kế hoạch giao thông đô thị và tính hiện thực hóa.",
-    tip: "Học từ 'Via' (Đi thông qua con đường/địa điểm trung gian) hay tính từ 'Viable' (Khả thi - có đường đi thông suốt để sinh tồn).",
-    category: "Time & Space",
-    exampleWords: [
+    "id": "stem-simil-par",
+    "root": "EQU / SIMIL / PAR-",
+    "meaning": "Đồng dạng, đồng hóa, tương xứng, ngang bằng",
+    "origin": "Latin (similis - tương tự; par - ngang bằng)",
+    "description": "Gốc chỉ sự tương đồng, đồng nhất hóa, sự tương xứng cân bằng hoặc sự chênh lệch so sánh trong xã hội học.",
+    "tip": "Nhớ đến Similar (tương tự) hoặc Parallel (song song) – đặt cạnh nhau để so chiếu.",
+    "category": "Trục 6: Chân Lý, Đo Lường & Chuẩn Mực",
+    "axis": "Trục 6",
+    "axisTitle": "TRỤC 6: CHÂN LÝ, ĐO LƯỜNG & CHUẨN MỰC",
+    "axisSubtitle": "Truth, Measure & Trust (Tương đồng & Chuẩn mực)",
+    "stemKey": "SIMIL / PAR-",
+    "exampleWords": [
       {
-        word: "viability",
-        partOfSpeech: "n",
-        meaning: "Khả năng tồn tại độc lập, tính khả thi có đường thực thi",
-        visualBreakdown: "VI (con đường sống sót) + ABILITY (khả năng) -> năng lực có cửa sinh, dễ dàng triển khai thành tựu cụ thể",
-        ieltsSentence: "The financial viability of the solar plant project remains speculative without government funding.",
-        vietnameseTranslation: "Khả năng sống sót tài chính bền vững của dự án nhà máy điện mặt trời vẫn mang tính đầu cơ phỏng đoán khi thiếu tài trợ chính phủ."
+        "word": "Assimilate",
+        "partOfSpeech": "v",
+        "meaning": "Đồng hóa; tiếp thu và hòa nhập tri thức mới",
+        "visualBreakdown": "As- (vào) + Simil (giống) $\\rightarrow$ Hòa làm một",
+        "ieltsSentence": "Immigrant communities often struggle to assimilate into host cultures while preserving heritage traditions.",
+        "vietnameseTranslation": "Các cộng đồng người nhập cư thường chật vật để hòa nhập vào nền văn hóa bản địa trong khi vẫn bảo tồn các truyền thống di sản.",
+        "level": "C1",
+        "collocation": "Assimilate into culture / Assimilate information"
       },
       {
-        word: "deviate",
-        partOfSpeech: "v",
-        meaning: "Chệch hướng, đi xa khỏi lộ trình chuẩn ban đầu",
-        visualBreakdown: "DE (rời khỏi) + VIA (đường chính) + ATE -> lạc trôi bẻ lái ra khỏi làn đường đã cam kết",
-        ieltsSentence: "The experimental results did not deviate significantly from the theoretical predictions.",
-        vietnameseTranslation: "Các kết quả thực nghiệm đã không có sự lệch hướng đáng kể so với những dự đoán lý thuyết."
+        "word": "Disparity",
+        "partOfSpeech": "n",
+        "meaning": "Sự chênh lệch, phân hóa rõ rệt",
+        "visualBreakdown": "Dis- (không) + Par (ngang bằng) + -ity",
+        "ieltsSentence": "The widening wealth disparity between metropolitan cores and neglected hinterlands threatens social stability.",
+        "vietnameseTranslation": "Sự chênh lệch giàu nghèo ngày càng mở rộng giữa các lõi đô thị và vùng nội địa bị lãng quên đe dọa sự ổn định xã hội.",
+        "level": "C1",
+        "collocation": "Income disparity / Wide disparity"
+      },
+      {
+        "word": "Parity",
+        "partOfSpeech": "n",
+        "meaning": "Sự bình đẳng, thế ngang bằng (về tiền tệ, quyền lợi)",
+        "visualBreakdown": "Par (ngang bằng) + -ity",
+        "ieltsSentence": "Advocates demand legislative action to guarantee gender pay parity across all corporate sectors.",
+        "vietnameseTranslation": "Những người ủng hộ yêu cầu hành động lập pháp để đảm bảo sự bình đẳng tiền lương theo giới trên mọi lĩnh vực doanh nghiệp.",
+        "level": "C1",
+        "collocation": "Achieve parity / Purchasing power parity"
+      },
+      {
+        "word": "Dissimilar",
+        "partOfSpeech": "adj",
+        "meaning": "Khác biệt, không giống nhau",
+        "visualBreakdown": "Dis- (không) + Similar (giống)",
+        "ieltsSentence": "Although originating from dissimilar backgrounds, both scholars arrived at concordant philosophical conclusions.",
+        "vietnameseTranslation": "Mặc dù xuất thân từ những hoàn cảnh khác biệt, cả hai học giả đều đi đến những kết luận triết học tương đồng.",
+        "level": "C1",
+        "collocation": "Dissimilar outcomes / Strikingly dissimilar"
+      },
+      {
+        "word": "Peerless",
+        "partOfSpeech": "adj",
+        "meaning": "Vô song, không ai sánh bằng",
+        "visualBreakdown": "Peer (người ngang hàng) + -less (không có)",
+        "ieltsSentence": "The classical composer earned peerless acclaim for harmonizing traditional motifs with modern orchestration.",
+        "vietnameseTranslation": "Nhà soạn nhạc cổ điển đã nhận được sự tán dương vô song nhờ việc hài hòa các mô-típ truyền thống với dàn nhạc hiện đại.",
+        "level": "C2",
+        "collocation": "Peerless craftsmanship / Peerless talent"
+      },
+      {
+        "word": "Simultaneous",
+        "partOfSpeech": "adj",
+        "meaning": "Đồng thời, xảy ra cùng một lúc",
+        "visualBreakdown": "Simul (cùng một lúc) + -aneous",
+        "ieltsSentence": "The simultaneous collapse of major lending banks triggered global market contagion.",
+        "vietnameseTranslation": "Sự sụp đổ đồng thời của các ngân hàng cho vay lớn đã kích hoạt hiệu ứng lây lan trên thị trường toàn cầu.",
+        "level": "C1",
+        "collocation": "Simultaneous translation / Simultaneous occurrence"
+      },
+      {
+        "word": "Incomparable",
+        "partOfSpeech": "adj",
+        "meaning": "Không thể so sánh được, tuyệt đỉnh",
+        "visualBreakdown": "In- (không) + Compare (so sánh) + -able",
+        "ieltsSentence": "The pristine biodiversity of the Galapagos archipelago offers incomparable ecological insights.",
+        "vietnameseTranslation": "Sự đa dạng sinh học nguyên sơ của quần đảo Galapagos cung cấp những hiểu biết sinh thái học không gì sánh được.",
+        "level": "C2",
+        "collocation": "Incomparable beauty / Incomparable advantage"
+      },
+      {
+        "word": "Simulate",
+        "partOfSpeech": "v",
+        "meaning": "Mô phỏng, giả lập môi trường",
+        "visualBreakdown": "Simil (giống) + -ate",
+        "ieltsSentence": "High-powered supercomputers simulate climate scenarios to forecast sea level rises over the forthcoming century.",
+        "vietnameseTranslation": "Các siêu máy tính công suất lớn mô phỏng các kịch bản khí hậu để dự báo mực nước biển dâng trong thế kỷ tới.",
+        "level": "C1",
+        "collocation": "Simulate conditions / Computer simulation"
       }
     ]
   },
   {
-    id: "r127",
-    root: "CULT",
-    meaning: "Gieo trồng, Trau dồi, Tôn sùng di sản văn hoá",
-    origin: "Latin (colere - to till, care, worship)",
-    description: "Gặp liên tục trong IELTS Reading mảng Nhân chủng học, Văn hóa so sánh toàn cầu hóa học và sự đồng hóa.",
-    tip: "Nhớ từ 'Culture' (Văn hóa - trau dồi tâm hồn tập thể) hoặc 'Agriculture' (Nông nghiệp - gieo trồng trên cánh đồng đất đai).",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-pon-pos",
+    "root": "PON / POS / POSIT-",
+    "meaning": "Đặt, để, sắp đặt vị trí, bố trí",
+    "origin": "Latin (ponere, positus - đặt, để)",
+    "description": "Gốc chỉ hành động đặt để thực thể, trình bày ý tưởng, định vị chiến lược hoặc sắp đặt tương quan.",
+    "tip": "Nhớ đến Position (vị trí) hoặc Propose (đề xuất) – đặt quân cờ vào đúng vị thế.",
+    "category": "Trục 7: Vị Thế, Thuộc Tính & Bền Vững",
+    "axis": "Trục 7",
+    "axisTitle": "TRỤC 7: VỊ THẾ, THUỘC TÍNH & BỀN VỮNG",
+    "axisSubtitle": "State, Position & Holding (Đặt để & Định vị)",
+    "stemKey": "PON / POS-",
+    "exampleWords": [
       {
-        word: "cultivate",
-        partOfSpeech: "v",
-        meaning: "Gieo trồng, vun đắp bồi dưỡng học vấn/mối quan hệ",
-        visualBreakdown: "CULT (chăm sóc gieo trồng) + IVATE -> cày cấy, nhẫn nại chăm sóc cho lớn mạnh tốt tươi",
-        ieltsSentence: "The mentor helped her cultivate the essential leadership skills necessary for high-level management.",
-        vietnameseTranslation: "Người cố vấn đã giúp cô bồi dưỡng các kỹ năng lãnh đạo thiết yếu cần có cho việc quản lý cấp cao."
+        "word": "Propose",
+        "partOfSpeech": "v",
+        "meaning": "Đề xuất, kiến nghị giải pháp",
+        "visualBreakdown": "Pro- (phía trước) + Pose (đặt) $\\rightarrow$ Đặt ý kiến ra trước bàn nghị sự",
+        "ieltsSentence": "Urban planners propose constructing decentralized rapid transit lines to alleviate suburban traffic bottlenecks.",
+        "vietnameseTranslation": "Các nhà quy hoạch đô thị đề xuất xây dựng các tuyến tàu điện ngầm phân tán để giảm bớt các nút thắt cổ chai giao thông ngoại ô.",
+        "level": "C1",
+        "collocation": "Propose a reform / Propose an initiative"
       },
       {
-        word: "acculturation",
-        partOfSpeech: "n",
-        meaning: "Sự tiếp biến văn hóa, học hỏi thích ứng lối sống mới",
-        visualBreakdown: "AC (hướng tới) + CULT (văn hóa bản địa) + URATION -> quá trình dung hòa lối sống bản địa để nhập gia tùy tục xứ người",
-        ieltsSentence: "Academics examined how acculturation stress affects the scholastic performance of overseas students.",
-        vietnameseTranslation: "Các nhà học thuật đã nghiên cứu xem căng thẳng tiếp biến thích ứng văn hóa ảnh hưởng thế nào đến thành tích học tập của học viên nước ngoài."
+        "word": "Juxtapose",
+        "partOfSpeech": "v",
+        "meaning": "Đặt cạnh nhau để so sánh đối chiếu tương phản",
+        "visualBreakdown": "Juxta (gần kề) + Pose (đặt)",
+        "ieltsSentence": "The photojournalist chose to juxtapose gleaming skyscrapers with dilapidated shantytowns to highlight inequality.",
+        "vietnameseTranslation": "Nhà báo ảnh đã chọn đặt cạnh nhau những tòa nhà chọc trời lộng lẫy với các khu ổ chuột tồi tàn để làm nổi bật sự bất bình đẳng.",
+        "level": "C2",
+        "collocation": "Juxtapose contrasting views / Strikingly juxtaposed"
+      },
+      {
+        "word": "Disposition",
+        "partOfSpeech": "n",
+        "meaning": "Khuynh hướng tính khí bẩm sinh; sự sắp đặt",
+        "visualBreakdown": "Dis- (từng phần) + Posit (đặt) + -ion",
+        "ieltsSentence": "A genetic predisposition to hypertension can be mitigated by conscientious lifestyle interventions.",
+        "vietnameseTranslation": "Khuynh hướng bẩm sinh do di truyền dẫn đến huyết áp cao có thể được giảm thiểu bằng các can thiệp lối sống chu đáo.",
+        "level": "C2",
+        "collocation": "Gentle disposition / Genetic predisposition"
+      },
+      {
+        "word": "Deposition",
+        "partOfSpeech": "n",
+        "meaning": "Sự lắng đọng trầm tích; lời khai hữu thệ",
+        "visualBreakdown": "De- (xuống) + Posit (đặt) + -ion",
+        "ieltsSentence": "Centuries of sediment deposition created nutrient-rich alluvial plains ideal for intensive agriculture.",
+        "vietnameseTranslation": "Nhiều thế kỷ lắng đọng trầm tích đã tạo nên những vùng đồng bằng phù sa màu mỡ lý tưởng cho canh tác nông nghiệp thâm canh.",
+        "level": "C1",
+        "collocation": "Sediment deposition / Legal deposition"
+      },
+      {
+        "word": "Posit",
+        "partOfSpeech": "v",
+        "meaning": "Đặt giả định làm cơ sở lý luận",
+        "visualBreakdown": "Posit (đặt nền tảng)",
+        "ieltsSentence": "Evolutionary psychologists posit that altruism originated as a survival mechanism in ancestral clans.",
+        "vietnameseTranslation": "Các nhà tâm lý học tiến hóa đưa ra giả định rằng lòng vị tha bắt nguồn như một cơ chế sinh tồn trong các thị tộc tổ tiên.",
+        "level": "C2",
+        "collocation": "Posit a hypothesis / Posit that"
+      },
+      {
+        "word": "Superimpose",
+        "partOfSpeech": "v",
+        "meaning": "Đặt chồng lấn lên trên một lớp khác",
+        "visualBreakdown": "Super- (trên) + Im- (vào) + Pose (đặt)",
+        "ieltsSentence": "Augmented reality applications superimpose computer-generated diagrams onto real-world surgical views.",
+        "vietnameseTranslation": "Các ứng dụng thực tế tăng cường đặt chồng các sơ đồ do máy tính tạo lên trên tầm nhìn phẫu thuật trong thế giới thực.",
+        "level": "C2",
+        "collocation": "Superimpose an image / Superimpose layers"
+      },
+      {
+        "word": "Postulate",
+        "partOfSpeech": "v",
+        "meaning": "Đòi hỏi tiên đề, mặc định làm tiền đề",
+        "visualBreakdown": "Postulate (đặt ra nguyên lý cơ bản)",
+        "ieltsSentence": "Classical economists postulate that market participants act with rational self-interest.",
+        "vietnameseTranslation": "Các nhà kinh tế học cổ điển mặc định tiền đề rằng các thành viên tham gia thị trường luôn hành động vì tư lợi hợp lý.",
+        "level": "C2",
+        "collocation": "Postulate a theory / Fundamental postulate"
+      },
+      {
+        "word": "Composite",
+        "partOfSpeech": "adj",
+        "meaning": "Hỗn hợp, kết hợp nhiều thành phần cấu tạo",
+        "visualBreakdown": "Com- (cùng) + Posit (đặt) + -e",
+        "ieltsSentence": "Aeronautical engineers utilize composite carbon-fiber polymers to lighten fuselage weight while preserving structural rigidity.",
+        "vietnameseTranslation": "Các kỹ sư hàng không vũ trụ sử dụng polyme sợi carbon composite để giảm trọng lượng thân máy bay trong khi vẫn giữ được độ cứng cấu trúc.",
+        "level": "C1",
+        "collocation": "Composite material / Composite index"
       }
     ]
   },
   {
-    id: "r128",
-    root: "HERI/HERIT",
-    meaning: "Thừa kế, Di sản lưu truyền, Nền tảng thừa hưởng",
-    origin: "Latin (heres - heir)",
-    description: "Phát hiện trong các bài đọc bảo tồn thiên nhiên, cổ vật lịch sử và đặc tính bẩm sinh trong sinh học hành vi.",
-    tip: "Gắn liền với danh từ đắt giá 'Heritage' (Di sản vô giá của quốc gia) hay đặc tính bẩm sinh 'Inherent'.",
-    category: "People & Society",
-    exampleWords: [
+    "id": "stem-ten-tain",
+    "root": "TEN / TAIN / TIN-",
+    "meaning": "Cầm, nắm giữ, duy trì, chịu đựng, bảo tồn",
+    "origin": "Latin (tenere - giữ chặt, duy trì)",
+    "description": "Gốc nói về việc duy trì trạng thái bền bỉ theo thời gian, kiên trì không từ bỏ và giữ gìn tài nguyên.",
+    "tip": "Nhớ đến Maintain (duy trì) hoặc Sustain (bền vững) – giữ chắc trong lòng bàn tay.",
+    "category": "Trục 7: Vị Thế, Thuộc Tính & Bền Vững",
+    "axis": "Trục 7",
+    "axisTitle": "TRỤC 7: VỊ THẾ, THUỘC TÍNH & BỀN VỮNG",
+    "axisSubtitle": "State, Position & Holding (Nắm giữ & Bền bỉ)",
+    "stemKey": "TEN / TAIN-",
+    "exampleWords": [
       {
-        word: "heritage",
-        partOfSpeech: "n",
-        meaning: "Di sản thừa hưởng từ tổ tiên (bao gồm văn hóa/tự nhiên)",
-        visualBreakdown: "HERIT (thừa kế) + AGE -> báu vật phi vật thể hay vật thể tích lũy theo năm tháng được truyền cho đời sau",
-        ieltsSentence: "UNESCO serves to safeguard historical monuments defined as the collective heritage of humanity.",
-        vietnameseTranslation: "UNESCO đóng vai trò bảo vệ an toàn các di tích lịch sử đại diện cho di sản chung của toàn nhân loại."
+        "word": "Sustainable",
+        "partOfSpeech": "adj",
+        "meaning": "Bền vững, có thể duy trì lâu dài",
+        "visualBreakdown": "Sus- (dưới) + Tain (giữ) + -able $\\rightarrow$ Đỡ được từ bên dưới lâu dài",
+        "ieltsSentence": "Governments must enact coherent policies to transition away from fossil dependence toward sustainable renewable energy.",
+        "vietnameseTranslation": "Các chính phủ phải ban hành các chính sách nhất quán để chuyển đổi khỏi sự phụ thuộc vào hóa thạch hướng tới năng lượng tái tạo bền vững.",
+        "level": "C1",
+        "collocation": "Sustainable development / Sustainable practice"
       },
       {
-        word: "inherent",
-        partOfSpeech: "adj",
-        meaning: "Vốn có, nội tại bẩm sinh, không thể bóc tách",
-        visualBreakdown: "IN (bên trong) + HER (thừa kế di truyền) + ENT -> phẩm chất đã nằm sẵn trong gốc rễ gen di truyền ngay khi sinh ra",
-        ieltsSentence: "Every engineering venture carries some inherent risks that must be carefully managed.",
-        vietnameseTranslation: "Mọi dự án kỹ thuật hoành tráng đều đi kèm những rủi ro nội tại vốn có cần được quản lý hết sức thận trọng."
+        "word": "Retain",
+        "partOfSpeech": "v",
+        "meaning": "Giữ lại, giữ chân nhân tài, lưu giữ ký ức",
+        "visualBreakdown": "Re- (lại) + Tain (giữ)",
+        "ieltsSentence": "Regional healthcare networks often struggle to retain qualified specialists due to uncompetitive salary packages.",
+        "vietnameseTranslation": "Mạng lưới y tế khu vực thường chật vật để giữ chân các bác sĩ chuyên khoa giỏi do chế độ đãi ngộ tiền lương không cạnh tranh.",
+        "level": "C1",
+        "collocation": "Retain talent / Retain information"
+      },
+      {
+        "word": "Attain",
+        "partOfSpeech": "v",
+        "meaning": "Đạt được mục tiêu, vươn tới thành tựu",
+        "visualBreakdown": "Ad- (tới) + Tain (chạm tới và giữ)",
+        "ieltsSentence": "Underprivileged pupils require targeted pedagogical support to attain high academic parity with their affluent peers.",
+        "vietnameseTranslation": "Học sinh có hoàn cảnh khó khăn cần được hỗ trợ sư phạm chuyên biệt để đạt được sự ngang bằng học thuật cao với các bạn đồng trang lứa khá giả.",
+        "level": "C1",
+        "collocation": "Attain objectives / Attain proficiency"
+      },
+      {
+        "word": "Tenacious",
+        "partOfSpeech": "adj",
+        "meaning": "Kiên trì, bền bỉ đến cùng, bám chặt",
+        "visualBreakdown": "Ten (giữ) + -acious",
+        "ieltsSentence": "Through tenacious investigative journalism, the reporter unmasked systemic corruption within municipal procurement.",
+        "vietnameseTranslation": "Thông qua báo chí điều tra kiên trì và bền bỉ, phóng viên đã lột trần nạn tham nhũng có hệ thống trong hoạt động mua sắm công của thành phố.",
+        "level": "C2",
+        "collocation": "Tenacious effort / Tenacious resistance"
+      },
+      {
+        "word": "Pertinent",
+        "partOfSpeech": "adj",
+        "meaning": "Xác đáng, thích đáng, gắn liền với vấn đề",
+        "visualBreakdown": "Per- (thông suốt) + Tin (giữ) + -ent",
+        "ieltsSentence": "Academic researchers must formulate pertinent questions rather than amassing superfluous extraneous data.",
+        "vietnameseTranslation": "Các nhà nghiên cứu học thuật phải đặt ra những câu hỏi xác đáng thay vì thu thập dữ liệu râu ria thừa thãi.",
+        "level": "C1",
+        "collocation": "Pertinent question / Highly pertinent"
+      },
+      {
+        "word": "Abstain",
+        "partOfSpeech": "v",
+        "meaning": "Kiêng cữ, bỏ phiếu trắng",
+        "visualBreakdown": "Abs- (rời xa) + Tain (giữ mình)",
+        "ieltsSentence": "Several non-aligned delegations elected to abstain during the contentious United Nations resolution vote.",
+        "vietnameseTranslation": "Một số phái đoàn không liên kết đã chọn bỏ phiếu trắng trong cuộc bỏ phiếu nghị quyết gây tranh cãi của Liên Hợp Quốc.",
+        "level": "C1",
+        "collocation": "Abstain from voting / Abstain from alcohol"
+      },
+      {
+        "word": "Tenable",
+        "partOfSpeech": "adj",
+        "meaning": "Có thể đứng vững được, bảo vệ được (luận điểm)",
+        "visualBreakdown": "Ten (giữ) + -able",
+        "ieltsSentence": "In light of newly surfaced forensic evidence, the defense hypothesis is no longer logically tenable.",
+        "vietnameseTranslation": "Trước các bằng chứng pháp y mới xuất hiện, giả thuyết của bên bào chữa không còn có thể đứng vững về mặt logic nữa.",
+        "level": "C2",
+        "collocation": "Tenable position / Logically tenable"
+      },
+      {
+        "word": "Untenable",
+        "partOfSpeech": "adj",
+        "meaning": "Không thể bào chữa hay bảo vệ được",
+        "visualBreakdown": "Un- (không) + Ten (giữ) + -able",
+        "ieltsSentence": "Soaring inflation made the administration's fiscal austerity stance politically untenable.",
+        "vietnameseTranslation": "Lạm phát tăng vọt đã khiến quan điểm thắt lưng buộc bụng tài khóa của chính quyền không còn có thể duy trì về mặt chính trị.",
+        "level": "C2",
+        "collocation": "Untenable situation / Untenable argument"
       }
     ]
   },
   {
-    id: "r129",
-    root: "ANTI- (Tiền tố)",
-    meaning: "Chống lại, Phủ định, Kháng, Đối nghịch",
-    origin: "Greek (anti - against, opposite)",
-    description: "Tiền tố cực mạnh trong IELTS để tạo ra các từ mang tính chất phòng vệ, phủ định, hoặc chống phá dòng chảy xã hội.",
-    tip: "Nhớ từ 'Antibiotic' (Kháng sinh chống vi khuẩn) hay 'Antiseptic' (Chất sát trùng khử trùng mạnh mẽ).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-sta-stat",
+    "root": "STA / STAT / STIT-",
+    "meaning": "Đứng yên, trạng thái, thiết lập, cố định",
+    "origin": "Latin (stare - đứng; statuere - dựng nên)",
+    "description": "Gốc chỉ sự đứng vững, các thiết chế xã hội được thành lập, tính trì trệ hoặc trạng thái cố định ổn định.",
+    "tip": "Nhớ đến Status (trạng thái) hoặc Station (nhà ga cố định) – đứng yên kiên định tại chỗ.",
+    "category": "Trục 7: Vị Thế, Thuộc Tính & Bền Vững",
+    "axis": "Trục 7",
+    "axisTitle": "TRỤC 7: VỊ THẾ, THUỘC TÍNH & BỀN VỮNG",
+    "axisSubtitle": "State, Position & Holding (Đứng vững & Thiết chế)",
+    "stemKey": "STA / STAT-",
+    "exampleWords": [
       {
-        word: "antibodies",
-        partOfSpeech: "n",
-        meaning: "Kháng thể (trong hệ miễn dịch cơ thể)",
-        visualBreakdown: "ANTI (kháng/chống) + BODIES (các vật thể sinh học) -> protein ngăn chặn, khóa chặt virus độc hại xâm nhập",
-        ieltsSentence: "The body generates specialized antibodies after receiving an active vaccine dose.",
-        vietnameseTranslation: "Cơ thể sản sinh ra các kháng thể chuyên biệt sau khi nhận được một liều vắc-xin hoạt lực."
+        "word": "Stagnant",
+        "partOfSpeech": "adj",
+        "meaning": "Trì trệ, đọng nước, không phát triển",
+        "visualBreakdown": "Stag- (đứng yên) + -ant",
+        "ieltsSentence": "Without technological modernization, domestic industrial wages have remained stagnant for over a decade.",
+        "vietnameseTranslation": "Nếu không có hiện đại hóa công nghệ, tiền lương công nghiệp trong nước vẫn giữ nguyên tình trạng trì trệ trong hơn một thập kỷ.",
+        "level": "C1",
+        "collocation": "Stagnant economy / Stagnant water"
       },
       {
-        word: "antisocial",
-        partOfSpeech: "adj",
-        meaning: "Phá hoại trật tự xã hội, phản xã hội, sống khép kín",
-        visualBreakdown: "ANTI (chống lại) + SOCIAL (thuộc cộng đồng xã hội) -> có hành vi lệch lạc khiêu khích chống lại cộng đồng hoặc từ chối giao tiếp xã hội",
-        ieltsSentence: "Vandalism and public noise are classified as classic examples of antisocial behavior.",
-        vietnameseTranslation: "Hành vi phá hoại của công và tiếng ồn nơi công cộng được phân loại là những ví dụ điển hình của hành vi phản xã hội."
+        "word": "Reinstate",
+        "partOfSpeech": "v",
+        "meaning": "Phục hồi chức vụ, tái lập chính sách cũ",
+        "visualBreakdown": "Re- (lại) + In- (vào) + State (đứng)",
+        "ieltsSentence": "Following civil demonstrations, the municipality agreed to reinstate subsidies for low-income commuters.",
+        "vietnameseTranslation": "Sau các cuộc biểu tình dân sự, chính quyền thành phố đã đồng ý tái lập trợ cấp cho những người đi làm có thu nhập thấp.",
+        "level": "C1",
+        "collocation": "Reinstate a policy / Reinstate an official"
+      },
+      {
+        "word": "Constitute",
+        "partOfSpeech": "v",
+        "meaning": "Cấu thành nên, thiết lập nên tỷ trọng",
+        "visualBreakdown": "Con- (cùng) + Stit (dựng nên) + -e",
+        "ieltsSentence": "Small and medium enterprises constitute the bedrock of national entrepreneurial vitality.",
+        "vietnameseTranslation": "Các doanh nghiệp vừa và nhỏ cấu thành nên nền tảng của sức sống khởi nghiệp quốc gia.",
+        "level": "C1",
+        "collocation": "Constitute a threat / Constitute a majority"
+      },
+      {
+        "word": "Status quo",
+        "partOfSpeech": "n",
+        "meaning": "Hiện trạng hiện tại, tình trạng nguyên trạng",
+        "visualBreakdown": "Latin (trạng thái như nó vốn là)",
+        "ieltsSentence": "Entrenched corporate interests consistently lobby to protect the status quo against renewable reforms.",
+        "vietnameseTranslation": "Các nhóm lợi ích doanh nghiệp bám rễ sâu luôn vận động hành lang để bảo vệ hiện trạng chống lại các cải cách tái tạo.",
+        "level": "C2",
+        "collocation": "Maintain the status quo / Challenge the status quo"
+      },
+      {
+        "word": "Static",
+        "partOfSpeech": "adj",
+        "meaning": "Tĩnh, không chuyển động, không đổi",
+        "visualBreakdown": "Stat (đứng) + -ic",
+        "ieltsSentence": "Language is dynamic rather than static, continually assimilating neologisms from digital spheres.",
+        "vietnameseTranslation": "Ngôn ngữ mang tính vận động chứ không tĩnh tại, liên tục tiếp thu các từ mới từ các không gian kỹ thuật số.",
+        "level": "C1",
+        "collocation": "Static variable / Static population"
+      },
+      {
+        "word": "Obstinate",
+        "partOfSpeech": "adj",
+        "meaning": "Ngoan cố, bướng bỉnh, khó chữa",
+        "visualBreakdown": "Ob- (chống lại) + Stat (đứng)",
+        "ieltsSentence": "Obstinate refusal to devalue inflated currency exacerbated the balance of payments deficit.",
+        "vietnameseTranslation": "Sự từ chối ngoan cố không chịu phá giá đồng tiền bị thổi phồng đã làm trầm trọng thêm mức thâm hụt cán cân thanh toán.",
+        "level": "C2",
+        "collocation": "Obstinate resistance / Obstinate refusal"
+      },
+      {
+        "word": "Destitute",
+        "partOfSpeech": "adj",
+        "meaning": "Cơ hàn, bần cùng hóa, thiếu thốn hoàn toàn",
+        "visualBreakdown": "De- (mất đi) + Stit (đứng vững)",
+        "ieltsSentence": "Severe natural disasters frequently leave rural agrarian households entirely destitute of shelter and livelihood.",
+        "vietnameseTranslation": "Thiên tai nghiêm trọng thường khiến các hộ gia đình nông nghiệp nông thôn hoàn toàn cơ hàn, mất chỗ che thân và sinh kế.",
+        "level": "C2",
+        "collocation": "Destitute of resources / Left destitute"
+      },
+      {
+        "word": "Restitution",
+        "partOfSpeech": "n",
+        "meaning": "Sự hoàn trả, bồi thường thiệt hại",
+        "visualBreakdown": "Re- (lại) + Stit (dựng lại) + -ion",
+        "ieltsSentence": "The multinational corporation was legally ordered to pay financial restitution to communities impacted by toxic dumping.",
+        "vietnameseTranslation": "Tập đoàn đa quốc gia đã bị tòa án yêu cầu bồi thường tài chính cho các cộng đồng bị ảnh hưởng bởi việc xả thải độc hại.",
+        "level": "C2",
+        "collocation": "Make restitution / Seek financial restitution"
       }
     ]
   },
   {
-    id: "r130",
-    root: "CONTRA/COUNTER- (Tiền tố)",
-    meaning: "Đối đầu, Phản kháng, Ngược chiều gió",
-    origin: "Latin (contra - against)",
-    description: "Dùng để tạo nghĩa phản bác trong tranh biện học thuật, chỉ ra các phát hiện đối lập hoàn toàn trong thực nghiệm khoa học.",
-    tip: "Gợi nhớ bằng 'Contra' (Trò chơi đối kháng bắn súng nổi tiếng) hay 'Contradict' (Cải nhau chan chát, mâu thuẫn lẫn nhau).",
-    category: "Actions & Motion",
-    exampleWords: [
+    "id": "stem-sed-sid",
+    "root": "SED / SID / SESS-",
+    "meaning": "Ngồi yên, lắng xuống, cư trú, định hình",
+    "origin": "Latin (sedere, sessus - ngồi)",
+    "description": "Gốc chỉ tư thế ngồi thụ động, sự định cư ổn định, quá trình lắng đọng vật lý hoặc đánh giá xem xét một vấn đề.",
+    "tip": "Nhớ đến Sedentary (ít vận động) hoặc President (người ngồi ghế chủ tịch) – an vị tại chỗ.",
+    "category": "Trục 7: Vị Thế, Thuộc Tính & Bền Vững",
+    "axis": "Trục 7",
+    "axisTitle": "TRỤC 7: VỊ THẾ, THUỘC TÍNH & BỀN VỮNG",
+    "axisSubtitle": "State, Position & Holding (Ngồi yên & Cư trú)",
+    "stemKey": "SED / SID-",
+    "exampleWords": [
       {
-        word: "contradict",
-        partOfSpeech: "v",
-        meaning: "Mâu thuẫn, phủ nhận hoặc bác bỏ luận điểm khác",
-        visualBreakdown: "CONTRA (ngược lại) + DICT (phát biểu/nói) -> tuyên bố luận điểm ngược chiều hoàn toàn để bác bỏ luận án của đối phương",
-        ieltsSentence: "Her empirical research results flatly contradict the established theories on soil degradation.",
-        vietnameseTranslation: "Các kết quả nghiên cứu thực nghiệm của cô bộc lộ mâu thuẫn thẳng thừng với các giả thuyết đã được xác lập về xói mòn đất."
+        "word": "Sedentary",
+        "partOfSpeech": "adj",
+        "meaning": "Thói quen ít vận động, ngồi nhiều một chỗ",
+        "visualBreakdown": "Seden (ngồi) + -ary",
+        "ieltsSentence": "Prolonged sedentary lifestyles among office workers directly exacerbate cardiovascular risks.",
+        "vietnameseTranslation": "Lối sống ngồi nhiều ít vận động kéo dài trong giới nhân viên văn phòng trực tiếp làm trầm trọng thêm các nguy cơ tim mạch.",
+        "level": "C1",
+        "collocation": "Sedentary lifestyle / Sedentary job"
       },
       {
-        word: "counteract",
-        partOfSpeech: "v",
-        meaning: "Kháng cự, triệt tiêu, hóa giải tác động bất lợi",
-        visualBreakdown: "COUNTER (đối kháng) + ACT (hành động) -> tiến hành hành lực đối kháng để bóp nghẹt, vô hiệu hiệu lực của chất có hại",
-        ieltsSentence: "The medical team administered a chemical antidote to counteract the deadly venom's stroke effect.",
-        vietnameseTranslation: "Đội ngũ y tế đã tiêm một liều thuốc giải hóa học để triệt tiêu ảnh hưởng gây đột quỵ của nọc độc chết người."
+        "word": "Subside",
+        "partOfSpeech": "v",
+        "meaning": "Lắng dịu xuống, sụt lún địa chất",
+        "visualBreakdown": "Sub- (dưới) + Side (ngồi xuống)",
+        "ieltsSentence": "Excessive groundwater extraction causes coastal terrain to subside at alarming rates.",
+        "vietnameseTranslation": "Việc khai thác nước ngầm quá mức khiến địa hình ven biển sụt lún với tốc độ đáng báo động.",
+        "level": "C1",
+        "collocation": "Floodwaters subside / Ground subsides"
+      },
+      {
+        "word": "Reside",
+        "partOfSpeech": "v",
+        "meaning": "Cư trú, trú ngụ lâu dài",
+        "visualBreakdown": "Re- (lại) + Side (ngồi cố định)",
+        "ieltsSentence": "A substantial proportion of migrant workers reside in informal housing lacking basic plumbing.",
+        "vietnameseTranslation": "Một tỷ lệ đáng kể người lao động di cư cư trú trong những khu nhà tạm bợ thiếu hệ thống ống nước cơ bản.",
+        "level": "C1",
+        "collocation": "Reside permanently / Residential area"
+      },
+      {
+        "word": "Preside",
+        "partOfSpeech": "v",
+        "meaning": "Chủ trì, ngồi ghế điều hành (phiên họp, tòa án)",
+        "visualBreakdown": "Pre- (trước) + Side (ngồi)",
+        "ieltsSentence": "A senior high court judge was appointed to preside over the antitrust hearing.",
+        "vietnameseTranslation": "Một thẩm phán tòa án tối cao cấp cao đã được bổ nhiệm để chủ trì phiên điều trần chống độc quyền.",
+        "level": "C2",
+        "collocation": "Preside over a meeting / Preside over trial"
+      },
+      {
+        "word": "Sedimentary",
+        "partOfSpeech": "adj",
+        "meaning": "Thuộc về trầm tích đất đá lắng đọng",
+        "visualBreakdown": "Sediment (cặn lắng) + -ary",
+        "ieltsSentence": "Geologists examine sedimentary rock strata to reconstruct prehistoric oceanic climatic cycles.",
+        "vietnameseTranslation": "Các nhà địa chất học kiểm tra các địa tầng đá trầm tích để tái hiện các chu kỳ khí hậu đại dương tiền sử.",
+        "level": "C1",
+        "collocation": "Sedimentary rock / Sedimentary layer"
+      },
+      {
+        "word": "Dissident",
+        "partOfSpeech": "n",
+        "meaning": "Người bất đồng chính kiến, người ngồi riêng một lối",
+        "visualBreakdown": "Dis- (tách rời) + Sid (ngồi) + -ent",
+        "ieltsSentence": "Political dissidents were subjected to surveillance and censorship by the governing junta.",
+        "vietnameseTranslation": "Những người bất đồng chính kiến đã bị quân phiệt cầm quyền đặt dưới sự giám sát và kiểm duyệt gắt gao.",
+        "level": "C2",
+        "collocation": "Political dissident / Dissident voice"
+      },
+      {
+        "word": "Subsidy",
+        "partOfSpeech": "n",
+        "meaning": "Tiền trợ cấp, hỗ trợ kinh tế để giữ giá",
+        "visualBreakdown": "Sub- (bên dưới) + Sid (ngồi chống đỡ)",
+        "ieltsSentence": "Phasing out government fossil fuel subsidies is vital to incentivize private investment in solar technology.",
+        "vietnameseTranslation": "Việc từng bước loại bỏ các khoản trợ cấp nhiên liệu hóa thạch của chính phủ là thiết yếu để khuyến khích đầu tư tư nhân vào công nghệ mặt trời.",
+        "level": "C1",
+        "collocation": "Government subsidy / Eliminate subsidies"
+      },
+      {
+        "word": "Assess",
+        "partOfSpeech": "v",
+        "meaning": "Đánh giá, ước lượng giá trị/nguy cơ",
+        "visualBreakdown": "Ad- (bên cạnh) + Sess (ngồi cùng để phán định)",
+        "ieltsSentence": "Actuaries assess potential underwriting risks before determining life insurance policy premiums.",
+        "vietnameseTranslation": "Các chuyên gia tính toán thẩm định đánh giá các rủi ro bảo hiểm tiềm ẩn trước khi xác định mức phí hợp đồng bảo hiểm nhân thọ.",
+        "level": "C1",
+        "collocation": "Assess the damage / Assess risk"
       }
     ]
   },
   {
-    id: "r131",
-    root: "FORE- (Tiền tố)",
-    meaning: "Đi trước, Tiên đoán, Tiên phong, Đằng trước",
-    origin: "Old English (fore - before)",
-    description: "Chỉ vị thế đi đầu của một xu hướng học thuật hoặc việc chuẩn bị chống đỡ thảm họa trước khi nó đổ bộ gieo rắc tàn phá.",
-    tip: "Nhớ từ 'Forecast' (Dự báo thời tiết / xu hướng tương lai trước khi nó diễn ra) hay dũng sĩ đi tuyến đầu 'Forefront'.",
-    category: "Time & Space",
-    exampleWords: [
+    "id": "stem-gress-grad",
+    "root": "GRESS / GRAD-",
+    "meaning": "Bước đi, tiến triển, nấc thang, mức độ",
+    "origin": "Latin (gradi, gressus - bước đi)",
+    "description": "Gốc diễn tả từng bước tiến lên, quá trình thoái trào thụt lùi, hoặc sự chia thang bậc mức độ.",
+    "tip": "Nhớ đến Progress (tiến bộ) hoặc Graduate (tốt nghiệp từng bước) – những bước chân trên con đường.",
+    "category": "Trục 8: Vận Động Của Dòng Đời & Chuyển Dịch",
+    "axis": "Trục 8",
+    "axisTitle": "TRỤC 8: VẬN ĐỘNG CỦA DÒNG ĐỜI & CHUYỂN DỊCH",
+    "axisSubtitle": "Cycle, Progress & Limits (Bước đi & Tiến trình)",
+    "stemKey": "GRESS / GRAD-",
+    "exampleWords": [
       {
-        word: "forecast",
-        partOfSpeech: "v, n",
-        meaning: "Dự báo, tuyên bố một phán đoán xu thế tương lai",
-        visualBreakdown: "FORE (trước) + CAST (tính toán/quăng lưới) -> quăng rải dữ liệu lịch sử để phán đoán chính xác hướng biến thiên",
-        ieltsSentence: "Meteorologists fail to forecast the exact severity of the flash floods in mount valleys.",
-        vietnameseTranslation: "Các nhà khí tượng học đã thất bại trong việc dự báo mức độ khắc nghiệt chính xác của các trận lũ quét tại các thung lũng núi."
+        "word": "Progressive",
+        "partOfSpeech": "adj",
+        "meaning": "Cấp tiến, tiến bộ, ngày càng gia tăng",
+        "visualBreakdown": "Pro- (phía trước) + Gress (bước) + -ive",
+        "ieltsSentence": "Scandinavian nations have successfully enacted progressive taxation to curb social inequality.",
+        "vietnameseTranslation": "Các quốc gia Scandinavia đã ban hành thành công chính sách thuế lũy tiến để hạn chế bất bình đẳng xã hội.",
+        "level": "C1",
+        "collocation": "Progressive policy / Progressive tax"
       },
       {
-        word: "foreseeable",
-        partOfSpeech: "adj",
-        meaning: "Có thể lường trước, trông thấy trước trong tầm tay",
-        visualBreakdown: "FORE (trước) + SEE (nhìn thấy) + ABLE (có khả năng) -> có thể tiên liệu, lập kế hoạch ứng phó gọn gàng",
-        ieltsSentence: "The oil prices are expected to remain volatile for the foreseeable future under trade tensions.",
-        vietnameseTranslation: "Giá dầu dự kiến sẽ duy trì không ổn định trong tương lai gần có thể đoán trước dưới các áp lực căng thẳng thương mại."
+        "word": "Retrograde",
+        "partOfSpeech": "adj",
+        "meaning": "Thụt lùi, thoái trào, đi ngược lại tiến bộ",
+        "visualBreakdown": "Retro- (lùi lại) + Grade (bước)",
+        "ieltsSentence": "Reintroducing tariffs on green technology components would represent a retrograde policy step.",
+        "vietnameseTranslation": "Việc tái áp thuế lên các linh kiện công nghệ xanh sẽ đại diện cho một bước đi chính sách thụt lùi.",
+        "level": "C2",
+        "collocation": "Retrograde step / Retrograde motion"
+      },
+      {
+        "word": "Transgression",
+        "partOfSpeech": "n",
+        "meaning": "Sự vi phạm pháp luật, vượt quá lằn ranh đạo đức",
+        "visualBreakdown": "Trans- (vượt qua) + Gress (bước) + -ion $\\rightarrow$ Bước qua ranh giới cấm",
+        "ieltsSentence": "Severe financial transgressions by executives warrant punitive custodial sentences.",
+        "vietnameseTranslation": "Những vi phạm tài chính nghiêm trọng của các giám đốc điều hành đáng bị nhận các bản án tù trừng phạt.",
+        "level": "C2",
+        "collocation": "Moral transgression / Legal transgression"
+      },
+      {
+        "word": "Digress",
+        "partOfSpeech": "v",
+        "meaning": "Lạc đề, đi chệch khỏi chủ đề chính",
+        "visualBreakdown": "Dis- (xa ra) + Gress (bước)",
+        "ieltsSentence": "In academic writing, candidates must avoid digressing into tangential personal anecdotes.",
+        "vietnameseTranslation": "Trong văn phong học thuật, các thí sinh phải tránh việc lạc đề sang các giai thoại cá nhân ngoài lề.",
+        "level": "C1",
+        "collocation": "Digress from subject / Digress briefly"
+      },
+      {
+        "word": "Regress",
+        "partOfSpeech": "v",
+        "meaning": "Thoái lui, thụt lùi về trạng thái kém hơn",
+        "visualBreakdown": "Re- (ngược lại) + Gress (bước)",
+        "ieltsSentence": "Without ongoing linguistic practice, adult learners tend to regress to elementary grammatical habits.",
+        "vietnameseTranslation": "Nếu không có sự thực hành ngôn ngữ liên tục, người học trưởng thành có xu hướng thoái lui về các thói quen ngữ pháp sơ cấp.",
+        "level": "C1",
+        "collocation": "Regress into / Regression analysis"
+      },
+      {
+        "word": "Gradient",
+        "partOfSpeech": "n",
+        "meaning": "Độ dốc, độ dốc nhiệt độ/nồng độ",
+        "visualBreakdown": "Grad (bước dốc) + -ient",
+        "ieltsSentence": "Cellular membranes maintain a steep electrochemical gradient to facilitate molecular transport.",
+        "vietnameseTranslation": "Màng tế bào duy trì một độ dốc điện hóa dốc để tạo điều kiện thuận lợi cho việc vận chuyển phân tử.",
+        "level": "C2",
+        "collocation": "Steep gradient / Temperature gradient"
+      },
+      {
+        "word": "Degradation",
+        "partOfSpeech": "n",
+        "meaning": "Sự suy thoái (môi trường, đạo đức), xói mòn",
+        "visualBreakdown": "De- (xuống) + Grad (bước) + -ation",
+        "ieltsSentence": "Intensive cattle ranching accelerates soil degradation throughout tropical rainforest biomes.",
+        "vietnameseTranslation": "Chăn nuôi gia súc thâm canh đẩy nhanh sự suy thoái đất trên khắp các quần xã sinh vật rừng nhiệt đới.",
+        "level": "C1",
+        "collocation": "Environmental degradation / Land degradation"
+      },
+      {
+        "word": "Egress",
+        "partOfSpeech": "n",
+        "meaning": "Lối thoát ra, sự đi ra ngoài",
+        "visualBreakdown": "E- (ra ngoài) + Gress (bước)",
+        "ieltsSentence": "Building safety codes mandate unhindered means of egress in public auditoriums during emergencies.",
+        "vietnameseTranslation": "Các quy chuẩn an toàn xây dựng bắt buộc các lối thoát hiểm không bị cản trở tại các hội trường công cộng trong trường hợp khẩn cấp.",
+        "level": "C2",
+        "collocation": "Means of egress / Safe egress"
       }
     ]
   },
   {
-    id: "r132",
-    root: "INTER- (Tiền tố)",
-    meaning: "Liên kết, Qua lại giữa các bên, Xen kẽ",
-    origin: "Latin (inter - between, among)",
-    description: "Tiền tố cực thịnh trong IELTS Reading toàn cầu hóa để nhấn mạnh sự đan quyện đùm bọc qua lại của thế giới đa cực.",
-    tip: "Dễ nhớ qua 'Internet' (Mạng lưới kết nối xuyên quốc gia đại cục) hay 'International' (Xuyên quốc gia, liên quốc tế giáo lưu).",
-    category: "Time & Space",
-    exampleWords: [
+    "id": "stem-fin-term",
+    "root": "FIN / TERM-",
+    "meaning": "Giới hạn, ranh giới, tận cùng, kết thúc",
+    "origin": "Latin (finis - điểm cuối, ranh giới; terminus - cột mốc ranh giới)",
+    "description": "Gốc nói về sự hữu hạn của tài nguyên thiên nhiên, các điều khoản thỏa thuận hoặc sự kết thúc chu kỳ.",
+    "tip": "Nhớ đến Final (cuối cùng) hoặc Terminate (chấm dứt) – đã tới cột mốc ranh giới.",
+    "category": "Trục 8: Vận Động Của Dòng Đời & Chuyển Dịch",
+    "axis": "Trục 8",
+    "axisTitle": "TRỤC 8: VẬN ĐỘNG CỦA DÒNG ĐỜI & CHUYỂN DỊCH",
+    "axisSubtitle": "Cycle, Progress & Limits (Giới hạn & Kết thúc)",
+    "stemKey": "FIN / TERM-",
+    "exampleWords": [
       {
-        word: "interdependent",
-        partOfSpeech: "adj",
-        meaning: "Phụ thuộc lẫn nhau, nương tựa vào nhau",
-        visualBreakdown: "INTER (qua lại giữa các bên) + DEPENDENT (lệ thuộc) -> mối quan hệ ràng buộc đa bên cùng sống cùng chết sinh tử có nhau",
-        ieltsSentence: "Modern national economies are highly interdependent due to complex supply chains.",
-        vietnameseTranslation: "Các nền kinh tế quốc gia hiện đại phụ thuộc sâu sắc lẫn nhau do các chuỗi cung ứng phức tạp."
+        "word": "Finite",
+        "partOfSpeech": "adj",
+        "meaning": "Hữu hạn, có giới hạn xác định",
+        "visualBreakdown": "Fin (ranh giới) + -ite",
+        "ieltsSentence": "Human civilization must confront the ecological reality of finite planetary reserves.",
+        "vietnameseTranslation": "Nền văn minh nhân loại phải đối diện với thực tế sinh thái về các nguồn tài nguyên hữu hạn trên hành tinh.",
+        "level": "C1",
+        "collocation": "Finite resources / Finite capacity"
       },
       {
-        word: "interstellar",
-        partOfSpeech: "adj",
-        meaning: "Giữa các vì sao, liên sao vũ trụ",
-        visualBreakdown: "INTER (ở giữa) + STELLAR (thuộc về sao) -> không gian sâu thẳm nằm giữa các hành tinh ngôi sao xa lạ",
-        ieltsSentence: "The interstellar dust particles offer crucial chemical clues to early universe expansion theories.",
-        vietnameseTranslation: "Các hạt bụi liên sao chứa đựng những manh mối hóa học tối cốt lõi cho các giả thuyết giãn nở vũ trụ thuở hồng hoang."
+        "word": "Determine",
+        "partOfSpeech": "v",
+        "meaning": "Xác định rõ ràng, quyết định kết quả",
+        "visualBreakdown": "De- (hoàn toàn) + Term (ranh giới) $\\rightarrow$ Đặt ra giới hạn giải pháp",
+        "ieltsSentence": "Genetic factors and social environment jointly determine child cognitive development.",
+        "vietnameseTranslation": "Các yếu tố di truyền và môi trường xã hội cùng nhau xác định sự phát triển nhận thức của trẻ.",
+        "level": "C1",
+        "collocation": "Determine the outcome / Determine accurately"
+      },
+      {
+        "word": "Terminate",
+        "partOfSpeech": "v",
+        "meaning": "Chấm dứt hoàn toàn (hợp đồng, vòng đời)",
+        "visualBreakdown": "Term (điểm cuối) + -ate",
+        "ieltsSentence": "The university reserved the right to terminate student accommodation contracts upon code violations.",
+        "vietnameseTranslation": "Trường đại học có quyền chấm dứt hợp đồng ký túc xá của sinh viên khi có vi phạm nội quy.",
+        "level": "C1",
+        "collocation": "Terminate a contract / Terminate employment"
+      },
+      {
+        "word": "Infinite",
+        "partOfSpeech": "adj",
+        "meaning": "Vô hạn, vô tận, không thể đong đếm",
+        "visualBreakdown": "In- (không) + Finite (hữu hạn)",
+        "ieltsSentence": "The cosmos encompasses an seemingly infinite expanse of galaxies exceeding human comprehension.",
+        "vietnameseTranslation": "Vũ trụ bao gồm một khoảng không gian các thiên hà dường như vô tận vượt xa tầm hiểu biết của con người.",
+        "level": "C1",
+        "collocation": "Infinite variety / Infinite possibilities"
+      },
+      {
+        "word": "Definitive",
+        "partOfSpeech": "adj",
+        "meaning": "Dứt khoát, mang tính kết luận chung cuộc",
+        "visualBreakdown": "De- (hoàn toàn) + Fin (ranh giới) + -itive",
+        "ieltsSentence": "Clinical researchers have yet to formulate a definitive cure for auto-immune neurological syndromes.",
+        "vietnameseTranslation": "Các nhà nghiên cứu lâm sàng vẫn chưa đưa ra được một phương pháp chữa trị dứt khoát cho các hội chứng thần kinh tự miễn.",
+        "level": "C2",
+        "collocation": "Definitive answer / Definitive guide"
+      },
+      {
+        "word": "Terminal",
+        "partOfSpeech": "adj",
+        "meaning": "Giai đoạn cuối (bệnh tật); điểm ga cuối",
+        "visualBreakdown": "Term (ranh giới) + -al",
+        "ieltsSentence": "Palliative hospice care centers specialize in providing compassionate dignity to patients facing terminal illness.",
+        "vietnameseTranslation": "Các trung tâm chăm sóc xoa dịu chuyên cung cấp phẩm giá nhân ái cho các bệnh nhân đối mặt với bệnh hiểm nghèo giai đoạn cuối.",
+        "level": "C1",
+        "collocation": "Terminal cancer / Terminal decline"
+      },
+      {
+        "word": "Exterminate",
+        "partOfSpeech": "v",
+        "meaning": "Tiêu diệt hoàn toàn, tận diệt",
+        "visualBreakdown": "Ex- (hoàn toàn) + Term (ranh giới) + -ate",
+        "ieltsSentence": "Excessive usage of broad-spectrum insecticides threatens to exterminate beneficial pollinator bees.",
+        "vietnameseTranslation": "Việc sử dụng quá mức các loại thuốc trừ sâu phổ rộng đe dọa tiêu diệt hoàn toàn các loài ong thụ phấn có ích.",
+        "level": "C2",
+        "collocation": "Exterminate pests / Exterminate populations"
+      },
+      {
+        "word": "Indeterminate",
+        "partOfSpeech": "adj",
+        "meaning": "Không xác định rõ, mập mờ mơ hồ",
+        "visualBreakdown": "In- (không) + Determine (xác định) + -ate",
+        "ieltsSentence": "The historical treaty left several nautical borders indeterminate, triggering modern maritime skirmishes.",
+        "vietnameseTranslation": "Hiệp ước lịch sử đã để lại một số đường biên giới hàng hải không xác định rõ ràng, làm bùng phát các cuộc đụng độ trên biển hiện đại.",
+        "level": "C2",
+        "collocation": "Indeterminate outcome / Indeterminate duration"
       }
     ]
   },
   {
-    id: "r133",
-    root: "INTRA/INTRO- (Tiền tố)",
-    meaning: "Bên trong, Nội bộ sâu xa, Hướng nội tâm",
-    origin: "Latin (intra - within, inside)",
-    description: "Trái nghĩa với EXTRA-, tiền tố này khu trúc vấn đề nằm gọn rọc bên trong cơ cấu, không có yếu tố ngoại lai tác động xuyên tạc.",
-    tip: "Học từ 'Introvert' (Người hướng nội, giữ tâm tư kín kẽ trong lòng) hay 'Intravenous' (Trong tĩnh mạch cánh tay y học).",
-    category: "Time & Space",
-    exampleWords: [
+    "id": "stem-mort-necr",
+    "root": "MORT / NECR-",
+    "meaning": "Tử vong, sự chết, suy tàn diệt vong",
+    "origin": "Latin (mors, mortis - cái chết; Hy Lạp: nekros - thi thể)",
+    "description": "Gốc chỉ sự suy tàn, cái chết sinh học, cam kết nợ nần cho đến chết hoặc tỷ lệ tử vong trong y tế công cộng.",
+    "tip": "Nhớ đến Mortality (tỷ lệ tử vong) hoặc Mortgage (thế chấp) – giới hạn sinh tử đời người.",
+    "category": "Trục 8: Vận Động Của Dòng Đời & Chuyển Dịch",
+    "axis": "Trục 8",
+    "axisTitle": "TRỤC 8: VẬN ĐỘNG CỦA DÒNG ĐỜI & CHUYỂN DỊCH",
+    "axisSubtitle": "Cycle, Progress & Limits (Sinh tử & Suy tàn)",
+    "stemKey": "MORT / NECR-",
+    "exampleWords": [
       {
-        word: "introvert",
-        partOfSpeech: "n, adj",
-        meaning: "Người hướng nội, tính cách trầm lặng khép mình",
-        visualBreakdown: "INTRO (vào trong) + VERT (bẻ hướng) -> bẻ cụp mọi hướng tư duy kích thích sâu vào trong thế giới nội tâm tinh tế cá nhân",
-        ieltsSentence: "An introvert typically charges their personal energy via quiet reflection, rather than social gathering.",
-        vietnameseTranslation: "Một người hướng nội thường nạp lại năng lượng cá nhân của họ qua suy ngẫm yên tĩnh, thay vì các cuộc tụ tập xã hội."
+        "word": "Mortality",
+        "partOfSpeech": "n",
+        "meaning": "Tỷ lệ tử vong trong dân số",
+        "visualBreakdown": "Mort (chết) + -ality",
+        "ieltsSentence": "Improving maternal healthcare facilities drastically reduces infant mortality across developing rural provinces.",
+        "vietnameseTranslation": "Cải thiện cơ sở chăm sóc sức khỏe bà mẹ giúp giảm đáng kể tỷ lệ tử vong ở trẻ sơ sinh trên khắp các tỉnh nông thôn đang phát triển.",
+        "level": "C1",
+        "collocation": "Infant mortality rate / Mortality statistics"
       },
       {
-        word: "intramural",
-        partOfSpeech: "adj",
-        meaning: "Nội bộ trong trường học, nội hạt bên trong bức tường tổ chức",
-        visualBreakdown: "INTRA (bên trong) + MUR (bức tường thành cổ) + AL -> chỉ diễn ra bó hẹp giữa tập thể bên trong, người ngoài không dự ké",
-        ieltsSentence: "The university athletic center organizes popular intramural football tournaments for non-professionals.",
-        vietnameseTranslation: "Trung tâm thể thao trường đại học tổ chức các giải đấu bóng đá nội bộ phổ biến dành cho các cầu thủ không chuyên."
+        "word": "Mortgage",
+        "partOfSpeech": "n",
+        "meaning": "Cam kết thế chấp tài sản vay nợ mua nhà",
+        "visualBreakdown": "Mort (chết) + Gage (cam kết) $\\rightarrow$ Cam kết trả nợ cho tới khi xong hoặc chết",
+        "ieltsSentence": "Skyrocketing real estate values compel middle-class citizens to shoulder thirty-year mortgage liabilities.",
+        "vietnameseTranslation": "Giá trị bất động sản tăng vọt buộc các công dân thuộc tầng lớp trung lưu phải gánh vác các nghĩa vụ thế chấp nhà 30 năm.",
+        "level": "C1",
+        "collocation": "Mortgage rates / Repay a mortgage"
+      },
+      {
+        "word": "Immortal",
+        "partOfSpeech": "adj",
+        "meaning": "Bất tử, trường tồn bất diệt",
+        "visualBreakdown": "Im- (không) + Mort (chết) + -al",
+        "ieltsSentence": "Shakespeare's literary sonnets secured immortal prestige within the global theatrical canon.",
+        "vietnameseTranslation": "Những bài thơ sonnet văn học của Shakespeare đã đảm bảo uy tín bất tử trong kho tàng kịch nghệ toàn cầu.",
+        "level": "C1",
+        "collocation": "Immortal fame / Immortal soul"
+      },
+      {
+        "word": "Morbid",
+        "partOfSpeech": "adj",
+        "meaning": "Bệnh tật; mang tính bệnh hoạn, u ám",
+        "visualBreakdown": "Morbus (bệnh tật, chết chóc) + -id",
+        "ieltsSentence": "Tabloid media exploit a morbid fascination with violent criminal sensationalism to boost viewership.",
+        "vietnameseTranslation": "Báo lá cải lợi dụng sự tò mò bệnh hoạn đối với những vụ án bạo lực giật gân để tăng lượng người xem.",
+        "level": "C2",
+        "collocation": "Morbid fascination / Morbid obesity"
+      },
+      {
+        "word": "Mortify",
+        "partOfSpeech": "v",
+        "meaning": "Làm cho xấu hổ ê chề; kìm hãm dục vọng",
+        "visualBreakdown": "Mort (chết) + -ify (làm cho)",
+        "ieltsSentence": "The keynote diplomat was visibly mortified upon discovering his presentation contained flawed statistics.",
+        "vietnameseTranslation": "Vị nhà ngoại giao diễn thuyết chính đã tỏ rõ sự bẽ bàng ê chề khi phát hiện bài thuyết trình của mình chứa các số liệu sai sót.",
+        "level": "C2",
+        "collocation": "Utterly mortified / Mortify the flesh"
+      },
+      {
+        "word": "Post-mortem",
+        "partOfSpeech": "n",
+        "meaning": "Cuộc khám nghiệm tử thi; phân tích nguyên nhân thất bại",
+        "visualBreakdown": "Post- (sau) + Mortem (cái chết)",
+        "ieltsSentence": "Corporate leadership conducted an exhaustive post-mortem following the catastrophic product launch failure.",
+        "vietnameseTranslation": "Ban lãnh đạo tập đoàn đã tiến hành một cuộc họp mổ xẻ phân tích toàn diện sau thất bại thảm hại của đợt ra mắt sản phẩm.",
+        "level": "C2",
+        "collocation": "Conduct a post-mortem / Post-mortem examination"
+      },
+      {
+        "word": "Necrosis",
+        "partOfSpeech": "n",
+        "meaning": "Chứng hoại tử tế bào/mô sống",
+        "visualBreakdown": "Necr (chết) + -osis (tình trạng bệnh lý)",
+        "ieltsSentence": "Severe venomous snakebites can precipitate localized tissue necrosis if antivenom is withheld.",
+        "vietnameseTranslation": "Vết rắn độc cắn nghiêm trọng có thể gây hoại tử mô cục bộ nếu không được cấp huyết thanh kháng nọc kịp thời.",
+        "level": "C2",
+        "collocation": "Tissue necrosis / Avascular necrosis"
+      },
+      {
+        "word": "Necropolis",
+        "partOfSpeech": "n",
+        "meaning": "Thành phố của người chết, nghĩa địa cổ đại",
+        "visualBreakdown": "Necr (chết) + Polis (thành phố)",
+        "ieltsSentence": "Archaeologists uncovered pristine dynastic sarcophagi while excavating the ancient Theban necropolis.",
+        "vietnameseTranslation": "Các nhà khảo cổ đã phát hiện những chiếc quan tài hoàng gia nguyên vẹn trong khi khai quật nghĩa địa cổ đại Thebes.",
+        "level": "C2",
+        "collocation": "Ancient necropolis / Vast necropolis"
       }
     ]
   },
   {
-    id: "r134",
-    root: "MIS- (Tiền tố)",
-    meaning: "Sai trái, Nhầm lẫn, Lệch lạc, Tồi tệ",
-    origin: "Old English (mis - bad, wrong)",
-    description: "Nhận diện tức khắc các lỗi đánh giá, rào cản truyền thông hoặc diễn dịch sai dữ liệu nghiên cứu khoa học.",
-    tip: "Nhớ từ 'Mistake' (Sai lầm đáng trách) hay 'Misunderstanding' (Sự hiểu lầm lệch hướng ý tứ truyền đạt).",
-    category: "Quality & State",
-    exampleWords: [
+    "id": "stem-via-voy",
+    "root": "VIA / VOY / WARD-",
+    "meaning": "Đường lối, phương hướng di chuyển, hành trình xuyên qua",
+    "origin": "Latin (via - con đường; voyager - du hành)",
+    "description": "Gốc chỉ con đường khả dĩ để đạt được mục tiêu, sự chệch hướng khỏi kế hoạch hoặc hành trình vượt qua chướng ngại.",
+    "tip": "Nhớ đến Voyage (chuyến hải trình) hoặc Viable (khả thi có đường đi) – tìm thấy lối đi giữa muôn trùng khó khăn.",
+    "category": "Trục 8: Vận Động Của Dòng Đời & Chuyển Dịch",
+    "axis": "Trục 8",
+    "axisTitle": "TRỤC 8: VẬN ĐỘNG CỦA DÒNG ĐỜI & CHUYỂN DỊCH",
+    "axisSubtitle": "Cycle, Progress & Limits (Đường lối & Chuyển dịch)",
+    "stemKey": "VIA / VOY-",
+    "exampleWords": [
       {
-        word: "misconception",
-        partOfSpeech: "n",
-        meaning: "Quan niệm sai lầm, hiểu hiểu lệch lạc dính đầy định kiến",
-        visualBreakdown: "MIS (sai trái) + CONCEPT (khái niệm cốt lõi) + ION -> quá trình nhét vào đầu khái niệm méo mó lệch lạc xa thực tế",
-        ieltsSentence: "The scientific editorial aimed to clear up a common misconception about gene editing safety.",
-        vietnameseTranslation: "Bài xã luận khoa học nhằm mục đích làm sáng tỏ hoàn toàn một quan niệm sai lầm phổ biến về độ an toàn của chỉnh sửa gen."
+        "word": "Viable",
+        "partOfSpeech": "adj",
+        "meaning": "Khả thi, có đường lối để thành công, có thể sống được",
+        "visualBreakdown": "Via (con đường) + -able $\\rightarrow$ Có con đường khả dĩ để đi tới đích",
+        "ieltsSentence": "Hydrogen fuel cells represent a commercially viable clean alternative to heavy diesel engines.",
+        "vietnameseTranslation": "Pin nhiên liệu hydro đại diện cho một giải pháp sạch khả thi về mặt thương mại để thay thế các động cơ diesel hạng nặng.",
+        "level": "C1",
+        "collocation": "Viable alternative / Economically viable"
       },
       {
-        word: "misinterpret",
-        partOfSpeech: "v",
-        meaning: "Giải thích sai lệch, hiểu sai ngữ cảnh văn bản gốc",
-        visualBreakdown: "MIS (sai) + INTERPRET (giải mã/thông dịch) -> thông dịch lúng túng làm sai lệch ý đồ truyền tải",
-        ieltsSentence: "Politicians frequently misinterpret raw economic indicators to back up their partisan bills.",
-        vietnameseTranslation: "Các chính trị gia thường xuyên giải giải sai các chỉ số kinh tế gốc để hỗ trợ cho các đạo luật đảng phái của họ."
-      }
-    ]
-  },
-  {
-    id: "r135",
-    root: "-ISM (Hậu tố)",
-    meaning: "Học thuyết, Chủ nghĩa, Hệ tư tưởng định danh",
-    origin: "Greek (ismos - doctrine, theory, state)",
-    description: "Hậu tố chuyển hóa tính từ/danh từ thành một trường phái tư tưởng, phong trào xã hội hoặc lối hành xử tâm lý triết học.",
-    tip: "Dễ nhận dạng qua 'Capitalism' (Chủ nghĩa tư bản cạnh tranh khốc liệt) hay 'Criticism' (Sự phê bình sắc sảo chỉ trích lỗi lầm).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "altruism",
-        partOfSpeech: "n",
-        meaning: "Lòng vị tha vĩ đại, chủ nghĩa hi sinh vô điều kiện vì tha nhân",
-        visualBreakdown: "ALTRU (người khác) + ISM (hệ tinh thần) -> tôn chỉ đặt quyền lợi sống còn của nhân loại lên trên tiền bạc cá nhân",
-        ieltsSentence: "The benevolent society was built purely on the principles of social altruism.",
-        vietnameseTranslation: "Hội từ thiện được xây dựng hoàn toàn dựa trên các nguyên lý của lòng vị tha xã hội sâu rộng."
+        "word": "Deviate",
+        "partOfSpeech": "v",
+        "meaning": "Chệch hướng khỏi chuẩn mực/kế hoạch ban đầu",
+        "visualBreakdown": "De- (lệch) + Via (đường) $\\rightarrow$ Lệch khỏi đường chính",
+        "ieltsSentence": "Airliner navigation systems sound automated warnings whenever trajectories deviate from designated flight corridors.",
+        "vietnameseTranslation": "Hệ thống định vị của máy bay phát cảnh báo tự động bất cứ khi nào quỹ đạo bị chệch khỏi các hành lang bay được chỉ định.",
+        "level": "C1",
+        "collocation": "Deviate from norms / Deviate from protocol"
       },
       {
-        word: "optimism",
-        partOfSpeech: "n",
-        meaning: "Tinh thần lạc quan, chủ nghĩa lạc quan tin tưởng tương lai tươi sáng",
-        visualBreakdown: "OPTIM (tốt đẹp nhất) + ISM (chủ nghĩa tinh thần) -> thói quen luôn hướng tầm mắt về khía cạnh khả quan nhất",
-        ieltsSentence: "The financial planners expressed cautious optimism regarding global trade recovery pace.",
-        vietnameseTranslation: "Các nhà hoạch định tài chính đã bày tỏ sự lạc quan thận trọng liên quan đến tốc độ phục hồi thương mại toàn cầu."
-      }
-    ]
-  },
-  {
-    id: "r136",
-    root: "-CENTRIC (Hậu tố)",
-    meaning: "Lấy làm trung tâm, Xoay quanh lõi",
-    origin: "Greek (kentrikos - center)",
-    description: "Xây dựng các từ học thuật cao bàn thảo về trọng tâm điều tiết chính sách, thiên kiến triết học coi mình là rốn vũ trụ.",
-    tip: "Gợi nhớ tốt nhất bằng 'Egocentric' (Bản sắc ích kỷ thượng tôn, coi cái tôi cá nhân mình là trung tâm vũ trụ).",
-    category: "Time & Space",
-    exampleWords: [
-      {
-        word: "anthropocentric",
-        partOfSpeech: "adj",
-        meaning: "Nhân loại trung tâm luận (coi con người là trung tâm thế giới)",
-        visualBreakdown: "ANTHROPO (con người) + CENTRIC (lõi trung tâm) -> niềm tin kiêu ngạo coi vạn vật tự nhiên sinh ra chỉ để phục vụ lợi ích loài người",
-        ieltsSentence: "The philosopher criticized anthropocentric views that excuse massive habitat degradation.",
-        vietnameseTranslation: "Nhà triết học đã chỉ trích các góc nhìn coi con người là trung tâm, vốn bao biện cho sự hủy hoại môi trường sống diện rộng."
+        "word": "Obviate",
+        "partOfSpeech": "v",
+        "meaning": "Hóa giải, loại bỏ nhu cầu cần thiết",
+        "visualBreakdown": "Ob- (chắn trước mặt) + Via (đường) $\\rightarrow$ Đón đường xử lý trước",
+        "ieltsSentence": "Widespread preventative digital health screenings obviate the necessity for invasive emergency surgeries.",
+        "vietnameseTranslation": "Việc khám sàng lọc sức khỏe số phòng ngừa rộng rãi giúp loại bỏ sự cần thiết của các ca phẫu thuật cấp cứu xâm lấn.",
+        "level": "C2",
+        "collocation": "Obviate the need / Obviate risk"
       },
       {
-        word: "ethnocentric",
-        partOfSpeech: "adj",
-        meaning: "Thượng đẳng sắc tộc (coi văn hóa sắc tộc mình tự hào là nhất)",
-        visualBreakdown: "ETHNO (chủng tộc/văn hóa gốc) + CENTRIC (trụ cốt trung tâm) -> xu hướng xem tất cả các sắc dân khác là hạ đẳng thụt lùi",
-        ieltsSentence: "Corporate training programs are modified to eliminate ethnocentric biases in international negotiation.",
-        vietnameseTranslation: "Các chương trình đào tạo doanh nghiệp được tinh chỉnh để loại bỏ các định kiến thượng đẳng sắc tộc trong đàm phán quốc tế."
-      }
-    ]
-  },
-  {
-    id: "r137",
-    root: "-LOGY (Hậu tố)",
-    meaning: "Ngành khoa học, Môn nghiên cứu sâu",
-    origin: "Greek (logia - study of, science)",
-    description: "Bất diệt trong tên gọi của mọi bộ môn học thuật nghiên cứu ngóc ngách của đời sống vũ trụ vương triều.",
-    tip: "Liệt kê vô vàn với 'Biology' (Sinh vật học), 'Psychology' (Tâm lý học thần bí) hay 'Archaeology' (Khảo cổ học trầm tích).",
-    category: "People & Society",
-    exampleWords: [
-      {
-        word: "archaeology",
-        partOfSpeech: "n",
-        meaning: "Khảo cổ học chuyên đào bới cổ vật cổ miếu",
-        visualBreakdown: "ARCHAE (cổ xưa hồng hoang) + OLOGY (ngành học khoa học) -> môn học khai quật giải mã bí ẩn vương quốc cổ đại",
-        ieltsSentence: "Archaeology reveals that pre-industrial societies suffered from extensive copper poisoning.",
-        vietnameseTranslation: "Khảo cổ học tiết lộ rằng các xã hội tiền công nghiệp đã phải chịu đựng tình trạng nhiễm độc đồng trên diện rộng."
+        "word": "Impervious",
+        "partOfSpeech": "adj",
+        "meaning": "Không thấm nước; trơ lì, không bị ảnh hưởng",
+        "visualBreakdown": "Im- (không) + Per- (xuyên qua) + Via (đường)",
+        "ieltsSentence": "Dogmatic political factions often remain entirely impervious to empirical scientific consensus.",
+        "vietnameseTranslation": "Các phe phái chính trị giáo điều thường tỏ ra hoàn toàn trơ lì trước sự đồng thuận khoa học thực nghiệm.",
+        "level": "C2",
+        "collocation": "Impervious to criticism / Impervious barrier"
       },
       {
-        word: "methodology",
-        partOfSpeech: "n",
-        meaning: "Hệ phương pháp luận nghiên cứu khoa học chuẩn mực",
-        visualBreakdown: "METHOD (phương thức hành sự) + OLOGY (môn học nguyên lý) -> hệ thống các phương pháp thiết kế thực nghiệm gắt gao",
-        ieltsSentence: "Peers scrutinized the methodology used in the climate research before certifying the breakthrough.",
-        vietnameseTranslation: "Các đồng nghiệp đã soi xét cực kỳ kỹ lưỡng hệ phương pháp luận được sử dụng trong nghiên cứu khí hậu trước khi phê chuẩn bước đột phá."
-      }
-    ]
-  },
-  {
-    id: "r138",
-    root: "-ABLE/-IBLE (Hậu tố)",
-    meaning: "Đáng được làm, Khả thi có thể hành động gọn gàng",
-    origin: "Latin (abilis - capable of)",
-    description: "Hậu tố biến động từ thành các tính từ đại diện cho khả năng tồn sinh bộc lộ phẩm chất cần thẩm định kĩ càng.",
-    tip: "Học từ 'Sustainable' (Bền vững lâu dài - có thể chống đỡ mãi mãi) hay 'Feasible' (Khả thi - có thể thực thi suôn sẻ).",
-    category: "Quality & State",
-    exampleWords: [
-      {
-        word: "sustainable",
-        partOfSpeech: "adj",
-        meaning: "Có tính bền vững lâu dài, thân thiện môi trường",
-        visualBreakdown: "SUSTAIN (chống đỡ duy trì) + ABLE (có khả năng) -> có thể tồn tồn ổn ổn định không làm cạn kiệt tài nguyên môi sinh",
-        ieltsSentence: "Global nations are pressured to transition rapidly into sustainable agricultural practices.",
-        vietnameseTranslation: "Các quốc gia toàn cầu đang bị áp lực phải chuyển đổi nhanh chóng sang các hoạt động nông nghiệp bền vững."
+        "word": "Voyage",
+        "partOfSpeech": "n",
+        "meaning": "Chuyến hải trình/thám hiểm không gian dài ngày",
+        "visualBreakdown": "Viaticum (hành trình đường dài)",
+        "ieltsSentence": "Crewed interplanetary voyages will demand closed-loop life-support systems capable of recycling all waste.",
+        "vietnameseTranslation": "Các chuyến hải trình liên hành tinh có người lái sẽ đòi hỏi các hệ thống hỗ trợ sự sống khép kín có khả năng tái chế toàn bộ chất thải.",
+        "level": "C1",
+        "collocation": "Interplanetary voyage / Maiden voyage"
       },
       {
-        word: "feasible",
-        partOfSpeech: "adj",
-        meaning: "Khả thi, có khả năng thực hiện đạt thành công thực tế",
-        visualBreakdown: "FEAS (làm nên việc) + IBLE (có thể làm) -> hoàn toàn triển khai được dưới nguồn lực tài chính hiện có",
-        ieltsSentence: "The mayor declared that building a metropolitan subway line is perfectly feasible given sufficient budget allocation.",
-        vietnameseTranslation: "Thị trưởng tuyên bố rằng việc xây dựng một tuyến tàu điện ngầm đại đô thị là hoàn toàn khả thi nếu phân bổ nguồn ngân sách đầy đủ."
+        "word": "Convey",
+        "partOfSpeech": "v",
+        "meaning": "Chuyển tải thông điệp; vận chuyển hàng hóa",
+        "visualBreakdown": "Con- (cùng) + Via (đường)",
+        "ieltsSentence": "Scientific authors must utilize concise terminology to convey complex theoretical propositions lucidly.",
+        "vietnameseTranslation": "Các tác giả khoa học phải sử dụng thuật ngữ ngắn gọn để chuyển tải các mệnh đề lý thuyết phức tạp một cách sáng sủa.",
+        "level": "C1",
+        "collocation": "Convey a message / Convey meaning"
+      },
+      {
+        "word": "Wayward",
+        "partOfSpeech": "adj",
+        "meaning": "Bướng bỉnh, ương ngạnh, khó bảo",
+        "visualBreakdown": "Away + -ward (hướng đi lạc)",
+        "ieltsSentence": "Youth rehabilitation initiatives seek to re-integrate wayward adolescents into structured vocational environments.",
+        "vietnameseTranslation": "Các sáng kiến phục hồi thanh thiếu niên tìm cách tái hòa nhập những thanh thiếu niên ương ngạnh vào các môi trường học nghề có cấu trúc.",
+        "level": "C2",
+        "collocation": "Wayward youth / Wayward behavior"
+      },
+      {
+        "word": "Deviation",
+        "partOfSpeech": "n",
+        "meaning": "Độ lệch chuẩn, sự sai lệch so với chuẩn mực",
+        "visualBreakdown": "De- (lệch) + Via (đường) + -ation",
+        "ieltsSentence": "Statisticians calculate standard deviation to quantify the dispersion of test scores around the class mean.",
+        "vietnameseTranslation": "Các nhà thống kê tính toán độ lệch chuẩn để lượng hóa sự phân tán của điểm thi xung quanh giá trị trung bình của lớp.",
+        "level": "C1",
+        "collocation": "Standard deviation / Significant deviation"
       }
     ]
   }
 ];
+
+export const allRoots: WordRoot[] = [
+  ...baseRoots,
+  ...extraRoots,
+  ...trunk10To13Roots,
+  ...trunk14To18Roots,
+];
+export const rootsData: WordRoot[] = allRoots;
+export default allRoots;

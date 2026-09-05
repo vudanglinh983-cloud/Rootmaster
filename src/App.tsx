@@ -326,7 +326,7 @@ export default function App() {
             }`}
           >
             <BrainCircuit className="w-4.5 h-4.5" />
-            TRỢ LÝ PHÂN TÍCH AI
+            CHUYÊN GIA LINGUIST AI
           </button>
         </nav>
 
@@ -366,6 +366,8 @@ export default function App() {
             <AiRootCoach
               onImportCustomRoot={handleImportCustomRoot}
               allRoots={mergedRoots}
+              userStats={stats}
+              onNavigate={(tab) => setActiveTab(tab)}
             />
           )}
 
