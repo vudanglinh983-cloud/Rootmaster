@@ -8,7 +8,8 @@ import {
   markLessonCompleted,
   canGenerateNewLesson,
   getLearnedWordsList,
-  deleteSavedLesson
+  deleteSavedLesson,
+  downloadSingleLessonJSON
 } from "../lib/lessonStorage";
 import {
   GraduationCap,
@@ -43,6 +44,7 @@ import {
   ChevronUp,
   Brain,
   Layers,
+  Download,
   Trash2
 } from "lucide-react";
 
@@ -423,6 +425,16 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
               <History className="w-4 h-4 text-sky-400" />
               <span className="hidden sm:inline">Bài Đã Lưu ({savedLessonsList.length})</span>
             </button>
+
+            {currentLessonRecord && (
+              <button
+                onClick={() => downloadSingleLessonJSON(currentLessonRecord)}
+                className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors cursor-pointer border border-slate-700"
+                title="Tải file lưu trữ bài học này (.JSON) về máy tính"
+              >
+                <Download className="w-4 h-4 text-sky-400" />
+              </button>
+            )}
 
             {lessonData && (
               <button

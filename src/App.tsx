@@ -8,9 +8,11 @@ import { Dashboard } from "./components/Dashboard";
 import { RootsBoulevard } from "./components/RootsBoulevard";
 import { AiRootCoach } from "./components/AiRootCoach";
 import { TopicVocabArena } from "./components/TopicVocabArena";
+import { SavedLessonsArchive } from "./components/SavedLessonsArchive";
+import { getAllSavedLessons } from "./lib/lessonStorage";
 
 // React icons
-import { LayoutDashboard, Compass, BrainCircuit, Sparkles, Maximize2, Minimize2 } from "lucide-react";
+import { LayoutDashboard, Compass, BrainCircuit, Sparkles, BookmarkCheck, Maximize2, Minimize2 } from "lucide-react";
 
 export default function App() {
   // Navigation Tabs state
@@ -61,6 +63,23 @@ export default function App() {
     correctAnswersCount: 0,
     masteredCount: 0,
   });
+
+  // Track total saved lessons count for sidebar badge
+  const [savedLessonsCount, setSavedLessonsCount] = useState<number>(0);
+
+  useEffect(() => {
+    const updateSavedCount = () => {
+      try {
+        const list = getAllSavedLessons();
+        setSavedLessonsCount(list.length);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+    updateSavedCount();
+    window.addEventListener("storage", updateSavedCount);
+    return () => window.removeEventListener("storage", updateSavedCount);
+  }, [activeTab]);
 
   // Load and initialize data on mount
   useEffect(() => {
@@ -346,6 +365,32 @@ export default function App() {
               VŨ TRỤ TỪ VỰNG CHỦ ĐỀ
             </button>
 
+            <button
+              onClick={() => startTransition(() => setActiveTab("saved_lessons"))}
+              disabled={isPending}
+              className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-xs md:text-sm font-black transition-all cursor-pointer border ${
+                activeTab === "saved_lessons"
+                  ? "bg-[#2563EB] text-white border-[#2563EB] shadow-md"
+                  : "text-[#0F172A] bg-white border-transparent hover:bg-gray-100"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <BookmarkCheck className={`w-4.5 h-4.5 ${activeTab === "saved_lessons" ? "text-white" : "text-amber-500"}`} />
+                <span>BÀI ĐÃ LƯU & ÔN TẬP</span>
+              </div>
+              {savedLessonsCount > 0 && (
+                <span
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
+                    activeTab === "saved_lessons"
+                      ? "bg-white/20 text-white"
+                      : "bg-blue-100 text-blue-800"
+                  }`}
+                >
+                  {savedLessonsCount}
+                </span>
+              )}
+            </button>
+
             <div className="h-px bg-gray-100 my-4"></div>
 
             <button
@@ -381,6 +426,13 @@ export default function App() {
             <TopicVocabArena
               isFullScreenFocus={isFullScreenFocus}
               onToggleFullScreen={toggleFullScreenFocus}
+              onNavigateTab={(tab) => setActiveTab(tab)}
+            />
+          )}
+
+          {activeTab === "saved_lessons" && (
+            <SavedLessonsArchive
+              onNavigateTab={(tab) => setActiveTab(tab)}
             />
           )}
 

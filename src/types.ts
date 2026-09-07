@@ -360,6 +360,9 @@ export interface SavedLessonRecord {
   } | null;
   savedAnswers: Record<string | number, string>;
   lessonData: AITutorLesson | AITopicLesson;
+  isBookmarked?: boolean;
+  userNotes?: string;
+  lastReviewedAt?: number;
 }
 
 export interface AITutorMessage {

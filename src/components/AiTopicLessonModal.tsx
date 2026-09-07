@@ -8,7 +8,8 @@ import {
   saveOrUpdateLesson,
   markLessonCompleted,
   canGenerateNewLesson,
-  getLearnedWordsList
+  getLearnedWordsList,
+  downloadSingleLessonJSON
 } from "../lib/lessonStorage";
 import {
   Sparkles,
@@ -35,7 +36,9 @@ import {
   Zap,
   Layers,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Download,
+  BookmarkCheck
 } from "lucide-react";
 
 interface AiTopicLessonModalProps {
@@ -326,6 +329,16 @@ Dịch nghĩa: ${lesson.connectingNarrative.translation}`;
               <span className="hidden sm:inline">Bài Đã Lưu ({savedLessonsList.length})</span>
             </button>
 
+            {currentLessonRecord && (
+              <button
+                onClick={() => downloadSingleLessonJSON(currentLessonRecord)}
+                className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors cursor-pointer border border-slate-700"
+                title="Tải riêng file bài học này (.JSON) để lưu trữ trên máy tính"
+              >
+                <Download className="w-4 h-4 text-blue-400" />
+              </button>
+            )}
+
             {lesson && (
               <button
                 onClick={handleCopyLesson}
@@ -385,7 +398,7 @@ Dịch nghĩa: ${lesson.connectingNarrative.translation}`;
                       </span>
                     </div>
                     <div className="text-[11px] text-slate-400 line-clamp-1">
-                      Chủ đề: {rec.topicName}
+                      Chủ đề: {rec.topic || rec.topicName}
                     </div>
                   </div>
                 ))

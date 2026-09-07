@@ -40,17 +40,20 @@ import {
   Zap,
   Table,
   Workflow,
-  Brain
+  Brain,
+  BookmarkCheck
 } from "lucide-react";
 
 interface TopicVocabArenaProps {
   isFullScreenFocus?: boolean;
   onToggleFullScreen?: () => void;
+  onNavigateTab?: (tab: string) => void;
 }
 
 export const TopicVocabArena: React.FC<TopicVocabArenaProps> = ({
   isFullScreenFocus = false,
   onToggleFullScreen,
+  onNavigateTab,
 }) => {
   // View mode: Mindmap, Table, or Bento Grid Matrix
   const [viewMode, setViewMode] = useState<"mindmap" | "table" | "grid">("mindmap");
@@ -357,6 +360,17 @@ export const TopicVocabArena: React.FC<TopicVocabArenaProps> = ({
                 <Sparkles className="w-4 h-4 text-amber-300" />
                 AI TẠO BÀI HỌC DỄ NHỚ
               </button>
+
+              {onNavigateTab && (
+                <button
+                  onClick={() => onNavigateTab("saved_lessons")}
+                  className="px-4 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-xs md:text-sm uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer border border-amber-400/40"
+                  title="Mở Kho bài học đã lưu để ôn tập lại hoặc làm lại bài kiểm tra"
+                >
+                  <BookmarkCheck className="w-4 h-4 text-amber-400" />
+                  KHO BÀI ĐÃ LƯU & ÔN TẬP
+                </button>
+              )}
             </div>
           </div>
         </div>
