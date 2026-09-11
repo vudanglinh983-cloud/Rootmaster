@@ -172,8 +172,11 @@ function generateFallbackAiTutorLesson(params: {
   const section3TextEn = `Ultimately, fostering interdisciplinary cooperation with global counterparts remains indispensable. By taking concerted actions to mitigate emerging hazards and alleviate acute financial distress, institutions can successfully disseminate sustainable solutions across all sectors.`;
   const section3TextVi = `Suy cho cùng, việc bồi đắp sự hợp tác liên ngành với các đối tác toàn cầu vẫn là điều không thể thiếu được. Bằng cách thực hiện các hành động phối hợp nhằm giảm thiểu các mối nguy mới nảy sinh và xoa dịu những khó khăn tài chính cấp bách, các thể chế có thể phổ biến thành công các giải pháp bền vững trên mọi lĩnh vực.`;
 
-  const fullTextEn = `${section1TextEn} ${section2TextEn} ${section3TextEn}`;
-  const fullTextVi = `${section1TextVi} ${section2TextVi} ${section3TextVi}`;
+  const section4TextEn = `Looking forward, academic scholars advocate for continuous longitudinal assessments to track systemic efficacy. Adopting proactive frameworks ensures societies remain resilient against unpredictable global transformations.`;
+  const section4TextVi = `Hướng tới tương lai, các học giả học thuật khuyến nghị thực hiện các đánh giá dọc liên tục để theo dõi hiệu quả mang tính hệ thống. Việc áp dụng các khung giải pháp chủ động sẽ đảm bảo các xã hội duy trì khả năng chống chịu trước những chuyển biến toàn cầu khó lường.`;
+
+  const fullTextEn = `${section1TextEn} ${section2TextEn} ${section3TextEn} ${section4TextEn}`;
+  const fullTextVi = `${section1TextVi} ${section2TextVi} ${section3TextVi} ${section4TextVi}`;
   const wordCountEstimated = fullTextEn.split(/\s+/).filter(Boolean).length;
 
   // In-depth linguistic and morphological analysis for key words
@@ -386,6 +389,14 @@ function generateFallbackAiTutorLesson(params: {
           textVi: section3TextVi,
           keyWordsInSection: ["counterparts", "indispensable", "mitigate", "alleviate", "disseminate"],
           keyStructures: "Cấu trúc phân từ chỉ phương thức: 'By taking concerted actions to mitigate..., institutions can successfully disseminate...'"
+        },
+        {
+          sectionNumber: 4,
+          sectionTitle: "Phần 4: Đánh giá dọc & Nâng cao sức chống chịu",
+          textEn: section4TextEn,
+          textVi: section4TextVi,
+          keyWordsInSection: ["longitudinal", "assessments", "resilient", "transformations"],
+          keyStructures: "Mệnh đề danh động từ làm chủ ngữ: 'Adopting proactive frameworks ensures societies remain resilient...'"
         }
       ]
     },
@@ -1400,7 +1411,8 @@ YÊU CẦU NỘI DUNG CHI TIẾT:
         macroDomain,
         targetBand = "Band 7.5 - 8.5",
         wordCount = 12,
-        excludedWords = []
+        excludedWords = [],
+        rootContext
       } = req.body;
 
       const requestedWordCount = Math.max(10, Math.min(15, Number(wordCount) || 12));
@@ -1428,6 +1440,15 @@ YÊU CẦU NỘI DUNG CHI TIẾT:
         ? `\nLƯU Ý NGHIÊM NGẶT VỀ TỪ MỚI: Học viên đã học xong các từ sau trong bài học trước, KHÔNG ĐƯỢC CHỌN LẠI: ${excludedWords.slice(0, 40).join(", ")}. BẮT BUỘC toàn bộ ${requestedWordCount} từ phải là TỪ MỚI chưa từng xuất hiện!`
         : "";
 
+      const rootSpecificContext = rootContext ? `
+THÔNG TIN TRỤC GỐC TỪ / HÌNH THÁI HỌC (ĐẠI LỘ GỐC TỪ):
+- Gốc từ / Trục mục tiêu: ${rootContext.root || rootContext.trunkTitle || currentTopic}
+- Ý nghĩa cốt lõi: ${rootContext.meaning || ''}
+- Nguồn gốc từ nguyên Latin/Hy Lạp: ${rootContext.origin || ''}
+- Mẹo liên tưởng gốc: ${rootContext.tip || ''}
+- Nhóm Trục: ${rootContext.category || rootContext.trunkTitle || ''}
+- YÊU CẦU ĐẶC BIỆT: Tất cả ${requestedWordCount} từ mục tiêu (keyTargetWords) PHẢI thuộc họ gốc từ này hoặc liên quan mật thiết đến gốc từ/tiền tố trên. Phân tích chi tiết tiền tố (prefix), gốc từ (root), hậu tố (suffix) và cơ chế biến đổi nghĩa.` : "";
+
       const prompt = `Bạn là GIA SƯ AI LUYỆN THI IELTS & CHUYÊN GIA SIÊU TRÍ NHỚ TỪ VỰNG (AI IELTS Master Tutor).
 Học viên gửi yêu cầu sau:
 """${userPrompt || `Hãy tạo một bài học gia sư hướng dẫn cách học và nhớ sâu các từ vựng chủ đề: ${currentTopic || 'IELTS Core Academic'}`}"""
@@ -1437,19 +1458,19 @@ THÔNG TIN BỐI CẢNH NỘI DUNG SỐ:
 - Đại nhóm lĩnh vực: ${macroDomain || "IELTS Academic Core"}
 - Danh sách từ vựng liên quan: ${wordsContext}
 - Mục tiêu dải điểm: ${targetBand}
-- SỐ LƯỢNG TỪ MỤC TIÊU BẮT BUỘC: ĐÚNG ${requestedWordCount} TỪ MỚI (nằm trong khoảng từ 10 đến 15 từ C1/C2 học thuật).${excludedNotice}
+- SỐ LƯỢNG TỪ MỤC TIÊU BẮT BUỘC: ĐÚNG ${requestedWordCount} TỪ MỚI (nằm trong khoảng từ 10 đến 15 từ C1/C2 học thuật).${excludedNotice}${rootSpecificContext}
 
 NHIỆM VỤ CHI TIẾT CỦA GIA SƯ AI:
-1. Trích xuất hoặc đề xuất ĐÚNG ${requestedWordCount} TỪ VỰNG HỌC THUẬT C1/C2 (keyTargetWords) trọng tâm nhất cho chủ đề. Mỗi từ có:
+1. Trích xuất hoặc đề xuất ĐÚNG ${requestedWordCount} TỪ VỰNG HỌC THUẬT C1/C2 (keyTargetWords) trọng tâm nhất cho chủ đề/gốc từ này. Mỗi từ có:
    - word: Từ tiếng Anh
    - ipa: Phiên âm quốc tế IPA chuẩn xác
    - partOfSpeech: Từ loại (adj, v, n, adv)
    - vietnamese: Nghĩa tiếng Việt chuẩn xác
    - b2Equivalent: TỪ ĐỒNG NGHĨA / TƯƠNG ĐƯƠNG B2 (B2 Paraphrase Equivalent)
-   - memoryHook: Mẹo liên tưởng siêu trí nhớ (âm thanh tương tự, bối cảnh ấn tượng)
+   - memoryHook: Mẹo liên tưởng siêu trí nhớ / cách gợi nhớ (âm thanh tương tự, bối cảnh ấn tượng)
    - ieltsCollocation: Cụm từ Collocation học thuật chuẩn dải điểm 8.0+.
-2. TẠO MỘT BÀI ĐỌC HỌC THUẬT (readingPassage) DÀI KHOẢNG 150 TỪ (từ 130 đến 165 từ), lồng ghép tự nhiên các từ vựng mới này.
-   ĐẶC BIỆT: Chia bài đọc này thành 3 - 4 PHẦN NHỎ (Bite-sized Sections, mỗi phần khoảng 35 - 50 từ) để học viên dễ theo dõi:
+2. TẠO MỘT BÀI ĐỌC HỌC THUẬT (readingPassage) DÀI KHOẢNG 150 - 250 TỪ (chuẩn IELTS Academic 150-250 từ), lồng ghép tự nhiên các từ vựng mới này.
+   ĐẶC BIỆT: Chia bài đọc này thành 3 - 4 PHẦN NHỎ (Bite-sized Sections, mỗi phần khoảng 40 - 65 từ) để học viên dễ theo dõi và đối chiếu song ngữ:
    - Mỗi phần có:
      * sectionNumber (1, 2, 3...)
      * sectionTitle (Tiêu đề ngắn gọn mô tả ý chính)
@@ -1457,14 +1478,14 @@ NHIỆM VỤ CHI TIẾT CỦA GIA SƯ AI:
      * textVi (Bản dịch tiếng Việt song ngữ chuẩn xác)
      * keyWordsInSection (Mảng các từ mục tiêu xuất hiện trong phần này)
      * keyStructures (Phân tích cấu trúc câu hoặc ngữ pháp học thuật điểm cao)
-   - Kèm fullTextEn (toàn bộ 150 từ của bài đọc tiếng Anh) và fullTextVi để phục vụ tính năng nghe audio toàn bài.
+   - Kèm fullTextEn (toàn bộ 150-250 từ của bài đọc tiếng Anh) và fullTextVi để phục vụ tính năng nghe audio toàn bài.
 3. PHÂN TÍCH CHUYÊN SÂU (inDepthAnalysis) cho 3-4 từ vựng then chốt:
    - Gốc từ & hình thái (Morphology: origin, root, prefix, suffix, rootMeaning)
    - Gia đình từ (wordFamily: noun, verb, adj, adv)
    - Sắc thái học thuật & đối chiếu B2 (academicRegister: b2Contrast, bandLiftReason, nuance)
    - Cạm bẫy phòng thi IELTS (examPitfalls: listeningTrap, spellingOrGrammar, collocationRule)
    - Khuôn mẫu câu thực chiến (sentenceFrames: writingTask2, speakingPart3)
-4. BỘ BÀI TEST ĐA DẠNG (diverseTestQuestions) gồm 5 CÂU HỎI với nhiều dạng bài khác nhau:
+4. BỘ BÀI TEST ĐA DẠNG (diverseTestQuestions) gồm 5 CÂU HỎI với nhiều dạng bài khác nhau để kiểm tra ôn tập:
    - Dạng 1: Trắc nghiệm ngữ cảnh (context_choice)
    - Dạng 2: Nâng cấp Paraphrase C1/C2 (synonym_upgrade)
    - Dạng 3: Độ chính xác Collocation Band 8.0 (collocation_precision)
@@ -1479,7 +1500,7 @@ NHIỆM VỤ CHI TIẾT CỦA GIA SƯ AI:
 
       const { parsed } = await callGeminiWithRetryAndFallback(ai, {
         prompt,
-        systemInstruction: "Bạn là Gia Sư AI IELTS giàu kinh nghiệm, phân tích ngôn ngữ học chuyên sâu và thiết kế bài test đa dạng toàn diện. Bạn tạo bài học từ 10-15 từ mới kèm bài đọc khoảng 150 từ chia thành các phần nhỏ bite-sized, phân tích hình thái từ và bài test 5 câu hỏi phong phú.",
+        systemInstruction: "Bạn là Gia Sư AI IELTS giàu kinh nghiệm, phân tích ngôn ngữ học chuyên sâu và thiết kế bài test đa dạng toàn diện. Bạn tạo bài học từ 10-15 từ mới kèm bài đọc khoảng 150-250 từ chia thành các phần nhỏ bite-sized, phân tích hình thái từ và bài test 5 câu hỏi phong phú để kiểm tra ôn tập.",
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
@@ -1684,6 +1705,7 @@ NHIỆM VỤ CHI TIẾT CỦA GIA SƯ AI:
       });
 
       if (!parsed.id) parsed.id = `tutor_lesson_${Date.now()}`;
+      if (rootContext) parsed.rootContext = rootContext;
       res.json(parsed);
     } catch (error: any) {
       console.error("Lỗi API gia sư AI:", error);

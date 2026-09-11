@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { TopicWord, AITutorLesson, BiteSizedSection, WordInDepthAnalysis, ComprehensiveQuizQuestion, SavedLessonRecord } from "../types";
-import { SpeechService } from "../lib/speechSynthesis";
+import { TopicWord, AITutorLesson, BiteSizedSection, WordInDepthAnalysis, ComprehensiveQuizQuestion, SavedLessonRecord, RootContextData } from "../types";
+import { SpeechService, getWordPronunciation } from "../lib/speechSynthesis";
 import {
   getAllSavedLessons,
   getActiveLesson,
@@ -54,6 +54,7 @@ interface AiVocabTutorModalProps {
   initialTopic?: string;
   initialWords?: TopicWord[];
   initialMacro?: string;
+  initialRootContext?: RootContextData;
 }
 
 export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
@@ -62,6 +63,7 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
   initialTopic,
   initialWords = [],
   initialMacro,
+  initialRootContext,
 }) => {
   const [userPrompt, setUserPrompt] = useState<string>("");
   const [targetWordCount, setTargetWordCount] = useState<number>(12); // Default 12 words (between 10-15)
@@ -130,20 +132,41 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
   };
 
   // Quick preset prompt chips
-  const quickPrompts = [
+  const quickPrompts = initialRootContext ? [
     {
-      label: "🔄 Bài học 12 từ + Bài đọc 150 từ",
-      prompt: "Hãy tạo bài học hoàn chỉnh với 12 từ vựng học thuật C1/C2 kèm bài đọc 150 từ chia thành 3 phần nhỏ và đối chiếu từ B2.",
+      label: `🌳 Gốc từ "${initialRootContext.root}": 12 từ + Test ôn tập`,
+      prompt: `Gia sư hãy tạo bài học chuyên sâu về họ từ của gốc "${initialRootContext.root}" (${initialRootContext.meaning}) với 12 từ vựng học thuật, phân tích tiền tố/hậu tố, cách đọc, mẹo gợi nhớ siêu tốc và bài đọc 150-250 từ chia đoạn nhỏ kèm bài test ôn tập.`,
+      words: 12
+    },
+    {
+      label: `🎯 Toàn diện 15 từ vựng gốc "${initialRootContext.root}"`,
+      prompt: `Tuyển chọn đúng 15 từ vựng phát triển từ gốc "${initialRootContext.root}" kèm đối chiếu B2 sang C1/C2, cách đọc chuẩn, bài đọc học thuật 200 từ chia đoạn và 5 câu test kiểm tra.`,
+      words: 15
+    },
+    {
+      label: `⚡ Cốt lõi 10 từ + Mẹo liên tưởng`,
+      prompt: `Tạo bài học cô đọng 10 từ then chốt mang gốc "${initialRootContext.root}", cách nhớ nhanh qua âm thanh tương tự, bài đọc 150 từ và bộ test ôn tập phản xạ.`,
+      words: 10
+    },
+    {
+      label: `🔬 Phân tích hình thái học & cạm bẫy`,
+      prompt: `Phân tích chuyên sâu cơ chế biến đổi hình thái học gốc "${initialRootContext.root}" (${initialRootContext.origin || 'Latin/Hy Lạp'}), gia đình từ, cạm bẫy phòng thi và bài đọc ứng dụng IELTS.`,
+      words: 12
+    }
+  ] : [
+    {
+      label: "🔄 Bài học 12 từ + Bài đọc 150-250 từ",
+      prompt: "Hãy tạo bài học hoàn chỉnh với 12 từ vựng học thuật C1/C2 kèm bài đọc 150-250 từ chia thành các phần nhỏ và đối chiếu từ B2.",
       words: 12
     },
     {
       label: "🎯 Bài học chuyên sâu 15 từ vựng",
-      prompt: "Hãy chọn lọc đúng 15 từ vựng đắt giá nhất cho chủ đề này, kèm bài đọc chuẩn IELTS 150 từ chia thành các phần nhỏ dễ theo dõi.",
+      prompt: "Hãy chọn lọc đúng 15 từ vựng đắt giá nhất cho chủ đề này, kèm bài đọc chuẩn IELTS 150-250 từ chia thành các phần nhỏ dễ theo dõi.",
       words: 15
     },
     {
       label: "⚡ Bài học cốt lõi 10 từ nhanh",
-      prompt: "Tạo bài học cô đọng 10 từ vựng mục tiêu kèm bài đọc ngắn 150 từ chia đoạn song ngữ và collocations điểm 8.0+.",
+      prompt: "Tạo bài học cô đọng 10 từ vựng mục tiêu kèm bài đọc 150 từ chia đoạn song ngữ và collocations điểm 8.0+.",
       words: 10
     },
     {
@@ -177,10 +200,11 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
     }
 
     const count = countOverride || targetWordCount;
-    const promptToSend =
-      customPrompt ||
-      userPrompt ||
-      `Gia sư hãy tạo bài học siêu trí nhớ với ${count} từ vựng mục tiêu và bài đọc 150 từ chia đoạn nhỏ cho chủ đề: ${initialTopic || "IELTS Academic Core"}`;
+    const defaultPrompt = initialRootContext
+      ? `Gia sư hãy tạo bài học chuyên sâu với ${count} từ vựng thuộc gốc từ "${initialRootContext.root}" (${initialRootContext.meaning}) kèm bài đọc 150-250 từ chia thành nhiều đoạn nhỏ cho dễ học, phân tích chuyên sâu các từ và cách gợi nhớ, cách đọc, cùng bộ đề kiểm tra để ôn tập.`
+      : `Gia sư hãy tạo bài học siêu trí nhớ với ${count} từ vựng mục tiêu và bài đọc 150-250 từ chia đoạn nhỏ cho chủ đề: ${initialTopic || "IELTS Academic Core"}`;
+
+    const promptToSend = customPrompt || userPrompt || defaultPrompt;
 
     setIsLoading(true);
     setErrorMessage(null);
@@ -199,12 +223,13 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userPrompt: promptToSend,
-          currentTopic: initialTopic || "IELTS Core Academic",
+          currentTopic: initialTopic || (initialRootContext ? `Gốc từ ${initialRootContext.root}` : "IELTS Core Academic"),
           selectedWords: initialWords.map((w) => ({ word: w.word, vietnamese: w.vietnamese })),
-          macroDomain: initialMacro || "IELTS Universe",
+          macroDomain: initialMacro || (initialRootContext ? "Đại lộ Gốc từ IELTS" : "IELTS Universe"),
           targetBand: "Band 7.5 - 8.5",
           wordCount: count,
           excludedWords,
+          rootContext: initialRootContext,
         }),
       });
 
@@ -224,9 +249,9 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
       const newRecord: SavedLessonRecord = {
         id: data.id || `tutor_lesson_${Date.now()}`,
         type: "tutor",
-        title: data.lessonTheme || initialTopic || "Bài học Gia sư AI",
-        topic: initialTopic || "IELTS Core Academic",
-        macroDomain: initialMacro || "IELTS Universe",
+        title: data.lessonTheme || (initialRootContext ? `Gốc từ: ${initialRootContext.root} - ${initialRootContext.meaning}` : (initialTopic || "Bài học Gia sư AI")),
+        topic: initialTopic || (initialRootContext ? `Gốc từ ${initialRootContext.root}` : "IELTS Core Academic"),
+        macroDomain: initialMacro || (initialRootContext ? "Đại lộ Gốc từ IELTS" : "IELTS Universe"),
         createdAt: Date.now(),
         updatedAt: Date.now(),
         status: "in-progress",
@@ -235,6 +260,7 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
         testScore: null,
         savedAnswers: {},
         lessonData: data,
+        rootContext: initialRootContext,
       };
 
       saveOrUpdateLesson(newRecord);
@@ -540,6 +566,39 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6 bg-slate-50/60">
           {/* Request Input & Word Count Selector Bar */}
           <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm space-y-3.5">
+            {/* Root Context Banner if learning by Root */}
+            {initialRootContext && (
+              <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 border border-blue-500/40 rounded-xl p-3 sm:p-3.5 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-md">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-amber-400 shrink-0">
+                    <GraduationCap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/20 text-sky-300 border border-blue-400/30 font-mono">
+                        Đại Lộ Gốc Từ • Trục {initialRootContext.trunkNumber || 1}
+                      </span>
+                      <span className="text-xs font-bold text-amber-300">
+                        {initialRootContext.category || initialRootContext.trunkTitle}
+                      </span>
+                    </div>
+                    <div className="text-sm font-black text-white mt-0.5">
+                      Gốc: <span className="text-amber-400">{initialRootContext.root}</span> ({initialRootContext.meaning})
+                      {initialRootContext.origin && <span className="text-xs text-slate-300 font-normal ml-2">• Nguồn gốc: {initialRootContext.origin}</span>}
+                    </div>
+                    {initialRootContext.tip && (
+                      <p className="text-xs text-slate-300 mt-0.5 italic">
+                        💡 Mẹo nhớ gốc: {initialRootContext.tip}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="text-[11px] text-sky-300 bg-blue-950/80 border border-blue-800/60 px-2.5 py-1.5 rounded-lg shrink-0 text-center font-mono font-bold">
+                  🎯 10-15 TỪ GỐC • ĐỌC 150-250 TỪ • TEST ÔN TẬP
+                </div>
+              </div>
+            )}
+
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-slate-700">
               <span className="flex items-center gap-1.5 text-blue-700">
                 <Sparkles className="w-4 h-4 text-amber-500" />
@@ -872,6 +931,9 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
                             <span className="text-xs font-mono font-bold text-slate-500">
                               {word.ipa}
                             </span>
+                            <span className="text-[11px] font-sans text-amber-800 bg-amber-100/80 border border-amber-300/60 px-1.5 py-0.5 rounded font-medium">
+                              Đọc: <strong>{getWordPronunciation(word.word, word.ipa).guide}</strong>
+                            </span>
                           </div>
                           <button
                             onClick={(e) => handlePronounceWord(word.word, e)}
@@ -899,7 +961,7 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
 
                         <div className="bg-amber-50/80 border border-amber-200 rounded-lg p-2.5 text-xs text-amber-950 font-medium leading-relaxed">
                           <strong className="text-amber-900 block font-bold mb-0.5">
-                            💡 Mẹo liên tưởng siêu trí nhớ:
+                            💡 Cách gợi nhớ siêu tốc (Memory Hook):
                           </strong>
                           {word.memoryHook}
                         </div>
@@ -914,7 +976,7 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
                 </div>
               )}
 
-              {/* TAB 2: READING PASSAGE (~150 WORDS) IN BITE-SIZED SECTIONS */}
+              {/* TAB 2: READING PASSAGE (150 - 250 WORDS) IN BITE-SIZED SECTIONS */}
               {activeTab === "reading" && lessonData.readingPassage && (
                 <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
@@ -924,11 +986,14 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
                       </div>
                       <div>
                         <span className="text-[11px] font-black uppercase tracking-wider text-blue-600 font-mono">
-                          BÀI ĐỌC HỌC THUẬT IELTS CHUẨN (~150 TỪ)
+                          BÀI ĐỌC HỌC THUẬT IELTS CHUẨN (150 - 250 TỪ)
                         </span>
                         <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
                           {lessonData.readingPassage.title}
                         </h3>
+                        <p className="text-xs text-slate-500 mt-0.5">
+                          Chia thành {lessonData.readingPassage.sections.length} đoạn nhỏ dễ học kèm đối chiếu song ngữ & audio bản xứ.
+                        </p>
                       </div>
                     </div>
 

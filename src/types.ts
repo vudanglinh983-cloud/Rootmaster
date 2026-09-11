@@ -290,6 +290,17 @@ export interface AITutorB2Upgrade {
   bandImpact: string;
 }
 
+export interface RootContextData {
+  root?: string;
+  meaning?: string;
+  origin?: string;
+  tip?: string;
+  category?: string;
+  trunkNumber?: number;
+  trunkTitle?: string;
+  roots?: string;
+}
+
 export interface BiteSizedSection {
   sectionNumber: number;
   sectionTitle: string;
@@ -339,6 +350,7 @@ export interface AITutorLesson {
   inDepthAnalysis?: WordInDepthAnalysis[];
   tutorAdvice: string;
   suggestedFollowUps: string[];
+  rootContext?: RootContextData;
 }
 
 export interface SavedLessonRecord {
@@ -363,6 +375,7 @@ export interface SavedLessonRecord {
   isBookmarked?: boolean;
   userNotes?: string;
   lastReviewedAt?: number;
+  rootContext?: RootContextData;
 }
 
 export interface AITutorMessage {

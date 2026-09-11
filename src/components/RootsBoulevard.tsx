@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from "react";
-import { WordRoot, RootCategory } from "../types";
+import { WordRoot, RootCategory, RootContextData } from "../types";
 import { ieltsParaphraseData, IELTSParaphraseItem } from "../data/paraphraseData";
 import { SpeechService, getRootPronunciation, getWordPronunciation } from "../lib/speechSynthesis";
 import { D3RootsMindmap } from "./D3RootsMindmap";
+import { AiVocabTutorModal } from "./AiVocabTutorModal";
 import { 
   Search, 
   ChevronDown, 
@@ -44,6 +45,11 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [currentlyPlayingId, setCurrentlyPlayingId] = useState<string | null>(null);
   const [speechSpeed, setSpeechSpeed] = useState<number>(0.85);
+
+  // AI Tutor Integration States for Roots Boulevard
+  const [isAiTutorOpen, setIsAiTutorOpen] = useState<boolean>(false);
+  const [selectedRootForTutor, setSelectedRootForTutor] = useState<RootContextData | null>(null);
+  const [tutorWords, setTutorWords] = useState<any[]>([]);
 
   const handlePlaySpeech = (text: string, id: string, e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -543,6 +549,32 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
     return allRoots.reduce((acc, root) => acc + (root.exampleWords?.length || 0), 0);
   }, [allRoots]);
 
+  const handleOpenRootTutor = (rootItem: WordRoot, trunkInfo?: TrunkConfig, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    const rootContext: RootContextData = {
+      root: rootItem.root,
+      meaning: rootItem.meaning,
+      origin: rootItem.origin,
+      tip: rootItem.tip,
+      category: rootItem.category,
+      trunkNumber: trunkInfo?.number,
+      trunkTitle: trunkInfo?.title,
+      roots: rootItem.root,
+    };
+    setSelectedRootForTutor(rootContext);
+    const wordsForTutor = (rootItem.exampleWords || []).map((w) => ({
+      id: `root_w_${w.word}`,
+      word: w.word,
+      vietnamese: w.meaning || "",
+      definition: w.visualBreakdown || w.meaning || "",
+      category: rootItem.category,
+      categoryEmoji: "🌳",
+      memoryHook: rootItem.tip || w.visualBreakdown || "",
+    }));
+    setTutorWords(wordsForTutor);
+    setIsAiTutorOpen(true);
+  };
+
   return (
     <div id="boulevard-tab" className="space-y-6">
       
@@ -567,6 +599,29 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
         </div>
 
         <div className="flex flex-wrap items-center gap-2 self-start lg:self-center">
+          {/* AI Tutor Main Entrance Button for Roots Boulevard */}
+          <button
+            id="open-roots-ai-tutor-btn"
+            type="button"
+            onClick={() => {
+              setSelectedRootForTutor({
+                root: "Đại Lộ Gốc Từ",
+                meaning: "Giải mã hình thái học Latin & Hy Lạp",
+                origin: "Latin & Hy Lạp",
+                tip: "Học theo cụm gốc từ giúp nhân 5 tốc độ ghi nhớ và mở rộng vốn từ học thuật C1/C2",
+                category: selectedCategory === "All" ? "18 Trục Lớn" : selectedCategory,
+                trunkTitle: selectedCategory === "All" ? "18 Trục Lớn Toàn Diện" : selectedCategory,
+              });
+              setTutorWords([]);
+              setIsAiTutorOpen(true);
+            }}
+            className="px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white shadow-md border border-blue-400 hover:scale-105 active:scale-95"
+            title="Mở Gia Sư AI học từ vựng theo gốc từ (10-15 từ, bài đọc 150-250 từ & test ôn tập)"
+          >
+            <Sparkles className="w-4 h-4 text-amber-300" />
+            <span>Gia Sư AI Gốc Từ</span>
+          </button>
+
           <button
             id="toggle-paraphrase-btn"
             onClick={() => setShowParaphraseView(!showParaphraseView)}
@@ -838,6 +893,7 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
                   document.getElementById(`root-item-${root.id}`)?.scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
+              onOpenAiTutor={(root) => handleOpenRootTutor(root)}
             />
           ) : (
             /* Classic 18-Trunk Grid View */
@@ -1029,6 +1085,18 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
                         <span>{currentlyPlayingId === `root-${item.id}` ? "Đang đọc..." : "Nghe Gốc"}</span>
                       </button>
 
+                      {/* AI Tutor Button on Root Card */}
+                      <button
+                        type="button"
+                        id={`ai-tutor-root-${item.id}`}
+                        onClick={(e) => handleOpenRootTutor(item, undefined, e)}
+                        title={`Mở Gia Sư AI học chuyên sâu 10-15 từ gốc ${item.root} kèm bài đọc 150-250 từ & test ôn tập`}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-black uppercase tracking-wider transition-all cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-xs border border-purple-400 hover:scale-105 active:scale-95"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                        <span>Gia Sư AI</span>
+                      </button>
+
                       <span className={`text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full border ${theme.badge}`}>
                         {theme.name}
                       </span>
@@ -1055,6 +1123,39 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
                 {/* Expanded Details Panel */}
                 {isExpanded && (
                   <div className="p-5 md:p-6 border-t-2 border-[#0F172A] bg-slate-50/60 space-y-5">
+                    {/* Dedicated AI Tutor Callout for this Root */}
+                    <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-950 text-white rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-indigo-500/40 shadow-md">
+                      <div className="flex items-center gap-3">
+                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-sm shrink-0">
+                          <GraduationCap className="w-6 h-6 text-amber-300" />
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-500/30 text-purple-200 border border-purple-400/40 font-mono">
+                              Gia Sư AI Chuyên Sâu
+                            </span>
+                            <span className="text-xs font-bold text-amber-300">
+                              Gốc: {item.root} ({item.meaning})
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-black text-white mt-0.5">
+                            Bài học 10-15 từ vựng, mẹo gợi nhớ, bài đọc 150-250 từ & 5 câu test ôn tập
+                          </h4>
+                          <p className="text-xs text-slate-300 mt-0.5">
+                            Gia sư AI sẽ phân tích chuyên sâu hình thái học, đối chiếu từ B2 sang C1/C2, hướng dẫn phát âm và kiểm tra kiến thức tự động.
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={(e) => handleOpenRootTutor(item, undefined, e)}
+                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2 shrink-0 cursor-pointer hover:scale-105 active:scale-95"
+                      >
+                        <Sparkles className="w-4 h-4 text-slate-950" />
+                        <span>Học Gốc Này Với AI</span>
+                      </button>
+                    </div>
+
                     {/* Origin description & Mnemonic Tip */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {/* Concept explanation */}
@@ -1205,6 +1306,16 @@ export const RootsBoulevard: React.FC<RootsBoulevardProps> = ({ allRoots }) => {
           })
         )}
       </div>
+
+      {/* AI Tutor Modal for Roots Boulevard */}
+      <AiVocabTutorModal
+        isOpen={isAiTutorOpen}
+        onClose={() => setIsAiTutorOpen(false)}
+        initialTopic={selectedRootForTutor ? `Gốc từ ${selectedRootForTutor.root}: ${selectedRootForTutor.meaning}` : "Đại Lộ Gốc Từ IELTS"}
+        initialWords={tutorWords}
+        initialMacro="Đại Lộ Gốc Từ IELTS"
+        initialRootContext={selectedRootForTutor || undefined}
+      />
     </div>
   );
 };

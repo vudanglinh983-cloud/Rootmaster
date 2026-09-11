@@ -29,6 +29,7 @@ interface MindmapWordDetailViewProps {
   compact?: boolean;
   onClose?: () => void;
   initialTab?: "meaning" | "linked" | "mnemonic";
+  onOpenAiTutor?: (root: WordRoot) => void;
 }
 
 export const MindmapWordDetailView: React.FC<MindmapWordDetailViewProps> = ({
@@ -42,6 +43,7 @@ export const MindmapWordDetailView: React.FC<MindmapWordDetailViewProps> = ({
   compact = false,
   onClose,
   initialTab = "meaning",
+  onOpenAiTutor,
 }) => {
   const [activeTab, setActiveTab] = useState<"meaning" | "linked" | "mnemonic">(initialTab);
 
@@ -142,6 +144,17 @@ export const MindmapWordDetailView: React.FC<MindmapWordDetailViewProps> = ({
 
           {/* Action Buttons: Audio & Close */}
           <div className="flex items-center gap-1.5 shrink-0">
+            {onOpenAiTutor && inspectedRoot && (
+              <button
+                type="button"
+                onClick={() => onOpenAiTutor(inspectedRoot)}
+                className="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-[11px] font-black flex items-center gap-1.5 shadow-sm border border-purple-400 cursor-pointer transition-all hover:scale-105 active:scale-95"
+                title={`Học gốc "${inspectedRoot.root}" với Gia Sư AI (10-15 từ + bài đọc + test)`}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                <span className="hidden sm:inline">Gia Sư AI</span>
+              </button>
+            )}
             {currentWord && (
               <button
                 type="button"

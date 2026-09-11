@@ -29,6 +29,7 @@ interface D3RootsMindmapProps {
   allRoots: WordRoot[];
   onSelectRoot?: (root: WordRoot) => void;
   selectedRootId?: string | null;
+  onOpenAiTutor?: (root: WordRoot) => void;
 }
 
 interface MindmapHierarchyNode {
@@ -73,6 +74,7 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
   allRoots,
   onSelectRoot,
   selectedRootId,
+  onOpenAiTutor,
 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -864,6 +866,7 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
                   allRoots={allRoots}
                   compact={true}
                   onClose={() => setShowFloatingCard(false)}
+                  onOpenAiTutor={onOpenAiTutor}
                 />
               )}
             </div>
@@ -895,6 +898,7 @@ export const D3RootsMindmap: React.FC<D3RootsMindmapProps> = ({
             onPlayAudio={handlePlayAudio}
             isSpeaking={isSpeaking}
             allRoots={allRoots}
+            onOpenAiTutor={onOpenAiTutor}
           />
         </div>
       </div>
