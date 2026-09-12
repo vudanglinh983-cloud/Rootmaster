@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { SavedLessonRecord, TopicWord, AITopicLesson, AITutorLesson } from "../types";
+import { SavedLessonRecord, TopicWord, AITopicLesson, AITutorLesson, BiteSizedSection } from "../types";
 import {
   getAllSavedLessons,
   deleteSavedLesson,
@@ -13,7 +13,7 @@ import {
   exportLessonsAsStudyMarkdown,
   markLessonCompleted
 } from "../lib/lessonStorage";
-import { SpeechService } from "../lib/speechSynthesis";
+import { SpeechService, getWordPronunciation } from "../lib/speechSynthesis";
 import {
   BookmarkCheck,
   Download,
@@ -32,6 +32,9 @@ import {
   GraduationCap,
   Sparkles,
   Volume2,
+  VolumeX,
+  Headphones,
+  Pause,
   Calendar,
   Layers,
   Award,
@@ -72,6 +75,18 @@ export const SavedLessonsArchive: React.FC<SavedLessonsArchiveProps> = ({
 
   // Audio Speech state
   const [playingWord, setPlayingWord] = useState<string | null>(null);
+  const [isPlayingReadingFull, setIsPlayingReadingFull] = useState<boolean>(false);
+  const [playingReadingSection, setPlayingReadingSection] = useState<number | string | null>(null);
+  const [readingAudioSpeed, setReadingAudioSpeed] = useState<number>(1.0);
+  const readingCancelRef = useRef<boolean>(false);
+
+  const stopReadingAudio = () => {
+    readingCancelRef.current = true;
+    SpeechService.stop();
+    setIsPlayingReadingFull(false);
+    setPlayingReadingSection(null);
+    setPlayingWord(null);
+  };
 
   // Feedback notifications
   const [notice, setNotice] = useState<{ type: "success" | "error"; message: string } | null>(null);
@@ -92,6 +107,9 @@ export const SavedLessonsArchive: React.FC<SavedLessonsArchiveProps> = ({
 
   useEffect(() => {
     loadLessons();
+    return () => {
+      stopReadingAudio();
+    };
   }, []);
 
   const showNotification = (type: "success" | "error", message: string) => {
@@ -101,14 +119,105 @@ export const SavedLessonsArchive: React.FC<SavedLessonsArchiveProps> = ({
     }, 3500);
   };
 
-  // Play audio pronunciation
+  // Play audio pronunciation for single word
   const handlePronounce = (word: string, e?: React.MouseEvent) => {
     e?.stopPropagation();
+    stopReadingAudio();
     setPlayingWord(word);
     SpeechService.speak(word, {
       rate: 0.9,
       onEnd: () => setPlayingWord(null),
       onError: () => setPlayingWord(null),
+    });
+  };
+
+  // Play full passage for Tutor Lesson sequentially
+  const handlePlayFullTutorPassage = async (readingPassage: any) => {
+    if (isPlayingReadingFull) {
+      stopReadingAudio();
+      return;
+    }
+    stopReadingAudio();
+    readingCancelRef.current = false;
+    setIsPlayingReadingFull(true);
+
+    if (readingPassage?.sections && readingPassage.sections.length > 0) {
+      for (let i = 0; i < readingPassage.sections.length; i++) {
+        if (readingCancelRef.current) break;
+        const sec = readingPassage.sections[i];
+        setPlayingReadingSection(sec.sectionNumber);
+        await new Promise<void>((resolve) => {
+          SpeechService.speak(sec.textEn, {
+            rate: readingAudioSpeed,
+            onEnd: () => resolve(),
+            onError: () => resolve(),
+          });
+        });
+        if (!readingCancelRef.current && i < readingPassage.sections.length - 1) {
+          await new Promise((r) => setTimeout(r, 600));
+        }
+      }
+    } else if (readingPassage?.fullTextEn) {
+      setPlayingReadingSection("full");
+      await new Promise<void>((resolve) => {
+        SpeechService.speak(readingPassage.fullTextEn, {
+          rate: readingAudioSpeed,
+          onEnd: () => resolve(),
+          onError: () => resolve(),
+        });
+      });
+    }
+
+    if (!readingCancelRef.current) {
+      setIsPlayingReadingFull(false);
+      setPlayingReadingSection(null);
+    }
+  };
+
+  // Play single section of the reading passage
+  const handlePlaySingleSection = (textEn: string, sectionId: number | string) => {
+    if (playingReadingSection === sectionId) {
+      stopReadingAudio();
+      return;
+    }
+    stopReadingAudio();
+    readingCancelRef.current = false;
+    setPlayingReadingSection(sectionId);
+    SpeechService.speak(textEn, {
+      rate: readingAudioSpeed,
+      onEnd: () => {
+        if (!readingCancelRef.current) setPlayingReadingSection(null);
+      },
+      onError: () => {
+        if (!readingCancelRef.current) setPlayingReadingSection(null);
+      },
+    });
+  };
+
+  // Play full story for Topic Lesson
+  const handlePlayTopicNarrative = (narrativeText: string) => {
+    if (isPlayingReadingFull || playingReadingSection === "topic_story") {
+      stopReadingAudio();
+      return;
+    }
+    stopReadingAudio();
+    readingCancelRef.current = false;
+    setIsPlayingReadingFull(true);
+    setPlayingReadingSection("topic_story");
+    SpeechService.speak(narrativeText, {
+      rate: readingAudioSpeed,
+      onEnd: () => {
+        if (!readingCancelRef.current) {
+          setIsPlayingReadingFull(false);
+          setPlayingReadingSection(null);
+        }
+      },
+      onError: () => {
+        if (!readingCancelRef.current) {
+          setIsPlayingReadingFull(false);
+          setPlayingReadingSection(null);
+        }
+      },
     });
   };
 
@@ -176,6 +285,7 @@ export const SavedLessonsArchive: React.FC<SavedLessonsArchiveProps> = ({
 
   // Exit review mode
   const handleExitReview = () => {
+    stopReadingAudio();
     setReviewingLesson(null);
     loadLessons();
   };
@@ -520,7 +630,10 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
           <div className="bg-slate-100 border-b border-gray-200 px-4 py-2 flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-1.5 overflow-x-auto">
               <button
-                onClick={() => setReviewTab("vocab")}
+                onClick={() => {
+                  if (reviewTab === "reading") stopReadingAudio();
+                  setReviewTab("vocab");
+                }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
                   reviewTab === "vocab"
                     ? "bg-white text-slate-900 shadow-sm border border-gray-300"
@@ -532,19 +645,25 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
               </button>
 
               <button
-                onClick={() => setReviewTab("reading")}
+                onClick={() => {
+                  if (reviewTab !== "reading") stopReadingAudio();
+                  setReviewTab("reading");
+                }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
                   reviewTab === "reading"
-                    ? "bg-white text-slate-900 shadow-sm border border-gray-300"
+                    ? "bg-white text-slate-900 shadow-sm border border-gray-300 ring-1 ring-blue-500/20"
                     : "text-gray-600 hover:bg-gray-200"
                 }`}
               >
-                <BookOpen className="w-3.5 h-3.5 text-blue-600" />
-                <span>Bài Đọc / Ngữ Cảnh</span>
+                <Headphones className="w-3.5 h-3.5 text-blue-600" />
+                <span>Bài Đọc & Đọc Mẫu</span>
               </button>
 
               <button
-                onClick={() => setReviewTab("analysis")}
+                onClick={() => {
+                  if (reviewTab === "reading") stopReadingAudio();
+                  setReviewTab("analysis");
+                }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
                   reviewTab === "analysis"
                     ? "bg-white text-slate-900 shadow-sm border border-gray-300"
@@ -556,7 +675,10 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
               </button>
 
               <button
-                onClick={() => setReviewTab("test")}
+                onClick={() => {
+                  if (reviewTab === "reading") stopReadingAudio();
+                  setReviewTab("test");
+                }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
                   reviewTab === "test"
                     ? "bg-white text-slate-900 shadow-sm border border-gray-300"
@@ -568,7 +690,10 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
               </button>
 
               <button
-                onClick={() => setReviewTab("notes")}
+                onClick={() => {
+                  if (reviewTab === "reading") stopReadingAudio();
+                  setReviewTab("notes");
+                }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 ${
                   reviewTab === "notes"
                     ? "bg-white text-slate-900 shadow-sm border border-gray-300"
@@ -732,59 +857,366 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
               </div>
             )}
 
-            {/* 2. READING PASSAGE / CONTEXT STORY TAB */}
+            {/* 2. READING PASSAGE / CONTEXT STORY TAB WITH SAMPLE AUDIO READING */}
             {reviewTab === "reading" && (
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                    NGỮ CẢNH HỌC THUẬT TỰ NHIÊN
-                  </span>
-                  <button
-                    onClick={() => setShowViTranslation(!showViTranslation)}
-                    className="px-3 py-1 rounded-lg text-xs font-bold bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center gap-1.5 cursor-pointer"
-                  >
-                    {showViTranslation ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
-                    <span>{showViTranslation ? "Ẩn bản dịch" : "Hiện bản dịch tiếng Việt"}</span>
-                  </button>
+              <div className="space-y-5">
+                {/* Full Lesson Audio Player Bar */}
+                <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-950 rounded-2xl p-5 text-white shadow-xl border border-blue-800/40 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-sky-400 shrink-0">
+                      <Headphones className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs font-black uppercase tracking-wider text-sky-300 font-mono">
+                          PHẦN ĐỌC MẪU BẢN XỨ (SAMPLE AUDIO READING)
+                        </span>
+                        {isPlayingReadingFull && (
+                          <span className="px-2.5 py-0.5 rounded-full bg-emerald-500 text-[10px] font-mono font-bold text-white uppercase animate-pulse flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
+                            Đang đọc mẫu toàn bài
+                          </span>
+                        )}
+                        {playingReadingSection !== null && !isPlayingReadingFull && (
+                          <span className="px-2.5 py-0.5 rounded-full bg-blue-500 text-[10px] font-mono font-bold text-white uppercase animate-pulse">
+                            Đang phát đoạn {playingReadingSection}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs text-slate-300 font-medium mt-0.5">
+                        Luyện nghe đọc mẫu chuẩn giọng bản xứ học thuật IELTS. Hỗ trợ điều chỉnh tốc độ và nghe theo từng đoạn bite-sized.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    {/* Speed Controls */}
+                    <div className="flex items-center bg-slate-800/90 rounded-xl p-1 border border-slate-700 text-xs">
+                      <span className="text-slate-400 font-bold px-2">Tốc độ:</span>
+                      {[0.75, 0.9, 1.0, 1.25].map((rate) => (
+                        <button
+                          key={rate}
+                          onClick={() => {
+                            setReadingAudioSpeed(rate);
+                            if (isPlayingReadingFull || playingReadingSection !== null) {
+                              stopReadingAudio();
+                            }
+                          }}
+                          className={`px-2 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                            readingAudioSpeed === rate
+                              ? "bg-blue-600 text-white shadow-sm"
+                              : "text-slate-300 hover:text-white"
+                          }`}
+                        >
+                          {rate}x
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Play / Stop Button */}
+                    <button
+                      onClick={() => {
+                        if (reviewingLesson.type === "tutor") {
+                          const tutorData = reviewingLesson.lessonData as AITutorLesson;
+                          if (tutorData?.readingPassage) {
+                            handlePlayFullTutorPassage(tutorData.readingPassage);
+                          }
+                        } else if (reviewingLesson.type === "topic_lesson") {
+                          const topicData = reviewingLesson.lessonData as AITopicLesson;
+                          if (topicData?.connectingNarrative?.text) {
+                            handlePlayTopicNarrative(topicData.connectingNarrative.text);
+                          }
+                        }
+                      }}
+                      className={`px-4 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2 cursor-pointer ${
+                        isPlayingReadingFull || playingReadingSection !== null
+                          ? "bg-red-600 hover:bg-red-500 text-white"
+                          : "bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white"
+                      }`}
+                    >
+                      {isPlayingReadingFull || playingReadingSection !== null ? (
+                        <>
+                          <VolumeX className="w-4 h-4" />
+                          <span>Dừng đọc mẫu</span>
+                        </>
+                      ) : (
+                        <>
+                          <Play className="w-4 h-4 fill-white" />
+                          <span>Nghe đọc mẫu toàn bài</span>
+                        </>
+                      )}
+                    </button>
+
+                    {/* Toggle Translation */}
+                    <button
+                      onClick={() => setShowViTranslation(!showViTranslation)}
+                      className="px-3 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 rounded-xl text-xs font-bold transition-colors flex items-center gap-1.5 cursor-pointer"
+                    >
+                      {showViTranslation ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                      <span>{showViTranslation ? "Ẩn bản dịch" : "Hiện bản dịch"}</span>
+                    </button>
+                  </div>
                 </div>
 
-                {reviewingLesson.type === "topic_lesson" && (
-                  <div className="bg-slate-50 border border-gray-200 rounded-xl p-5 space-y-4">
-                    <h4 className="text-base font-black text-slate-900">
-                      {(reviewingLesson.lessonData as AITopicLesson).connectingNarrative?.title}
-                    </h4>
-                    <p className="text-sm text-slate-800 leading-relaxed font-serif whitespace-pre-line">
-                      {(reviewingLesson.lessonData as AITopicLesson).connectingNarrative?.text}
-                    </p>
+                {/* TUTOR LESSON READING PASSAGE */}
+                {reviewingLesson.type === "tutor" && (() => {
+                  const tutorData = reviewingLesson.lessonData as AITutorLesson;
+                  const readingPassage = tutorData?.readingPassage;
 
-                    {showViTranslation && (
-                      <div className="pt-4 border-t border-gray-200 text-xs text-slate-600 leading-relaxed italic">
-                        <span className="font-bold text-slate-900 not-italic block mb-1">Dịch nghĩa:</span>
-                        {(reviewingLesson.lessonData as AITopicLesson).connectingNarrative?.translation}
+                  if (!readingPassage) {
+                    return (
+                      <div className="bg-white rounded-2xl p-8 text-center text-xs text-gray-500 border border-gray-200">
+                        Bài học này chưa có dữ liệu bài đọc văn bản.
                       </div>
-                    )}
-                  </div>
-                )}
+                    );
+                  }
 
-                {reviewingLesson.type === "tutor" && (
-                  <div className="space-y-4">
-                    <div className="bg-slate-50 border border-gray-200 rounded-xl p-5 space-y-3">
-                      <h4 className="text-base font-black text-slate-900">
-                        {(reviewingLesson.lessonData as AITutorLesson).readingPassage?.title}
-                      </h4>
-                      <p className="text-sm text-slate-800 leading-relaxed font-serif whitespace-pre-line">
-                        {(reviewingLesson.lessonData as AITutorLesson).readingPassage?.fullTextEn}
-                      </p>
+                  const hasSections = readingPassage.sections && readingPassage.sections.length > 0;
 
-                      {showViTranslation && (
-                        <div className="pt-4 border-t border-gray-200 text-xs text-slate-600 leading-relaxed italic">
-                          <span className="font-bold text-slate-900 not-italic block mb-1">Dịch toàn văn:</span>
-                          {(reviewingLesson.lessonData as AITutorLesson).readingPassage?.fullTextVi}
+                  return (
+                    <div className="space-y-4">
+                      {/* Reading Passage Title Header */}
+                      <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-3">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-blue-50 text-blue-600">
+                            <BookOpen className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <span className="text-[11px] font-black uppercase tracking-wider text-blue-600 font-mono">
+                              BÀI ĐỌC HỌC THUẬT IELTS (~150 - 250 TỪ)
+                            </span>
+                            <h3 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
+                              {readingPassage.title}
+                            </h3>
+                            <p className="text-xs text-slate-500 mt-0.5">
+                              {hasSections
+                                ? `Chia thành ${readingPassage.sections.length} đoạn nhỏ dễ học kèm audio đọc mẫu & bản dịch song ngữ.`
+                                : "Bài đọc ngữ cảnh học thuật kèm audio đọc mẫu bản xứ."}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          {readingPassage.totalWordCount > 0 && (
+                            <span className="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-mono font-bold">
+                              {readingPassage.totalWordCount} TỪ
+                            </span>
+                          )}
+                          {hasSections && (
+                            <span className="px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-mono font-bold">
+                              {readingPassage.sections.length} ĐOẠN NHỎ
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Bite-Sized Sections */}
+                      {hasSections ? (
+                        <div className="space-y-4">
+                          {readingPassage.sections.map((sec, sIdx) => {
+                            const isThisSectionPlaying = playingReadingSection === sec.sectionNumber;
+                            return (
+                              <div
+                                key={sIdx}
+                                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                                  isThisSectionPlaying
+                                    ? "border-blue-500 bg-blue-50/40 ring-2 ring-blue-400/50 shadow-md"
+                                    : "border-slate-200 bg-slate-50/70 hover:border-slate-300"
+                                }`}
+                              >
+                                <div className="px-4 py-3 bg-white border-b border-slate-200 flex items-center justify-between flex-wrap gap-2">
+                                  <div className="flex items-center gap-2">
+                                    <span className="w-6 h-6 rounded-full bg-blue-600 text-white font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                                      {sec.sectionNumber}
+                                    </span>
+                                    <span className="text-xs sm:text-sm font-bold text-slate-900">
+                                      {sec.sectionTitle}
+                                    </span>
+                                  </div>
+
+                                  <button
+                                    onClick={() => handlePlaySingleSection(sec.textEn, sec.sectionNumber)}
+                                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                                      isThisSectionPlaying
+                                        ? "bg-red-100 text-red-700 border border-red-300"
+                                        : "bg-blue-100/70 hover:bg-blue-200 text-blue-700 border border-blue-200"
+                                    }`}
+                                    title="Nghe riêng phần đọc mẫu đoạn này"
+                                  >
+                                    {isThisSectionPlaying ? (
+                                      <>
+                                        <VolumeX className="w-3.5 h-3.5" />
+                                        <span>Dừng đọc đoạn</span>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <Volume2 className="w-3.5 h-3.5" />
+                                        <span>Nghe đọc mẫu đoạn này</span>
+                                      </>
+                                    )}
+                                  </button>
+                                </div>
+
+                                <div className="p-4 space-y-3">
+                                  <div className="text-sm sm:text-base font-serif leading-relaxed text-slate-900 bg-white p-4 rounded-xl border border-slate-200 shadow-inner">
+                                    {sec.textEn}
+                                  </div>
+
+                                  {showViTranslation && (
+                                    <div className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans bg-slate-100/80 p-3 rounded-xl border border-slate-200">
+                                      <span className="font-bold text-slate-900 mr-1.5">Bản dịch song ngữ:</span>
+                                      {sec.textVi}
+                                    </div>
+                                  )}
+
+                                  <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+                                    {sec.keyWordsInSection && sec.keyWordsInSection.length > 0 && (
+                                      <div className="flex items-center gap-1.5 flex-wrap">
+                                        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                                          Từ vựng then chốt:
+                                        </span>
+                                        {sec.keyWordsInSection.map((kw, kwIdx) => (
+                                          <button
+                                            key={kwIdx}
+                                            onClick={(e) => handlePronounce(kw, e)}
+                                            className="px-2 py-0.5 rounded-md bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold font-mono transition-colors cursor-pointer border border-amber-300 flex items-center gap-1"
+                                            title="Nhấn để nghe phát âm"
+                                          >
+                                            <span>{kw}</span>
+                                            <Volume2 className="w-2.5 h-2.5 opacity-60" />
+                                          </button>
+                                        ))}
+                                      </div>
+                                    )}
+
+                                    {sec.keyStructures && (
+                                      <div className="text-[11px] text-indigo-700 font-medium italic">
+                                        💡 {sec.keyStructures}
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        /* Fallback Full Text */
+                        <div className="bg-white border border-gray-200 rounded-2xl p-5 space-y-4">
+                          <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-serif whitespace-pre-line bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            {readingPassage.fullTextEn}
+                          </p>
+
+                          {showViTranslation && (
+                            <div className="p-4 bg-slate-100/80 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                              <strong className="text-slate-900 block mb-1">Dịch toàn văn:</strong>
+                              {readingPassage.fullTextVi}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
+                  );
+                })()}
+
+                {/* TOPIC LESSON CONNECTING NARRATIVE STORY */}
+                {reviewingLesson.type === "topic_lesson" && (() => {
+                  const topicData = reviewingLesson.lessonData as AITopicLesson;
+                  const narrative = topicData?.connectingNarrative;
+
+                  if (!narrative) {
+                    return (
+                      <div className="bg-white rounded-2xl p-8 text-center text-xs text-gray-500 border border-gray-200">
+                        Bài học này chưa có câu chuyện ngữ cảnh.
+                      </div>
+                    );
+                  }
+
+                  const isPlayingStory = playingReadingSection === "topic_story";
+
+                  return (
+                    <div className="space-y-4">
+                      <div
+                        className={`bg-white rounded-2xl border transition-all p-5 space-y-4 shadow-sm ${
+                          isPlayingStory
+                            ? "border-blue-500 ring-2 ring-blue-400/50 bg-blue-50/20"
+                            : "border-slate-200"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
+                          <div>
+                            <span className="text-[11px] font-black uppercase tracking-wider text-blue-600 font-mono">
+                              CÂU CHUYỆN NGỮ CẢNH HỌC THUẬT
+                            </span>
+                            <h4 className="text-base font-black text-slate-900">
+                              {narrative.title}
+                            </h4>
+                          </div>
+
+                          <button
+                            onClick={() => handlePlayTopicNarrative(narrative.text)}
+                            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                              isPlayingStory
+                                ? "bg-red-100 text-red-700 border border-red-300"
+                                : "bg-blue-100 hover:bg-blue-200 text-blue-700 border border-blue-200"
+                            }`}
+                          >
+                            {isPlayingStory ? (
+                              <>
+                                <VolumeX className="w-3.5 h-3.5" />
+                                <span>Dừng đọc mẫu</span>
+                              </>
+                            ) : (
+                              <>
+                                <Volume2 className="w-3.5 h-3.5" />
+                                <span>Nghe đọc mẫu câu chuyện</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+
+                        <div className="p-4 bg-amber-50/40 rounded-xl border border-amber-200/60 font-serif leading-relaxed text-slate-900 text-sm sm:text-base whitespace-pre-line">
+                          {narrative.text}
+                        </div>
+
+                        {showViTranslation && (
+                          <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+                            <strong className="text-slate-900 block mb-1">Bản dịch song ngữ:</strong>
+                            {narrative.translation}
+                          </div>
+                        )}
+
+                        {narrative.takeawayTip && (
+                          <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs text-blue-900 font-medium">
+                            💡 <strong>Bài học rút ra: </strong>{narrative.takeawayTip}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Shadowing Practice Guide */}
+                <div className="bg-gradient-to-r from-slate-50 to-blue-50/60 border border-blue-200/80 rounded-2xl p-4 sm:p-5 space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-black uppercase text-blue-900 font-mono">
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                    <span>Phương Pháp Ôn Tập Shadowing Hiệu Quả Cùng Phần Đọc Mẫu</span>
                   </div>
-                )}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs text-slate-700">
+                    <div className="bg-white p-3 rounded-xl border border-blue-100 shadow-2xs">
+                      <strong className="text-blue-900 block mb-0.5">1. Nghe ngấm (Active Listening)</strong>
+                      Bật đọc mẫu 1-2 lần để bắt trọn ngữ điệu (intonation), nhịp điệu (cadence) và ngắt nghỉ tự nhiên.
+                    </div>
+                    <div className="bg-white p-3 rounded-xl border border-blue-100 shadow-2xs">
+                      <strong className="text-blue-900 block mb-0.5">2. Đọc đuổi (Shadowing)</strong>
+                      Bật đọc mẫu ở tốc độ 0.9x hoặc 1.0x, đọc đuổi theo với độ trễ 0.5 - 1 giây để luyện phản xạ phát âm.
+                    </div>
+                    <div className="bg-white p-3 rounded-xl border border-blue-100 shadow-2xs">
+                      <strong className="text-blue-900 block mb-0.5">3. Đối chiếu từ vựng</strong>
+                      Bấm vào từng từ vựng then chốt trong đoạn để nghe lại cách đọc âm tiết, trọng âm và liên kết câu.
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 

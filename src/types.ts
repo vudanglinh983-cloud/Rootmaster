@@ -268,6 +268,7 @@ export interface AITopicLesson {
     text: string;
     translation: string;
     keyWordsUsed: string[];
+    takeawayTip?: string;
   };
   quickRecallQuiz: QuizQuestionItem[];
   diverseTestQuestions?: ComprehensiveQuizQuestion[];
