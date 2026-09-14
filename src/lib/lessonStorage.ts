@@ -1,11 +1,12 @@
 import { SavedLessonRecord, TopicWord } from "../types";
+import { getActiveProfile } from "./profileStorage";
 
 const LESSON_STORAGE_KEY = "ielts_ai_saved_lessons_v2";
 
 /**
- * Retrieve all saved lessons from localStorage
+ * Retrieve raw list of all saved lessons from localStorage (all users)
  */
-export function getAllSavedLessons(): SavedLessonRecord[] {
+export function getAllSavedLessonsRaw(): SavedLessonRecord[] {
   try {
     const raw = localStorage.getItem(LESSON_STORAGE_KEY);
     if (!raw) return [];
@@ -13,6 +14,28 @@ export function getAllSavedLessons(): SavedLessonRecord[] {
     return Array.isArray(parsed) ? parsed : [];
   } catch (e) {
     console.error("Error reading saved lessons:", e);
+    return [];
+  }
+}
+
+/**
+ * Retrieve saved lessons for a specific user (defaults to currently active profile)
+ */
+export function getAllSavedLessons(targetUserId?: string): SavedLessonRecord[] {
+  try {
+    const activeProfile = getActiveProfile();
+    const currentUserId = targetUserId || activeProfile.id;
+    const all = getAllSavedLessonsRaw();
+
+    return all.filter((l) => {
+      // If lesson doesn't have a userId, treat it as belonging to default user
+      if (!l.userId) {
+        return currentUserId === "user_default" || currentUserId === activeProfile.id;
+      }
+      return l.userId === currentUserId;
+    });
+  } catch (e) {
+    console.error("Error filtering saved lessons by user:", e);
     return [];
   }
 }
@@ -29,22 +52,22 @@ function persistLessons(lessons: SavedLessonRecord[]): void {
 }
 
 /**
- * Get the currently active in-progress lesson (if any)
+ * Get the currently active in-progress lesson for current user (if any)
  */
-export function getActiveLesson(): SavedLessonRecord | null {
-  const lessons = getAllSavedLessons();
+export function getActiveLesson(targetUserId?: string): SavedLessonRecord | null {
+  const lessons = getAllSavedLessons(targetUserId);
   return lessons.find((l) => l.status === "in-progress") || null;
 }
 
 /**
- * Check if the user is allowed to generate a new lesson.
- * Rule: Only allow new lesson generation if the previous lesson is completed!
+ * Check if the current user is allowed to generate a new lesson.
+ * Rule: Only allow new lesson generation if the previous lesson for this user is completed!
  */
-export function canGenerateNewLesson(): {
+export function canGenerateNewLesson(targetUserId?: string): {
   allowed: boolean;
   activeLesson?: SavedLessonRecord;
 } {
-  const active = getActiveLesson();
+  const active = getActiveLesson(targetUserId);
   if (active) {
     return {
       allowed: false,
@@ -55,26 +78,30 @@ export function canGenerateNewLesson(): {
 }
 
 /**
- * Save a new lesson or update an existing lesson
+ * Save a new lesson or update an existing lesson for the specified or active user
  */
-export function saveOrUpdateLesson(record: SavedLessonRecord): void {
-  const lessons = getAllSavedLessons();
-  const index = lessons.findIndex((l) => l.id === record.id);
+export function saveOrUpdateLesson(record: SavedLessonRecord, targetUserId?: string): void {
+  const allLessons = getAllSavedLessonsRaw();
+  const index = allLessons.findIndex((l) => l.id === record.id);
   const now = Date.now();
+  const activeProfile = getActiveProfile();
+  const assignedUserId = record.userId || targetUserId || activeProfile.id;
+  const assignedUserName = record.userName || activeProfile.name;
 
   const toSave: SavedLessonRecord = {
     ...record,
+    userId: assignedUserId,
+    userName: assignedUserName,
     updatedAt: now,
   };
 
   if (index >= 0) {
-    lessons[index] = toSave;
+    allLessons[index] = toSave;
   } else {
-    // If saving a new in-progress lesson, make sure no other lesson is in-progress
-    lessons.unshift(toSave);
+    allLessons.unshift(toSave);
   }
 
-  persistLessons(lessons);
+  persistLessons(allLessons);
 }
 
 /**
@@ -84,33 +111,33 @@ export function markLessonCompleted(
   lessonId: string,
   testScore?: SavedLessonRecord["testScore"]
 ): SavedLessonRecord | null {
-  const lessons = getAllSavedLessons();
-  const index = lessons.findIndex((l) => l.id === lessonId);
+  const allLessons = getAllSavedLessonsRaw();
+  const index = allLessons.findIndex((l) => l.id === lessonId);
   if (index === -1) return null;
 
-  lessons[index].status = "completed";
-  lessons[index].updatedAt = Date.now();
+  allLessons[index].status = "completed";
+  allLessons[index].updatedAt = Date.now();
   if (testScore) {
-    lessons[index].testScore = testScore;
+    allLessons[index].testScore = testScore;
   }
 
-  persistLessons(lessons);
-  return lessons[index];
+  persistLessons(allLessons);
+  return allLessons[index];
 }
 
 /**
  * Delete a saved lesson
  */
 export function deleteSavedLesson(lessonId: string): void {
-  const lessons = getAllSavedLessons().filter((l) => l.id !== lessonId);
-  persistLessons(lessons);
+  const allLessons = getAllSavedLessonsRaw().filter((l) => l.id !== lessonId);
+  persistLessons(allLessons);
 }
 
 /**
- * Get all words that have been learned/included in any past lessons
+ * Get all words that have been learned/included in any past lessons for the current user
  */
-export function getLearnedWordsSet(): Set<string> {
-  const lessons = getAllSavedLessons();
+export function getLearnedWordsSet(targetUserId?: string): Set<string> {
+  const lessons = getAllSavedLessons(targetUserId);
   const set = new Set<string>();
   for (const lesson of lessons) {
     if (Array.isArray(lesson.wordsLearned)) {
@@ -123,20 +150,21 @@ export function getLearnedWordsSet(): Set<string> {
 }
 
 /**
- * Get array of all learned words for API exclusion
+ * Get array of all learned words for API exclusion for the current user
  */
-export function getLearnedWordsList(): string[] {
-  return Array.from(getLearnedWordsSet());
+export function getLearnedWordsList(targetUserId?: string): string[] {
+  return Array.from(getLearnedWordsSet(targetUserId));
 }
 
 /**
- * Filter candidates so only unlearned and unknown words are returned
+ * Filter candidates so only unlearned and unknown words are returned for the current user
  */
 export function filterNewWords(
   candidates: TopicWord[],
-  knownWordIds: string[] = []
+  knownWordIds: string[] = [],
+  targetUserId?: string
 ): TopicWord[] {
-  const learned = getLearnedWordsSet();
+  const learned = getLearnedWordsSet(targetUserId);
   const knownSet = new Set(knownWordIds);
 
   return candidates.filter((wordObj) => {
@@ -148,72 +176,83 @@ export function filterNewWords(
 }
 
 /**
+ * Internal helper to mutate a single lesson in the global raw store
+ */
+function mutateLesson(
+  lessonId: string,
+  mutator: (lesson: SavedLessonRecord) => void
+): SavedLessonRecord | null {
+  const all = getAllSavedLessonsRaw();
+  const idx = all.findIndex((l) => l.id === lessonId);
+  if (idx === -1) return null;
+  mutator(all[idx]);
+  all[idx].updatedAt = Date.now();
+  persistLessons(all);
+  return all[idx];
+}
+
+/**
  * Toggle bookmark state for a saved lesson
  */
 export function toggleLessonBookmark(lessonId: string): boolean {
-  const lessons = getAllSavedLessons();
-  const idx = lessons.findIndex((l) => l.id === lessonId);
-  if (idx === -1) return false;
-
-  lessons[idx].isBookmarked = !lessons[idx].isBookmarked;
-  lessons[idx].updatedAt = Date.now();
-  persistLessons(lessons);
-  return !!lessons[idx].isBookmarked;
+  let isMarked = false;
+  mutateLesson(lessonId, (l) => {
+    l.isBookmarked = !l.isBookmarked;
+    isMarked = !!l.isBookmarked;
+  });
+  return isMarked;
 }
 
 /**
  * Update personal notes for a saved lesson
  */
 export function updateLessonNotes(lessonId: string, notes: string): void {
-  const lessons = getAllSavedLessons();
-  const idx = lessons.findIndex((l) => l.id === lessonId);
-  if (idx === -1) return;
-
-  lessons[idx].userNotes = notes;
-  lessons[idx].updatedAt = Date.now();
-  persistLessons(lessons);
+  mutateLesson(lessonId, (l) => {
+    l.userNotes = notes;
+  });
 }
 
 /**
  * Reset test answers and score to re-take the quiz / review
  */
 export function resetLessonTest(lessonId: string): SavedLessonRecord | null {
-  const lessons = getAllSavedLessons();
-  const idx = lessons.findIndex((l) => l.id === lessonId);
-  if (idx === -1) return null;
-
-  lessons[idx].savedAnswers = {};
-  lessons[idx].testScore = null;
-  lessons[idx].lastReviewedAt = Date.now();
-  lessons[idx].updatedAt = Date.now();
-  persistLessons(lessons);
-  return lessons[idx];
+  return mutateLesson(lessonId, (l) => {
+    l.savedAnswers = {};
+    l.testScore = null;
+    l.lastReviewedAt = Date.now();
+  });
 }
 
 /**
  * Record a review timestamp for spaced repetition tracking
  */
 export function recordLessonReview(lessonId: string): void {
-  const lessons = getAllSavedLessons();
-  const idx = lessons.findIndex((l) => l.id === lessonId);
-  if (idx === -1) return;
-
-  lessons[idx].lastReviewedAt = Date.now();
-  persistLessons(lessons);
+  mutateLesson(lessonId, (l) => {
+    l.lastReviewedAt = Date.now();
+  });
 }
 
 /**
- * Export all saved lessons to a downloadable JSON file
+ * Export all saved lessons for current user to a downloadable JSON file
  */
-export function exportLessonsToJSONFile(filename: string = "ielts_saved_lessons_backup.json"): void {
+export function exportLessonsToJSONFile(filename?: string): void {
   try {
-    const lessons = getAllSavedLessons();
+    const active = getActiveProfile();
+    const lessons = getAllSavedLessons(active.id);
+    const safeName = active.name.replace(/[^a-zA-Z0-9_-]/g, "_").toLowerCase();
+    const finalFilename = filename || `ielts_saved_lessons_${safeName}_${Date.now()}.json`;
+
     const payload = {
       version: "2.0",
       exportedAt: new Date().toISOString(),
       appName: "IELTS Word Roots & Topic Vocab Master",
+      user: {
+        id: active.id,
+        name: active.name,
+        targetBand: active.targetBand,
+      },
       totalLessons: lessons.length,
-      totalWordsLearned: getLearnedWordsList().length,
+      totalWordsLearned: getLearnedWordsList(active.id).length,
       lessons,
     };
 
@@ -223,7 +262,7 @@ export function exportLessonsToJSONFile(filename: string = "ielts_saved_lessons_
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = filename;
+    link.download = finalFilename;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -290,30 +329,37 @@ export function importLessonsFromJSONFile(
       return { success: false, count: 0, error: "Không tìm thấy bài học hợp lệ trong file." };
     }
 
+    const active = getActiveProfile();
+    const preparedLessons = validLessons.map((l) => ({
+      ...l,
+      userId: l.userId || active.id,
+      userName: l.userName || active.name,
+    }));
+
+    const allRaw = getAllSavedLessonsRaw();
+
     if (mode === "replace") {
-      persistLessons(validLessons);
-      return { success: true, count: validLessons.length };
+      // Keep other users' lessons, replace current user's lessons
+      const otherUsersLessons = allRaw.filter((l) => (l.userId || "user_default") !== active.id);
+      const combined = [...preparedLessons, ...otherUsersLessons];
+      persistLessons(combined);
+      return { success: true, count: preparedLessons.length };
     }
 
     // Merge mode: retain existing, overwrite if duplicate ID, add new
-    const current = getAllSavedLessons();
-    const currentMap = new Map<string, SavedLessonRecord>();
-    current.forEach((l) => currentMap.set(l.id, l));
+    const rawMap = new Map<string, SavedLessonRecord>();
+    allRaw.forEach((l) => rawMap.set(l.id, l));
 
-    let addedCount = 0;
-    validLessons.forEach((l) => {
-      if (!currentMap.has(l.id)) {
-        addedCount++;
-      }
-      currentMap.set(l.id, l);
+    preparedLessons.forEach((l) => {
+      rawMap.set(l.id, l);
     });
 
-    const merged = Array.from(currentMap.values()).sort(
+    const merged = Array.from(rawMap.values()).sort(
       (a, b) => (b.updatedAt || b.createdAt || 0) - (a.updatedAt || a.createdAt || 0)
     );
 
     persistLessons(merged);
-    return { success: true, count: validLessons.length };
+    return { success: true, count: preparedLessons.length };
   } catch (err: any) {
     return { success: false, count: 0, error: err?.message || "Lỗi xử lý file JSON." };
   }

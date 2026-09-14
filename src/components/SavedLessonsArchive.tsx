@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { SavedLessonRecord, TopicWord, AITopicLesson, AITutorLesson, BiteSizedSection } from "../types";
+import { SavedLessonRecord, TopicWord, AITopicLesson, AITutorLesson, BiteSizedSection, UserProfile } from "../types";
 import {
   getAllSavedLessons,
   deleteSavedLesson,
@@ -13,6 +13,8 @@ import {
   exportLessonsAsStudyMarkdown,
   markLessonCompleted
 } from "../lib/lessonStorage";
+import { getActiveProfile, subscribeToProfileChange } from "../lib/profileStorage";
+import { UserProfileManagerModal } from "./UserProfileManagerModal";
 import { SpeechService, getWordPronunciation } from "../lib/speechSynthesis";
 import {
   BookmarkCheck,
@@ -46,7 +48,9 @@ import {
   FileJson,
   Eye,
   EyeOff,
-  AlertCircle
+  AlertCircle,
+  Users,
+  Unlock,
 } from "lucide-react";
 
 interface SavedLessonsArchiveProps {
@@ -61,6 +65,8 @@ export const SavedLessonsArchive: React.FC<SavedLessonsArchiveProps> = ({
   onNavigateTab,
 }) => {
   const [lessons, setLessons] = useState<SavedLessonRecord[]>([]);
+  const [currentProfile, setCurrentProfile] = useState<UserProfile>(getActiveProfile());
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [typeFilter, setTypeFilter] = useState<"all" | "topic_lesson" | "tutor">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "completed" | "in-progress" | "bookmarked">("all");
@@ -101,13 +107,23 @@ export const SavedLessonsArchive: React.FC<SavedLessonsArchiveProps> = ({
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const loadLessons = () => {
-    const list = getAllSavedLessons();
+    const active = getActiveProfile();
+    setCurrentProfile(active);
+    const list = getAllSavedLessons(active.id);
     setLessons(list);
   };
 
   useEffect(() => {
     loadLessons();
+
+    const unsubscribe = subscribeToProfileChange((newProfile) => {
+      setCurrentProfile(newProfile);
+      const list = getAllSavedLessons(newProfile.id);
+      setLessons(list);
+    });
+
     return () => {
+      unsubscribe();
       stopReadingAudio();
     };
   }, []);
@@ -518,6 +534,39 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
               <span className="hidden sm:inline">Tải Cẩm Nang .MD</span>
             </button>
           </div>
+        </div>
+
+        {/* Personalization Profile Status Bar */}
+        <div className="mt-4 pt-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2.5">
+            <span className="text-xl leading-none">{currentProfile.avatarEmoji || "🎓"}</span>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-slate-600">Không gian bài học của:</span>
+              <span className="font-black text-slate-900 bg-slate-100 px-2 py-0.5 rounded-lg border border-slate-200">
+                {currentProfile.name}
+              </span>
+              <span className="text-slate-500 font-medium">
+                ({lessons.length} bài học riêng biệt • Band {currentProfile.targetBand || "7.5"})
+              </span>
+              {currentProfile.hasPassword ? (
+                <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold flex items-center gap-1 border border-amber-200">
+                  <Lock className="w-2.5 h-2.5 text-amber-700" /> Có mật khẩu bảo vệ
+                </span>
+              ) : (
+                <span className="px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-bold flex items-center gap-1 border border-slate-200">
+                  <Unlock className="w-2.5 h-2.5 text-slate-500" /> Chế độ mở
+                </span>
+              )}
+            </div>
+          </div>
+
+          <button
+            onClick={() => setIsProfileModalOpen(true)}
+            className="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs"
+          >
+            <Users className="w-3.5 h-3.5" />
+            <span>Đổi người học khác</span>
+          </button>
         </div>
 
         {/* Quick Stats Strip */}
@@ -1706,6 +1755,16 @@ ${reviewingLesson.userNotes ? `\nGhi chú: ${reviewingLesson.userNotes}` : ""}`;
           )}
         </div>
       )}
+
+      {/* User Profile Manager & Switcher Modal */}
+      <UserProfileManagerModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        onProfileSwitched={(p) => {
+          setCurrentProfile(p);
+          loadLessons();
+        }}
+      />
     </div>
   );
 };

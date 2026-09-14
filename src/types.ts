@@ -354,8 +354,21 @@ export interface AITutorLesson {
   rootContext?: RootContextData;
 }
 
+export interface UserProfile {
+  id: string;
+  name: string;
+  avatarEmoji: string;
+  hasPassword?: boolean;
+  passwordHash?: string;
+  targetBand?: string;
+  createdAt: number;
+  lastActiveAt: number;
+}
+
 export interface SavedLessonRecord {
   id: string;
+  userId?: string;
+  userName?: string;
   type: "tutor" | "topic_lesson";
   title: string;
   topic: string;

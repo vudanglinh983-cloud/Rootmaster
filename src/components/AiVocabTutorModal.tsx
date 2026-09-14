@@ -11,6 +11,7 @@ import {
   deleteSavedLesson,
   downloadSingleLessonJSON
 } from "../lib/lessonStorage";
+import { getActiveProfile } from "../lib/profileStorage";
 import {
   GraduationCap,
   Sparkles,
@@ -442,6 +443,14 @@ export const AiVocabTutorModal: React.FC<AiVocabTutorModalProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
+            <div
+              className="px-2.5 py-1 rounded-xl bg-slate-800/90 text-slate-200 border border-slate-700 text-xs font-bold flex items-center gap-1.5 shrink-0"
+              title={`Hồ sơ đang học: ${getActiveProfile().name}`}
+            >
+              <span className="text-sm">{getActiveProfile().avatarEmoji || "🎓"}</span>
+              <span className="text-white font-black max-w-[100px] truncate">{getActiveProfile().name}</span>
+            </div>
+
             {/* Drawer toggle for saved lessons */}
             <button
               onClick={() => setShowSavedDrawer(!showSavedDrawer)}

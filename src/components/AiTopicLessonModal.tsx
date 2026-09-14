@@ -11,6 +11,7 @@ import {
   getLearnedWordsList,
   downloadSingleLessonJSON
 } from "../lib/lessonStorage";
+import { getActiveProfile } from "../lib/profileStorage";
 import {
   Sparkles,
   X,
@@ -349,6 +350,14 @@ Dịch nghĩa: ${lesson.connectingNarrative.translation}`;
           </div>
 
           <div className="flex items-center gap-2">
+            <div
+              className="px-2.5 py-1 rounded-xl bg-slate-800/90 text-slate-200 border border-slate-700 text-xs font-bold flex items-center gap-1.5 shrink-0"
+              title={`Hồ sơ đang học: ${getActiveProfile().name}`}
+            >
+              <span className="text-sm">{getActiveProfile().avatarEmoji || "🎓"}</span>
+              <span className="text-white font-black max-w-[100px] truncate">{getActiveProfile().name}</span>
+            </div>
+
             <button
               onClick={() => setShowSavedDrawer(!showSavedDrawer)}
               className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors cursor-pointer border border-slate-700 flex items-center gap-1.5"

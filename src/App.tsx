@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useTransition } from "react";
-import { WordRoot, SRSState, UserStats, RootCategory } from "./types";
+import { WordRoot, SRSState, UserStats, RootCategory, UserProfile } from "./types";
 import { rootsData } from "./data/rootsData";
 import { initializeSRSDatabase, saveSRSDatabase } from "./lib/srsHelper";
 
@@ -9,10 +9,23 @@ import { RootsBoulevard } from "./components/RootsBoulevard";
 import { AiRootCoach } from "./components/AiRootCoach";
 import { TopicVocabArena } from "./components/TopicVocabArena";
 import { SavedLessonsArchive } from "./components/SavedLessonsArchive";
+import { UserProfileManagerModal } from "./components/UserProfileManagerModal";
 import { getAllSavedLessons } from "./lib/lessonStorage";
+import { getActiveProfile, subscribeToProfileChange } from "./lib/profileStorage";
 
 // React icons
-import { LayoutDashboard, Compass, BrainCircuit, Sparkles, BookmarkCheck, Maximize2, Minimize2 } from "lucide-react";
+import {
+  LayoutDashboard,
+  Compass,
+  BrainCircuit,
+  Sparkles,
+  BookmarkCheck,
+  Maximize2,
+  Minimize2,
+  Users,
+  Lock,
+  Unlock,
+} from "lucide-react";
 
 export default function App() {
   // Navigation Tabs state
@@ -48,6 +61,10 @@ export default function App() {
     return () => document.removeEventListener("fullscreenchange", handleFsChange);
   }, [isFullScreenFocus]);
 
+  // Active User Profile state & Profile Switcher Modal
+  const [activeProfile, setActiveProfile] = useState<UserProfile>(getActiveProfile());
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState<boolean>(false);
+
   // Active study parameters mapping to SRS
   const [studyMode, setStudyMode] = useState<"due" | "new" | "all">("due");
 
@@ -70,15 +87,27 @@ export default function App() {
   useEffect(() => {
     const updateSavedCount = () => {
       try {
-        const list = getAllSavedLessons();
+        const active = getActiveProfile();
+        setActiveProfile(active);
+        const list = getAllSavedLessons(active.id);
         setSavedLessonsCount(list.length);
       } catch (e) {
         console.error(e);
       }
     };
     updateSavedCount();
+
+    const unsubscribe = subscribeToProfileChange((p) => {
+      setActiveProfile(p);
+      const list = getAllSavedLessons(p.id);
+      setSavedLessonsCount(list.length);
+    });
+
     window.addEventListener("storage", updateSavedCount);
-    return () => window.removeEventListener("storage", updateSavedCount);
+    return () => {
+      unsubscribe();
+      window.removeEventListener("storage", updateSavedCount);
+    };
   }, [activeTab]);
 
   // Load and initialize data on mount
@@ -271,7 +300,33 @@ export default function App() {
             </div>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* User Personalization Switcher Pill in Header */}
+            <button
+              onClick={() => setIsProfileModalOpen(true)}
+              className="flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 transition-all cursor-pointer shadow-2xs group"
+              title="Đổi tài khoản người học, cá nhân hóa tên & mật khẩu bảo vệ"
+            >
+              <span className="text-base leading-none">{activeProfile.avatarEmoji || "🎓"}</span>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-black leading-tight max-w-[85px] sm:max-w-[120px] truncate text-slate-900 group-hover:text-blue-600 transition-colors">
+                  {activeProfile.name}
+                </span>
+                <span className="text-[9px] font-bold text-slate-500 flex items-center gap-0.5">
+                  {activeProfile.hasPassword ? (
+                    <span className="flex items-center gap-0.5 text-amber-600 font-bold">
+                      <Lock className="w-2.5 h-2.5" /> Khóa
+                    </span>
+                  ) : (
+                    <span className="text-slate-500">Band {activeProfile.targetBand || "7.5"}</span>
+                  )}
+                </span>
+              </div>
+              <span className="hidden sm:inline-block text-[10px] text-blue-700 font-black bg-blue-100/70 px-1.5 py-0.5 rounded-md border border-blue-200">
+                Đổi
+              </span>
+            </button>
+
             {/* Fullscreen focus toggle button in header */}
             <button
               onClick={toggleFullScreenFocus}
@@ -324,6 +379,32 @@ export default function App() {
         {/* Responsive Drawer navigation toolbar (Hidden in full-screen focus mode) */}
         {!isFullScreenFocus && (
           <nav className="w-full md:w-64 shrink-0 bg-white border border-gray-200 rounded-2xl p-4 h-fit md:sticky md:top-22 space-y-1.5 shadow-sm">
+            {/* Active Learner Profile Card in Sidebar */}
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 mb-3 flex items-center justify-between gap-2 shadow-2xs">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-lg shrink-0 shadow-xs">
+                  {activeProfile.avatarEmoji || "🎓"}
+                </div>
+                <div className="min-w-0">
+                  <div className="text-xs font-black text-slate-900 truncate flex items-center gap-1">
+                    <span>{activeProfile.name}</span>
+                    {activeProfile.hasPassword && (
+                      <Lock className="w-2.5 h-2.5 text-amber-600 shrink-0" title="Có mật khẩu bảo vệ" />
+                    )}
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-bold">
+                    Mục tiêu Band {activeProfile.targetBand || "7.5"}
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsProfileModalOpen(true)}
+                className="px-2.5 py-1 bg-white hover:bg-blue-50 text-blue-600 hover:text-blue-700 border border-slate-200 hover:border-blue-300 text-[10px] font-black rounded-lg transition-colors cursor-pointer shrink-0"
+              >
+                Đổi hồ sơ
+              </button>
+            </div>
+
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-3 mb-2 block">Mục lục Học Phần</span>
             
             <button
@@ -453,6 +534,13 @@ export default function App() {
           <p>© 2026 IELTS Word Roots SRS. Bọc bởi Bold Typography & Blue Accent Theme.</p>
         </div>
       </footer>
+
+      {/* User Personalization & Profile Switcher Modal */}
+      <UserProfileManagerModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        onProfileSwitched={(p) => setActiveProfile(p)}
+      />
     </div>
   );
 }
